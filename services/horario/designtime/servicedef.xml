@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" springFile="horario.spring.xml" type="JavaService" CRUDService="false" class="horario" id="horario">
+    <operation name="getReport">
+        <parameter isList="false" typeRef="java.lang.String" name="idc"/>
+        <parameter isList="false" typeRef="java.lang.String" name="idsy"/>
+        <parameter isList="false" typeRef="java.lang.String" name="sem"/>
+        <return isList="false" typeRef="com.wavemaker.runtime.server.DownloadResponse"/>
+    </operation>
+    <dataobjects/>
+</service>

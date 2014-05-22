@@ -1,0 +1,77 @@
+.Distribucion .Distribucion-inscalumcursoGridPanel {
+	background: #3366CC;
+	  background-image: -moz-linear-gradient(center top , #3366CC, #3366CC);
+  background-image: -webkit-linear-gradient(center top , #3366CC, #3366CC);
+  background-image: -moz-linear-gradient(center top , #3366CC, #3366CC);
+  background-image: -o-linear-gradient(center top , #3366CC, #3366CC);
+  color: #FFFFFF;
+  border: #FFCC00;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+}
+
+.Distribucion .Distribucion-inscalumcursoDataGrid1 {
+	cursor: pointer;
+	color: #000000;
+}
+
+.Distribucion .Distribucion-lista_distribucion_curso_dataGrid {
+	cursor: pointer;
+}
+
+.Distribucion .Distribucion-inscalumcursoDetailsPanel {
+	background: #3366CC;
+	  background-image: -moz-linear-gradient(center top , #3366CC, #3366CC);
+  background-image: -webkit-linear-gradient(center top , #3366CC, #3366CC);
+  background-image: -moz-linear-gradient(center top , #3366CC, #3366CC);
+  background-image: -o-linear-gradient(center top , #3366CC, #3366CC);
+  color: #FFFFFF;
+  border: #FFCC00;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+}
+
+.Distribucion .Distribucion-inscalumcursoLiveForm1 {
+	color: #000000;
+}
+
+.Distribucion .Distribucion-label_total_estudiantes {
+	color: #a62121;
+	  border: #FFCC00;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+text-decoration:blink;
+}
+
+.Distribucion .Distribucion-label_total_estudiantes2 {
+	
+}
+
+.Distribucion .Distribucion-panel_informativo {
+	color: #3366CC;
+	border: #FFCC00;
+text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+text-decoration: blink;
+}
+
+.Distribucion .Distribucion-pic_male {
+	cursor: pointer;
+}
+
+.Distribucion .Distribucion-pic_female {
+	cursor: pointer;
+}
+
+.Distribucion .Distribucion-panel {
+	color: #000000;
+}
+
+.Distribucion .Distribucion-getCountMale {
+	color: #3366CC;
+	  border: #FFCC00;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+}
+
+.Distribucion .Distribucion-getCountFemale {
+	color: #3366CC;
+	  border: #FFCC00;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+}
+

@@ -1,0 +1,18 @@
+{
+	"methods": [{
+		"name": "getReport",
+		"parameters": [{
+			"name": "idc",
+			"type": "java.lang.String"
+		}, {
+			"name": "idsy",
+			"type": "java.lang.String"
+		}, {
+			"name": "sem",
+			"type": "java.lang.String"
+		}],
+		"returnType": "com.wavemaker.runtime.server.DownloadResponse"
+	}],
+	"serviceType": "JSON-RPC",
+	"serviceURL": "horario.json"
+}

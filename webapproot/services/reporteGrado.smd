@@ -1,0 +1,15 @@
+{
+	"methods": [{
+		"name": "getReport",
+		"parameters": [{
+			"name": "idGrado",
+			"type": "java.lang.String"
+		}, {
+			"name": "idGrado2",
+			"type": "java.lang.String"
+		}],
+		"returnType": "com.wavemaker.runtime.server.DownloadResponse"
+	}],
+	"serviceType": "JSON-RPC",
+	"serviceURL": "reporteGrado.json"
+}

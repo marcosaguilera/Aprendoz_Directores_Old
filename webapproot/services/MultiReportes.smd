@@ -1,0 +1,12 @@
+{
+	"methods": [{
+		"name": "getReport",
+		"parameters": [{
+			"name": "parameters",
+			"type": null
+		}],
+		"returnType": "java.lang.String"
+	}],
+	"serviceType": "JSON-RPC",
+	"serviceURL": "MultiReportes.json"
+}

@@ -1,0 +1,12 @@
+{
+	"methods": [{
+		"name": "getReport",
+		"parameters": [{
+			"name": "ida",
+			"type": "java.lang.String"
+		}],
+		"returnType": "com.wavemaker.runtime.server.DownloadResponse"
+	}],
+	"serviceType": "JSON-RPC",
+	"serviceURL": "catalogoAsignaturas.json"
+}

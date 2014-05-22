@@ -1,0 +1,15 @@
+{
+	"methods": [{
+		"name": "getReport",
+		"parameters": [{
+			"name": "curso1",
+			"type": "java.lang.String"
+		}, {
+			"name": "curso2",
+			"type": "java.lang.String"
+		}],
+		"returnType": "com.wavemaker.runtime.server.DownloadResponse"
+	}],
+	"serviceType": "JSON-RPC",
+	"serviceURL": "Promociones.json"
+}

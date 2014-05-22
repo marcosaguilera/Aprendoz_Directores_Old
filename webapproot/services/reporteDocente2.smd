@@ -1,0 +1,15 @@
+{
+	"methods": [{
+		"name": "getReport",
+		"parameters": [{
+			"name": "Asignatura",
+			"type": "java.lang.String"
+		}, {
+			"name": "Curso",
+			"type": "java.lang.String"
+		}],
+		"returnType": "com.wavemaker.runtime.server.DownloadResponse"
+	}],
+	"serviceType": "JSON-RPC",
+	"serviceURL": "reporteDocente2.json"
+}

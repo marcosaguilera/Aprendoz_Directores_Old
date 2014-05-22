@@ -1,0 +1,15 @@
+{
+	"methods": [{
+		"name": "getReport",
+		"parameters": [{
+			"name": "fr1",
+			"type": "java.lang.String"
+		}, {
+			"name": "fr2",
+			"type": "java.lang.String"
+		}],
+		"returnType": "com.wavemaker.runtime.server.DownloadResponse"
+	}],
+	"serviceType": "JSON-RPC",
+	"serviceURL": "retirados.json"
+}

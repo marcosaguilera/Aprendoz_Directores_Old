@@ -1,0 +1,712 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"nom",
+				"nombre2"
+			],
+			[
+				"apellid",
+				"apellido2"
+			],
+			[
+				"apelli",
+				"apellido1"
+			],
+			[
+				"idperso",
+				"idPersona"
+			],
+			[
+				"back",
+				"background-position"
+			],
+			[
+				"day",
+				"dayNow"
+			],
+			[
+				"mon",
+				"monthNow"
+			],
+			[
+				"_ar",
+				"_array2"
+			],
+			[
+				"arra",
+				"_array2"
+			],
+			[
+				"_",
+				"_array2"
+			],
+			[
+				"_a",
+				"_array"
+			],
+			[
+				"LO",
+				"log"
+			],
+			[
+				"pun",
+				"puntajes"
+			],
+			[
+				"as",
+				"asignaturas"
+			],
+			[
+				"new",
+				"newarray"
+			],
+			[
+				"asigna",
+				"asignatura"
+			],
+			[
+				"peso",
+				"pesoEditor2"
+			],
+			[
+				"get",
+				"getData"
+			],
+			[
+				"Aprn",
+				"aprendizajes"
+			],
+			[
+				"to",
+				"toFixed"
+			],
+			[
+				"con",
+				"console"
+			],
+			[
+				"id",
+				"idtipo"
+			],
+			[
+				"_id",
+				"_idficha"
+			],
+			[
+				"getDa",
+				"getDataValue"
+			],
+			[
+				"_medi",
+				"_medicamentos"
+			],
+			[
+				"getDat",
+				"getDataValue"
+			],
+			[
+				"alergias",
+				"_alergias"
+			],
+			[
+				"_fic",
+				"_fichaMedicaVar"
+			],
+			[
+				"idper",
+				"idpersona"
+			],
+			[
+				"setVa",
+				"setValue"
+			],
+			[
+				"mont",
+				"monthBorn"
+			],
+			[
+				"recomen",
+				"recomendaciones"
+			],
+			[
+				"recomend",
+				"_recomendaciones"
+			],
+			[
+				"set",
+				"setDataValue"
+			],
+			[
+				"e",
+				"eps"
+			],
+			[
+				"_g",
+				"_grado"
+			],
+			[
+				"getd",
+				"getDataValue"
+			],
+			[
+				"respos",
+				"responsable"
+			],
+			[
+				"selected",
+				"selectedItem"
+			],
+			[
+				"getData",
+				"getDataValue"
+			],
+			[
+				"do",
+				"documento"
+			],
+			[
+				"nombre",
+				"nombreCompleto"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "pages/Main/Main.js",
+			"settings":
+			{
+				"buffer_size": 109223,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "¿Que es esto?<br><br>Los cursos extracurriculares generalmente se extienden en horarios diferentes a los habituales, lo que en algunos casos dificulte el transporte de los estudiantes. En esta selección usted podrá definir si su hijo tomará el servicio de transporte ofrecido por el Colegio. En caso contrario se entenderá que el estudiante será recogido por un responsable.",
+			"settings":
+			{
+				"buffer_size": 374,
+				"line_ending": "Unix",
+				"name": "¿Que es esto?<br><br>Los cursos extracurriculares"
+			}
+		},
+		{
+			"file": "/Users/rochester/WaveMaker 6.1.10GA/projects/Aprendoz_Padres/webapproot/pages/Main/Main.widgets.js",
+			"settings":
+			{
+				"buffer_size": 111215,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 167.0,
+		"selected_items":
+		[
+			[
+				"js",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"java",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"css",
+				"Set Syntax: CSS"
+			],
+			[
+				"sql",
+				"Set Syntax: SQL"
+			],
+			[
+				"ja",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"ty",
+				"Set Syntax: Java"
+			]
+		],
+		"width": 467.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/rochester/WaveMaker 6.1.10GA/projects/Aprendoz_Directores/services/aprendoz_test/src/com/aprendoz_test/data/app-queries.ql.xml",
+		"/Users/rochester/Documents/WaveMaker 6.6.0.RELEASE/projects/Aprendoz_Padres_v2/webapproot/pages/Main/Main.js",
+		"/Users/rochester/Documents/WaveMaker 6.6.0.RELEASE/projects/Aprendoz_Padres_v2/webapproot/pages/Main/Main.a.js",
+		"/Users/rochester/Documents/WaveMaker 6.6.0.RELEASE/projects/Aprendoz_Padres_v2/services/aprendoz_desarrollo/designtime/servicedef.xml",
+		"/Users/rochester/Documents/WaveMaker 6.6.0.RELEASE/projects/Aprendoz_Padres_v2/services/aprendoz_desarrollo/src/aprendoz_desarrollo.properties",
+		"/Users/rochester/Documents/WaveMaker 6.6.0.RELEASE/projects/Aprendoz_Padres_v2/services/aprendoz_desarrollo/src/aprendoz_desarrollo.spring.xml",
+		"/Users/rochester/Documents/WaveMaker 6.6.0.RELEASE/projects/Aprendoz_Padres_v2/services/aprendoz_desarrollo/src/com/aprendoz_desarrollo/Aprendoz_desarrollo.java",
+		"/Users/rochester/Documents/WaveMaker 6.6.0.RELEASE/projects/Aprendoz_Padres_v2/services/aprendoz_desarrollo/src/com/aprendoz_desarrollo/Aprendoz_desarrolloConstants.java",
+		"/Users/rochester/Documents/WaveMaker 6.6.0.RELEASE/projects/Aprendoz_Padres_v2/services/aprendoz_desarrollo/src/com/aprendoz_desarrollo/data/app-queries.ql.xml",
+		"/Users/rochester/WaveMaker 6.1.10GA/projects/Aprendoz_Directores/webapproot/index.html",
+		"/Users/rochester/WaveMaker 6.1.10GA/projects/Aprendoz_Directores/webapproot/pages/Main/Main.js",
+		"/Users/rochester/WaveMaker 6.1.10GA/projects/Aprendoz_Docentes/webapproot/pages/Main/Main.js",
+		"/Users/rochester/Documents/WaveMaker 6.1.10GA/projects/Aprendoz_Docentes/services/aprendoz_test/src/com/aprendoz_test/data/app-queries.ql.xml",
+		"/Users/rochester/Documents/WaveMaker 6.1.10GA/projects/Aprendoz_Docentes/webapproot/pages/Main/Main.js",
+		"/Users/rochester/Documents/WaveMaker 6.1.10GA/projects/Aprendoz_Padres/services/aprendoz_desarrollo/src/com/aprendoz_desarrollo/data/app-queries.ql.xml",
+		"/Users/rochester/Documents/WaveMaker 6.6.0.RELEASE/projects/test1/webapproot/pages/Main/Main.js",
+		"/Users/rochester/Documents/WaveMaker 6.1.10GA/projects/Aprendoz_Directores/webapproot/pages/Main/Main.html",
+		"/Users/rochester/Documents/WaveMaker 6.1.10GA/projects/Aprendoz_Directores/services/aprendoz_test/src/com/aprendoz_test/data/app-queries.ql.xml",
+		"/Users/rochester/Desktop/error wsdl.xml",
+		"/Users/rochester/Desktop/Procedures sesion.sql",
+		"/Users/rochester/Desktop/Procedures insc_alumn_asig.sql",
+		"/Users/rochester/Desktop/Procedures InscAlumAprendizaje.sql",
+		"/Users/rochester/Desktop/Procedures calificacion final.sql",
+		"/Users/rochester/Documents/WaveMaker 6.1.10GA/projects/Aprendoz_Docentes/services/aprendoz_test/src/aprendoz_test.properties",
+		"/Users/rochester/Documents/WaveMaker 6.1.10GA/projects/Aprendoz_Docentes/services/aprendoz_test/src/aprendoz_test.spring.xml",
+		"/Users/rochester/Documents/WaveMaker 6.1.10GA/projects/Aprendoz_Docentes/services/aprendoz_test/src/com/aprendoz_test/data/aprendoz_test_procedures.ql.xml",
+		"/Users/rochester/Desktop/code.js",
+		"/Users/rochester/Documents/WaveMaker 6.1.10GA/projects/Aprendoz_Docentes/webapproot/pages/Inscripciones/Inscripciones.js",
+		"/Users/rochester/Documents/WaveMaker 6.1.10GA/projects/Aprendoz_Directores/webapproot/pages/Main/Main.js",
+		"/Users/rochester/Documents/WaveMaker 6.1.10GA/projects/Aprendoz_Directores/webapproot/resources/javascript/external.js",
+		"/Users/rochester/Desktop/20131002102222.sql",
+		"/Users/rochester/Documents/WaveMaker 6.1.10GA/projects/Aprendoz_Directores/services/aprendoz_test/src/com/aprendoz_test/data/AdministracionVistaInscAlumAsig.java",
+		"/Users/rochester/Documents/WaveMaker 6.1.10GA/projects/Aprendoz_Directores/webapproot/resources/javascript/jquery-1.10.2.min.js",
+		"/Users/rochester/Documents/WaveMaker 6.1.10GA/projects/Aprendoz_Docentes/webapproot/pages/Reg_eventualidades/Reg_eventualidades.js",
+		"/Users/rochester/Documents/WaveMaker 6.1.10GA/projects/Aprendoz_Docentes/webapproot/pages/Main/Main.css",
+		"/Users/rochester/Desktop/d8f58a3c327b3dcdb3f225aafa3066ac.json",
+		"/Users/rochester/Documents/WaveMaker 6.1.10GA/projects/Aprendoz_Docentes/webapproot/pages/Reportes/Reportes.css",
+		"/Users/rochester/Desktop/sendEmailMasivo",
+		"/Users/rochester/Desktop/enviar correo.js",
+		"/Users/rochester/Documents/WaveMaker 6.1.10GA/projects/Aprendoz_Docentes/services/faltasLevesaGrave/src/faltasLevesaGrave.java",
+		"/Users/rochester/Documents/WaveMaker 6.1.10GA/projects/Aprendoz_Docentes/services/enviarNotificacionFaltaGrave/src/enviarNotificacionFaltaGrave.java",
+		"/Users/rochester/Documents/WaveMaker 6.1.10GA/projects/Aprendoz_Matriculas/services/aprendoz_desarrollo/src/com/aprendoz_desarrollo/data/procedimientos_aprendoz_matriculas.ql.xml",
+		"/Users/rochester/Desktop/dojogridSlection.js",
+		"/Users/rochester/Documents/WaveMaker 6.1.10GA/projects/JPHQ/services/prueba/src/prueba.java",
+		"/Users/rochester/Documents/WaveMaker 6.1.10GA/projects/JPHQ/services/queryService/src/queryService.java",
+		"/Users/rochester/Documents/WaveMaker 6.1.10GA/projects/Aprendoz_Docentes/webapproot/pages/Horarios/Horarios.js",
+		"/Users/rochester/Documents/WaveMaker 6.1.10GA/projects/JPHQ/.wmproject.properties",
+		"/Users/rochester/Documents/WaveMaker 6.1.10GA/projects/JPHQ/services/query/src/query.java",
+		"/Users/rochester/Documents/WaveMaker 6.1.10GA/projects/JPHQ/services/JavaMysql/src/JavaMysqlSelectExample.java",
+		"/Users/rochester/Documents/WaveMaker 6.1.10GA/projects/JPHQ/services/sqlTest/src/sqlTest.java",
+		"/Users/rochester/Documents/WaveMaker 6.1.10GA/projects/JPHQ/services/aprendoz_desarrollo/src/com/aprendoz_desarrollo/data/a_rutines.ql.xml",
+		"/Users/rochester/Documents/WaveMaker 6.1.10GA/projects/JPHQ/services/aprendoz_desarrollo/src/com/aprendoz_desarrollo/data/TipoDia.java",
+		"/Users/rochester/Documents/WaveMaker 6.1.10GA/projects/Aprendoz_Docentes/services/actualiza_calif/src/actualiza_calif.java",
+		"/Users/rochester/Documents/WaveMaker 6.1.10GA/projects/JPHQ/services/creadoFaltasGraves/src/creadoFaltasGraves.java",
+		"/Users/rochester/Documents/WaveMaker 6.1.10GA/projects/JPHQ/services/aprendoz_desarrollo/src/aprendoz_desarrollo.spring.xml",
+		"/Users/rochester/Documents/WaveMaker 6.1.10GA/projects/JPHQ/services/aprendoz_desarrollo/src/aprendoz_desarrollo.properties",
+		"/Users/rochester/Documents/WaveMaker 6.1.10GA/projects/JPHQ/services/aprendoz_desarrollo/src/com/aprendoz_desarrollo/data/InscDirectorNivel.java",
+		"/Users/rochester/Documents/WaveMaker 6.1.10GA/projects/Aprendoz_Docentes/services/sp_actividad_curso/src/sp_actividad_curso.java",
+		"/Users/rochester/Documents/WaveMaker 6.1.10GA/projects/Aprendoz_Padres/webapproot/pages/Login/Login.js",
+		"/Users/rochester/Documents/WaveMaker 6.1.10GA/projects/Aprendoz_Docentes/webapproot/pages/Login/Login.js",
+		"/Users/rochester/Documents/WaveMaker 6.1.10GA/projects/Aprendoz_Padres/webapproot/pages/Main/Main.js",
+		"/Users/rochester/Documents/WaveMaker 6.1.10GA/projects/Aprendoz_Docentes/webapproot/pages/Reportes/Reportes.js",
+		"/Users/rochester/Documents/WaveMaker 6.1.10GA/projects/Aprendoz_Docentes/webapproot/pages/Demografica/Demografica.css",
+		"/Users/rochester/Documents/WaveMaker 6.1.10GA/projects/Aprendoz_Directores/webapproot/index.html",
+		"/Users/rochester/Desktop/HQL.sql",
+		"/Users/rochester/Documents/WaveMaker 6.1.10GA/projects/Administracion/webapproot/pages/Main/Main.js",
+		"/Users/rochester/Documents/WaveMaker 6.1.10GA/projects/Aprendoz_Directores/webapproot/pages/Subjects/Subjects.js",
+		"/Users/rochester/Saludatos/www/js/index.js",
+		"/Users/rochester/Documents/WaveMaker/projects/Aprendoz_Padres/webapproot/pages/Transporte/Transporte.widgets.js",
+		"/Users/rochester/Documents/WaveMaker/projects/Aprendoz_Padres/webapproot/pages/Main/Main.widgets.js",
+		"/Users/rochester/Documents/WaveMaker/projects/Aprendoz_Padres/webapproot/pages/Main/Main.css",
+		"/Users/rochester/Documents/WaveMaker/projects/Aprendoz_Padres/webapproot/pages/Transporte/Transporte.css",
+		"/Users/rochester/Documents/WaveMaker/projects/Aprendoz_Padres/webapproot/pages/Main/Main.js",
+		"/Users/rochester/Desktop/colors.js",
+		"/Users/rochester/Saludatos/www/index.html",
+		"/Users/rochester/Desktop/oAuth/oauthTest.html",
+		"/Users/rochester/Library/Caches/Cleanup At Startup/Transmit/98767684-F406-4479-A839-9A1C3A679533/Main.js",
+		"/Users/rochester/Library/Caches/Cleanup At Startup/Transmit/4FD6DA34-EC2C-4A0B-878F-D3F582D08F62/ActualizaDatos.js",
+		"/Users/rochester/Library/Caches/Cleanup At Startup/Transmit/AAAB7736-E259-45BD-A7B8-1415288EAB77/ActualizaDatos.js",
+		"/Users/rochester/Library/Caches/Cleanup At Startup/Transmit/4E24760A-C951-423A-8E8D-3353E602AA5B/ActualizaDatos.js",
+		"/Users/rochester/Library/Caches/Cleanup At Startup/Transmit/A3D33741-9577-43E6-9DC9-5D3B08E186B1/Main.js",
+		"/Users/rochester/Library/Caches/Cleanup At Startup/Transmit/B5368B46-EA1D-431E-B74A-98FE3681BE2D/Main.js",
+		"/Users/rochester/Library/Caches/Cleanup At Startup/Transmit/766ADCCF-6212-4201-9ACF-1E70EF4B36E9/Main.js",
+		"/Users/rochester/Library/Caches/Cleanup At Startup/Transmit/E2AED08C-5966-46BB-892D-57E53B479C38/Main.js",
+		"/Users/rochester/Library/Caches/Cleanup At Startup/Transmit/5F7E9805-D9A2-4934-81BE-66A9F891C2D4/ActualizaDatos.js",
+		"/Users/rochester/Library/Caches/Cleanup At Startup/Transmit/09858B5C-B894-4E03-9155-FEFAA0BA9689/Main.js",
+		"/Users/rochester/Library/Caches/Cleanup At Startup/Transmit/D746DEDB-4F67-4E4B-8490-AC4B2FFDC47C/ActualizaDatos.js",
+		"/Users/rochester/Library/Caches/Cleanup At Startup/Transmit/24A1128C-EBE4-4AF6-A915-AADA7C35D91A/Main.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/Retosalud/css/retosalud.css",
+		"/Applications/XAMPP/xamppfiles/htdocs/Retosalud/css/style.css",
+		"/Users/rochester/Library/Caches/Cleanup At Startup/Transmit/BC625F79-4CF8-4B6B-B6B0-7036990ED1AD/ActualizaDatos.js",
+		"/Users/rochester/Library/Caches/Cleanup At Startup/Transmit/A08A39A9-F42E-4421-A380-6ACB8EC2C1B5/Main.js",
+		"/Users/rochester/Library/Caches/Cleanup At Startup/Transmit/66D17F43-538F-4265-8730-AC135A64410D/Main.js",
+		"/Users/rochester/Library/Caches/Cleanup At Startup/Transmit/A4BB27A0-0FD8-4263-85DF-4218382F6766/Main.js",
+		"/Users/rochester/Desktop/html5.html",
+		"/Users/rochester/Library/Caches/Cleanup At Startup/Transmit/E9F554B2-3238-4786-89ED-E56AB94609BC/Main.js",
+		"/Users/rochester/Library/Caches/Cleanup At Startup/Transmit/B0BB1DF1-39CF-46D3-AB0B-6C08BE4CA38F/Main.js",
+		"/Users/rochester/Library/Caches/Cleanup At Startup/Transmit/E0025D55-59A7-49CD-B99C-1A080DB0B4AD/Main.js",
+		"/Users/rochester/Library/Caches/Cleanup At Startup/Transmit/AE68F147-5EAE-4EE7-8511-3901E99286A5/Main.js",
+		"/Users/rochester/Library/Caches/Cleanup At Startup/Transmit/53DC6E7E-A8E5-4C53-AF85-B53333E6C511/Main.js",
+		"/Users/rochester/Library/Caches/Cleanup At Startup/Transmit/C05D376C-E175-425C-A0D5-40C03D9C7C1B/index.html",
+		"/Users/rochester/Library/Caches/Cleanup At Startup/Transmit/5E334E10-6915-4EC0-8327-4ABD7C9726B1/index.html",
+		"/Users/rochester/Library/Caches/Cleanup At Startup/Transmit/759A3FAC-714D-4660-A574-DE4D33542716/index.html",
+		"/Users/rochester/Library/Caches/Cleanup At Startup/Transmit/B5FB4572-8E89-4F1B-9BBC-3A1069F2EC8A/Main.js",
+		"/Users/rochester/Library/Caches/Cleanup At Startup/Transmit/C5FD9819-5F60-461E-9FF1-E3F586FC59C3/Main.js",
+		"/Users/rochester/Library/Caches/Cleanup At Startup/Transmit/F6B08FEC-79E1-4BCF-B468-98794BA57825/EnviarMail.java",
+		"/Users/rochester/Library/Caches/Cleanup At Startup/Transmit/9501CC88-4825-46D1-98EC-DFC71F0FE3A5/Main.js",
+		"/Users/rochester/Library/Caches/Cleanup At Startup/Transmit/99C143E8-B890-4814-B7B7-375A4DD5D762/Main.js",
+		"/Users/rochester/Library/Caches/Cleanup At Startup/Transmit/B78494A9-8388-4482-BEAE-8737313C1EC2/index.html",
+		"/Users/rochester/Desktop/gauge.html",
+		"/Users/rochester/Library/Caches/Cleanup At Startup/Transmit/33F4103F-479F-4ED5-826F-4F2BBEC9CAEA/Main.js",
+		"/Users/rochester/Desktop/var _now = new Date();",
+		"/Users/rochester/Library/Caches/Cleanup At Startup/Transmit/0317E0D3-895F-4EC5-8A9E-188E53E9A12E/index.html",
+		"/Users/rochester/Library/Caches/Cleanup At Startup/Transmit/CA868234-CDAB-46A8-A5DF-CA9669B4EFF0/Main.js",
+		"/Users/rochester/Library/Caches/Cleanup At Startup/Transmit/3A13FF40-5B75-4BC9-9D28-237B03AFDD46/Main.js",
+		"/Users/rochester/Library/Caches/Cleanup At Startup/Transmit/4D2247FC-6925-4900-8B6B-A6DF0835B60B/Main.js",
+		"/Users/rochester/Library/Caches/Cleanup At Startup/Transmit/C95C6FEF-AF4E-472C-A0C4-39DE8595FCA1/Main.js",
+		"/Users/rochester/Library/Caches/Cleanup At Startup/Transmit/C9298EA7-2DFC-43B7-965D-21A6CE4C3811/Main.js",
+		"/Users/rochester/Library/Caches/Cleanup At Startup/Transmit/E2209472-4D28-4685-A77D-0F1C04B568F6/Main.js",
+		"/Users/rochester/Library/Caches/Cleanup At Startup/Transmit/89C42DE2-CD1E-4FED-99E3-8BCC416D6801/login.html",
+		"/Users/rochester/Library/Caches/Cleanup At Startup/Transmit/51A8F7B0-4FE5-44E6-A711-64EA8C9BD1B1/login.html",
+		"/Users/rochester/Library/Caches/Cleanup At Startup/Transmit/43579809-3E27-46AD-9832-746260002F88/Main.js",
+		"/Users/rochester/Library/Caches/Cleanup At Startup/Transmit/1C12EB76-3112-4C8A-90E8-84E15AFB5C2A/aprendoz_desarrollo.spring.xml",
+		"/Users/rochester/Library/Caches/Cleanup At Startup/Transmit/98E10847-C50A-435A-B62C-AF25EA35F3AB/index.html",
+		"/Users/rochester/Library/Caches/Cleanup At Startup/Transmit/BDEFE7B3-E272-4B1A-9A70-02B9D16807E0/Main.widgets.js",
+		"/Users/rochester/Library/Caches/Cleanup At Startup/Transmit/EEE619C5-5201-41F1-A9B6-420DF9983BD4/app-queries.ql.xml",
+		"/Users/rochester/Library/Caches/Cleanup At Startup/Transmit/05BF1420-59CA-4788-9F08-C635E3716CEE/Main.js",
+		"/Users/rochester/Library/Caches/Cleanup At Startup/Transmit/FDF48D71-0D7E-4D5E-9FA7-4C626A493E72/Main.js"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"f1",
+			"&apos;",
+			"<query name=\"_hqlFichaMedicaByUser\">\n        <query-param name=\"idp\" type=\"java.lang.Integer\"/>\n        SELECT _p.idPersona as id, CONCAT(_p.nombre1,&apos; &apos;,_p.nombre2,&apos; &apos;,_p.apellido1,&apos; &apos;,_p.apellido2) as nombrecompleto, _p.fechaNacimiento as fecha, _p.gradoIngreso as grado, _p.tipoSangre as rh, _p.eps as eps, _p.saludPrepagada  as prepagada, _p.telefono as telefono, _p.clinicaEmergencia as emergencia\nFROM Persona _p\nWHERE _p.idPersona=:idp\n    </query>",
+			"getFormulario5aById",
+			"5a",
+			"f1",
+			"?",
+			"f1",
+			"subjec",
+			"between",
+			"\"\"\"",
+			"fechaInicio",
+			"Unidad",
+			"Numero",
+			"numerosub",
+			"return",
+			"agregar_butt",
+			"agregarLiveFormSuccess:",
+			"true",
+			"}",
+			"a_getInforUser",
+			"idp",
+			"id_subject",
+			"debugger;",
+			"rutasLiveVariable1",
+			"inscalumtransporteLiveVariable1",
+			"novedadesLiveVariable1",
+			".Main",
+			"transporte_lista_persona",
+			"transporte_lista_personas",
+			"transportes_panel_detalles",
+			"solicitudes",
+			".setReadonly(false);",
+			"false",
+			" ",
+			"map",
+			"table",
+			"Title-Size",
+			";\n",
+			"#home",
+			"#demografia",
+			"ActualizaDatos",
+			"actualizaDatos",
+			"edad",
+			"agregar_aso",
+			"app.pageDialog.showPage",
+			"boton_actualizar",
+			".icon_map",
+			"CATEGORÍAS<br/>DE SALUD",
+			"categorias",
+			"style=\"display:inline-block; vertical-align:middle; padding-top: 30px;\"",
+			" style=\"display:inline-block; vertical-align:middle; padding-top: 30px;\"",
+			"main.",
+			"seguro_butt",
+			"_verificarResponsablePagoShowPanel",
+			"_verificaExistenciaFichaMedica",
+			"page",
+			"page.",
+			"fecha1_dt.show();",
+			"dash_asignaturas_estudiante",
+			"main.dash_asignaturas_estudiante",
+			"personaDataGridX",
+			"getCodigoFamilia",
+			"user2",
+			"a_getInforUser",
+			"dash_asignaturas_estudiante",
+			"hql_dash_asignaturas",
+			"rutas",
+			"username",
+			"page",
+			"fechaBimestre.show",
+			"bSubtopico",
+			"bCrearUnidadClick",
+			"setDisabled",
+			"aprendizajeLiveForm1CancelEdit",
+			"aprendizajeLiveForm1BeginUpdate",
+			"getFullName",
+			"dash_dash_lv1",
+			"debugger;",
+			"a_informacionUsuario",
+			"a_obtenerNombre",
+			"a_getTipoPersona",
+			"a_lista_grupoFamiliar",
+			"transporte_butt",
+			"contrato_trans_butt",
+			"MAT007",
+			"continuar_servicios",
+			"_verificarResponsablePagoShowPanelSuccess:",
+			"transporte_butt",
+			"listadoEstudiantesGrupoFamiliar",
+			"idTipoTransporte",
+			"rutas",
+			"getUserByIdPersona",
+			"personaLiveForm1UpdateData",
+			"editPanel1",
+			"boton_actualizar",
+			"guardar_ficha",
+			"window.open",
+			"adicional_butt",
+			"seguro_butt",
+			"matricula_select_estudiante",
+			"seguro_butt",
+			"seguros_butt",
+			"transporte_butt",
+			"alimento_butt",
+			"guardar_ficha",
+			"_hqlAlergiasSuccess:",
+			"boton_continuar",
+			"guardar_ficha",
+			");\n",
+			"alimento_butt",
+			"panel_botones",
+			"servicios_butt",
+			"matricula",
+			"matricula_select_estudiante",
+			"enfermeria_butt",
+			"enfermeria_buttClick",
+			");\n",
+			"&apos;",
+			"fechaIngresoEditor1",
+			"personaLiveForm1",
+			"updateButton1",
+			"personaLiveForm1",
+			"footerPanel",
+			"personaSelect",
+			"selectorReport",
+			"a_getRoleByUsernameSV",
+			"_hqlAlergias"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"'",
+			"Subtopico",
+			"Unidad",
+			"}",
+			"subject_idasignatura",
+			"",
+			".Transporte",
+			".clear();",
+			"true",
+			"\"",
+			"",
+			"this.",
+			"'"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "pages/Main/Main.js",
+					"settings":
+					{
+						"buffer_size": 109223,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								395,
+								280
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"settings":
+					{
+						"buffer_size": 374,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								374,
+								0
+							]
+						],
+						"settings":
+						{
+							"auto_name": "¿Que es esto?<br><br>Los cursos extracurriculares",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/Users/rochester/WaveMaker 6.1.10GA/projects/Aprendoz_Padres/webapproot/pages/Main/Main.widgets.js",
+					"settings":
+					{
+						"buffer_size": 111215,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								36626,
+								36742
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 690.0,
+						"translation.y": 5693.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		},
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.833965390789,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 351.0,
+	"status_bar_visible": true
+}

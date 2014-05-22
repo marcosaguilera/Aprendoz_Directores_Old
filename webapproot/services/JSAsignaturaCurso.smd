@@ -1,0 +1,15 @@
+{
+	"methods": [{
+		"name": "getReport",
+		"parameters": [{
+			"name": "idasig",
+			"type": "java.lang.String"
+		}, {
+			"name": "idcurso",
+			"type": "java.lang.String"
+		}],
+		"returnType": "com.wavemaker.runtime.server.DownloadResponse"
+	}],
+	"serviceType": "JSON-RPC",
+	"serviceURL": "JSAsignaturaCurso.json"
+}
