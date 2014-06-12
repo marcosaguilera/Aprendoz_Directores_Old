@@ -238,6 +238,7 @@ ORDER BY curso.idCurso
     <query name="studentsByCurseBySubject">
         <query-param name="pasignatura" type="java.lang.Integer"/>
         <query-param name="pcurso" type="java.lang.Integer"/>
+        <query-param name="idsy" type="java.lang.Integer"/>
         SELECT
 p.codigo as codigo,
 p.idPersona as idpersona,
@@ -250,7 +251,7 @@ pc.idPersona as idpersonacurso,
 c.curso as curso,
 iaa.idInscAlumAsig as idaa
 FROM InscAlumAsig iaa INNER JOIN iaa.persona p INNER JOIN iaa.asignatura a INNER JOIN iaa.periodo per, InscAlumCurso iac INNER JOIN iac.persona pc INNER JOIN iac.curso c INNER JOIN iac.sy syy
-WHERE a.idAsignatura=:pasignatura AND c.idCurso=:pcurso AND per.idPeriodo=10 AND (p.idPersona=pc.idPersona) AND (c.idCurso&gt;=10101 AND c.idCurso&lt;=40403) AND syy.idSy=4
+WHERE a.idAsignatura=:pasignatura AND c.idCurso=:pcurso AND (p.idPersona=pc.idPersona) AND (c.idCurso&gt;=10101 AND c.idCurso&lt;=40403) AND syy.idSy=:idsy
 GROUP BY a.idAsignatura, c.idCurso, p.idPersona
 ORDER BY c.idCurso desc,p.apellido1,p.apellido2,p.nombre1,p.nombre2
     </query>
@@ -379,6 +380,7 @@ ld.idLogDocentes &lt; (SELECT MAX(ld.idLogDocentes) from LogDocentes ld where us
     </query>
     <query name="getSubjectsByProfile">
         <query-param name="pgrado" type="java.lang.Integer"/>
+        <query-param name="idsy" type="java.lang.Integer"/>
         SELECT
 a.idAsignatura as idasignatura,
 a.asignatura as asignatura,
@@ -387,7 +389,7 @@ sy.schoolYear as sy_escolar,
 g.idGrado as idgrado,
 g.grado as grado
 FROM Asignatura a INNER JOIN a.grado g INNER JOIN a.sy as sy
-WHERE g.idGrado=:pgrado and sy.idSy=4
+WHERE g.idGrado=:pgrado and sy.idSy=:idsy
 GROUP BY a.idAsignatura
     </query>
     <query name="sendMailHQL">
@@ -538,15 +540,38 @@ CONCAT(p.apellido1,&apos; &apos;,p.nombre2,&apos; &apos;,p.nombre1,&apos; &apos;
 CONCAT(p.apellido2,&apos; &apos;,p.nombre1,&apos; &apos;,p.nombre2,&apos; &apos;,p.apellido1) LIKE &apos;%&apos; || :search || &apos;%&apos;)
     </query>
     <query name="subjectsByTeachersByCurseByPer">
-        <query-param name="idp" type="java.lang.Integer"/>
         <query-param name="idper" type="java.lang.Integer"/>
         <query-param name="idc" type="java.lang.Integer"/>
         SELECT
 CONCAT(p.apellido1,&apos; &apos;,p.apellido2,&apos; &apos;,p.nombre1,&apos; &apos;, p.nombre2) as nombre_completo,
 a.asignatura as asignatura,
 per.periodo as periodo,
-ica.idInscCursoAsig as id
+ica.idInscCursoAsig as id,
+c.curso as curso
 FROM InscCursoAsig ica INNER JOIN ica.curso c INNER JOIN ica.asignatura a INNER JOIN ica.persona p INNER JOIN ica.periodo per INNER JOIN per.sy syper
-WHERE p.idPersona=:idp AND c.idCurso=:idc AND syper.idSy=:idper
+WHERE c.idCurso=:idc AND syper.idSy=:idper
+    </query>
+    <query name="deleteInscCursAsig">
+        <query-param name="icaId" type="java.lang.Long"/>
+        DELETE FROM InscCursoAsig ica WHERE ica.idInscCursoAsig=:icaId
+    </query>
+    <query name="hql_aprendizaje_detalles">
+        <query-param name="idaprendizajes" type="java.lang.Integer"/>
+        SELECT
+aa.idAprendizaje as idAprendizaje,
+aa.fechaEsperada as fechaEsperada,
+aa.aprendizaje as aprendizaje,
+aa.learning as learning,
+aa.peso as peso,
+aa.ejeIdEje as ejeIdEje,
+aa.eje2IdEje as eje2IdEje,
+aa.eje3IdEje as eje3IdEje,
+i.idInteligencia as idInteligencia,
+dc.idDimension as idDimension,
+a.idAsignatura as idAsignatura,
+n.idNivelEsperado as idNivelEsperado,
+dcr.idDimension as idDimension
+FROM AprendizajesAsignaturas aa INNER JOIN aa.inteligencia i INNER JOIN  aa.dimensionComprension dc INNER JOIN aa.asignatura a INNER JOIN aa.nivelEsperado n INNER JOIN aa.dimensionCurricular dcr
+WHERE aa.idAprendizaje=:idaprendizajes
     </query>
 </hibernate-mapping>

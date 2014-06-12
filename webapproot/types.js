@@ -21017,6 +21017,130 @@ wm.types = {
 			"liveService": false,
 			"service": "aprendoz_test"
 		},
+		"com.aprendoz_test.data.output.Hql_aprendizaje_detallesRtnType": {
+			"fields": {
+				"aprendizaje": {
+					"exclude": [],
+					"fieldOrder": 2,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"eje2IdEje": {
+					"exclude": [],
+					"fieldOrder": 6,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.lang.Integer"
+				},
+				"eje3IdEje": {
+					"exclude": [],
+					"fieldOrder": 7,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.lang.Integer"
+				},
+				"ejeIdEje": {
+					"exclude": [],
+					"fieldOrder": 5,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.lang.Integer"
+				},
+				"fechaEsperada": {
+					"exclude": [],
+					"fieldOrder": 1,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.util.Date"
+				},
+				"idAprendizaje": {
+					"exclude": [],
+					"fieldOrder": 0,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.lang.Integer"
+				},
+				"idAsignatura": {
+					"exclude": [],
+					"fieldOrder": 10,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.lang.Integer"
+				},
+				"idDimension": {
+					"exclude": [],
+					"fieldOrder": 9,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.lang.Integer"
+				},
+				"idDimension2": {
+					"exclude": [],
+					"fieldOrder": 12,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.lang.Integer"
+				},
+				"idInteligencia": {
+					"exclude": [],
+					"fieldOrder": 8,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.lang.Integer"
+				},
+				"idNivelEsperado": {
+					"exclude": [],
+					"fieldOrder": 11,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.lang.Integer"
+				},
+				"learning": {
+					"exclude": [],
+					"fieldOrder": 3,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"peso": {
+					"exclude": [],
+					"fieldOrder": 4,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.lang.Integer"
+				}
+			},
+			"internal": false,
+			"liveService": false,
+			"service": "aprendoz_test"
+		},
 		"com.aprendoz_test.data.output.Hql_tipo_eventualidadRtnType": {
 			"fields": {
 				"id": {
@@ -22324,6 +22448,15 @@ wm.types = {
 				"asignatura": {
 					"exclude": [],
 					"fieldOrder": 1,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"curso": {
+					"exclude": [],
+					"fieldOrder": 4,
 					"include": [],
 					"isList": false,
 					"noChange": [],

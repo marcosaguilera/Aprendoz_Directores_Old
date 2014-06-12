@@ -297,3 +297,16 @@ font-size: 13px;
 	color: #fff;
 }
 
+.Subjects .Subjects-docentesVer {
+	background-color: #FFA500 !important;
+	color: #fff;
+}
+
+.Subjects .Subjects-aprendizajes_asignaturas {
+	cursor: pointer;
+}
+
+.Subjects .Subjects-aprendizajes_aprendizajes {
+	cursor: pointer;
+}
+

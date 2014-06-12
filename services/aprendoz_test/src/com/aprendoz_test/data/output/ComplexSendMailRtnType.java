@@ -4,7 +4,7 @@ package com.aprendoz_test.data.output;
 
 
 /**
- * Generated for query "complexSendMail" on 05/21/2014 13:04:39
+ * Generated for query "complexSendMail" on 06/11/2014 14:24:03
  * 
  */
 public class ComplexSendMailRtnType {

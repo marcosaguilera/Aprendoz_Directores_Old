@@ -396,14 +396,14 @@ Main.widgets = {
 								format: ["wm.DataFormatter", {}, {}]
 							}],
 							picture1: ["wm.Picture", {"height":"26px","border":"0","width":"22px","source":"resources/images/buttons/date.png","aspect":"v"}, {}],
-							dateEditor1: ["wm.DateEditor", {"_classes":{"domNode":["wm_FontSizePx_12px","wm_FontFamily_Arial"]},"width":"78px","captionAlign":"center","height":"26px","displayValue":"19/05/2014","readonly":true}, {}, {
+							dateEditor1: ["wm.DateEditor", {"_classes":{"domNode":["wm_FontSizePx_12px","wm_FontFamily_Arial"]},"width":"78px","captionAlign":"center","height":"26px","displayValue":"12/06/2014","readonly":true}, {}, {
 								binding: ["wm.Binding", {}, {}, {
 									wire: ["wm.Wire", {"targetProperty":"dataValue","expression":"new Date().getTime()"}, {}]
 								}],
 								editor: ["wm._DateEditor", {}, {}]
 							}],
 							picture3: ["wm.Picture", {"height":"26px","border":"0","width":"22px","source":"resources/images/buttons/clock.png","aspect":"v"}, {}],
-							timeEditor1: ["wm.TimeEditor", {"_classes":{"domNode":["wm_FontSizePx_12px","wm_FontFamily_Arial"]},"displayValue":"14:47 p.m.","captionAlign":"center","height":"26px","width":"72px","readonly":true}, {}, {
+							timeEditor1: ["wm.TimeEditor", {"_classes":{"domNode":["wm_FontSizePx_12px","wm_FontFamily_Arial"]},"displayValue":"14:38 p.m.","captionAlign":"center","height":"26px","width":"72px","readonly":true}, {}, {
 								binding: ["wm.Binding", {}, {}, {
 									wire: ["wm.Wire", {"targetProperty":"dataValue","expression":"new Date().getTime()"}, {}]
 								}],
@@ -421,7 +421,7 @@ Main.widgets = {
 						templateLeft: ["wm.Panel", {"_classes":{"domNode":["template-left"]},"height":"100%","width":"24px","horizontalAlign":"left","verticalAlign":"top","freeze":true,"showing":false}, {}],
 						templateContent: ["wm.Panel", {"_classes":{"domNode":["template-content"]},"height":"100%","width":"100%","horizontalAlign":"left","verticalAlign":"top"}, {}, {
 							MAIN: ["wm.TabLayers", {}, {}, {
-								pestana_bievenida: ["wm.Layer", {"caption":"Inicio","horizontalAlign":"left","verticalAlign":"top","roles":["6","10","5"],"padding":"100","lock":true}, {}, {
+								pestana_bievenida: ["wm.Layer", {"caption":"Inicio","horizontalAlign":"left","verticalAlign":"top","roles":["6","10","5"],"lock":true,"padding":"100"}, {}, {
 									bienvenida_inputFullName: ["wm.TextEditor", {"width":"100%","caption":"inputFullName","showing":false}, {"onchange":"bienvenida_inputFullNameChange"}, {
 										binding: ["wm.Binding", {}, {}, {
 											wire: ["wm.Wire", {"targetProperty":"dataValue","source":"a_getUserName.dataValue"}, {}]
@@ -542,13 +542,13 @@ Main.widgets = {
 												format: ["wm.DataFormatter", {}, {}]
 											}],
 											logForm: ["wm.LiveForm", {"height":"60px","verticalAlign":"top","horizontalAlign":"left","showing":false}, {}, {
-												inicio_box_fecha: ["wm.DateEditor", {"displayValue":"19/05/2014","readonly":true,"disabled":true,"caption":"hora","showing":false}, {}, {
+												inicio_box_fecha: ["wm.DateEditor", {"displayValue":"12/06/2014","readonly":true,"disabled":true,"caption":"hora","showing":false}, {}, {
 													binding: ["wm.Binding", {}, {}, {
 														wire: ["wm.Wire", {"targetProperty":"dataValue","expression":"new Date().getTime()"}, {}]
 													}],
 													editor: ["wm._DateEditor", {}, {}]
 												}],
-												inicio_box_hora: ["wm.TimeEditor", {"displayValue":"14:47 p.m.","disabled":true,"caption":"fecha","showing":false}, {}, {
+												inicio_box_hora: ["wm.TimeEditor", {"displayValue":"14:38 p.m.","disabled":true,"caption":"fecha","showing":false}, {}, {
 													binding: ["wm.Binding", {}, {}, {
 														wire: ["wm.Wire", {"targetProperty":"dataValue","expression":"new Date().getTime()"}, {}]
 													}],
@@ -1309,7 +1309,7 @@ Main.widgets = {
 										}]
 									}]
 								}],
-								calificaciones: ["wm.Layer", {"caption":"Calificaciones","horizontalAlign":"left","verticalAlign":"top","roles":["6","8","9","10","7","25"],"borderColor":"#CD0000"}, {}, {
+								calificaciones: ["wm.Layer", {"caption":"Calificaciones","horizontalAlign":"left","verticalAlign":"top","roles":["6","8","9","10","7","25"],"borderColor":"#CD0000"}, {"onShow":"calificacionesShow"}, {
 									calf_panel_encabezado_principal: ["wm.Panel", {"_classes":{"domNode":["wm_SilverBlueTheme_LightBlueInsetPanel"]},"height":"42px","width":"100%","horizontalAlign":"left","verticalAlign":"middle","margin":"3","layoutKind":"left-to-right"}, {}, {
 										textEditor6: ["wm.TextEditor", {"width":"308px","caption":"idTipoPersona","showing":false}, {}, {
 											binding: ["wm.Binding", {}, {}, {
@@ -1325,7 +1325,7 @@ Main.widgets = {
 									fotoEstd: ["wm.Panel", {"height":"0px","width":"100%","horizontalAlign":"left","verticalAlign":"top","layoutKind":"left-to-right","lock":true,"showing":false}, {}, {
 										imgstd: ["wm.Picture", {"height":"100%","border":"0","width":"120px","source":"http://big.cs.bris.ac.uk/wp-content/themes/crystal/img/default-profile-image.png","aspect":"v"}, {}]
 									}],
-									calf_panel_encabezado_opciones: ["wm.Panel", {"_classes":{"domNode":["wm_BackgroundColor_LightBlue","wm_SilverBlueTheme_LightBlueInsetPanel"]},"height":"45px","width":"100%","horizontalAlign":"left","verticalAlign":"middle","layoutKind":"left-to-right","lock":true}, {}, {
+									calf_panel_encabezado_opciones: ["wm.Panel", {"_classes":{"domNode":["wm_BackgroundColor_LightBlue","wm_SilverBlueTheme_LightBlueInsetPanel"]},"height":"45px","width":"100%","horizontalAlign":"left","verticalAlign":"middle","layoutKind":"left-to-right"}, {}, {
 										calif_encabezado_opciones_sel_grado: ["wm.SelectEditor", {"_classes":{"domNode":["wm_FontSizePx_16px"]},"width":"200px","caption":"Grado","captionSize":"70%","height":"26px"}, {"onchange":"calif_encabezado_opciones_sel_gradoChange"}, {
 											editor: ["wm._SelectEditor", {"displayField":"grado","dataField":"idGrado","required":true}, {}, {
 												binding: ["wm.Binding", {}, {}, {

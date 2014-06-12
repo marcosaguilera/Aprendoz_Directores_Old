@@ -57,6 +57,13 @@
 		}],
 		"returnType": "java.lang.Integer"
 	}, {
+		"name": "deleteInscCursAsig",
+		"parameters": [{
+			"name": "icaId",
+			"type": "java.lang.Long"
+		}],
+		"returnType": "java.lang.Integer"
+	}, {
 		"name": "deleteSubject",
 		"parameters": [{
 			"name": "idasignatura",
@@ -143,6 +150,9 @@
 		"parameters": [{
 			"name": "pgrado",
 			"type": "java.lang.Integer"
+		}, {
+			"name": "idsy",
+			"type": "java.lang.Integer"
 		}],
 		"returnType": "[com.aprendoz_test.data.output.GetSubjectsByProfileRtnType]"
 	}, {
@@ -185,6 +195,13 @@
 			"type": "java.lang.Integer"
 		}],
 		"returnType": "[com.aprendoz_test.data.output.HqlPersonaEventualidadRtnType]"
+	}, {
+		"name": "hql_aprendizaje_detalles",
+		"parameters": [{
+			"name": "idaprendizajes",
+			"type": "java.lang.Integer"
+		}],
+		"returnType": "[com.aprendoz_test.data.output.Hql_aprendizaje_detallesRtnType]"
 	}, {
 		"name": "hql_tipo_eventualidad",
 		"parameters": null,
@@ -260,6 +277,9 @@
 		}, {
 			"name": "pcurso",
 			"type": "java.lang.Integer"
+		}, {
+			"name": "idsy",
+			"type": "java.lang.Integer"
 		}],
 		"returnType": "[com.aprendoz_test.data.output.StudentsByCurseBySubjectRtnType]"
 	}, {
@@ -299,9 +319,6 @@
 	}, {
 		"name": "subjectsByTeachersByCurseByPer",
 		"parameters": [{
-			"name": "idp",
-			"type": "java.lang.Integer"
-		}, {
 			"name": "idper",
 			"type": "java.lang.Integer"
 		}, {

@@ -107,6 +107,7 @@ dojo.declare("Inscripciones", wm.Page, {
      this.listadoCursoSelect.enable();
      var idcurso   = this.listadoCursoSelect.getDataValue();
      var idgrado   = this.listadoGradoSelect.getDataValue();
+     
      if(idcurso != undefined && idgrado != undefined){
        var index     = this.asignatura.getSelectedIndex();
        var data      = this.asignatura.getItemData(index);
@@ -116,16 +117,17 @@ dojo.declare("Inscripciones", wm.Page, {
        this.messageTop.setCaption("Ha seleccionado: "+subject);
        this.studentsListGradeSubject.input.setValue("pcurso",idcurso);
        this.studentsListGradeSubject.input.setValue("pasignatura",subjectid);
-
+      
        this.studentsListGradeSubject.update();
      }else{/*nothing to do!*/}
   },
   
   showSubjectsButtonClick: function(inSender, inEvent) {
     var username = this.getUserName.getData().dataValue;
+    
     //var idgrado  = this.subjectsSelect.getDataValue();
-    this.subjectsByUser.input.setValue("sy","4");
-    this.subjectsByUser.input.setValue("usuario",username);
+    this.subjectsByUser.input.setValue("sy", sy);
+    this.subjectsByUser.input.setValue("usuario", username);
     this.subjectsByUser.update();
   },
   
@@ -149,39 +151,7 @@ dojo.declare("Inscripciones", wm.Page, {
         console.error('ERROR IN retirarEstudiantesClick: ' + e); 
     } 
   },
-  
-  /*deleteRecord: function(){
-    var obj  = this.obj_;  
-    var cont = this.cont_;
-    console.log(obj);
-    console.log(cont); 
-       var intiaa = parseInt(obj[this.itemretirar_].idaa);
-       console.log(intiaa);
-       this.borrarVar.setValue("idInscAlumAsig", intiaa);
-       this.retirarForm.setDataSet(this.borrarVar); 
-       this.retirarForm.deleteData();   
-       this.itemretirar_++;
-  
-  },*/
-  
-  /*retirarFormSuccess: function(inSender, inData) {
-    try {
-     debugger;
-     if(this.itemretirar_ <= this.cont_) {
-        this.deleteRecord();
-      }else{
-        this.studentsListGradeSubject.update();
-      } 
-     debugger; 
-    } catch(e) {
-      console.error('ERROR IN retirarFormSuccess: ' + e); 
-      debugger;
-      this.itemretirar_=0;
-      debugger;
-      //this.studentsListGradeSubject.update();
-    } 
-  },*/
-  
+
   estudiantesDojoGridCellClick: function(inSender, evt) {
      this.inscribirEstudiantes.enable(); 
   },
@@ -197,10 +167,11 @@ dojo.declare("Inscripciones", wm.Page, {
      var subjectid = data.idasignatura; 
      var subject   = data.asignatura;
      var idcurso   = this.listadoCursoSelect.getDataValue();
+     var sy= this.syGrade.getDataValue();
      this.messageTop.setCaption("Ha seleccionado: "+subject);
-     this.studentsListGradeSubject.input.setValue("pcurso",idcurso);
-     this.studentsListGradeSubject.input.setValue("pasignatura",subjectid);
-
+     this.studentsListGradeSubject.input.setValue("pcurso", idcurso);
+     this.studentsListGradeSubject.input.setValue("pasignatura", subjectid);
+     this.studentsListGradeSubject.input.setValue("idsy", sy);
      this.listStudentsByCurse.input.setValue("pcurso",idcurso);
      
      this.listStudentsByCurse.update();
@@ -212,7 +183,6 @@ dojo.declare("Inscripciones", wm.Page, {
   },
   
   subjectsGradeChange: function(inSender, inDisplayValue, inDataValue) {
-    try {
      this.listadoCursoSelect.disable();
      this.listadoGradoSelect.disable();
      this.listadoCursoSelect.clear();
@@ -221,10 +191,6 @@ dojo.declare("Inscripciones", wm.Page, {
      this.studentsListGradeSubject.clearData();
      this.listStudentsByCurse.clearData();
      this.subjectsByUser.update(); 
-      
-    } catch(e) {
-      console.error('ERROR IN subjectsGradeChange: ' + e); 
-    } 
   },
   _end: 0
 });

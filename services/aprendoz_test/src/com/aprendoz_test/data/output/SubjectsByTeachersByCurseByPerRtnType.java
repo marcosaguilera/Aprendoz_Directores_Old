@@ -4,7 +4,7 @@ package com.aprendoz_test.data.output;
 
 
 /**
- * Generated for query "subjectsByTeachersByCurseByPer" on 05/21/2014 13:04:39
+ * Generated for query "subjectsByTeachersByCurseByPer" on 06/11/2014 14:24:03
  * 
  */
 public class SubjectsByTeachersByCurseByPerRtnType {
@@ -13,15 +13,17 @@ public class SubjectsByTeachersByCurseByPerRtnType {
     private String asignatura;
     private String periodo;
     private Long id;
+    private String curso;
 
     public SubjectsByTeachersByCurseByPerRtnType() {
     }
 
-    public SubjectsByTeachersByCurseByPerRtnType(String nombre_completo, String asignatura, String periodo, Long id) {
+    public SubjectsByTeachersByCurseByPerRtnType(String nombre_completo, String asignatura, String periodo, Long id, String curso) {
         this.nombre_completo = nombre_completo;
         this.asignatura = asignatura;
         this.periodo = periodo;
         this.id = id;
+        this.curso = curso;
     }
 
     public String getNombre_completo() {
@@ -54,6 +56,14 @@ public class SubjectsByTeachersByCurseByPerRtnType {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getCurso() {
+        return curso;
+    }
+
+    public void setCurso(String curso) {
+        this.curso = curso;
     }
 
 }

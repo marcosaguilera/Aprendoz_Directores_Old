@@ -76,10 +76,29 @@ Subjects.widgets = {
 			}]
 		}]
 	}],
-	inscCursoAsigSv: ["wm.ServiceVariable", {"service":"aprendoz_test","operation":"subjectsByTeachersByCurseByPer"}, {}, {
+	inscCursoAsigSv: ["wm.ServiceVariable", {"service":"aprendoz_test","operation":"subjectsByTeachersByCurseByPer"}, {"onSuccess":"inscCursoAsigSvSuccess"}, {
 		input: ["wm.ServiceInput", {"type":"subjectsByTeachersByCurseByPerInputs"}, {}]
 	}],
 	actionsInscCursoAsig: ["wm.Variable", {"type":"com.aprendoz_test.data.InscCursoAsig"}, {}],
+	deleteInscCursoAsig: ["wm.ServiceVariable", {"service":"aprendoz_test","operation":"deleteInscCursAsig"}, {}, {
+		input: ["wm.ServiceInput", {"type":"deleteInscCursAsigInputs"}, {}]
+	}],
+	aprendizajes_asignaturas_sv: ["wm.ServiceVariable", {"service":"aprendoz_test","operation":"subjectsByGrade"}, {}, {
+		input: ["wm.ServiceInput", {"type":"subjectsByGradeInputs"}, {}, {
+			binding: ["wm.Binding", {}, {}, {
+				wire: ["wm.Wire", {"targetProperty":"_grado","source":"aprendizajes_grado.dataValue"}, {}],
+				wire1: ["wm.Wire", {"targetProperty":"_sy","source":"aprendizajes_sy.dataValue"}, {}]
+			}]
+		}]
+	}],
+	aprendizajesAsignaturaLV: ["wm.LiveVariable", {"autoUpdate":false,"startUpdate":false,"liveSource":"com.aprendoz_test.data.AprendizajesAsignaturas"}, {}],
+	aprendizajes_asignaturaActions: ["wm.Variable", {"type":"com.aprendoz_test.data.AprendizajesAsignaturas"}, {}],
+	hql_detallesAprendizajes: ["wm.ServiceVariable", {"service":"aprendoz_test","operation":"hql_aprendizaje_detalles"}, {"onSuccess":"hql_detallesAprendizajesSuccess"}, {
+		input: ["wm.ServiceInput", {"type":"hql_aprendizaje_detallesInputs"}, {}]
+	}],
+	aprendizajesEje1: ["wm.LiveVariable", {"autoUpdate":false,"startUpdate":false,"liveSource":"com.aprendoz_test.data.Eje"}, {}],
+	aprendizajesEje2: ["wm.LiveVariable", {"autoUpdate":false,"startUpdate":false,"liveSource":"com.aprendoz_test.data.Eje"}, {}],
+	aprendizajesEje3: ["wm.LiveVariable", {"autoUpdate":false,"startUpdate":false,"liveSource":"com.aprendoz_test.data.Eje"}, {}],
 	layoutBox1: ["wm.Layout", {"height":"100%","width":"100%","horizontalAlign":"left","verticalAlign":"top","padding":"20"}, {}, {
 		top_header: ["wm.Panel", {"height":"46px","width":"100%","horizontalAlign":"left","verticalAlign":"bottom","layoutKind":"left-to-right"}, {}, {
 			asignatura_button: ["wm.Button", {"height":"40px","width":"110px","borderColor":"#C1272D","iconUrl":"resources/images/buttons/subjects.png","iconMargin":"0 5px 0 0","margin":"4,4,0,4","caption":"Asignaturas","iconWidth":"20px","iconHeight":"20px"}, {"onclick":"asignatura_buttonClick"}],
@@ -417,7 +436,7 @@ Subjects.widgets = {
 				}]
 			}]
 		}],
-		aprendizajes: ["wm.Panel", {"_classes":{"domNode":["wm_BackgroundColor_VeryLightGray"]},"height":"100%","width":"100%","horizontalAlign":"left","verticalAlign":"top","padding":"10"}, {}, {
+		docentes: ["wm.Panel", {"_classes":{"domNode":["wm_BackgroundColor_VeryLightGray"]},"height":"100%","width":"100%","horizontalAlign":"left","verticalAlign":"top","padding":"10","lock":true,"showing":false}, {}, {
 			docentes_selection_panels: ["wm.Panel", {"height":"420px","width":"100%","horizontalAlign":"left","verticalAlign":"top","layoutKind":"left-to-right"}, {}, {
 				aprendizajes_left_panel: ["wm.Panel", {"height":"100%","width":"100%","horizontalAlign":"left","verticalAlign":"top"}, {}, {
 					aprendizajes_sel_sy: ["wm.SelectEditor", {"width":"100%","caption":"Año escolar"}, {}, {
@@ -434,7 +453,7 @@ Subjects.widgets = {
 							}]
 						}]
 					}],
-					listado_asgianturas: ["wm.List", {"_classes":{"domNode":["wm_BackgroundColor_White"]},"height":"100%","width":"100%","border":"0","dataFields":"id, asignatura","columnWidths":"20%, 80%"}, {}, {
+					listado_asignaturas: ["wm.List", {"_classes":{"domNode":["wm_BackgroundColor_White"]},"height":"100%","width":"100%","border":"0","dataFields":"id, asignatura","columnWidths":"20%, 80%"}, {}, {
 						binding: ["wm.Binding", {}, {}, {
 							wire: ["wm.Wire", {"targetProperty":"dataSet","source":"learningsSubjectsByGrade","expression":undefined}, {}]
 						}]
@@ -445,7 +464,7 @@ Subjects.widgets = {
 					label4: ["wm.Label", {"height":"48px","width":"100%","border":"0","padding":"4, 4, 4, 10","caption":"Seleccionar un Curso"}, {}, {
 						format: ["wm.DataFormatter", {}, {}]
 					}],
-					cursosDojoGrid: ["wm.DojoGrid", {"height":"100%","border":"0","selectionMode":"multiple","structure":"[[{\"field\":\"idcurso\",\"name\":\"Id Curso\",\"width\":\"80px\",\"displayType\":undefined},{\"field\":\"curso\",\"name\":\"Curso\",\"width\":\"auto\",\"displayType\":undefined}]]"}, {}, {
+					cursosDojoGrid: ["wm.DojoGrid", {"height":"100%","border":"0","structure":"[[{\"field\":\"idcurso\",\"name\":\"Id Curso\",\"width\":\"80px\",\"displayType\":undefined},{\"field\":\"curso\",\"name\":\"Curso\",\"width\":\"auto\",\"displayType\":undefined}]]"}, {}, {
 						binding: ["wm.Binding", {}, {}, {
 							wire: ["wm.Wire", {"targetProperty":"dataSet","source":"ls_cursos_by_grade"}, {}]
 						}]
@@ -468,22 +487,121 @@ Subjects.widgets = {
 			}],
 			docentes_details_panel: ["wm.Panel", {"height":"100%","width":"100%","horizontalAlign":"left","verticalAlign":"top"}, {}, {
 				docentes_action_button: ["wm.Panel", {"height":"35px","width":"100%","horizontalAlign":"center","verticalAlign":"top","padding":"2","layoutKind":"left-to-right"}, {}, {
-					docentesVer: ["wm.Button", {"height":"100%","width":"96px","margin":"0","caption":"Ver registros"}, {"onclick":"docentesVerClick"}],
+					docentesVer: ["wm.Button", {"_classes":{"domNode":["wm_BackgroundColor_White"]},"height":"100%","width":"96px","borderColor":"#FFA500","margin":"0","caption":"Ver registros"}, {"onclick":"docentesVerClick"}],
 					spacer5: ["wm.Spacer", {"height":"100%","width":"10px"}, {}],
-					docentesRestablecer: ["wm.Button", {"_classes":{"domNode":["wm_BackgroundColor_White"]},"height":"100%","width":"96px","borderColor":"#1225b2","margin":"0","caption":"[/] Restablecer"}, {}],
+					docentesRestablecer: ["wm.Button", {"_classes":{"domNode":["wm_BackgroundColor_White"]},"height":"100%","width":"96px","borderColor":"#1225b2","margin":"0","caption":"[/] Restablecer"}, {"onclick":"docentesRestablecerClick"}],
 					spacer4: ["wm.Spacer", {"height":"100%","width":"10px"}, {}],
 					docentesAgregar: ["wm.Button", {"_classes":{"domNode":["wm_BackgroundColor_White"]},"height":"100%","width":"100px","borderColor":"#56bd14","margin":"0","caption":"[+] Agregar"}, {"onclick":"docentesAgregarClick"}],
 					spacer3: ["wm.Spacer", {"height":"100%","width":"10px"}, {}],
-					docentesRetirar: ["wm.Button", {"_classes":{"domNode":["wm_BackgroundColor_White"]},"height":"100%","width":"100px","borderColor":"#c6353a ","margin":"0","caption":"[-] Retirar"}, {}]
+					docentesRetirar: ["wm.Button", {"_classes":{"domNode":["wm_BackgroundColor_White"]},"height":"100%","width":"100px","borderColor":"#c6353a ","margin":"0","caption":"[-] Retirar","disabled":true}, {"onclick":"docentesRetirarClick"}]
 				}],
-				inscripcionesGrid1: ["wm.DojoGrid", {"height":"100%","border":"0","structure":"[[{\"field\":\"id\",\"name\":\" \",\"width\":\"80px\",\"displayType\":undefined},{\"field\":\"nombre_completo\",\"name\":\"Nombre completo\",\"width\":\"auto\",\"displayType\":undefined},{\"field\":\"asignatura\",\"name\":\"Asignatura\",\"width\":\"auto\",\"displayType\":undefined},{\"field\":\"periodo\",\"name\":\"Periodo escolar\",\"width\":\"120px\",\"displayType\":undefined}]]"}, {}, {
+				inscripcionesGrid1: ["wm.DojoGrid", {"height":"100%","border":"0","structure":"[[{\"field\":\"id\",\"name\":\" \",\"width\":\"auto\",\"displayType\":undefined},{\"field\":\"curso\",\"name\":\"Curso\",\"width\":\"auto\",\"displayType\":undefined},{\"field\":\"asignatura\",\"name\":\"Asignatura\",\"width\":\"auto\",\"displayType\":undefined},{\"field\":\"nombre_completo\",\"name\":\"Nombre completo\",\"width\":\"auto\",\"displayType\":undefined},{\"field\":\"periodo\",\"name\":\"Periodo\",\"width\":\"auto\",\"displayType\":undefined}]]","customFields":"[]","customFieldCounter":1}, {"onCellClick":"inscripcionesGrid1CellClick"}, {
 					binding: ["wm.Binding", {}, {}, {
 						wire: ["wm.Wire", {"targetProperty":"dataSet","source":"inscCursoAsigSv"}, {}]
 					}]
 				}],
-				inscCursoAsigActionForm: ["wm.LiveForm", {"height":"60px","verticalAlign":"top","horizontalAlign":"left"}, {}]
+				inscCursoAsigActionForm: ["wm.LiveForm", {"height":"60px","verticalAlign":"top","horizontalAlign":"left","showing":false}, {"onSuccess":"inscCursoAsigActionFormSuccess"}]
 			}]
 		}],
-		panel7: ["wm.Panel", {"height":"48px","width":"100%","horizontalAlign":"left","verticalAlign":"top","layoutKind":"left-to-right"}, {}]
+		learnings: ["wm.Panel", {"height":"100%","width":"100%","horizontalAlign":"left","verticalAlign":"top","layoutKind":"left-to-right"}, {}, {
+			panel6: ["wm.Panel", {"height":"100%","width":"252px","horizontalAlign":"left","verticalAlign":"top"}, {}, {
+				aprendizajes_sy: ["wm.SelectEditor", {"width":"100%","caption":"Año escolar"}, {}, {
+					editor: ["wm._SelectEditor", {"displayField":"schoolYear","dataField":"idSy"}, {}, {
+						binding: ["wm.Binding", {}, {}, {
+							wire: ["wm.Wire", {"targetProperty":"dataSet","source":"sy","expression":undefined}, {}]
+						}]
+					}]
+				}],
+				aprendizajes_grado: ["wm.SelectEditor", {"width":"100%","caption":"Grado"}, {"onchange":"aprendizajes_asignaturas_sv"}, {
+					editor: ["wm._SelectEditor", {"displayField":"grado","dataField":"idGrado"}, {}, {
+						binding: ["wm.Binding", {}, {}, {
+							wire: ["wm.Wire", {"targetProperty":"dataSet","source":"grados","expression":undefined}, {}]
+						}]
+					}]
+				}],
+				aprendizajes_asignaturas: ["wm.DojoGrid", {"height":"704px","border":"0","structure":"[[{\"field\":\"id\",\"name\":\" \",\"width\":\"55px\",\"displayType\":undefined},{\"field\":\"asignatura\",\"name\":\"Asignatura\",\"width\":\"auto\",\"displayType\":undefined}]]"}, {"onClick":"aprendizajes_asignaturasClick"}, {
+					binding: ["wm.Binding", {}, {}, {
+						wire: ["wm.Wire", {"targetProperty":"dataSet","source":"aprendizajes_asignaturas_sv"}, {}]
+					}]
+				}]
+			}],
+			aprendizajes_aprendizajes: ["wm.DojoGrid", {"height":"750px","border":"0","structure":"[[{\"field\":\"idAprendizaje\",\"name\":\" \",\"width\":\"50px\",\"displayType\":\"Number\"},{\"field\":\"fechaEsperada\",\"name\":\"Fecha esperada\",\"width\":\"60px\",\"displayType\":\"Date\",\"typeValue\":\"\",\"editable\":false,\"type\":\"\",\"expression\":\"\"},{\"field\":\"aprendizaje\",\"name\":\"Aprendizaje\",\"width\":\"auto\",\"displayType\":\"Text\"},{\"field\":\"peso\",\"name\":\"Peso\",\"width\":\"30px\",\"displayType\":\"Number\"}]]","width":"386px"}, {"onClick":"aprendizajes_aprendizajesClick"}, {
+				binding: ["wm.Binding", {}, {}, {
+					wire: ["wm.Wire", {"targetProperty":"dataSet","source":"aprendizajesAsignaturaLV"}, {}]
+				}]
+			}],
+			panel7: ["wm.Panel", {"height":"100%","width":"100%","horizontalAlign":"left","verticalAlign":"top"}, {}, {
+				liveForm1: ["wm.LiveForm", {"height":"69px","verticalAlign":"top","horizontalAlign":"left","readonly":true,"editPanelStyle":"wm.Button"}, {}, {
+					binding: ["wm.Binding", {}, {}, {
+						wire: ["wm.Wire", {"targetProperty":"dataSet","source":"aprendizajes_aprendizajes.selectedItem","expression":undefined}, {}],
+						wire1: ["wm.Wire", {"targetProperty":"dataOutput.inteligencia","source":"dimensinComprensionEditor1"}, {}]
+					}]
+				}],
+				aprendizajes_asignaturaLiveForm: ["wm.LiveForm", {"verticalAlign":"top","horizontalAlign":"left","showing":false}, {}],
+				idAprendizajeEditor1: ["wm.Editor", {"caption":"Id aprendizaje","width":"100%","height":"26px","display":"Number","readonly":true,"formField":"idAprendizaje"}, {}, {
+					editor: ["wm._NumberEditor", {"required":true}, {}]
+				}],
+				fechaEsperadaEditor1: ["wm.Editor", {"caption":"Fecha esperada","width":"100%","height":"26px","display":"Date","readonly":true,"formField":"fechaEsperada"}, {}, {
+					editor: ["wm._DateEditor", {"required":true}, {}]
+				}],
+				aprendizajeEditor1: ["wm.Editor", {"caption":"Aprendizaje","width":"100%","height":"80px","readonly":true,"formField":"aprendizaje","singleLine":false}, {}, {
+					editor: ["wm._TextEditor", {"required":true}, {}]
+				}],
+				learningEditor1: ["wm.Editor", {"caption":"Learning","width":"100%","height":"80px","readonly":true,"formField":"learning","singleLine":false}, {}, {
+					editor: ["wm._TextEditor", {"required":true}, {}]
+				}],
+				pesoEditor1: ["wm.Editor", {"caption":"Peso","width":"100%","height":"26px","display":"Number","readonly":true,"formField":"peso"}, {}, {
+					editor: ["wm._NumberEditor", {"required":true}, {}]
+				}],
+				ejeIdEjeEditor1: ["wm.Editor", {"caption":"1er. Eje","width":"100%","height":"26px","display":"Select","readonly":true,"formField":"ejeIdEje"}, {}, {
+					editor: ["wm._SelectEditor", {"displayField":"ejeTematico","dataField":"idEje"}, {}, {
+						binding: ["wm.Binding", {}, {}, {
+							wire: ["wm.Wire", {"targetProperty":"dataSet","source":"aprendizajesEje1","expression":undefined}, {}]
+						}]
+					}]
+				}],
+				eje2IdEjeEditor1: ["wm.Editor", {"caption":"2do. Eje","width":"100%","height":"26px","display":"Number","readonly":true,"formField":"eje2IdEje"}, {}, {
+					editor: ["wm._NumberEditor", {}, {}]
+				}],
+				eje3IdEjeEditor1: ["wm.TextEditor", {"width":"100%","caption":"3er. Eje","display":"Number","readonly":true,"formField":"eje3IdEje"}, {}, {
+					editor: ["wm._NumberEditor", {}, {}]
+				}],
+				dimensinComprensionEditor1: ["wm.SelectEditor", {"width":"100%","caption":"Dimensión Comprensión"}, {}, {
+					editor: ["wm._SelectEditor", {}, {}]
+				}],
+				dimensinCurricularEditor1: ["wm.SelectEditor", {"width":"100%","caption":"Dimensión Currícular"}, {}, {
+					editor: ["wm._SelectEditor", {}, {}]
+				}],
+				inteligenciaEditor1: ["wm.SelectEditor", {"width":"100%","caption":"Inteligencia"}, {}, {
+					editor: ["wm._SelectEditor", {}, {}]
+				}],
+				nivelEsperadoEditor1: ["wm.SelectEditor", {"width":"100%","caption":"Nivel esperado"}, {}, {
+					editor: ["wm._SelectEditor", {}, {}]
+				}],
+				editPanel3: ["wm.EditPanel", {"liveForm":"liveForm1","savePanel":"savePanel3","operationPanel":"operationPanel3"}, {}, {
+					savePanel3: ["wm.Panel", {"height":"100%","width":"100%","horizontalAlign":"right","verticalAlign":"top","layoutKind":"left-to-right","showing":false}, {}, {
+						saveButton3: ["wm.Button", {"height":"100%","width":"100px","caption":"Save","disabled":undefined}, {"onclick":"saveButton3Click"}, {
+							binding: ["wm.Binding", {}, {}, {
+								wire: ["wm.Wire", {"targetProperty":"disabled","source":"editPanel3.formInvalid","expression":undefined}, {}]
+							}]
+						}],
+						cancelButton3: ["wm.Button", {"height":"100%","width":"100px","caption":"Cancel"}, {"onclick":"editPanel3.cancelEdit"}]
+					}],
+					operationPanel3: ["wm.Panel", {"height":"100%","width":"100%","horizontalAlign":"right","verticalAlign":"top","layoutKind":"left-to-right"}, {}, {
+						newButton3: ["wm.Button", {"height":"100%","width":"100px","caption":"New"}, {"onclick":"editPanel3.beginDataInsert"}],
+						updateButton3: ["wm.Button", {"height":"100%","width":"100px","caption":"Update","disabled":true}, {"onclick":"editPanel3.beginDataUpdate"}, {
+							binding: ["wm.Binding", {}, {}, {
+								wire: ["wm.Wire", {"targetProperty":"disabled","source":"editPanel3.formUneditable","expression":undefined}, {}]
+							}]
+						}],
+						deleteButton3: ["wm.Button", {"height":"100%","width":"100px","caption":"Delete","disabled":true}, {"onclick":"deleteButton3Click"}, {
+							binding: ["wm.Binding", {}, {}, {
+								wire: ["wm.Wire", {"targetProperty":"disabled","source":"editPanel3.formUneditable","expression":undefined}, {}]
+							}]
+						}]
+					}]
+				}]
+			}]
+		}]
 	}]
 }

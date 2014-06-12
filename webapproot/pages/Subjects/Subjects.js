@@ -344,17 +344,30 @@ dojo.declare("Subjects", wm.Page, {
   asignatura_buttonClick: function(inSender, inEvent) {
      this.axis.hide();
      this.areas.hide();
+     this.docentes.hide();
      this.subjects.show();
   },
   areas_buttonClick: function(inSender, inEvent) {
      this.axis.hide();
      this.subjects.hide(); 
+     this.docentes.hide();
      this.areas.show();
   },
   ejes_buttonClick: function(inSender, inEvent) {   
      this.subjects.hide(); 
      this.areas.hide(); 
+     this.docentes.hide();
      this.axis.show();
+  },
+  docentes_buttonClick: function(inSender, inEvent) {
+     this.subjects.hide(); 
+     this.areas.hide();    
+     this.axis.hide();
+     this.docentes.show();
+     
+     this.curdate = new Date().getTime();
+     this.a_cursy.input.setValue("f1",this.curdate); 
+     this.a_cursy.update();   
   },
   search_axis_textEditorChange: function(inSender, inDisplayValue, inDataValue) {
      var search_eje= this.search_axis_textEditor.getDataValue();
@@ -371,12 +384,7 @@ dojo.declare("Subjects", wm.Page, {
   areaLiveVariable1Success: function(inSender, inDeprecated) {
      this.ls_area.update();
      this.ls_subareas.update();  
-  },
-  docentes_buttonClick: function(inSender, inEvent) {
-     this.curdate = new Date().getTime();
-     this.a_cursy.input.setValue("f1",this.curdate); 
-     this.a_cursy.update();   
-  },  
+  },   
   a_cursySuccess: function(inSender, inDeprecated) {
      var json= this.a_cursy.getItem(0);    
      var sy = json.data.sy;
@@ -396,79 +404,99 @@ dojo.declare("Subjects", wm.Page, {
   docentesVerClick: function(inSender, inEvent) {
      var idcurso= this.cursosDojoGrid.selectedItem.getData().idcurso;
      var idsy= this.aprendizajes_sel_sy.getDataValue();
-     var idpersona= this.docentesDojoGrid.selectedItem.getData().idpersona;
      this.inscCursoAsigSv.input.setValue("idc", idcurso); 
-     this.inscCursoAsigSv.input.setValue("idp", idpersona); 
      this.inscCursoAsigSv.input.setValue("idper", idsy); 
      this.inscCursoAsigSv.update(); 
-  },
+  }, 
   
-  
-    
   docentesAgregarClick: function(inSender, inEvent) {
-     this.obj_  = this.cursosDojoGrid.dojoObj.selection.getSelected();
-     this.cont_ = this.cursosDojoGrid.dojoObj.selection.getSelectedCount();
-     this.index = this.listado_asgianturas.getSelectedIndex();
-     this.data = this.listado_asgianturas.getItemData(index);
-     this.idasignatura= data.id;
-     this.idcurso= this.cursosDojoGrid.selectedItem.getData().idcurso;
-     //this.grado     = this.data.grado;
-     this.periodoid = 13;
-     this.periodo   = "2014-2015";
-     this.idpersona= this.docentesDojoGrid.selectedItem.getData().idpersona;     
-     console.log("fin");    
-     this.writeNext();     
+     var obj_  = this.cursosDojoGrid.dojoObj.selection.getSelected();
+     var cont_ = this.cursosDojoGrid.dojoObj.selection.getSelectedCount();
+     var index = this.listado_asignaturas.getSelectedIndex();
+     var data = this.listado_asignaturas.getItemData(index);
+     var idasignatura= data.id;
+     var idcurso= this.cursosDojoGrid.selectedItem.getData().idcurso;
+     var periodoid = 13;
+     var periodo   = "2014-2015";
+     var idpersona= this.docentesDojoGrid.selectedItem.getData().idpersona;       
+     
+     this.actionsInscCursoAsig.setValue("asignatura.idAsignatura", idasignatura);
+     this.actionsInscCursoAsig.setValue("persona.idPersona", idpersona);
+     this.actionsInscCursoAsig.setValue("periodo.idPeriodo", periodoid);
+     this.actionsInscCursoAsig.setValue("curso.idCurso", idcurso);     
+     this.inscCursoAsigActionForm.setDataSet(this.actionsInscCursoAsig);          
+     this.inscCursoAsigActionForm.insertData();  
+  }, 
+  
+  docentesRestablecerClick: function(inSender, inEvent) {
+     this.inscCursoAsigSv.clearData();
+     this.searchTeacher.clearData();
+     this.ls_cursos_by_grade.clearData();
+     this.learningsSubjectsByGrade.clearData(); 
+     this.aprendizajes_sel_grado.clear();
+     this.docentesSearch.clear();
   },
-  
-  item_ : 0,
-  /*
-  for(var i=0; i<=count; i++){        
-         var obj = 
-         console.log(obj);
-         var intcurso = parseInt(obj[i].idcurso);              
-         this.actionsInscCursoAsig.setValue("asignatura.idAsignatura", idasignatura);
-         this.actionsInscCursoAsig.setValue("persona.idPersona", idpersona);
-         this.actionsInscCursoAsig.setValue("periodo.idPeriodo", idperiodo);
-         this.actionsInscCursoAsig.setValue("curso.idCurso", intcurso);     
-         this.inscCursoAsigActionForm.setDataSet(this.actionsInscCursoAsig);          
-         this.inscCursoAsigActionForm.insertData();
-     }
-  */
-  writeNext: function(){
-    var obj = this.obj_;  
-    var cont = this.cont_;
-    var index= this.index;
-    var data = this.data;
-    var subjectid= this.subjectid;
-    var subject= this.subject;
-    var gradoid= this.gradoid;
-    var grado= this.grado;
-    var periodoid= this.periodoid;
-    var periodo  = this.periodo; 
-    console.log(obj);
-    console.log(cont);  
-    console.log(index);
-    console.log(data); 
-    console.log(subjectid);
-    console.log(subject); 
-    console.log(gradoid);
-    console.log(grado); 
-    console.log(periodoid);
-    console.log(periodo);
-       this.inscribirVar.setValue("grado.idGrado", obj[this.item_].idgrado); 
-       this.inscribirVar.setValue("grado.grado", obj[this.item_].grado);
-       this.inscribirVar.setValue("asignatura.idAsignatura", subjectid); 
-       this.inscribirVar.setValue("asignatura.asignatura", subject);
-       var intp = parseInt(obj[this.item_].idpersona);
-       console.log(intp);
-       this.inscribirVar.setValue("persona.idPersona", intp);
-       this.inscribirVar.setValue("periodo.idPeriodo", periodoid);
-       this.inscribirVar.setValue("periodo.periodo", periodo);
-       this.inscribirForm.setDataSet(this.inscribirVar); 
-       this.inscribirForm.insertData(); 
-    this.item_++;
+  inscripcionesGrid1CellClick: function(inSender, evt) {
+     this.docentesRetirar.enable();
   },
-  
-  
+  docentesRetirarClick: function(inSender, inEvent) {
+     var id= this.inscripcionesGrid1.selectedItem.data.id;
+     var r=confirm("¿El registro se eliminará de manera definitiva, estas seguro de continuar?");
+     if (r==true) {
+        this.deleteInscCursoAsig.input.setValue("icaId", id);
+        this.deleteInscCursoAsig.update();
+        this.inscCursoAsigSv.update();
+     } else {
+        alert("Acción cancelada.");
+     }    
+  },  
+  inscCursoAsigActionFormSuccess: function(inSender, inData) {
+     this.inscCursoAsigSv.update(); 
+  },
+  aprendizajes_asignaturasClick: function(inSender, evt) {
+     var idasignatura=  this.aprendizajes_asignaturas.selectedItem.data.id;
+     console.log(idasignatura);
+     this.aprendizajesAsignaturaLV.filter.setValue("asignatura.idAsignatura", idasignatura);
+     this.aprendizajesAsignaturaLV.update();
+  },
+  aprendizajes_aprendizajesClick: function(inSender, evt) {
+     var idapr= this.aprendizajes_aprendizajes.selectedItem.data.idAprendizaje;
+     this.hql_detallesAprendizajes.input.setValue("idaprendizajes", idapr);
+     this.hql_detallesAprendizajes.update();
+  },
+  deleteButton3Click: function(inSender, inEvent) {
+     
+  },
+  saveButton3Click: function(inSender, inEvent) {
+     
+  },
+  hql_detallesAprendizajesSuccess: function(inSender, inDeprecated) {
+     var jsonObj         = this.hql_detallesAprendizajes.getItem(0).data;
+     var idAprendizaje   = jsonObj.idAprendizaje;
+     var aprendizaje     = jsonObj.aprendizaje;
+     var learning        = jsonObj.learning;
+     var ejeIdEje        = jsonObj.ejeIdEje;
+     var eje2IdEje       = jsonObj.eje2IdEje;
+     var eje3IdEje       = jsonObj.eje3IdEje;    
+     var fechaEsperada   = jsonObj.fechaEsperada;
+     var idAsignatura    = jsonObj.idAsignatura;
+     var idDimension     = jsonObj.idDimension;
+     var idDimension2    = jsonObj.idDimension2;
+     var idInteligencia  = jsonObj.idInteligencia;
+     var idNivelEsperado = jsonObj.idNivelEsperado;     
+     var peso            = jsonObj.peso;
+     
+     
+     
+     this.idAprendizajeEditor1.setDataValue(idAprendizaje);
+     this.fechaEsperadaEditor1.setDataValue(fechaEsperada);
+     this.aprendizajeEditor1.setDataValue(aprendizaje);
+     this.learningEditor1.setDataValue(learning);
+     this.pesoEditor1.setDataValue(peso);
+     this.ejeIdEjeEditor1.setDataValue(ejeIdEje);
+     this.eje2IdEjeEditor1.setDataValue(eje2IdEje);
+     this.eje3IdEjeEditor1.setDataValue(eje3IdEje);
+     
+  },
   _end: 0
 });

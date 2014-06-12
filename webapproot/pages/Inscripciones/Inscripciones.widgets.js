@@ -4,7 +4,8 @@ Inscripciones.widgets = {
 			binding: ["wm.Binding", {}, {}, {
 				wire: ["wm.Wire", {"targetProperty":"sy","expression":"\"4\""}, {}],
 				wire1: ["wm.Wire", {"targetProperty":"pcurso","source":"subjectsCurse.dataValue"}, {}],
-				wire2: ["wm.Wire", {"targetProperty":"pgrado","source":"subjectsGrade.dataValue"}, {}]
+				wire2: ["wm.Wire", {"targetProperty":"idsy","source":"syGrade.dataValue"}, {}],
+				wire3: ["wm.Wire", {"targetProperty":"pgrado","source":"subjectsGrade.dataValue"}, {}]
 			}]
 		}]
 	}],
@@ -39,17 +40,25 @@ Inscripciones.widgets = {
 			}]
 		}]
 	}],
+	a_sy: ["wm.LiveVariable", {"autoUpdate":false,"liveSource":"com.aprendoz_test.data.Sy","orderBy":"desc: idSy"}, {}],
 	layoutBox1: ["wm.Layout", {"height":"100%","width":"100%","horizontalAlign":"left","verticalAlign":"top"}, {}, {
-		panel2: ["wm.Panel", {"height":"100%","width":"100%","layoutKind":"left-to-right","horizontalAlign":"left","verticalAlign":"top"}, {}, {
-			right_panel: ["wm.Panel", {"height":"100%","width":"100%","lock":true,"horizontalAlign":"left","verticalAlign":"top"}, {}, {
+		panel2: ["wm.Panel", {"height":"100%","width":"100%","horizontalAlign":"left","verticalAlign":"top","layoutKind":"left-to-right"}, {}, {
+			right_panel: ["wm.Panel", {"height":"100%","width":"100%","horizontalAlign":"left","verticalAlign":"top"}, {}, {
 				subjectsLabel: ["wm.Label", {"_classes":{"domNode":["wm_FontSizePx_12px"]},"height":"38px","width":"100%","border":"0","caption":"Asignaturas"}, {}, {
 					format: ["wm.DataFormatter", {}, {}]
 				}],
-				showSubjectsButton: ["wm.Button", {"_classes":{"domNode":["wm_BackgroundColor_White"]},"height":"33px","width":"100%","caption":"Para ver las asignaturas haga clic aquí","borderColor":" #3d80df","margin":"1","iconUrl":"resources/images/showme.png","iconWidth":"20px","iconHeight":"20px","iconMargin":"0 0px 0 0","showing":false}, {"onclick":"showSubjectsButtonClick"}],
+				showSubjectsButton: ["wm.Button", {"_classes":{"domNode":["wm_BackgroundColor_White"]},"height":"33px","width":"100%","borderColor":" #3d80df","iconUrl":"resources/images/showme.png","iconMargin":"0 0px 0 0","margin":"1","caption":"Para ver las asignaturas haga clic aquí","iconWidth":"20px","iconHeight":"20px","showing":false}, {"onclick":"showSubjectsButtonClick"}],
 				label2: ["wm.Label", {"height":"120px","width":"100%","border":"0","caption":"A continuación seleccione el Grado y  la <u>Asignatura</u> a la cual desea (+Agregar) o (-Retirar) alumnos.<br><br>Una vez hecho esto, los selectores  de <u>Estudiantes por Curso</u> se activarán y podrá buscar los alumnos en el curso deseado, seleccionarlos y (+Agregar) a la asignatura.","singleLine":false}, {}, {
 					format: ["wm.DataFormatter", {}, {}]
 				}],
-				panel8: ["wm.Panel", {"height":"32px","width":"100%","layoutKind":"left-to-right","horizontalAlign":"left","verticalAlign":"top"}, {}, {
+				syGrade: ["wm.SelectEditor", {"width":"100%","caption":"Año escolar"}, {}, {
+					editor: ["wm._SelectEditor", {"displayField":"schoolYear","dataField":"idSy"}, {}, {
+						binding: ["wm.Binding", {}, {}, {
+							wire: ["wm.Wire", {"targetProperty":"dataSet","source":"a_sy","expression":undefined}, {}]
+						}]
+					}]
+				}],
+				panel8: ["wm.Panel", {"height":"32px","width":"100%","horizontalAlign":"left","verticalAlign":"top","layoutKind":"left-to-right"}, {}, {
 					subjectsGrade: ["wm.SelectEditor", {"width":"100%","caption":"Grado"}, {"onchange":"subjectsGradeChange"}, {
 						editor: ["wm._SelectEditor", {"displayField":"grado","dataField":"idGrado"}, {}, {
 							binding: ["wm.Binding", {}, {}, {
@@ -71,7 +80,7 @@ Inscripciones.widgets = {
 				label3: ["wm.Label", {"height":"120px","width":"100%","border":"0","caption":"Para (+Agregar) alumnos a un listado de Asignatura deberá realizar el siguiente proceso:<br><br>1). Seleccione el <u>Grado</u> y <u>Curso</u>.<br>2). Haga clic sobre el/los alumnos que quiera agregar. Nota*** La tabla permite <b><u>multiselección.</u></b><br>3). Haga clic en el botón <u>+Agregar</u>.","singleLine":false}, {}, {
 					format: ["wm.DataFormatter", {}, {}]
 				}],
-				panel7: ["wm.Panel", {"height":"32px","width":"100%","layoutKind":"left-to-right","horizontalAlign":"left","verticalAlign":"top"}, {}, {
+				panel7: ["wm.Panel", {"height":"32px","width":"100%","horizontalAlign":"left","verticalAlign":"top","layoutKind":"left-to-right"}, {}, {
 					listadoGradoSelect: ["wm.SelectEditor", {"width":"100%","caption":"Grado","disabled":true}, {"onchange":"listadoGradoSelectChange"}, {
 						editor: ["wm._SelectEditor", {"displayField":"grado","dataField":"idGrado"}, {}, {
 							binding: ["wm.Binding", {}, {}, {
@@ -99,16 +108,16 @@ Inscripciones.widgets = {
 				}],
 				inscribirForm: ["wm.LiveForm", {"verticalAlign":"top","horizontalAlign":"left","showing":false}, {"onSuccess":"inscribirFormSuccess","onError":"inscribirFormError"}]
 			}],
-			panel5: ["wm.Panel", {"height":"100%","width":"58px","padding":"5","horizontalAlign":"left","verticalAlign":"top"}, {}, {
+			panel5: ["wm.Panel", {"height":"100%","width":"58px","horizontalAlign":"left","verticalAlign":"top","padding":"5"}, {}, {
 				spacer1: ["wm.Spacer", {"height":"150px","width":"100%"}, {}],
-				inscribirEstudiantes: ["wm.Button", {"_classes":{"domNode":["wm_BackgroundColor_White"]},"height":"48px","width":"100%","caption":"+<br>Agregar","borderColor":"#5cb85c","margin":"1","disabled":true}, {"onclick":"inscribirEstudiantesClick"}],
-				retirarEstudiantes: ["wm.Button", {"_classes":{"domNode":["wm_BackgroundColor_White"]},"height":"48px","width":"100%","caption":"-<br>Retirar","borderColor":"#d9534f","margin":"1","disabled":true}, {"onclick":"retirarEstudiantesClick"}]
+				inscribirEstudiantes: ["wm.Button", {"_classes":{"domNode":["wm_BackgroundColor_White"]},"height":"48px","width":"100%","borderColor":"#5cb85c","margin":"1","caption":"+<br>Agregar","disabled":true}, {"onclick":"inscribirEstudiantesClick"}],
+				retirarEstudiantes: ["wm.Button", {"_classes":{"domNode":["wm_BackgroundColor_White"]},"height":"48px","width":"100%","borderColor":"#d9534f","margin":"1","caption":"-<br>Retirar","disabled":true}, {"onclick":"retirarEstudiantesClick"}]
 			}],
 			left_panel: ["wm.Panel", {"height":"100%","width":"100%","horizontalAlign":"left","verticalAlign":"top"}, {}, {
 				alumnosInscritos: ["wm.Label", {"_classes":{"domNode":["wm_FontSizePx_12px"]},"height":"38px","width":"100%","border":"0","caption":"Estudiantes Inscritos por Asignatura y curso"}, {}, {
 					format: ["wm.DataFormatter", {}, {}]
 				}],
-				panel6: ["wm.Panel", {"height":"50px","width":"100%","layoutKind":"left-to-right","horizontalAlign":"left","verticalAlign":"top","showing":false}, {}, {
+				panel6: ["wm.Panel", {"height":"50px","width":"100%","horizontalAlign":"left","verticalAlign":"top","layoutKind":"left-to-right","showing":false}, {}, {
 					label1: ["wm.Label", {"height":"100%","width":"100%","border":"0","caption":"Esta tabla muestra los estudiantes inscritos en la asignatura y curso seleccionados en la tabla de <u>Asignaturas.</u>","singleLine":false}, {}, {
 						format: ["wm.DataFormatter", {}, {}]
 					}]

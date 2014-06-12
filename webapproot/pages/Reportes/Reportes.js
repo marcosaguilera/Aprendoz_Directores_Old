@@ -602,7 +602,26 @@ dojo.declare("Reportes", wm.Page, {
          }
        });
        inEvent.preventDefault();
-     }     
+     }
+     if(codigoRep=="REC035"){
+      main.a_informacionUsuario.update();
+      var getter = main.a_informacionUsuario.getItem(0);
+      var id= getter.data.idpersona;
+      var clave= getter.data.clave;
+      var psy= this.sy_box.getDataValue();
+      var formatType= this.formato_box.getDisplayValue();
+      $.fileDownload("http://aprendoz.rochester.edu.co/wsreport/runreport?callback=?", {
+        failMessageHtml: "Hubo un problema generando tu reporte, por favor intenta de nuevo.",
+        httpMethod: "POST",
+        data:{ idp: id, 
+               pass: clave,
+               uri: "/aprendozreports/REC035",
+               format: formatType,
+               params: { sy: psy }
+         }
+       });
+       inEvent.preventDefault();
+     }      
   },
       
   limpiar_buttClick: function(inSender, inEvent) {

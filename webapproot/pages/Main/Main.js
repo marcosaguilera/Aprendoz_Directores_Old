@@ -945,6 +945,8 @@ otrasmetasLiveForm1BeginInsert: function(inSender) {
       this.calif_finales.update();
   },  
   calificacionesShow: function(inSender) {
+      //var sy_actual= this.a_cursy.getItem(0).data.sy;
+      //this.calif_encabezado_opciones_sel_grado.setDisplayValue(sy_actual);
       this.l_calif_encabezado_opciones_listaCursos.update();
   },
 
@@ -2180,6 +2182,33 @@ otrasmetasLiveForm1BeginInsert: function(inSender) {
       app.pageDialog.page.num_asig_bajo.hide(); 
       app.pageDialog.page.periodo_box.hide();  
       app.pageDialog.page.nivel_box.show();       
+      } 
+      if(codigoRep=="REC035"){ 
+      app.pageDialog.page.tipoeventualidad.hide();
+      app.pageDialog.page.numero_eventualidades.hide();
+      app.pageDialog.page.fecha1_dt.hide();
+      app.pageDialog.page.fecha2_dt.hide();    
+      app.pageDialog.page.puntaje_max.hide(); 
+      app.pageDialog.page.curso_box.hide();
+      app.pageDialog.page.nivel_esperado.hide();
+      app.pageDialog.page.idp_box.hide();      
+      app.pageDialog.page.peso_aprendizaje.hide(); 
+      app.pageDialog.page.search_user_complex_box.hide();
+      app.pageDialog.page.desde_curso_box.hide();
+      app.pageDialog.page.p2.hide();
+      app.pageDialog.page.p1.hide();
+      app.pageDialog.page.hasta_curso_box.hide();
+      app.pageDialog.page.alumnosDataGrid.setShowing(false);      
+      app.pageDialog.page.num_asig_bajo.hide(); 
+      app.pageDialog.page.numero_mes.hide();      
+      app.pageDialog.page.periodo_box.hide();
+      app.pageDialog.page.puntaje.hide(); 
+      app.pageDialog.page.nivel_box.hide(); 
+      app.pageDialog.page.grado_box.hide();
+      app.pageDialog.page.semana_box.hide();
+      app.pageDialog.page.area_box.hide();
+      app.pageDialog.page.grado_box2.hide();
+      app.pageDialog.page.sy_box.show();
       } 
   },
   reportes_graficos_listado_reportesSelected: function(inSender, inIndex) {
