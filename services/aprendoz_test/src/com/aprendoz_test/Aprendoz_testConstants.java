@@ -5,7 +5,7 @@ package com.aprendoz_test;
 
 /**
  *  Query names for service "aprendoz_test"
- *  06/11/2014 14:25:54
+ *  06/24/2014 11:05:17
  * 
  */
 public class Aprendoz_testConstants {
@@ -15,10 +15,12 @@ public class Aprendoz_testConstants {
     public final static String cursosQueryName = "cursos";
     public final static String sendMailHQLOneQueryName = "sendMailHQLOne";
     public final static String lsCursosQueryName = "lsCursos";
+    public final static String getEmailsFamiliarGroupQueryName = "getEmailsFamiliarGroup";
     public final static String searchStudentsByComplexNameQueryName = "searchStudentsByComplexName";
     public final static String getListStudentsByCurseQueryName = "getListStudentsByCurse";
     public final static String getCountGenderQueryName = "getCountGender";
     public final static String HQLlsPeriodoQueryName = "HQLlsPeriodo";
+    public final static String hql_deleteLearningsQueryName = "hql_deleteLearnings";
     public final static String HQLlsCursosQueryName = "HQLlsCursos";
     public final static String enviarMailEventualidadesQueryName = "enviarMailEventualidades";
     public final static String getTipoEventualidadByIdSubTipoQueryName = "getTipoEventualidadByIdSubTipo";
@@ -27,7 +29,6 @@ public class Aprendoz_testConstants {
     public final static String HQLlsGradoQueryName = "HQLlsGrado";
     public final static String subjectsByTeachersByCurseByPerQueryName = "subjectsByTeachersByCurseByPer";
     public final static String hqlPersonaEventualidadQueryName = "hqlPersonaEventualidad";
-    public final static String getInscAlumActividadByIdQueryName = "getInscAlumActividadById";
     public final static String getCountGenderFemaleQueryName = "getCountGenderFemale";
     public final static String a_getCursoProcesoSVQueryName = "a_getCursoProcesoSV";
     public final static String studentsByCurseBySubjectQueryName = "studentsByCurseBySubject";
@@ -36,6 +37,7 @@ public class Aprendoz_testConstants {
     public final static String deleteSubjectQueryName = "deleteSubject";
     public final static String getSyByCurDateQueryName = "getSyByCurDate";
     public final static String getTypeUserQueryName = "getTypeUser";
+    public final static String getDimensionCurricularByIdQueryName = "getDimensionCurricularById";
     public final static String actualizarClaveQueryName = "actualizarClave";
     public final static String subjectsAxisQueryName = "subjectsAxis";
     public final static String searchReportesAlumnosQueryName = "searchReportesAlumnos";

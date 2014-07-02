@@ -31,7 +31,9 @@
                         <value>com.aprendoz_test.data.AccStudentCardAuthorization</value>
                         <value>com.aprendoz_test.data.Actividad</value>
                         <value>com.aprendoz_test.data.ActualizacionDatosPersona</value>
+                        <value>com.aprendoz_test.data.ActualizacionDatosPersonaCopy</value>
                         <value>com.aprendoz_test.data.ActualizacionGrupoFamiliar</value>
+                        <value>com.aprendoz_test.data.ActualizacionGrupoFamiliarCopy</value>
                         <value>com.aprendoz_test.data.AdministracionVistaAsignaturas</value>
                         <value>com.aprendoz_test.data.AdministracionVistaAsignaturasCurso</value>
                         <value>com.aprendoz_test.data.AdministracionVistaInscAlumAsig</value>
@@ -45,6 +47,7 @@
                         <value>com.aprendoz_test.data.AprendizajesAsignaturas</value>
                         <value>com.aprendoz_test.data.Area</value>
                         <value>com.aprendoz_test.data.Asignatura</value>
+                        <value>com.aprendoz_test.data.AsignaturaCopy</value>
                         <value>com.aprendoz_test.data.Asistencia</value>
                         <value>com.aprendoz_test.data.BimestreSy</value>
                         <value>com.aprendoz_test.data.BisUsers</value>
@@ -99,6 +102,8 @@
                         <value>com.aprendoz_test.data.FacturacionSapiens</value>
                         <value>com.aprendoz_test.data.FichaMedica</value>
                         <value>com.aprendoz_test.data.Formulario5a</value>
+                        <value>com.aprendoz_test.data.GestionEncuestas</value>
+                        <value>com.aprendoz_test.data.GestionEncuestasGrupoFamiliar</value>
                         <value>com.aprendoz_test.data.Grado</value>
                         <value>com.aprendoz_test.data.GradoSiguiente</value>
                         <value>com.aprendoz_test.data.GrupoFamiliar</value>
@@ -157,6 +162,7 @@
                         <value>com.aprendoz_test.data.PersonaEdad</value>
                         <value>com.aprendoz_test.data.Personal</value>
                         <value>com.aprendoz_test.data.Promocion</value>
+                        <value>com.aprendoz_test.data.PromocionCopy</value>
                         <value>com.aprendoz_test.data.PromocionVistaInscAlumnCurso</value>
                         <value>com.aprendoz_test.data.Recurso</value>
                         <value>com.aprendoz_test.data.ReporteDavivienda</value>
@@ -216,63 +222,63 @@
                         <value>com.aprendoz_test.data.VistaMatriculasGraficasTotalDia</value>
                         <value>com.aprendoz_test.data.VistaPersonasGrupoFamiliar</value>
                         <value>com.aprendoz_test.data.Vistaasistencia</value>
-                        <value>com.aprendoz_test.data.PadresVistaRecursosId</value>
-                        <value>com.aprendoz_test.data.VProfesorAsignaturaCompletoId</value>
-                        <value>com.aprendoz_test.data.AprLogradosId</value>
-                        <value>com.aprendoz_test.data.PromocionVistaInscAlumnCursoId</value>
-                        <value>com.aprendoz_test.data.AprEsperadosId</value>
-                        <value>com.aprendoz_test.data.PadresVistaCalifFinalId</value>
-                        <value>com.aprendoz_test.data.PadresVistaPersonasId</value>
-                        <value>com.aprendoz_test.data.VistaAlumnosActivosId</value>
-                        <value>com.aprendoz_test.data.InscipcionesVistaAsignaturasId</value>
-                        <value>com.aprendoz_test.data.TmpEnrLogId</value>
-                        <value>com.aprendoz_test.data.VistaAlumnosActivosPrejardinNuevosId</value>
-                        <value>com.aprendoz_test.data.VistaEnvioCorreoId</value>
-                        <value>com.aprendoz_test.data.DocentesVistaPersonasDemograficaId</value>
-                        <value>com.aprendoz_test.data.DocentesVistaAprendizajesAsignaturaId</value>
-                        <value>com.aprendoz_test.data.VistaDashboardNoCalificadosId</value>
-                        <value>com.aprendoz_test.data.AdministracionVistaInscAlumAsigId</value>
-                        <value>com.aprendoz_test.data.ImportacionExtractoId</value>
-                        <value>com.aprendoz_test.data.AccStudentCardAuthorizationId</value>
-                        <value>com.aprendoz_test.data.CalifEstId</value>
-                        <value>com.aprendoz_test.data.TmpBoletin20122013Id</value>
-                        <value>com.aprendoz_test.data.AdministracionVistaAsignaturasCursoId</value>
-                        <value>com.aprendoz_test.data.PersonaEdadId</value>
-                        <value>com.aprendoz_test.data.DocentesVistaAsignaturasId</value>
-                        <value>com.aprendoz_test.data.VistaEventualidadesNotificacionesId</value>
-                        <value>com.aprendoz_test.data.PadresVistaInscAlumAsigId</value>
-                        <value>com.aprendoz_test.data.VProfesorAsignaturaId</value>
-                        <value>com.aprendoz_test.data.PadresVistaActividadesId</value>
-                        <value>com.aprendoz_test.data.VistaEventualidadesNotificacionesFamiliaId</value>
-                        <value>com.aprendoz_test.data.FacturacionSapiensId</value>
-                        <value>com.aprendoz_test.data.InscripcionesVistaInscAlumnCursoId</value>
-                        <value>com.aprendoz_test.data.BisUsersId</value>
-                        <value>com.aprendoz_test.data.DocentesAsistenciaAsistenciasId</value>
-                        <value>com.aprendoz_test.data.InscAlumAsigCursoId</value>
-                        <value>com.aprendoz_test.data.DirectoresDocentesListadoReportesId</value>
-                        <value>com.aprendoz_test.data.ServiciosListadoServiciosAlumnosId</value>
-                        <value>com.aprendoz_test.data.VistaasistenciaId</value>
-                        <value>com.aprendoz_test.data.PadresVistaPersonasPromocionId</value>
-                        <value>com.aprendoz_test.data.VistaPersonasGrupoFamiliarId</value>
-                        <value>com.aprendoz_test.data.AdministracionVistaAsignaturasId</value>
-                        <value>com.aprendoz_test.data.VistaInscAlumnCursoId</value>
-                        <value>com.aprendoz_test.data.DocentesVistaInscAlumnAsigDemograficaId</value>
-                        <value>com.aprendoz_test.data.InscAlumAsigCursoCompletoId</value>
-                        <value>com.aprendoz_test.data.DocentesVistaAsignaturaGradoId</value>
-                        <value>com.aprendoz_test.data.CurriculoGradoId</value>
                         <value>com.aprendoz_test.data.PadresVistaAprendizajesId</value>
-                        <value>com.aprendoz_test.data.DocentesInicioVistaDetallesAccesoId</value>
-                        <value>com.aprendoz_test.data.AdministracionVistaInscAlumnCursoId</value>
-                        <value>com.aprendoz_test.data.DocentesVistaDristribucionAlumnosCursosId</value>
-                        <value>com.aprendoz_test.data.DocentesInscCursoAsignaturaId</value>
-                        <value>com.aprendoz_test.data.CoordinadoresId</value>
-                        <value>com.aprendoz_test.data.VistaDashboardAvanzadosYMagistralesId</value>
-                        <value>com.aprendoz_test.data.CalifEstCopyId</value>
-                        <value>com.aprendoz_test.data.DocentesVistaCalificacionFinalId</value>
-                        <value>com.aprendoz_test.data.VistaMatriculasGraficasTotalDiaId</value>
-                        <value>com.aprendoz_test.data.DocentesVistaInscAlumnAsigId</value>
+                        <value>com.aprendoz_test.data.TmpEnrLogId</value>
+                        <value>com.aprendoz_test.data.AccStudentCardAuthorizationId</value>
+                        <value>com.aprendoz_test.data.ServiciosListadoServiciosAlumnosId</value>
+                        <value>com.aprendoz_test.data.VistaEnvioCorreoId</value>
+                        <value>com.aprendoz_test.data.InscAlumAsigCursoCompletoId</value>
                         <value>com.aprendoz_test.data.AdministracionVistaPersonasId</value>
+                        <value>com.aprendoz_test.data.AdministracionVistaInscAlumnCursoId</value>
+                        <value>com.aprendoz_test.data.AdministracionVistaAsignaturasCursoId</value>
+                        <value>com.aprendoz_test.data.VistaasistenciaId</value>
+                        <value>com.aprendoz_test.data.VistaDashboardNoCalificadosId</value>
+                        <value>com.aprendoz_test.data.DocentesVistaCalificacionFinalId</value>
+                        <value>com.aprendoz_test.data.DocentesAsistenciaAsistenciasId</value>
+                        <value>com.aprendoz_test.data.PadresVistaCalifFinalId</value>
+                        <value>com.aprendoz_test.data.VistaEventualidadesNotificacionesFamiliaId</value>
+                        <value>com.aprendoz_test.data.PadresVistaActividadesId</value>
+                        <value>com.aprendoz_test.data.VProfesorAsignaturaId</value>
+                        <value>com.aprendoz_test.data.DocentesInicioVistaDetallesAccesoId</value>
+                        <value>com.aprendoz_test.data.CalifEstCopyId</value>
+                        <value>com.aprendoz_test.data.TmpBoletin20122013Id</value>
+                        <value>com.aprendoz_test.data.ImportacionExtractoId</value>
+                        <value>com.aprendoz_test.data.DocentesVistaAprendizajesAsignaturaId</value>
+                        <value>com.aprendoz_test.data.AprEsperadosId</value>
+                        <value>com.aprendoz_test.data.InscAlumAsigCursoId</value>
+                        <value>com.aprendoz_test.data.VistaAlumnosActivosId</value>
+                        <value>com.aprendoz_test.data.AdministracionVistaInscAlumAsigId</value>
+                        <value>com.aprendoz_test.data.DocentesVistaPersonasDemograficaId</value>
+                        <value>com.aprendoz_test.data.DocentesVistaDristribucionAlumnosCursosId</value>
+                        <value>com.aprendoz_test.data.PadresVistaRecursosId</value>
+                        <value>com.aprendoz_test.data.DocentesVistaAsignaturasId</value>
+                        <value>com.aprendoz_test.data.DirectoresDocentesListadoReportesId</value>
+                        <value>com.aprendoz_test.data.CoordinadoresId</value>
+                        <value>com.aprendoz_test.data.AdministracionVistaAsignaturasId</value>
+                        <value>com.aprendoz_test.data.VistaAlumnosActivosPrejardinNuevosId</value>
+                        <value>com.aprendoz_test.data.CalifEstId</value>
+                        <value>com.aprendoz_test.data.BisUsersId</value>
+                        <value>com.aprendoz_test.data.DocentesVistaAsignaturaGradoId</value>
+                        <value>com.aprendoz_test.data.FacturacionSapiensId</value>
+                        <value>com.aprendoz_test.data.DocentesVistaInscAlumnAsigDemograficaId</value>
+                        <value>com.aprendoz_test.data.PromocionVistaInscAlumnCursoId</value>
+                        <value>com.aprendoz_test.data.VProfesorAsignaturaCompletoId</value>
+                        <value>com.aprendoz_test.data.CurriculoGradoId</value>
+                        <value>com.aprendoz_test.data.PadresVistaPersonasId</value>
+                        <value>com.aprendoz_test.data.InscipcionesVistaAsignaturasId</value>
+                        <value>com.aprendoz_test.data.PadresVistaInscAlumAsigId</value>
+                        <value>com.aprendoz_test.data.PersonaEdadId</value>
                         <value>com.aprendoz_test.data.CoordinacionId</value>
+                        <value>com.aprendoz_test.data.VistaPersonasGrupoFamiliarId</value>
+                        <value>com.aprendoz_test.data.PadresVistaPersonasPromocionId</value>
+                        <value>com.aprendoz_test.data.DocentesVistaInscAlumnAsigId</value>
+                        <value>com.aprendoz_test.data.DocentesInscCursoAsignaturaId</value>
+                        <value>com.aprendoz_test.data.VistaInscAlumnCursoId</value>
+                        <value>com.aprendoz_test.data.InscripcionesVistaInscAlumnCursoId</value>
+                        <value>com.aprendoz_test.data.AprLogradosId</value>
+                        <value>com.aprendoz_test.data.VistaDashboardAvanzadosYMagistralesId</value>
+                        <value>com.aprendoz_test.data.VistaMatriculasGraficasTotalDiaId</value>
+                        <value>com.aprendoz_test.data.VistaEventualidadesNotificacionesId</value>
                         <value>com.aprendoz_test.data.output.StudentsByCurseBySubjectRtnType</value>
                         <value>com.aprendoz_test.data.output.SendMailHQLRtnType</value>
                         <value>com.aprendoz_test.data.output.CursosRtnType</value>
@@ -295,6 +301,7 @@
                         <value>com.aprendoz_test.data.output.SearchReportesAlumnosRtnType</value>
                         <value>com.aprendoz_test.data.output.SubjectDetailsRtnType</value>
                         <value>com.aprendoz_test.data.output.GetTypeUserRtnType</value>
+                        <value>com.aprendoz_test.data.output.GetEmailsFamiliarGroupRtnType</value>
                         <value>com.aprendoz_test.data.output.GetFullNameRtnType</value>
                         <value>com.aprendoz_test.data.output.SeachEventualidadHQLRtnType</value>
                         <value>com.aprendoz_test.data.output.LsCursosRtnType</value>
@@ -362,6 +369,9 @@
                     </list>
                 </entry>
                 <entry key="securityService">
+                    <list/>
+                </entry>
+                <entry key="sendingMailToParents">
                     <list/>
                 </entry>
                 <entry key="sp_actividad_curso">

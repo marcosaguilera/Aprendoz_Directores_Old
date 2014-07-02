@@ -8,6 +8,7 @@ import com.aprendoz_test.data.output.ComplexSendMailRtnType;
 import com.aprendoz_test.data.output.CursosRtnType;
 import com.aprendoz_test.data.output.EnviarMailEventualidadesRtnType;
 import com.aprendoz_test.data.output.GetCurseByidGradeRtnType;
+import com.aprendoz_test.data.output.GetEmailsFamiliarGroupRtnType;
 import com.aprendoz_test.data.output.GetListStudentsByCurseRtnType;
 import com.aprendoz_test.data.output.GetMaxSubjectByGradeRtnType;
 import com.aprendoz_test.data.output.GetSubjectsByProfileRtnType;
@@ -47,7 +48,7 @@ import com.wavemaker.runtime.service.TypedServiceReturn;
 
 /**
  *  Operations for service "aprendoz_test"
- *  06/11/2014 14:25:54
+ *  06/24/2014 11:05:16
  * 
  */
 @SuppressWarnings("unchecked")
@@ -78,6 +79,10 @@ public class Aprendoz_test
         return ((List<LsCursosRtnType> ) dsMgr.invoke(taskMgr.getQueryTask(), (Aprendoz_testConstants.lsCursosQueryName)));
     }
 
+    public List<GetEmailsFamiliarGroupRtnType> getEmailsFamiliarGroup(Integer pgrupo, Integer ppersona) {
+        return ((List<GetEmailsFamiliarGroupRtnType> ) dsMgr.invoke(taskMgr.getQueryTask(), (Aprendoz_testConstants.getEmailsFamiliarGroupQueryName), pgrupo, ppersona));
+    }
+
     public List<SearchStudentsByComplexNameRtnType> searchStudentsByComplexName(String search) {
         return ((List<SearchStudentsByComplexNameRtnType> ) dsMgr.invoke(taskMgr.getQueryTask(), (Aprendoz_testConstants.searchStudentsByComplexNameQueryName), search));
     }
@@ -97,6 +102,15 @@ public class Aprendoz_test
 
     public List<HQLlsPeriodoRtnType> hQLlsPeriodo() {
         return ((List<HQLlsPeriodoRtnType> ) dsMgr.invoke(taskMgr.getQueryTask(), (Aprendoz_testConstants.HQLlsPeriodoQueryName)));
+    }
+
+    public Integer hql_deleteLearnings(Integer ida) {
+        List<Integer> rtn = ((List<Integer> ) dsMgr.invoke(taskMgr.getQueryTask(), (Aprendoz_testConstants.hql_deleteLearningsQueryName), ida));
+        if (rtn.isEmpty()) {
+            return null;
+        } else {
+            return rtn.get(0);
+        }
     }
 
     public List<HQLlsCursosRtnType> hQLlsCursos() {
@@ -139,15 +153,6 @@ public class Aprendoz_test
 
     public List<HqlPersonaEventualidadRtnType> hqlPersonaEventualidad(Integer ide) {
         return ((List<HqlPersonaEventualidadRtnType> ) dsMgr.invoke(taskMgr.getQueryTask(), (Aprendoz_testConstants.hqlPersonaEventualidadQueryName), ide));
-    }
-
-    public com.aprendoz_test.data.InscAlumActividad getInscAlumActividadById(Integer id) {
-        List<com.aprendoz_test.data.InscAlumActividad> rtn = ((List<com.aprendoz_test.data.InscAlumActividad> ) dsMgr.invoke(taskMgr.getQueryTask(), (Aprendoz_testConstants.getInscAlumActividadByIdQueryName), id));
-        if (rtn.isEmpty()) {
-            return null;
-        } else {
-            return rtn.get(0);
-        }
     }
 
     public com.aprendoz_test.data.output.GetCountGenderFemaleRtnType getCountGenderFemale(Integer sy, Integer curso) {
@@ -195,6 +200,15 @@ public class Aprendoz_test
 
     public com.aprendoz_test.data.output.GetTypeUserRtnType getTypeUser(String usuario) {
         List<com.aprendoz_test.data.output.GetTypeUserRtnType> rtn = ((List<com.aprendoz_test.data.output.GetTypeUserRtnType> ) dsMgr.invoke(taskMgr.getQueryTask(), (Aprendoz_testConstants.getTypeUserQueryName), usuario));
+        if (rtn.isEmpty()) {
+            return null;
+        } else {
+            return rtn.get(0);
+        }
+    }
+
+    public com.aprendoz_test.data.DimensionCurricular getDimensionCurricularById(Integer id) {
+        List<com.aprendoz_test.data.DimensionCurricular> rtn = ((List<com.aprendoz_test.data.DimensionCurricular> ) dsMgr.invoke(taskMgr.getQueryTask(), (Aprendoz_testConstants.getDimensionCurricularByIdQueryName), id));
         if (rtn.isEmpty()) {
             return null;
         } else {

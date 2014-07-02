@@ -5,7 +5,7 @@ package com.aprendoz_test.data;
 
 /**
  *  aprendoz_test.ImportacionExtracto
- *  05/19/2014 15:25:28
+ *  06/13/2014 12:51:22
  * 
  */
 public class ImportacionExtracto {

@@ -1,0 +1,15 @@
+{
+	"methods": [{
+		"name": "enviarNotificacionAlmuerzo",
+		"parameters": [{
+			"name": "correopadre",
+			"type": "java.lang.String"
+		}, {
+			"name": "correomadre",
+			"type": "java.lang.String"
+		}],
+		"returnType": "java.lang.String"
+	}],
+	"serviceType": "JSON-RPC",
+	"serviceURL": "sendingMailToParents.json"
+}

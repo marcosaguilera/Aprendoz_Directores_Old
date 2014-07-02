@@ -8,7 +8,7 @@ import java.util.Set;
 
 /**
  *  aprendoz_test.Persona
- *  05/19/2014 15:25:28
+ *  06/13/2014 12:51:22
  * 
  */
 public class Persona {
@@ -79,12 +79,14 @@ public class Persona {
     private Integer inscAlumCursoIdInscAlumCurso;
     private Set<com.aprendoz_test.data.SeguridadPersonasAccesos> seguridadPersonasAccesoses = new HashSet<com.aprendoz_test.data.SeguridadPersonasAccesos>();
     private Set<com.aprendoz_test.data.InscAlumAprendizaje> inscAlumAprendizajes = new HashSet<com.aprendoz_test.data.InscAlumAprendizaje>();
+    private Set<com.aprendoz_test.data.PromocionCopy> promocionCopies = new HashSet<com.aprendoz_test.data.PromocionCopy>();
     private Set<com.aprendoz_test.data.TransporteInscAlumTransporte> transporteInscAlumTransportes = new HashSet<com.aprendoz_test.data.TransporteInscAlumTransporte>();
-    private Set<com.aprendoz_test.data.CalificacionFinal> calificacionFinals = new HashSet<com.aprendoz_test.data.CalificacionFinal>();
     private Set<com.aprendoz_test.data.InscComentariosAlumnos> inscComentariosAlumnoses = new HashSet<com.aprendoz_test.data.InscComentariosAlumnos>();
-    private Set<com.aprendoz_test.data.InscAlumActividad> inscAlumActividads = new HashSet<com.aprendoz_test.data.InscAlumActividad>();
+    private Set<com.aprendoz_test.data.CalificacionFinal> calificacionFinals = new HashSet<com.aprendoz_test.data.CalificacionFinal>();
     private Set<com.aprendoz_test.data.InscDirectorNivel> inscDirectorNivels = new HashSet<com.aprendoz_test.data.InscDirectorNivel>();
+    private Set<com.aprendoz_test.data.InscAlumActividad> inscAlumActividads = new HashSet<com.aprendoz_test.data.InscAlumActividad>();
     private Set<com.aprendoz_test.data.InscPersonaGrupoFamiliar> inscPersonaGrupoFamiliars = new HashSet<com.aprendoz_test.data.InscPersonaGrupoFamiliar>();
+    private Set<com.aprendoz_test.data.ActualizacionDatosPersonaCopy> actualizacionDatosPersonaCopies = new HashSet<com.aprendoz_test.data.ActualizacionDatosPersonaCopy>();
     private Set<com.aprendoz_test.data.EventualidadPersonas> eventualidadPersonases = new HashSet<com.aprendoz_test.data.EventualidadPersonas>();
     private Set<com.aprendoz_test.data.AccStudentCard> accStudentCards = new HashSet<com.aprendoz_test.data.AccStudentCard>();
     private Set<com.aprendoz_test.data.CoordinacionDeGrupo> coordinacionDeGrupos = new HashSet<com.aprendoz_test.data.CoordinacionDeGrupo>();
@@ -109,6 +111,7 @@ public class Persona {
     private Set<com.aprendoz_test.data.Matricula> matriculas = new HashSet<com.aprendoz_test.data.Matricula>();
     private Set<com.aprendoz_test.data.InscAlumAsigCopy3> inscAlumAsigCopy3s = new HashSet<com.aprendoz_test.data.InscAlumAsigCopy3>();
     private Set<com.aprendoz_test.data.InscAlumAsig> inscAlumAsigs = new HashSet<com.aprendoz_test.data.InscAlumAsig>();
+    private Set<com.aprendoz_test.data.GestionEncuestas> gestionEncuestases = new HashSet<com.aprendoz_test.data.GestionEncuestas>();
     private Set<com.aprendoz_test.data.InscAlumCosto> inscAlumCostos = new HashSet<com.aprendoz_test.data.InscAlumCosto>();
     private Set<com.aprendoz_test.data.InscAlumAsigCopy2> inscAlumAsigCopy2s = new HashSet<com.aprendoz_test.data.InscAlumAsigCopy2>();
     private Set<com.aprendoz_test.data.Coordinacion> coordinacions = new HashSet<com.aprendoz_test.data.Coordinacion>();
@@ -180,7 +183,7 @@ public class Persona {
         this.inscAlumCursoIdInscAlumCurso = inscAlumCursoIdInscAlumCurso;
     }
 
-    public Persona(Integer idPersona, Pais pais, TipoPersona tipoPersona, GrupoFamiliar grupoFamiliar, String nombreLdap, String clave, String codigo, String email, Boolean matriculado, Boolean activoRetirado, String apellido1, String apellido2, String nombre1, String nombre2, String nivelAcademico, Date fechaNacimiento, String direccionResidencia, String telefono, String telefono2, String religion, String tipoDocumento, String noDocumento, String nacionalidad, String lugarNacimientoDepartamento, String lugarNacimientoMunicipio, String lugarExpedicionMunicipio, String lugarExpedicionDepartamento, String paisDomicilio, String barrio, String codigoPostal, String municipio, String departamento, String saludPrepagada, String eps, String numeroContratoSalud, String clinicaEmergencia, String viveCon, String tipoSangre, String sexo, String codigoFamilia, Date fechaIngreso, String gradoIngreso, String cursoIngreso, Date fechaRetiro, String comentarioRetiro, String colegioAnterior, Boolean hijoDeExalumno, String nombrePadreExalumno, String promocion, String numeroTarjetaCredito, String profesion, String empresa, String cargo, String celular, String direccionOficina, String telefonoOficina, String parentesco, String rutaM, String rutaT, Boolean tomaAlmuerzo, Boolean tomaMediasNueves, Boolean tomaSeguroAccidentes, String noPlaqueta, Integer inscAlumCursoIdInscAlumCurso, Set<com.aprendoz_test.data.SeguridadPersonasAccesos> seguridadPersonasAccesoses, Set<com.aprendoz_test.data.InscAlumAprendizaje> inscAlumAprendizajes, Set<com.aprendoz_test.data.TransporteInscAlumTransporte> transporteInscAlumTransportes, Set<com.aprendoz_test.data.CalificacionFinal> calificacionFinals, Set<com.aprendoz_test.data.InscComentariosAlumnos> inscComentariosAlumnoses, Set<com.aprendoz_test.data.InscAlumActividad> inscAlumActividads, Set<com.aprendoz_test.data.InscDirectorNivel> inscDirectorNivels, Set<com.aprendoz_test.data.InscPersonaGrupoFamiliar> inscPersonaGrupoFamiliars, Set<com.aprendoz_test.data.EventualidadPersonas> eventualidadPersonases, Set<com.aprendoz_test.data.AccStudentCard> accStudentCards, Set<com.aprendoz_test.data.CoordinacionDeGrupo> coordinacionDeGrupos, Set<com.aprendoz_test.data.InscAlumCurso> inscAlumCursos, Set<com.aprendoz_test.data.Asistencia> asistencias, Set<com.aprendoz_test.data.InscCoordinadoresCurso> inscCoordinadoresCursos, Set<com.aprendoz_test.data.Logeventosaprendoz> logeventosaprendozs, Set<com.aprendoz_test.data.LogIngresoCarne> logIngresoCarnes, Set<com.aprendoz_test.data.Promocion> promocions, Set<com.aprendoz_test.data.InscCursoAsig> inscCursoAsigs, Set<com.aprendoz_test.data.InscCursoAsigCopy> inscCursoAsigCopies, Set<com.aprendoz_test.data.InscAlumCostoCopy> inscAlumCostoCopies, Set<com.aprendoz_test.data.ActualizacionDatosPersona> actualizacionDatosPersonas, Set<com.aprendoz_test.data.FichaMedica> fichaMedicas, Set<com.aprendoz_test.data.TransporteNovedades> transporteNovedadeses, Set<com.aprendoz_test.data.LogDocentes> logDocenteses, Set<com.aprendoz_test.data.PersonaCarne> personaCarnes, Set<com.aprendoz_test.data.InscAlumAsigCopy> inscAlumAsigCopies, Set<com.aprendoz_test.data.PerfilPersonaImg> perfilPersonaImgs, Set<com.aprendoz_test.data.InscPersonaEduCom> inscPersonaEduComs, Set<com.aprendoz_test.data.Coordinadores> coordinadoreses, Set<com.aprendoz_test.data.Matricula> matriculas, Set<com.aprendoz_test.data.InscAlumAsigCopy3> inscAlumAsigCopy3s, Set<com.aprendoz_test.data.InscAlumAsig> inscAlumAsigs, Set<com.aprendoz_test.data.InscAlumCosto> inscAlumCostos, Set<com.aprendoz_test.data.InscAlumAsigCopy2> inscAlumAsigCopy2s, Set<com.aprendoz_test.data.Coordinacion> coordinacions) {
+    public Persona(Integer idPersona, Pais pais, TipoPersona tipoPersona, GrupoFamiliar grupoFamiliar, String nombreLdap, String clave, String codigo, String email, Boolean matriculado, Boolean activoRetirado, String apellido1, String apellido2, String nombre1, String nombre2, String nivelAcademico, Date fechaNacimiento, String direccionResidencia, String telefono, String telefono2, String religion, String tipoDocumento, String noDocumento, String nacionalidad, String lugarNacimientoDepartamento, String lugarNacimientoMunicipio, String lugarExpedicionMunicipio, String lugarExpedicionDepartamento, String paisDomicilio, String barrio, String codigoPostal, String municipio, String departamento, String saludPrepagada, String eps, String numeroContratoSalud, String clinicaEmergencia, String viveCon, String tipoSangre, String sexo, String codigoFamilia, Date fechaIngreso, String gradoIngreso, String cursoIngreso, Date fechaRetiro, String comentarioRetiro, String colegioAnterior, Boolean hijoDeExalumno, String nombrePadreExalumno, String promocion, String numeroTarjetaCredito, String profesion, String empresa, String cargo, String celular, String direccionOficina, String telefonoOficina, String parentesco, String rutaM, String rutaT, Boolean tomaAlmuerzo, Boolean tomaMediasNueves, Boolean tomaSeguroAccidentes, String noPlaqueta, Integer inscAlumCursoIdInscAlumCurso, Set<com.aprendoz_test.data.SeguridadPersonasAccesos> seguridadPersonasAccesoses, Set<com.aprendoz_test.data.InscAlumAprendizaje> inscAlumAprendizajes, Set<com.aprendoz_test.data.PromocionCopy> promocionCopies, Set<com.aprendoz_test.data.TransporteInscAlumTransporte> transporteInscAlumTransportes, Set<com.aprendoz_test.data.InscComentariosAlumnos> inscComentariosAlumnoses, Set<com.aprendoz_test.data.CalificacionFinal> calificacionFinals, Set<com.aprendoz_test.data.InscDirectorNivel> inscDirectorNivels, Set<com.aprendoz_test.data.InscAlumActividad> inscAlumActividads, Set<com.aprendoz_test.data.InscPersonaGrupoFamiliar> inscPersonaGrupoFamiliars, Set<com.aprendoz_test.data.ActualizacionDatosPersonaCopy> actualizacionDatosPersonaCopies, Set<com.aprendoz_test.data.EventualidadPersonas> eventualidadPersonases, Set<com.aprendoz_test.data.AccStudentCard> accStudentCards, Set<com.aprendoz_test.data.CoordinacionDeGrupo> coordinacionDeGrupos, Set<com.aprendoz_test.data.InscAlumCurso> inscAlumCursos, Set<com.aprendoz_test.data.Asistencia> asistencias, Set<com.aprendoz_test.data.InscCoordinadoresCurso> inscCoordinadoresCursos, Set<com.aprendoz_test.data.Logeventosaprendoz> logeventosaprendozs, Set<com.aprendoz_test.data.LogIngresoCarne> logIngresoCarnes, Set<com.aprendoz_test.data.Promocion> promocions, Set<com.aprendoz_test.data.InscCursoAsig> inscCursoAsigs, Set<com.aprendoz_test.data.InscCursoAsigCopy> inscCursoAsigCopies, Set<com.aprendoz_test.data.InscAlumCostoCopy> inscAlumCostoCopies, Set<com.aprendoz_test.data.ActualizacionDatosPersona> actualizacionDatosPersonas, Set<com.aprendoz_test.data.FichaMedica> fichaMedicas, Set<com.aprendoz_test.data.TransporteNovedades> transporteNovedadeses, Set<com.aprendoz_test.data.LogDocentes> logDocenteses, Set<com.aprendoz_test.data.PersonaCarne> personaCarnes, Set<com.aprendoz_test.data.InscAlumAsigCopy> inscAlumAsigCopies, Set<com.aprendoz_test.data.PerfilPersonaImg> perfilPersonaImgs, Set<com.aprendoz_test.data.InscPersonaEduCom> inscPersonaEduComs, Set<com.aprendoz_test.data.Coordinadores> coordinadoreses, Set<com.aprendoz_test.data.Matricula> matriculas, Set<com.aprendoz_test.data.InscAlumAsigCopy3> inscAlumAsigCopy3s, Set<com.aprendoz_test.data.InscAlumAsig> inscAlumAsigs, Set<com.aprendoz_test.data.GestionEncuestas> gestionEncuestases, Set<com.aprendoz_test.data.InscAlumCosto> inscAlumCostos, Set<com.aprendoz_test.data.InscAlumAsigCopy2> inscAlumAsigCopy2s, Set<com.aprendoz_test.data.Coordinacion> coordinacions) {
         this.idPersona = idPersona;
         this.pais = pais;
         this.tipoPersona = tipoPersona;
@@ -247,12 +250,14 @@ public class Persona {
         this.inscAlumCursoIdInscAlumCurso = inscAlumCursoIdInscAlumCurso;
         this.seguridadPersonasAccesoses = seguridadPersonasAccesoses;
         this.inscAlumAprendizajes = inscAlumAprendizajes;
+        this.promocionCopies = promocionCopies;
         this.transporteInscAlumTransportes = transporteInscAlumTransportes;
-        this.calificacionFinals = calificacionFinals;
         this.inscComentariosAlumnoses = inscComentariosAlumnoses;
-        this.inscAlumActividads = inscAlumActividads;
+        this.calificacionFinals = calificacionFinals;
         this.inscDirectorNivels = inscDirectorNivels;
+        this.inscAlumActividads = inscAlumActividads;
         this.inscPersonaGrupoFamiliars = inscPersonaGrupoFamiliars;
+        this.actualizacionDatosPersonaCopies = actualizacionDatosPersonaCopies;
         this.eventualidadPersonases = eventualidadPersonases;
         this.accStudentCards = accStudentCards;
         this.coordinacionDeGrupos = coordinacionDeGrupos;
@@ -277,6 +282,7 @@ public class Persona {
         this.matriculas = matriculas;
         this.inscAlumAsigCopy3s = inscAlumAsigCopy3s;
         this.inscAlumAsigs = inscAlumAsigs;
+        this.gestionEncuestases = gestionEncuestases;
         this.inscAlumCostos = inscAlumCostos;
         this.inscAlumAsigCopy2s = inscAlumAsigCopy2s;
         this.coordinacions = coordinacions;
@@ -810,20 +816,20 @@ public class Persona {
         this.inscAlumAprendizajes = inscAlumAprendizajes;
     }
 
+    public Set<com.aprendoz_test.data.PromocionCopy> getPromocionCopies() {
+        return promocionCopies;
+    }
+
+    public void setPromocionCopies(Set<com.aprendoz_test.data.PromocionCopy> promocionCopies) {
+        this.promocionCopies = promocionCopies;
+    }
+
     public Set<com.aprendoz_test.data.TransporteInscAlumTransporte> getTransporteInscAlumTransportes() {
         return transporteInscAlumTransportes;
     }
 
     public void setTransporteInscAlumTransportes(Set<com.aprendoz_test.data.TransporteInscAlumTransporte> transporteInscAlumTransportes) {
         this.transporteInscAlumTransportes = transporteInscAlumTransportes;
-    }
-
-    public Set<com.aprendoz_test.data.CalificacionFinal> getCalificacionFinals() {
-        return calificacionFinals;
-    }
-
-    public void setCalificacionFinals(Set<com.aprendoz_test.data.CalificacionFinal> calificacionFinals) {
-        this.calificacionFinals = calificacionFinals;
     }
 
     public Set<com.aprendoz_test.data.InscComentariosAlumnos> getInscComentariosAlumnoses() {
@@ -834,12 +840,12 @@ public class Persona {
         this.inscComentariosAlumnoses = inscComentariosAlumnoses;
     }
 
-    public Set<com.aprendoz_test.data.InscAlumActividad> getInscAlumActividads() {
-        return inscAlumActividads;
+    public Set<com.aprendoz_test.data.CalificacionFinal> getCalificacionFinals() {
+        return calificacionFinals;
     }
 
-    public void setInscAlumActividads(Set<com.aprendoz_test.data.InscAlumActividad> inscAlumActividads) {
-        this.inscAlumActividads = inscAlumActividads;
+    public void setCalificacionFinals(Set<com.aprendoz_test.data.CalificacionFinal> calificacionFinals) {
+        this.calificacionFinals = calificacionFinals;
     }
 
     public Set<com.aprendoz_test.data.InscDirectorNivel> getInscDirectorNivels() {
@@ -850,12 +856,28 @@ public class Persona {
         this.inscDirectorNivels = inscDirectorNivels;
     }
 
+    public Set<com.aprendoz_test.data.InscAlumActividad> getInscAlumActividads() {
+        return inscAlumActividads;
+    }
+
+    public void setInscAlumActividads(Set<com.aprendoz_test.data.InscAlumActividad> inscAlumActividads) {
+        this.inscAlumActividads = inscAlumActividads;
+    }
+
     public Set<com.aprendoz_test.data.InscPersonaGrupoFamiliar> getInscPersonaGrupoFamiliars() {
         return inscPersonaGrupoFamiliars;
     }
 
     public void setInscPersonaGrupoFamiliars(Set<com.aprendoz_test.data.InscPersonaGrupoFamiliar> inscPersonaGrupoFamiliars) {
         this.inscPersonaGrupoFamiliars = inscPersonaGrupoFamiliars;
+    }
+
+    public Set<com.aprendoz_test.data.ActualizacionDatosPersonaCopy> getActualizacionDatosPersonaCopies() {
+        return actualizacionDatosPersonaCopies;
+    }
+
+    public void setActualizacionDatosPersonaCopies(Set<com.aprendoz_test.data.ActualizacionDatosPersonaCopy> actualizacionDatosPersonaCopies) {
+        this.actualizacionDatosPersonaCopies = actualizacionDatosPersonaCopies;
     }
 
     public Set<com.aprendoz_test.data.EventualidadPersonas> getEventualidadPersonases() {
@@ -1048,6 +1070,14 @@ public class Persona {
 
     public void setInscAlumAsigs(Set<com.aprendoz_test.data.InscAlumAsig> inscAlumAsigs) {
         this.inscAlumAsigs = inscAlumAsigs;
+    }
+
+    public Set<com.aprendoz_test.data.GestionEncuestas> getGestionEncuestases() {
+        return gestionEncuestases;
+    }
+
+    public void setGestionEncuestases(Set<com.aprendoz_test.data.GestionEncuestas> gestionEncuestases) {
+        this.gestionEncuestases = gestionEncuestases;
     }
 
     public Set<com.aprendoz_test.data.InscAlumCosto> getInscAlumCostos() {

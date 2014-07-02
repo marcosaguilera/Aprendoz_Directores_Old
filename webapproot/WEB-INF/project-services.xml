@@ -23,5 +23,6 @@
     <import resource="classpath:retirados.spring.xml"/>
     <import resource="classpath:com/wavemaker/runtime/service/runtimeServiceBean.xml"/>
     <import resource="classpath:securityService.spring.xml"/>
+    <import resource="classpath:sendingMailToParents.spring.xml"/>
     <import resource="classpath:sp_actividad_curso.spring.xml"/>
 </beans>

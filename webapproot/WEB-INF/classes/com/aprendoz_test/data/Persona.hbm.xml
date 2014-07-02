@@ -144,10 +144,10 @@
             <column name="numero_tarjeta_credito"/>
         </property>
         <property name="profesion" type="string">
-            <column name="Profesion" length="45"/>
+            <column name="Profesion" length="500"/>
         </property>
         <property name="empresa" type="string">
-            <column name="Empresa" length="45"/>
+            <column name="Empresa" length="500"/>
         </property>
         <property name="cargo" type="string">
             <column name="Cargo" length="45"/>
@@ -206,17 +206,17 @@
             </key>
             <one-to-many class="com.aprendoz_test.data.InscAlumAprendizaje"/>
         </set>
+        <set name="promocionCopies" inverse="true">
+            <key>
+                <column name="Persona_Id_Persona" not-null="true"/>
+            </key>
+            <one-to-many class="com.aprendoz_test.data.PromocionCopy"/>
+        </set>
         <set name="transporteInscAlumTransportes" inverse="true">
             <key>
                 <column name="Persona_Id_Persona" not-null="true"/>
             </key>
             <one-to-many class="com.aprendoz_test.data.TransporteInscAlumTransporte"/>
-        </set>
-        <set name="calificacionFinals" inverse="true">
-            <key>
-                <column name="Persona_Id_Persona"/>
-            </key>
-            <one-to-many class="com.aprendoz_test.data.CalificacionFinal"/>
         </set>
         <set name="inscComentariosAlumnoses" inverse="true">
             <key>
@@ -224,11 +224,11 @@
             </key>
             <one-to-many class="com.aprendoz_test.data.InscComentariosAlumnos"/>
         </set>
-        <set name="inscAlumActividads" inverse="true">
+        <set name="calificacionFinals" inverse="true">
             <key>
-                <column name="Persona_Id_Persona" not-null="true"/>
+                <column name="Persona_Id_Persona"/>
             </key>
-            <one-to-many class="com.aprendoz_test.data.InscAlumActividad"/>
+            <one-to-many class="com.aprendoz_test.data.CalificacionFinal"/>
         </set>
         <set name="inscDirectorNivels" inverse="true">
             <key>
@@ -236,11 +236,23 @@
             </key>
             <one-to-many class="com.aprendoz_test.data.InscDirectorNivel"/>
         </set>
+        <set name="inscAlumActividads" inverse="true">
+            <key>
+                <column name="Persona_Id_Persona" not-null="true"/>
+            </key>
+            <one-to-many class="com.aprendoz_test.data.InscAlumActividad"/>
+        </set>
         <set name="inscPersonaGrupoFamiliars" inverse="true">
             <key>
                 <column name="Persona_Id_Persona" not-null="true"/>
             </key>
             <one-to-many class="com.aprendoz_test.data.InscPersonaGrupoFamiliar"/>
+        </set>
+        <set name="actualizacionDatosPersonaCopies" inverse="true">
+            <key>
+                <column name="persona_id_persona" not-null="true"/>
+            </key>
+            <one-to-many class="com.aprendoz_test.data.ActualizacionDatosPersonaCopy"/>
         </set>
         <set name="eventualidadPersonases" inverse="true">
             <key>
@@ -385,6 +397,12 @@
                 <column name="Persona_Id_Persona" not-null="true"/>
             </key>
             <one-to-many class="com.aprendoz_test.data.InscAlumAsig"/>
+        </set>
+        <set name="gestionEncuestases" inverse="true">
+            <key>
+                <column name="persona_id_persona" not-null="true"/>
+            </key>
+            <one-to-many class="com.aprendoz_test.data.GestionEncuestas"/>
         </set>
         <set name="inscAlumCostos" inverse="true">
             <key>

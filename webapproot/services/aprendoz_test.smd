@@ -115,19 +115,29 @@
 		}],
 		"returnType": "[com.aprendoz_test.data.output.GetCurseByidGradeRtnType]"
 	}, {
+		"name": "getDimensionCurricularById",
+		"parameters": [{
+			"name": "id",
+			"type": "java.lang.Integer"
+		}],
+		"returnType": "com.aprendoz_test.data.DimensionCurricular"
+	}, {
+		"name": "getEmailsFamiliarGroup",
+		"parameters": [{
+			"name": "pgrupo",
+			"type": "java.lang.Integer"
+		}, {
+			"name": "ppersona",
+			"type": "java.lang.Integer"
+		}],
+		"returnType": "[com.aprendoz_test.data.output.GetEmailsFamiliarGroupRtnType]"
+	}, {
 		"name": "getFullName",
 		"parameters": [{
 			"name": "usuario",
 			"type": "java.lang.String"
 		}],
 		"returnType": "com.aprendoz_test.data.output.GetFullNameRtnType"
-	}, {
-		"name": "getInscAlumActividadById",
-		"parameters": [{
-			"name": "id",
-			"type": "java.lang.Integer"
-		}],
-		"returnType": "com.aprendoz_test.data.InscAlumActividad"
 	}, {
 		"name": "getListStudentsByCurse",
 		"parameters": [{
@@ -202,6 +212,13 @@
 			"type": "java.lang.Integer"
 		}],
 		"returnType": "[com.aprendoz_test.data.output.Hql_aprendizaje_detallesRtnType]"
+	}, {
+		"name": "hql_deleteLearnings",
+		"parameters": [{
+			"name": "ida",
+			"type": "java.lang.Integer"
+		}],
+		"returnType": "java.lang.Integer"
 	}, {
 		"name": "hql_tipo_eventualidad",
 		"parameters": null,

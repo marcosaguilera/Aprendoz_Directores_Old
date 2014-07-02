@@ -1255,7 +1255,7 @@ otrasmetasLiveForm1BeginInsert: function(inSender) {
     } 
   },
   promocion_butt_limpiarClick: function(inSender, inEvent) {
-      this.promocion_sel_ao_escolar.setDataValue(3);
+      this.promocion_sel_ao_escolar.setDataValue(4);
       this.promocion_sel_grado.clear();
       this.promocion_sel_curso.clear();
       this.l_promocion_insc_alum_curso.clearData();
@@ -1263,7 +1263,7 @@ otrasmetasLiveForm1BeginInsert: function(inSender) {
   },
   
   a_lista_sySuccess: function(inSender, inDeprecated) {
-      this.promocion_sel_ao_escolar.setDataValue(3);
+      this.promocion_sel_ao_escolar.setDataValue(4);
   },
   
   a_getUserNameSuccess: function(inSender, inDeprecated) {
@@ -2767,11 +2767,37 @@ otrasmetasLiveForm1BeginInsert: function(inSender) {
                pass: clave,
                uri: "/aprendozreports/DOC008",
                format: formatType,
-               params: { idpersona: idpersonap}
+               params: { idpersona: idpersonap }
          }
        });
        inEvent.preventDefault(); 
   },  
   
+  promocionLiveForm1Success: function(inSender, inData) {
+     var aca= main.promocionDataGrid1.selectedItem.data.autorizadoAcademico;
+     var cra= main.promocionDataGrid1.selectedItem.data.autorizadoCra;
+     var fra= main.promocionDataGrid1.selectedItem.data.autorizadoFinanciera; 
+     var idp= main.promocion_container_datag_personas_x_curso.selectedItem.data.id.data.idPersona;
+     var idg= main.promocion_container_datag_personas_x_curso.selectedItem.data.id.data.grupoFamiliarIdGrupoFamiliar;
+    
+     if(aca==true && cra==true && fra==true){
+      this.infoEmailsGroup.input.setValue("ppersona",idp);
+      this.infoEmailsGroup.input.setValue("pgrupo",idg);
+      this.infoEmailsGroup.update();
+     }else{/*nothing to do here!!!!*/}
+  },
+  infoEmailsGroupSuccess: function(inSender, inDeprecated) { 
+      var correoma= main.infoEmailsGroup.getItem(0).data.correomama;
+      var correopa= main.infoEmailsGroup.getItem(0).data.correopapa;
+      this.sendingEmailJS.input.setValue("correomadre",correoma);
+      this.sendingEmailJS.input.setValue("correopadre",correopa);
+      this.sendingEmailJS.update();       
+  },
+  sendingEmailJSSuccess: function(inSender, inDeprecated) {
+      alert("****Notificación enviada exitosamente.");
+  },
+  sendingEmailJSError: function(inSender, inError) {
+      alert("****Error al enviar la notificación, intente nuevamente o comuníquese con el administrador del sistema.");
+  },
   _end: 0
 });

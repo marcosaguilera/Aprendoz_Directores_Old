@@ -19,6 +19,11 @@ WHERE e.idEventualidad=:ide
 FROM Asignatura a INNER JOIN a.grado g INNER JOIN a.sy sy
 WHERE sy.idSy=:_sy AND g.idGrado=:_grado
     </query>
+    <query name="cursos">
+        <query-param name="idg" type="java.lang.Integer"/>
+        SELECT g.idGrado as idgrado, c.idCurso as idcurso, c.curso as curso FROM Grado g INNER JOIN g.cursos c
+WHERE g.idGrado=:idg and c.idCurso&gt;=10101 and c.idCurso&lt;=40403
+    </query>
     <query name="sendMailHQLOne">
         <query-param name="ide" type="java.lang.Integer"/>
         <query-param name="ppersona" type="java.lang.Integer"/>
@@ -182,6 +187,10 @@ WHERE se.idSubtipoEventualidad=:id
 FROM Curso c
 WHERE c.idCurso &gt;= 10101 and c.idCurso &lt;=40403
     </query>
+    <query name="deleteInscCursAsig">
+        <query-param name="icaId" type="java.lang.Long"/>
+        DELETE FROM InscCursoAsig ica WHERE ica.idInscCursoAsig=:icaId
+    </query>
     <query name="crearPlan">
         <query-param name="p1" type="java.lang.String"/>
         <query-param name="p2" type="java.lang.String"/>
@@ -190,6 +199,18 @@ WHERE c.idCurso &gt;= 10101 and c.idCurso &lt;=40403
         <query-param name="id" type="java.lang.Integer"/>
         UPDATE Eventualidades e SET e.pregunta1=:p1, e.pregunta2=:p2, e.pregunta3=:p3, e.fechaPlanReparacion=:fecha_plan
 WHERE e.idEventualidad=:id
+    </query>
+    <query name="subjectsByTeachersByCurseByPer">
+        <query-param name="idper" type="java.lang.Integer"/>
+        <query-param name="idc" type="java.lang.Integer"/>
+        SELECT
+CONCAT(p.apellido1,&apos; &apos;,p.apellido2,&apos; &apos;,p.nombre1,&apos; &apos;, p.nombre2) as nombre_completo,
+a.asignatura as asignatura,
+per.periodo as periodo,
+ica.idInscCursoAsig as id,
+c.curso as curso
+FROM InscCursoAsig ica INNER JOIN ica.curso c INNER JOIN ica.asignatura a INNER JOIN ica.persona p INNER JOIN ica.periodo per INNER JOIN per.sy syper
+WHERE c.idCurso=:idc AND syper.idSy=:idper
     </query>
     <query name="hqlPersonaEventualidad">
         <query-param name="ide" type="java.lang.Integer"/>
@@ -263,6 +284,10 @@ ORDER BY c.idCurso desc,p.apellido1,p.apellido2,p.nombre1,p.nombre2
         SELECT te.idTipoEventualidad as id, te.tipoEventualidad as tipo
 FROM TipoEventualidad te
     </query>
+    <query name="deleteSubject">
+        <query-param name="idasignatura" type="java.lang.Integer"/>
+        DELETE FROM Asignatura a WHERE a.idAsignatura=:idasignatura
+    </query>
     <query name="getSyByCurDate">
         <query-param name="f1" type="java.util.Date"/>
         SELECT
@@ -272,10 +297,6 @@ DATE(sy.fechaDesde),
 DATE(sy.fechaHasta)
 FROM Sy sy
 WHERE :f1 BETWEEN sy.fechaDesde AND sy.fechaHasta
-    </query>
-    <query name="deleteSubject">
-        <query-param name="idasignatura" type="java.lang.Integer"/>
-        DELETE FROM Asignatura a WHERE a.idAsignatura=:idasignatura
     </query>
     <query name="getTypeUser">
         <query-param name="usuario" type="java.lang.String"/>
@@ -412,6 +433,25 @@ FROM InscAlumCurso i INNER JOIN i.curso c INNER JOIN i.persona pc INNER JOIN c.g
 WHERE e.idEventualidad=:ide AND c.idCurso &gt;=10101 AND c.idCurso &lt;=40403 AND pc.idPersona=alumno.idPersona AND nidn.idNivel=n.idNivel and sy.idSy=4 and c.idCurso=cc.idCurso AND sycp.idSy=4
 GROUP BY alumno.idPersona
     </query>
+    <query name="hql_aprendizaje_detalles">
+        <query-param name="idaprendizajes" type="java.lang.Integer"/>
+        SELECT
+aa.idAprendizaje as idAprendizaje,
+aa.fechaEsperada as fechaEsperada,
+aa.aprendizaje as aprendizaje,
+aa.learning as learning,
+aa.peso as peso,
+aa.ejeIdEje as ejeIdEje,
+aa.eje2IdEje as eje2IdEje,
+aa.eje3IdEje as eje3IdEje,
+i.idInteligencia as idInteligencia,
+dc.idDimension as idDimension,
+a.idAsignatura as idAsignatura,
+n.idNivelEsperado as idNivelEsperado,
+dcr.idDimension as idDimension
+FROM AprendizajesAsignaturas aa INNER JOIN aa.inteligencia i INNER JOIN  aa.dimensionComprension dc INNER JOIN aa.asignatura a INNER JOIN aa.nivelEsperado n INNER JOIN aa.dimensionCurricular dcr
+WHERE aa.idAprendizaje=:idaprendizajes
+    </query>
     <query name="showInformationUser">
         <query-param name="user" type="java.lang.String"/>
         SELECT
@@ -430,6 +470,36 @@ tipo.idTipoPersona as idtipo
 FROM Persona AS p
 INNER JOIN p.tipoPersona AS tipo
 WHERE p.nombreLdap=:user
+    </query>
+    <query name="searchStudentsByComplexNameNoStudents">
+        <query-param name="search" type="java.lang.String"/>
+        SELECT p.codigo as codigo, CONCAT(p.apellido1,&apos; &apos;,p.apellido2,&apos; &apos;,p.nombre1,&apos; &apos;,p.nombre2) as nombreCompleto, gf.idGrupoFamiliar as idgf, gf.grupoFamiliar as grupoFamiliar, p.idPersona as idpersona
+FROM Persona as p INNER JOIN p.grupoFamiliar as gf INNER JOIN p.tipoPersona
+WHERE p.tipoPersona&gt;3 AND
+(CONCAT(p.apellido1,&apos; &apos;,p.apellido2,&apos; &apos;,p.nombre1,&apos; &apos;,p.nombre2) LIKE &apos;%&apos; || :search || &apos;%&apos; OR
+CONCAT(p.apellido2,&apos; &apos;,p.apellido1,&apos; &apos;,p.nombre1,&apos; &apos;,p.nombre2) LIKE &apos;%&apos; || :search || &apos;%&apos; OR
+CONCAT(p.apellido2,&apos; &apos;,p.apellido1,&apos; &apos;,p.nombre2,&apos; &apos;,p.nombre1) LIKE &apos;%&apos; || :search || &apos;%&apos; OR
+CONCAT(p.apellido1,&apos; &apos;,p.apellido2,&apos; &apos;,p.nombre2,&apos; &apos;,p.nombre1) LIKE &apos;%&apos; || :search || &apos;%&apos; OR
+CONCAT(p.nombre1,&apos; &apos;,p.nombre2,&apos; &apos;,p.apellido1,&apos; &apos;,p.apellido2) LIKE &apos;%&apos; || :search || &apos;%&apos; OR
+CONCAT(p.nombre1,&apos; &apos;,p.nombre2,&apos; &apos;,p.apellido1,&apos; &apos;,p.apellido2) LIKE &apos;%&apos; || :search || &apos;%&apos; OR
+CONCAT(p.nombre2,&apos; &apos;,p.nombre1,&apos; &apos;,p.apellido1,&apos; &apos;,p.apellido2) LIKE &apos;%&apos; || :search || &apos;%&apos; OR
+CONCAT(p.nombre2,&apos; &apos;,p.nombre1,&apos; &apos;,p.apellido2,&apos; &apos;,p.apellido1) LIKE &apos;%&apos; || :search || &apos;%&apos; OR
+CONCAT(p.apellido1,&apos; &apos;,p.nombre1,&apos; &apos;,p.apellido2,&apos; &apos;,p.nombre2) LIKE &apos;%&apos; || :search || &apos;%&apos; OR
+CONCAT(p.apellido1,&apos; &apos;,p.nombre1,&apos; &apos;,p.nombre2,&apos; &apos;,p.apellido2) LIKE &apos;%&apos; || :search || &apos;%&apos; OR
+CONCAT(p.nombre1,&apos; &apos;,p.apellido1,&apos; &apos;,p.apellido2,&apos; &apos;,p.nombre2) LIKE &apos;%&apos; || :search || &apos;%&apos; OR
+CONCAT(p.apellido1,&apos; &apos;,p.nombre2,&apos; &apos;,p.apellido2,&apos; &apos;,p.nombre1) LIKE &apos;%&apos; || :search || &apos;%&apos; OR
+CONCAT(p.apellido1,&apos; &apos;,p.apellido2,&apos; &apos;,p.nombre1,&apos; &apos;,p.nombre2) LIKE &apos;%&apos; || :search || &apos;%&apos; OR
+CONCAT(p.nombre1,&apos; &apos;,p.apellido1,&apos; &apos;,p.nombre2,&apos; &apos;,p.apellido2) LIKE &apos;%&apos; || :search || &apos;%&apos; OR
+CONCAT(p.apellido2,&apos; &apos;,p.nombre2,&apos; &apos;,p.apellido1,&apos; &apos;,p.nombre1) LIKE &apos;%&apos; || :search || &apos;%&apos; OR
+CONCAT(p.apellido2,&apos; &apos;,p.nombre2,&apos; &apos;,p.nombre1,&apos; &apos;,p.apellido1) LIKE &apos;%&apos; || :search || &apos;%&apos; OR
+CONCAT(p.nombre2,&apos; &apos;,p.apellido2,&apos; &apos;,p.apellido1,&apos; &apos;,p.nombre1) LIKE &apos;%&apos; || :search || &apos;%&apos; OR
+CONCAT(p.nombre2,&apos; &apos;,p.apellido2,&apos; &apos;,p.nombre1,&apos; &apos;,p.apellido1) LIKE &apos;%&apos; || :search || &apos;%&apos; OR
+CONCAT(p.apellido1,&apos; &apos;,p.nombre1,&apos; &apos;,p.apellido2,&apos; &apos;,p.nombre2) LIKE &apos;%&apos; || :search || &apos;%&apos; OR
+CONCAT(p.nombre1,&apos; &apos;,p.apellido2,&apos; &apos;,p.apellido1,&apos; &apos;,p.nombre2) LIKE &apos;%&apos; || :search || &apos;%&apos; OR
+CONCAT(p.apellido2,&apos; &apos;,p.nombre2,&apos; &apos;,p.apellido1,&apos; &apos;,p.nombre1) LIKE &apos;%&apos; || :search || &apos;%&apos; OR
+CONCAT(p.nombre2,&apos; &apos;,p.apellido1,&apos; &apos;,p.nombre1,&apos; &apos;,p.apellido2) LIKE &apos;%&apos; || :search || &apos;%&apos; OR
+CONCAT(p.apellido1,&apos; &apos;,p.nombre2,&apos; &apos;,p.nombre1,&apos; &apos;,p.apellido2) LIKE &apos;%&apos; || :search || &apos;%&apos; OR
+CONCAT(p.apellido2,&apos; &apos;,p.nombre1,&apos; &apos;,p.nombre2,&apos; &apos;,p.apellido1) LIKE &apos;%&apos; || :search || &apos;%&apos;)
     </query>
     <query name="deleteEventualidadPersona">
         <query-param name="epid" type="java.lang.Integer"/>
@@ -504,74 +574,44 @@ a.peso as peso
 FROM Asignatura a INNER JOIN a.grado g INNER JOIN a.sy sy INNER JOIN a.tipoInscAsig tia
 WHERE a.idAsignatura=:idasignatura
     </query>
-    <query name="cursos">
-        <query-param name="idg" type="java.lang.Integer"/>
-        SELECT g.idGrado as idgrado, c.idCurso as idcurso, c.curso as curso FROM Grado g INNER JOIN g.cursos c
-WHERE g.idGrado=:idg and c.idCurso&gt;=10101 and c.idCurso&lt;=40403
-    </query>
-    <query name="searchStudentsByComplexNameNoStudents">
-        <query-param name="search" type="java.lang.String"/>
-        SELECT p.codigo as codigo, CONCAT(p.apellido1,&apos; &apos;,p.apellido2,&apos; &apos;,p.nombre1,&apos; &apos;,p.nombre2) as nombreCompleto, gf.idGrupoFamiliar as idgf, gf.grupoFamiliar as grupoFamiliar, p.idPersona as idpersona
-FROM Persona as p INNER JOIN p.grupoFamiliar as gf INNER JOIN p.tipoPersona
-WHERE p.tipoPersona&gt;3 AND
-(CONCAT(p.apellido1,&apos; &apos;,p.apellido2,&apos; &apos;,p.nombre1,&apos; &apos;,p.nombre2) LIKE &apos;%&apos; || :search || &apos;%&apos; OR
-CONCAT(p.apellido2,&apos; &apos;,p.apellido1,&apos; &apos;,p.nombre1,&apos; &apos;,p.nombre2) LIKE &apos;%&apos; || :search || &apos;%&apos; OR
-CONCAT(p.apellido2,&apos; &apos;,p.apellido1,&apos; &apos;,p.nombre2,&apos; &apos;,p.nombre1) LIKE &apos;%&apos; || :search || &apos;%&apos; OR
-CONCAT(p.apellido1,&apos; &apos;,p.apellido2,&apos; &apos;,p.nombre2,&apos; &apos;,p.nombre1) LIKE &apos;%&apos; || :search || &apos;%&apos; OR
-CONCAT(p.nombre1,&apos; &apos;,p.nombre2,&apos; &apos;,p.apellido1,&apos; &apos;,p.apellido2) LIKE &apos;%&apos; || :search || &apos;%&apos; OR
-CONCAT(p.nombre1,&apos; &apos;,p.nombre2,&apos; &apos;,p.apellido1,&apos; &apos;,p.apellido2) LIKE &apos;%&apos; || :search || &apos;%&apos; OR
-CONCAT(p.nombre2,&apos; &apos;,p.nombre1,&apos; &apos;,p.apellido1,&apos; &apos;,p.apellido2) LIKE &apos;%&apos; || :search || &apos;%&apos; OR
-CONCAT(p.nombre2,&apos; &apos;,p.nombre1,&apos; &apos;,p.apellido2,&apos; &apos;,p.apellido1) LIKE &apos;%&apos; || :search || &apos;%&apos; OR
-CONCAT(p.apellido1,&apos; &apos;,p.nombre1,&apos; &apos;,p.apellido2,&apos; &apos;,p.nombre2) LIKE &apos;%&apos; || :search || &apos;%&apos; OR
-CONCAT(p.apellido1,&apos; &apos;,p.nombre1,&apos; &apos;,p.nombre2,&apos; &apos;,p.apellido2) LIKE &apos;%&apos; || :search || &apos;%&apos; OR
-CONCAT(p.nombre1,&apos; &apos;,p.apellido1,&apos; &apos;,p.apellido2,&apos; &apos;,p.nombre2) LIKE &apos;%&apos; || :search || &apos;%&apos; OR
-CONCAT(p.apellido1,&apos; &apos;,p.nombre2,&apos; &apos;,p.apellido2,&apos; &apos;,p.nombre1) LIKE &apos;%&apos; || :search || &apos;%&apos; OR
-CONCAT(p.apellido1,&apos; &apos;,p.apellido2,&apos; &apos;,p.nombre1,&apos; &apos;,p.nombre2) LIKE &apos;%&apos; || :search || &apos;%&apos; OR
-CONCAT(p.nombre1,&apos; &apos;,p.apellido1,&apos; &apos;,p.nombre2,&apos; &apos;,p.apellido2) LIKE &apos;%&apos; || :search || &apos;%&apos; OR
-CONCAT(p.apellido2,&apos; &apos;,p.nombre2,&apos; &apos;,p.apellido1,&apos; &apos;,p.nombre1) LIKE &apos;%&apos; || :search || &apos;%&apos; OR
-CONCAT(p.apellido2,&apos; &apos;,p.nombre2,&apos; &apos;,p.nombre1,&apos; &apos;,p.apellido1) LIKE &apos;%&apos; || :search || &apos;%&apos; OR
-CONCAT(p.nombre2,&apos; &apos;,p.apellido2,&apos; &apos;,p.apellido1,&apos; &apos;,p.nombre1) LIKE &apos;%&apos; || :search || &apos;%&apos; OR
-CONCAT(p.nombre2,&apos; &apos;,p.apellido2,&apos; &apos;,p.nombre1,&apos; &apos;,p.apellido1) LIKE &apos;%&apos; || :search || &apos;%&apos; OR
-CONCAT(p.apellido1,&apos; &apos;,p.nombre1,&apos; &apos;,p.apellido2,&apos; &apos;,p.nombre2) LIKE &apos;%&apos; || :search || &apos;%&apos; OR
-CONCAT(p.nombre1,&apos; &apos;,p.apellido2,&apos; &apos;,p.apellido1,&apos; &apos;,p.nombre2) LIKE &apos;%&apos; || :search || &apos;%&apos; OR
-CONCAT(p.apellido2,&apos; &apos;,p.nombre2,&apos; &apos;,p.apellido1,&apos; &apos;,p.nombre1) LIKE &apos;%&apos; || :search || &apos;%&apos; OR
-CONCAT(p.nombre2,&apos; &apos;,p.apellido1,&apos; &apos;,p.nombre1,&apos; &apos;,p.apellido2) LIKE &apos;%&apos; || :search || &apos;%&apos; OR
-CONCAT(p.apellido1,&apos; &apos;,p.nombre2,&apos; &apos;,p.nombre1,&apos; &apos;,p.apellido2) LIKE &apos;%&apos; || :search || &apos;%&apos; OR
-CONCAT(p.apellido2,&apos; &apos;,p.nombre1,&apos; &apos;,p.nombre2,&apos; &apos;,p.apellido1) LIKE &apos;%&apos; || :search || &apos;%&apos;)
-    </query>
-    <query name="subjectsByTeachersByCurseByPer">
-        <query-param name="idper" type="java.lang.Integer"/>
-        <query-param name="idc" type="java.lang.Integer"/>
+    <query name="getEmailsFamiliarGroup">
+        <query-param name="pgrupo" type="java.lang.Integer"/>
+        <query-param name="ppersona" type="java.lang.Integer"/>
         SELECT
-CONCAT(p.apellido1,&apos; &apos;,p.apellido2,&apos; &apos;,p.nombre1,&apos; &apos;, p.nombre2) as nombre_completo,
-a.asignatura as asignatura,
-per.periodo as periodo,
-ica.idInscCursoAsig as id,
-c.curso as curso
-FROM InscCursoAsig ica INNER JOIN ica.curso c INNER JOIN ica.asignatura a INNER JOIN ica.persona p INNER JOIN ica.periodo per INNER JOIN per.sy syper
-WHERE c.idCurso=:idc AND syper.idSy=:idper
+gf.idGrupoFamiliar as idgrupofamiliar,
+gf.grupoFamiliar as grupofamiliar,
+tipostd.idTipoPersona as tipoalumno,
+p.idPersona as idpersona,
+p.nombre1 as stdn1,
+p.nombre2 as stdn2,
+p.apellido1 as stda1,
+p.apellido2 as stda2,
+mama.idPersona as mamaidpersona,
+mama.nombre1 as maman1,
+mama.nombre2 as maman2,
+mama.apellido1 as mamaa1,
+mama.apellido2 as mamaa2,
+mama.email as correomama,
+mama.noDocumento as dnimama,
+tipomama.idTipoPersona as tipomama,
+papa.idPersona as papaidpersona,
+papa.nombre1 as papan1,
+papa.nombre2 as papan2,
+papa.apellido1 as papaa1,
+papa.apellido2 as papaa2,
+papa.email as correopapa,
+papa.noDocumento as dnipapa,
+tipopapa.idTipoPersona as tipopapa
+FROM Persona p INNER JOIN p.grupoFamiliar gf INNER JOIN p.tipoPersona tipostd, Persona mama INNER JOIN mama.grupoFamiliar mamagrupo INNER JOIN mama.tipoPersona tipomama,
+Persona papa INNER JOIN papa.grupoFamiliar papagrupo INNER JOIN papa.tipoPersona tipopapa
+WHERE gf.idGrupoFamiliar=:pgrupo AND p.idPersona=:ppersona AND mamagrupo.idGrupoFamiliar= gf.idGrupoFamiliar AND  papagrupo.idGrupoFamiliar= gf.idGrupoFamiliar
+AND (tipostd.idTipoPersona=1)
+AND (tipomama.idTipoPersona=12 OR tipomama.idTipoPersona=10 OR tipomama.idTipoPersona=7 OR tipomama.idTipoPersona=5 OR tipomama.idTipoPersona=4)
+AND (tipopapa.idTipoPersona=10 OR tipopapa.idTipoPersona=7 OR tipopapa.idTipoPersona=4 OR tipopapa.idTipoPersona=2)
+AND (papa.idPersona &lt;&gt; mama.idPersona)
     </query>
-    <query name="deleteInscCursAsig">
-        <query-param name="icaId" type="java.lang.Long"/>
-        DELETE FROM InscCursoAsig ica WHERE ica.idInscCursoAsig=:icaId
-    </query>
-    <query name="hql_aprendizaje_detalles">
-        <query-param name="idaprendizajes" type="java.lang.Integer"/>
-        SELECT
-aa.idAprendizaje as idAprendizaje,
-aa.fechaEsperada as fechaEsperada,
-aa.aprendizaje as aprendizaje,
-aa.learning as learning,
-aa.peso as peso,
-aa.ejeIdEje as ejeIdEje,
-aa.eje2IdEje as eje2IdEje,
-aa.eje3IdEje as eje3IdEje,
-i.idInteligencia as idInteligencia,
-dc.idDimension as idDimension,
-a.idAsignatura as idAsignatura,
-n.idNivelEsperado as idNivelEsperado,
-dcr.idDimension as idDimension
-FROM AprendizajesAsignaturas aa INNER JOIN aa.inteligencia i INNER JOIN  aa.dimensionComprension dc INNER JOIN aa.asignatura a INNER JOIN aa.nivelEsperado n INNER JOIN aa.dimensionCurricular dcr
-WHERE aa.idAprendizaje=:idaprendizajes
+    <query name="hql_deleteLearnings">
+        <query-param name="ida" type="java.lang.Integer"/>
+        DELETE FROM AprendizajesAsignaturas aa WHERE aa.idAprendizaje=:ida
     </query>
 </hibernate-mapping>

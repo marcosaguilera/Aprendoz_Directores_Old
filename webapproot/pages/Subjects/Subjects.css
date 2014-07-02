@@ -1,6 +1,6 @@
 .Subjects .Subjects-subject_newRecord {
-	color: #ffffff;
-	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  color: #ffffff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
 background-color: #006dcc;
 background-image: -moz-linear-gradient(top, #0088cc, #0044cc);
 background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#0088cc), to(#0044cc));
@@ -17,8 +17,8 @@ border-radius: 2px;
 }
 
 .Subjects .Subjects-subject_updateRecord {
-	color: #ffffff;
-	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  color: #ffffff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
 background-color: #006dcc;
 background-image: -moz-linear-gradient(top, #0088cc, #0044cc);
 background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#0088cc), to(#0044cc));
@@ -34,8 +34,8 @@ border-radius: 2px;
 }
 
 .Subjects .Subjects-subject_deleteRecord {
-	color: #ffffff;
-	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  color: #ffffff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
 background-color: #da4f49;
 background-image: -moz-linear-gradient(top, #ee5f5b, #bd362f);
 background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ee5f5b), to(#bd362f));
@@ -51,8 +51,8 @@ border-radius: 2px;
 }
 
 .Subjects .Subjects-subject_saveNewRecord {
-	display: inline-block;
-	padding: 4px 12px;
+  display: inline-block;
+  padding: 4px 12px;
 margin-bottom: 0;
 font-size: 11px;
 line-height: 20px;
@@ -84,8 +84,8 @@ border-radius: 2px;
 }
 
 .Subjects .Subjects-subject_cancelOperation {
-	display: inline-block;
-	padding: 4px 12px;
+  display: inline-block;
+  padding: 4px 12px;
 margin-bottom: 0;
 font-size: 11px;
 line-height: 20px;
@@ -117,8 +117,8 @@ border-radius: 2px;
 }
 
 .Subjects .Subjects-subject_saveUpdateRecord {
-	display: inline-block;
-	padding: 4px 12px;
+  display: inline-block;
+  padding: 4px 12px;
 margin-bottom: 0;
 font-size: 11px;
 line-height: 20px;
@@ -150,12 +150,12 @@ border-radius: 2px;
 }
 
 .Subjects .Subjects-subject_top_message {
-	text-decoration: justify !important;
+  text-decoration: justify !important;
 }
 
 .Subjects .Subjects-areas_button {
-	color: #ffffff;
-	border-radius: 12Zpx;
+  color: #ffffff;
+  border-radius: 12Zpx;
 padding-top: 10px;
 text-align: center;
 background: #C1272D !important;
@@ -170,8 +170,8 @@ border-radius: 5px 5px 0px 0px;
 }
 
 .Subjects .Subjects-asignatura_button {
-	color: #ffffff;
-	border-radius: 12Zpx;
+  color: #ffffff;
+  border-radius: 12Zpx;
 padding-top: 10px;
 text-align: center;
 background: #C1272D !important;
@@ -186,8 +186,8 @@ border-radius: 5px 5px 0px 0px;
 }
 
 .Subjects .Subjects-ejes_button {
-	color: #ffffff;
-	border-radius: 12Zpx;
+  color: #ffffff;
+  border-radius: 12Zpx;
 padding-top: 10px;
 text-align: center;
 background: #C1272D !important;
@@ -202,31 +202,31 @@ border-radius: 5px 5px 0px 0px;
 }
 
 .Subjects .Subjects-areas_header_panel {
-	
+  
 }
 
 .Subjects .Subjects-label1 {
-	color: #C1272D !important;
-	font-size: 16px;
+  color: #C1272D !important;
+  font-size: 16px;
 }
 
 .Subjects .Subjects-areaDataGrid1 {
-	cursor: pointer;
+  cursor: pointer;
 }
 
 .Subjects .Subjects-label2 {
-	color: #C1272D !important;
-	font-size: 16px;
+  color: #C1272D !important;
+  font-size: 16px;
 }
 
 .Subjects .Subjects-label3 {
-	color: #C1272D !important;
-	font-size: 16px;
+  color: #C1272D !important;
+  font-size: 16px;
 }
 
-.Subjects .Subjects-button1 {
-	color: #ffffff;
-	border-radius: 12Zpx;
+.Subjects .Subjects-aprendizajes_button {
+  color: #ffffff;
+  border-radius: 12Zpx;
 padding-top: 10px;
 text-align: center;
 background: #C1272D !important;
@@ -241,8 +241,8 @@ border-radius: 5px 5px 0px 0px;
 }
 
 .Subjects .Subjects-docentes_button {
-	color: #ffffff;
-	border-radius: 12Zpx;
+  color: #ffffff;
+  border-radius: 12Zpx;
 padding-top: 10px;
 text-align: center;
 background: #C1272D !important;
@@ -257,56 +257,137 @@ border-radius: 5px 5px 0px 0px;
 }
 
 .Subjects .Subjects-label4 {
-	color: #ffffff;
-	border-radius: 12Zpx;
+  color: #ffffff;
+  border-radius: 12Zpx;
 background: #C1272D !important;
 font-size: 13px;
 }
 
 .Subjects .Subjects-label5 {
-	color: #ffffff;
-	border-radius: 12Zpx;
+  color: #ffffff;
+  border-radius: 12Zpx;
 background: #C1272D !important;
 font-size: 13px;
 }
 
 .Subjects .Subjects-cursosDojoGrid {
-	cursor: pointer;
+  cursor: pointer;
 }
 
 .Subjects .Subjects-docentesDojoGrid {
-	cursor: pointer;
+  cursor: pointer;
 }
 
 .Subjects .Subjects-inscripcionesGrid1 {
-	cursor: pointer;
+  cursor: pointer;
 }
 
 .Subjects .Subjects-docentesRetirar {
-	background-color: #c6353a !important;
-	color: #fff;
+  background-color: #c6353a !important;
+  color: #fff;
 }
 
 .Subjects .Subjects-docentesAgregar {
-	background-color: #56bd14 !important;
-	color: #fff;
+  background-color: #56bd14 !important;
+  color: #fff;
 }
 
 .Subjects .Subjects-docentesRestablecer {
-	background-color: #1225b2 !important;
-	color: #fff;
+  background-color: #1225b2 !important;
+  color: #fff;
 }
 
 .Subjects .Subjects-docentesVer {
-	background-color: #FFA500 !important;
-	color: #fff;
+  background-color: #FFA500 !important;
+  color: #fff;
 }
 
 .Subjects .Subjects-aprendizajes_asignaturas {
-	cursor: pointer;
+  cursor: pointer;
 }
 
 .Subjects .Subjects-aprendizajes_aprendizajes {
-	cursor: pointer;
+  cursor: pointer;
+}
+
+.Subjects .Subjects-newButton3 {
+  position: absolute;
+  border-style: solid;
+  border-width: 0px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  margin: 0px 7.499999888241293px 0px 0px;
+  padding: 4.999999925494195px 14.999999776482586px;
+  overflow: hidden;
+  left: 20px;
+  top: 0px;
+  width: 139px;
+  height: 40px;
+  line-height: normal;
+  background-color: rgb(54, 82, 164);
+}
+
+.Subjects .Subjects-updateButton3 {
+  position: absolute;
+  border-style: solid;
+  border-width: 0px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  margin: 0px 7.499999888241293px 0px 0px;
+  padding: 4.999999925494195px 14.999999776482586px;
+  overflow: hidden;
+  left: 20px;
+  top: 0px;
+  width: 139px;
+  height: 40px;
+  line-height: normal;
+  background-color: rgb(54, 82, 164);
+}
+.Subjects .Subjects-deleteButton3 {
+  background-color: rgb(197, 53, 57) !important;
+  border: none !important;
+color: #ffffff;
+background: none;
+}
+
+.Subjects .Subjects-cancelButton3 {
+  background-color: rgb(197, 53, 57) !important;
+  border: none !important;
+color: #ffffff;
+background: none;
+}
+
+.Subjects .Subjects-saveButton3 {
+  position: absolute;
+  border-style: solid;
+border-width: 0px;
+margin: 0px;
+padding: 0px;
+overflow: hidden;
+left: 0px;
+top: 0px;
+width: 120px;
+height: 29px;
+line-height: normal;
+background-color: rgb(99, 187, 0);
+}
+
+.Subjects .Subjects-saveButton4 {
+  position: absolute;
+  border-style: solid;
+border-width: 0px;
+margin: 0px;
+padding: 0px;
+overflow: hidden;
+left: 0px;
+top: 0px;
+width: 120px;
+height: 29px;
+line-height: normal;
+background-color: rgb(99, 187, 0);
 }
 

@@ -3,6 +3,7 @@ dojo.declare("Subjects", wm.Page, {
     this.curdate = new Date().getTime();
     main.a_cursy.input.setValue("f1",this.curdate);
     main.a_cursy.update();
+    //this.aprendizajes_sy.setDisplayValue("2014-2015"); 
   }, 
   intensidadHorariaTotal: function(){
     var ih1= parseFloat(this.subject_iha1.getDataValue());
@@ -345,24 +346,28 @@ dojo.declare("Subjects", wm.Page, {
      this.axis.hide();
      this.areas.hide();
      this.docentes.hide();
+     this.learnings.hide();
      this.subjects.show();
   },
   areas_buttonClick: function(inSender, inEvent) {
      this.axis.hide();
      this.subjects.hide(); 
      this.docentes.hide();
+     this.learnings.hide();
      this.areas.show();
   },
   ejes_buttonClick: function(inSender, inEvent) {   
      this.subjects.hide(); 
      this.areas.hide(); 
      this.docentes.hide();
-     this.axis.show();
+     this.learnings.hide();
+     this.axis.show();    
   },
   docentes_buttonClick: function(inSender, inEvent) {
      this.subjects.hide(); 
      this.areas.hide();    
      this.axis.hide();
+     this.learnings.hide();
      this.docentes.show();
      
      this.curdate = new Date().getTime();
@@ -454,22 +459,39 @@ dojo.declare("Subjects", wm.Page, {
      this.inscCursoAsigSv.update(); 
   },
   aprendizajes_asignaturasClick: function(inSender, evt) {
+     this.newButton3.enable();
      var idasignatura=  this.aprendizajes_asignaturas.selectedItem.data.id;
-     console.log(idasignatura);
+     var ejeIdEje1= this.aprendizajes_asignaturas.selectedItem.data.sa1;
+     var ejeIdEje2= this.aprendizajes_asignaturas.selectedItem.data.sa2;
+     var ejeIdEje3= this.aprendizajes_asignaturas.selectedItem.data.sa3;
+     console.log(ejeIdEje1);
+     console.log(ejeIdEje2);
+     console.log(ejeIdEje3);
+
      this.aprendizajesAsignaturaLV.filter.setValue("asignatura.idAsignatura", idasignatura);
      this.aprendizajesAsignaturaLV.update();
+     
+     this.aprendizajesEje1.filter.setValue("subarea.idSubarea", ejeIdEje1);
+     this.aprendizajesEje2.filter.setValue("subarea.idSubarea", ejeIdEje2);
+     this.aprendizajesEje3.filter.setValue("subarea.idSubarea", ejeIdEje3);
+     this.aprendizajesEje1.update();
+     this.aprendizajesEje2.update();
+     this.aprendizajesEje3.update();     
+          
+     this.l_dimension_comprension.update();
+     this.l_dimension_curricular.update();
+     this.l_inteligencias.update();
+     this.l_nivel_esperado.update();
   },
   aprendizajes_aprendizajesClick: function(inSender, evt) {
+     this.updateButton3.enable();
+     this.deleteButton3.enable();
+      
      var idapr= this.aprendizajes_aprendizajes.selectedItem.data.idAprendizaje;
      this.hql_detallesAprendizajes.input.setValue("idaprendizajes", idapr);
      this.hql_detallesAprendizajes.update();
   },
-  deleteButton3Click: function(inSender, inEvent) {
-     
-  },
-  saveButton3Click: function(inSender, inEvent) {
-     
-  },
+   
   hql_detallesAprendizajesSuccess: function(inSender, inDeprecated) {
      var jsonObj         = this.hql_detallesAprendizajes.getItem(0).data;
      var idAprendizaje   = jsonObj.idAprendizaje;
@@ -485,18 +507,424 @@ dojo.declare("Subjects", wm.Page, {
      var idInteligencia  = jsonObj.idInteligencia;
      var idNivelEsperado = jsonObj.idNivelEsperado;     
      var peso            = jsonObj.peso;
-     
-     
-     
+       
      this.idAprendizajeEditor1.setDataValue(idAprendizaje);
      this.fechaEsperadaEditor1.setDataValue(fechaEsperada);
      this.aprendizajeEditor1.setDataValue(aprendizaje);
      this.learningEditor1.setDataValue(learning);
      this.pesoEditor1.setDataValue(peso);
      this.ejeIdEjeEditor1.setDataValue(ejeIdEje);
+     console.log(ejeIdEje);
      this.eje2IdEjeEditor1.setDataValue(eje2IdEje);
-     this.eje3IdEjeEditor1.setDataValue(eje3IdEje);
+     console.log(eje2IdEje);
+     this.eje3IdEjeEditor1.setDataValue(eje3IdEje);  
+     console.log(eje3IdEje);
+     this.dimensinComprensionEditor1.setDataValue(idDimension);
+     this.dimensinCurricularEditor1.setDataValue(idDimension2);
+     this.inteligenciaEditor1.setDataValue(idInteligencia);
+     this.nivelEsperadoEditor1.setDataValue(idNivelEsperado);
+     this.pesoEditor1.setDataValue(peso);
      
+  },
+  updateButton3Click: function(inSender, inEvent) {
+    try {
+     this.operationPanel3.hide();
+     this.savePanel3.show();
+     this.saveButton4.hide();
+     this.saveButton3.show();
+     //this.editPanel3.beginDataUpdate();
+     //this.idAprendizajeEditor1.setReadonly(false);
+     this.fechaEsperadaEditor1.setReadonly(false);
+     this.aprendizajeEditor1.setReadonly(false);
+     this.learningEditor1.setReadonly(false);
+     this.pesoEditor1.setReadonly(false);
+     this.ejeIdEjeEditor1.setReadonly(false);
+     this.eje2IdEjeEditor1.setReadonly(false);
+     this.eje3IdEjeEditor1.setReadonly(false);  
+     this.dimensinComprensionEditor1.setReadonly(false);
+     this.dimensinCurricularEditor1.setReadonly(false);
+     this.inteligenciaEditor1.setReadonly(false);
+     this.nivelEsperadoEditor1.setReadonly(false);
+     this.pesoEditor1.setReadonly(false);  
+    } catch(e) {
+      console.error('ERROR IN updateButton3Click: ' + e); 
+    } 
+  },
+  newButton3Click: function(inSender, inEvent) {
+    try {
+     this.operationPanel3.hide();
+     this.savePanel3.show();
+     this.saveButton3.hide();
+     this.saveButton4.show();     
+     //this.editPanel3.beginDataInsert();
+     //this.idAprendizajeEditor1.setReadonly(false);
+     this.idAprendizajeEditor1.clear()
+     this.fechaEsperadaEditor1.clear()
+     this.aprendizajeEditor1.clear()
+     this.learningEditor1.clear()
+     this.pesoEditor1.clear()
+     this.ejeIdEjeEditor1.clear()
+     this.eje2IdEjeEditor1.clear()
+     this.eje3IdEjeEditor1.clear()  
+     this.dimensinComprensionEditor1.clear()
+     this.dimensinCurricularEditor1.clear()
+     this.inteligenciaEditor1.clear()
+     this.nivelEsperadoEditor1.clear()
+     this.pesoEditor1.clear()
+     
+     this.fechaEsperadaEditor1.setReadonly(false);
+     this.aprendizajeEditor1.setReadonly(false);
+     this.learningEditor1.setReadonly(false);
+     this.pesoEditor1.setReadonly(false);
+     this.ejeIdEjeEditor1.setReadonly(false);
+     this.eje2IdEjeEditor1.setReadonly(false);
+     this.eje3IdEjeEditor1.setReadonly(false);  
+     this.dimensinComprensionEditor1.setReadonly(false);
+     this.dimensinCurricularEditor1.setReadonly(false);
+     this.inteligenciaEditor1.setReadonly(false);
+     this.nivelEsperadoEditor1.setReadonly(false);
+     this.pesoEditor1.setReadonly(false); 
+      
+    } catch(e) {
+      console.error('ERROR IN newButton3Click: ' + e); 
+    } 
+  },
+  cancelButton3Click: function(inSender, inEvent) {
+    try {
+     this.savePanel3.hide();
+     this.operationPanel3.show(); 
+     this.saveButton4.hide();  
+     this.saveButton3.show();       
+     //this.editPanel3.cancelEdit();
+     this.idAprendizajeEditor1.setReadonly(true);
+     this.fechaEsperadaEditor1.setReadonly(true);
+     this.aprendizajeEditor1.setReadonly(true);
+     this.learningEditor1.setReadonly(true);
+     this.pesoEditor1.setReadonly(true);
+     this.ejeIdEjeEditor1.setReadonly(true);
+     this.eje2IdEjeEditor1.setReadonly(true);
+     this.eje3IdEjeEditor1.setReadonly(true);  
+     this.dimensinComprensionEditor1.setReadonly(true);
+     this.dimensinCurricularEditor1.setReadonly(true);
+     this.inteligenciaEditor1.setReadonly(true);
+     this.nivelEsperadoEditor1.setReadonly(true);
+     this.pesoEditor1.setReadonly(true);       
+    } catch(e) {
+      console.error('ERROR IN cancelButton3Click: ' + e); 
+    } 
+  },  
+  //save update learning
+  saveButton3Click: function(inSender, inEvent) {
+  try{     
+     var idAprendizaje   = this.idAprendizajeEditor1.getDataValue();
+     var aprendizaje     = this.aprendizajeEditor1.getDataValue();
+     var learning        = this.learningEditor1.getDataValue();
+     var ejeIdEje        = this.ejeIdEjeEditor1.getDataValue();
+     var eje2IdEje       = this.eje2IdEjeEditor1.getDataValue();
+     var eje3IdEje       = this.eje3IdEjeEditor1.getDataValue();    
+     var fechaEsperada   = new Date().getTime();
+     console.log(fechaEsperada);
+     var grado           = this.aprendizajes_grado.dataValue.idGrado;
+     var gradosapiens    = this.aprendizajes_grado.dataValue.gradoSapiens;
+     var grade           = this.aprendizajes_grado.dataValue.grade;
+     var gradostr        = this.aprendizajes_grado.getDisplayValue();
+     var sy              = this.aprendizajes_sy.dataValue.idSy;    
+     var systr           = this.aprendizajes_sy.getDisplayValue();
+     var idAsignatura    = this.aprendizajes_asignaturas.selectedItem.data.id;
+     var idDimension     = this.dimensinComprensionEditor1.getDataValue();
+     var idDimensionstr  = this.dimensinComprensionEditor1.getDisplayValue();
+     var idDimension2    = this.dimensinCurricularEditor1.getDataValue();
+     var idDimension2str = this.dimensinCurricularEditor1.getDisplayValue();
+     var idInteligencia  = this.inteligenciaEditor1.getDataValue();
+     var idNivelEsperado = this.nivelEsperadoEditor1.getDataValue();
+     var inteligencia    = this.inteligenciaEditor1.getDisplayValue();
+     var nivelEsperado   = this.nivelEsperadoEditor1.getDisplayValue();    
+     var peso            = this.pesoEditor1.getDataValue(); 
+          
+     this.aprendizajes_asignaturaActions.setValue("idAprendizaje",idAprendizaje);
+     this.aprendizajes_asignaturaActions.setValue("aprendizaje",aprendizaje);
+     this.aprendizajes_asignaturaActions.setValue("learning",learning);
+     this.aprendizajes_asignaturaActions.setValue("fechaEsperada",fechaEsperada);
+     this.aprendizajes_asignaturaActions.setValue("ejeIdEje",ejeIdEje);
+     this.aprendizajes_asignaturaActions.setValue("eje2IdEje",eje2IdEje);
+     this.aprendizajes_asignaturaActions.setValue("eje3IdEje",eje3IdEje);
+     this.aprendizajes_asignaturaActions.setValue("peso",peso);
+     this.aprendizajes_asignaturaActions.setValue("asignatura.idAsignatura",idAsignatura);
+     this.aprendizajes_asignaturaActions.setValue("asignatura.grado.idGrado",grado);
+     this.aprendizajes_asignaturaActions.setValue("asignatura.grado.gradoSapiens",gradosapiens);
+     this.aprendizajes_asignaturaActions.setValue("asignatura.grado.grade",grade);
+     this.aprendizajes_asignaturaActions.setValue("asignatura.grado.grado",gradostr);
+     this.aprendizajes_asignaturaActions.setValue("asignatura.sy.idSy",sy);
+     this.aprendizajes_asignaturaActions.setValue("asignatura.sy.schoolYear",systr);
+     this.aprendizajes_asignaturaActions.setValue("dimensionComprension.idDimension",idDimension);
+     this.aprendizajes_asignaturaActions.setValue("dimensionCurricular.idDimension",idDimension2);
+     this.aprendizajes_asignaturaActions.setValue("dimensionComprension.dimensionComprension",idDimensionstr);//
+     this.aprendizajes_asignaturaActions.setValue("dimensionCurricular.dimensionCurricular",idDimension2str);//
+     this.aprendizajes_asignaturaActions.setValue("nivelEsperado.idNivelEsperado",idNivelEsperado);
+     this.aprendizajes_asignaturaActions.setValue("inteligencia.idInteligencia",idInteligencia);
+     this.aprendizajes_asignaturaActions.setValue("nivelEsperado.nivelEsperado",nivelEsperado);
+     this.aprendizajes_asignaturaActions.setValue("inteligencia.inteligencia",inteligencia);
+     this.aprendizajes_asignaturaLiveForm.setDataSet(this.aprendizajes_asignaturaActions);          
+     this.aprendizajes_asignaturaLiveForm.updateData();  
+     
+     this.idAprendizajeEditor1.setReadonly(true);
+     this.fechaEsperadaEditor1.setReadonly(true);
+     this.aprendizajeEditor1.setReadonly(true);
+     this.learningEditor1.setReadonly(true);
+     this.pesoEditor1.setReadonly(true);
+     this.ejeIdEjeEditor1.setReadonly(true);
+     this.eje2IdEjeEditor1.setReadonly(true);
+     this.eje3IdEjeEditor1.setReadonly(true);  
+     this.dimensinComprensionEditor1.setReadonly(true);
+     this.dimensinCurricularEditor1.setReadonly(true);
+     this.inteligenciaEditor1.setReadonly(true);
+     this.nivelEsperadoEditor1.setReadonly(true);
+     this.pesoEditor1.setReadonly(true);
+     this.savePanel3.hide();
+     this.operationPanel3.show();   
+    } catch(e) {
+    console.error('ERROR IN saveButton3Click: ' + e); 
+    } 
+  },  
+  //save new learning
+  saveButton4Click: function(inSender, inEvent) {
+    try {
+     var idAprendizaje   = this.idAprendizajeEditor1.getDataValue();
+     var aprendizaje     = this.aprendizajeEditor1.getDataValue();
+     var learning        = this.learningEditor1.getDataValue();
+     var ejeIdEje        = this.ejeIdEjeEditor1.getDataValue();
+     var eje2IdEje       = this.eje2IdEjeEditor1.getDataValue();
+     var eje3IdEje       = this.eje3IdEjeEditor1.getDataValue();      
+     var fechaEsperada   = new Date().getTime();
+     console.log(fechaEsperada);
+     var grado           = this.aprendizajes_grado.dataValue.idGrado;
+     var gradosapiens    = this.aprendizajes_grado.dataValue.gradoSapiens;
+     var grade           = this.aprendizajes_grado.dataValue.grade;
+     var gradostr        = this.aprendizajes_grado.getDisplayValue();
+     var sy              = this.aprendizajes_sy.dataValue.idSy;
+     var systr           = this.aprendizajes_sy.getDisplayValue();
+     var idAsignatura    = this.aprendizajes_asignaturas.selectedItem.data.id;
+     var idDimension     = this.dimensinComprensionEditor1.getDataValue();
+     var idDimensionstr  = this.dimensinComprensionEditor1.getDisplayValue();
+     var idDimension2    = this.dimensinCurricularEditor1.getDataValue();
+     var idDimension2str = this.dimensinCurricularEditor1.getDisplayValue();
+     var idInteligencia  = this.inteligenciaEditor1.getDataValue();
+     var idNivelEsperado = this.nivelEsperadoEditor1.getDataValue();   
+     var inteligencia    = this.inteligenciaEditor1.getDisplayValue();
+     var nivelEsperado   = this.nivelEsperadoEditor1.getDisplayValue(); 
+     var peso            = this.pesoEditor1.getDataValue(); 
+
+     //this.aprendizajes_asignaturaActions.setValue("idAprendizaje",idAprendizaje);
+     this.aprendizajes_asignaturaActions.setValue("aprendizaje",aprendizaje);
+     this.aprendizajes_asignaturaActions.setValue("learning",learning);
+     this.aprendizajes_asignaturaActions.setValue("fechaEsperada",fechaEsperada);
+     this.aprendizajes_asignaturaActions.setValue("ejeIdEje",ejeIdEje);
+     this.aprendizajes_asignaturaActions.setValue("eje2IdEje",eje2IdEje);
+     this.aprendizajes_asignaturaActions.setValue("eje3IdEje",eje3IdEje);
+     this.aprendizajes_asignaturaActions.setValue("peso",peso);
+     this.aprendizajes_asignaturaActions.setValue("asignatura.idAsignatura",idAsignatura);
+     this.aprendizajes_asignaturaActions.setValue("asignatura.idAsignatura",idAsignatura);
+     this.aprendizajes_asignaturaActions.setValue("asignatura.grado.idGrado",grado);
+     this.aprendizajes_asignaturaActions.setValue("asignatura.grado.gradoSapiens",gradosapiens);
+     this.aprendizajes_asignaturaActions.setValue("asignatura.grado.grade",grade);
+     this.aprendizajes_asignaturaActions.setValue("asignatura.grado.grado",gradostr);
+     this.aprendizajes_asignaturaActions.setValue("asignatura.sy.idSy",sy);
+     this.aprendizajes_asignaturaActions.setValue("asignatura.sy.schoolYear",systr);
+     this.aprendizajes_asignaturaActions.setValue("dimensionComprension.idDimension",idDimension);
+     this.aprendizajes_asignaturaActions.setValue("dimensionCurricular.idDimension",idDimension2);
+     this.aprendizajes_asignaturaActions.setValue("dimensionComprension.dimensionComprension",idDimensionstr);//
+     this.aprendizajes_asignaturaActions.setValue("dimensionCurricular.dimensionCurricular",idDimension2str);//
+     this.aprendizajes_asignaturaActions.setValue("nivelEsperado.idNivelEsperado",idNivelEsperado);
+     this.aprendizajes_asignaturaActions.setValue("inteligencia.idInteligencia",idInteligencia);
+     this.aprendizajes_asignaturaActions.setValue("nivelEsperado.nivelEsperado",nivelEsperado);
+     this.aprendizajes_asignaturaActions.setValue("inteligencia.inteligencia",inteligencia);
+     this.aprendizajes_asignaturaLiveForm.setDataSet(this.aprendizajes_asignaturaActions);          
+     this.aprendizajes_asignaturaLiveForm.insertData();  
+     
+     this.idAprendizajeEditor1.setReadonly(true);
+     this.fechaEsperadaEditor1.setReadonly(true);
+     this.aprendizajeEditor1.setReadonly(true);
+     this.learningEditor1.setReadonly(true);
+     this.pesoEditor1.setReadonly(true);
+     this.ejeIdEjeEditor1.setReadonly(true);
+     this.eje2IdEjeEditor1.setReadonly(true);
+     this.eje3IdEjeEditor1.setReadonly(true);  
+     this.dimensinComprensionEditor1.setReadonly(true);
+     this.dimensinCurricularEditor1.setReadonly(true);
+     this.inteligenciaEditor1.setReadonly(true);
+     this.nivelEsperadoEditor1.setReadonly(true);
+     this.pesoEditor1.setReadonly(true);
+          
+     this.savePanel3.hide();
+     this.operationPanel3.show();        
+    } catch(e) {
+      console.error('ERROR IN saveButton4Click: ' + e); 
+    } 
+  },
+  aprendizajes_asignaturaLiveFormSuccess: function(inSender, inData) {
+     this.aprendizajesAsignaturaLV.update(); 
+  },
+  deleteButton3Click: function(inSender, inEvent) {
+  try{
+     var idAprendizaje   = this.aprendizajes_aprendizajes.selectedItem.data.idAprendizaje;
+     var r = confirm("¿Esta acción no se puede revertir. Desea eliminar este aprendizaje?");
+     if (r == true) {
+         this.deleteLearningsSV.input.setValue("ida", idAprendizaje);
+         this.deleteLearningsSV.update(); 
+     } else {
+         alert("Operación cancelada.");
+     }          
+     this.idAprendizajeEditor1.clear();
+     this.fechaEsperadaEditor1.clear();
+     this.aprendizajeEditor1.clear();
+     this.learningEditor1.clear();
+     this.pesoEditor1.clear();
+     this.ejeIdEjeEditor1.clear();
+     this.eje2IdEjeEditor1.clear();
+     this.eje3IdEjeEditor1.clear(); 
+     this.dimensinComprensionEditor1.clear();
+     this.dimensinCurricularEditor1.clear();
+     this.inteligenciaEditor1.clear();
+     this.nivelEsperadoEditor1.clear();
+     this.pesoEditor1.clear();     
+     this.idAprendizajeEditor1.setReadonly(true);
+     this.fechaEsperadaEditor1.setReadonly(true);
+     this.aprendizajeEditor1.setReadonly(true);
+     this.learningEditor1.setReadonly(true);
+     this.pesoEditor1.setReadonly(true);
+     this.ejeIdEjeEditor1.setReadonly(true);
+     this.eje2IdEjeEditor1.setReadonly(true);
+     this.eje3IdEjeEditor1.setReadonly(true);  
+     this.dimensinComprensionEditor1.setReadonly(true);
+     this.dimensinCurricularEditor1.setReadonly(true);
+     this.inteligenciaEditor1.setReadonly(true);
+     this.nivelEsperadoEditor1.setReadonly(true);
+     this.pesoEditor1.setReadonly(true);
+
+     this.savePanel3.hide();
+     this.operationPanel3.show();  
+     } catch(e) {
+      console.error('ERROR IN deleteButton3Click: ' + e); 
+    }
+  }, 
+  deleteLearningsSVSuccess: function(inSender, inDeprecated) {
+     this.aprendizajesAsignaturaLV.update(); 
+     
+     var idAprendizaje   = this.idAprendizajeEditor1.getDataValue();
+     var aprendizaje     = this.aprendizajeEditor1.getDataValue();
+     var learning        = this.learningEditor1.getDataValue();
+     var ejeIdEje        = this.ejeIdEjeEditor1.getDataValue();
+     var eje2IdEje       = this.eje2IdEjeEditor1.getDataValue();
+     var eje3IdEje       = this.eje3IdEjeEditor1.getDataValue();      
+     var fechaEsperada   = main.pageSubjects.page.fechaEsperadaEditor1.getDataValue();
+     var idAsignatura    = this.aprendizajes_asignaturas.selectedItem.data.id;
+     var idDimension     = this.dimensinComprensionEditor1.getDataValue();
+     var idDimension2    = this.dimensinCurricularEditor1.getDataValue();
+     var idInteligencia  = this.inteligenciaEditor1.getDataValue();
+     var idNivelEsperado = this.nivelEsperadoEditor1.getDataValue();   
+     var peso            = this.pesoEditor1.getDataValue();  
+     
+     var now             = new Date().getTime(); 
+     var accion          = "accion: borrar > idAprendizaje >"+idAprendizaje+" idAsignatura >"+idAsignatura+" aprendizaje >"+aprendizaje+" learning> "+learning+" ejes >"+ejeIdEje+"-"+eje2IdEje+"-"+eje3IdEje+" dimension_comp >"+idDimension+" >dimension curr >"+idDimension2+" > idInteligencia >"+idInteligencia+" > idNivelEsperado > "+idNivelEsperado+" peso >"+peso+" fechaEsperada > "+fechaEsperada;
+     var username        = main.a_getUserName.getData().dataValue;  
+     this.insertLogData.setValue("usuario", username);
+     this.insertLogData.setValue("tablaAfectada", "AprendizajesAsig");
+     this.insertLogData.setValue("accionRealizada", accion);
+     this.insertLogData.setValue("fechaCreacion", now);
+     this.insertLogDocentesForm.setDataSet(this.insertLogData);          
+     this.insertLogDocentesForm.insertData();       
+  },
+  aprendizajes_buttonClick: function(inSender, inEvent) {
+     this.axis.hide();
+     this.areas.hide();
+     this.docentes.hide();
+     this.subjects.hide();
+     this.learnings.show();
+  },
+  aprendizajes_asignaturaLiveFormInsertData: function(inSender) {
+    try {
+     var idAprendizaje   = this.idAprendizajeEditor1.getDataValue();
+     var aprendizaje     = this.aprendizajeEditor1.getDataValue();
+     var learning        = this.learningEditor1.getDataValue();
+     var ejeIdEje        = this.ejeIdEjeEditor1.getDataValue();
+     var eje2IdEje       = this.eje2IdEjeEditor1.getDataValue();
+     var eje3IdEje       = this.eje3IdEjeEditor1.getDataValue();      
+     var fechaEsperada   = main.pageSubjects.page.fechaEsperadaEditor1.getDataValue();
+     var idAsignatura    = this.aprendizajes_asignaturas.selectedItem.data.id;
+     var idDimension     = this.dimensinComprensionEditor1.getDataValue();
+     var idDimension2    = this.dimensinCurricularEditor1.getDataValue();
+     var idInteligencia  = this.inteligenciaEditor1.getDataValue();
+     var idNivelEsperado = this.nivelEsperadoEditor1.getDataValue();   
+     var peso            = this.pesoEditor1.getDataValue();  
+     
+     var now             = new Date().getTime(); 
+     var accion          = "accion: crear > idAprendizaje >"+idAprendizaje+" idAsignatura >"+idAsignatura+" aprendizaje >"+aprendizaje+" learning> "+learning+" ejes >"+ejeIdEje+"-"+eje2IdEje+"-"+eje3IdEje+" dimension_comp >"+idDimension+" >dimension curr >"+idDimension2+" > idInteligencia >"+idInteligencia+" > idNivelEsperado > "+idNivelEsperado+" peso >"+peso+" fechaEsperada > "+fechaEsperada;
+     var username        = main.a_getUserName.getData().dataValue;  
+     this.insertLogData.setValue("usuario", username);
+     this.insertLogData.setValue("tablaAfectada", "AprendizajesAsig");
+     this.insertLogData.setValue("accionRealizada", accion);
+     this.insertLogData.setValue("fechaCreacion", now);
+     this.insertLogDocentesForm.setDataSet(this.insertLogData);          
+     this.insertLogDocentesForm.insertData(); 
+      
+    } catch(e) {
+      console.error('ERROR IN aprendizajes_asignaturaLiveFormInsertData: ' + e); 
+    } 
+  },
+  aprendizajes_asignaturaLiveFormUpdateData: function(inSender) {
+    try {
+     var idAprendizaje   = this.idAprendizajeEditor1.getDataValue();
+     var aprendizaje     = this.aprendizajeEditor1.getDataValue();
+     var learning        = this.learningEditor1.getDataValue();
+     var ejeIdEje        = this.ejeIdEjeEditor1.getDataValue();
+     var eje2IdEje       = this.eje2IdEjeEditor1.getDataValue();
+     var eje3IdEje       = this.eje3IdEjeEditor1.getDataValue();      
+     var fechaEsperada   = main.pageSubjects.page.fechaEsperadaEditor1.getDataValue();
+     var idAsignatura    = this.aprendizajes_asignaturas.selectedItem.data.id;
+     var idDimension     = this.dimensinComprensionEditor1.getDataValue();
+     var idDimension2    = this.dimensinCurricularEditor1.getDataValue();
+     var idInteligencia  = this.inteligenciaEditor1.getDataValue();
+     var idNivelEsperado = this.nivelEsperadoEditor1.getDataValue();   
+     var peso            = this.pesoEditor1.getDataValue();  
+     
+     var now             = new Date().getTime(); 
+     var accion          = "accion: actualizar > idAprendizaje >"+idAprendizaje+" idAsignatura >"+idAsignatura+" aprendizaje >"+aprendizaje+" learning> "+learning+" ejes >"+ejeIdEje+"-"+eje2IdEje+"-"+eje3IdEje+" dimension_comp >"+idDimension+" >dimension curr >"+idDimension2+" > idInteligencia >"+idInteligencia+" > idNivelEsperado > "+idNivelEsperado+" peso >"+peso+" fechaEsperada > "+fechaEsperada;
+     var username        = main.a_getUserName.getData().dataValue;  
+     this.insertLogData.setValue("usuario", username);
+     this.insertLogData.setValue("tablaAfectada", "AprendizajesAsig");
+     this.insertLogData.setValue("accionRealizada", accion);
+     this.insertLogData.setValue("fechaCreacion", now);
+     this.insertLogDocentesForm.setDataSet(this.insertLogData);          
+     this.insertLogDocentesForm.insertData();        
+    } catch(e) {
+      console.error('ERROR IN aprendizajes_asignaturaLiveFormUpdateData: ' + e); 
+    } 
+  },
+  insertLogDocentesFormSuccess: function(inSender, inData) {
+     this.idAprendizajeEditor1.clear();
+     this.fechaEsperadaEditor1.clear();
+     this.aprendizajeEditor1.clear();
+     this.learningEditor1.clear();
+     this.pesoEditor1.clear();
+     this.ejeIdEjeEditor1.clear();
+     this.eje2IdEjeEditor1.clear();
+     this.eje3IdEjeEditor1.clear(); 
+     this.dimensinComprensionEditor1.clear();
+     this.dimensinCurricularEditor1.clear();
+     this.inteligenciaEditor1.clear();
+     this.nivelEsperadoEditor1.clear();
+     this.pesoEditor1.clear(); 
+  },
+  aprendizajes_gradoChange: function(inSender, inDisplayValue, inDataValue) {
+    try {
+     var idgrado= this.aprendizajes_grado.dataValue.idGrado;
+     var idsy   = this.aprendizajes_sy.dataValue.idSy;
+     this.aprendizajes_asignaturas_sv.input.setValue("_grado", idgrado);
+     this.aprendizajes_asignaturas_sv.input.setValue("_sy", idsy);
+     this.aprendizajes_asignaturas_sv.update();      
+    } catch(e) {
+      console.error('ERROR IN aprendizajes_gradoChange: ' + e); 
+    } 
   },
   _end: 0
 });

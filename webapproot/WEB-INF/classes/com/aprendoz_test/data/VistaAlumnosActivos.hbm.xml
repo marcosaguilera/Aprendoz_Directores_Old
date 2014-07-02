@@ -150,10 +150,10 @@
                 <column name="Promocion" length="45"/>
             </key-property>
             <key-property name="profesion" type="string">
-                <column name="Profesion" length="45"/>
+                <column name="Profesion" length="500"/>
             </key-property>
             <key-property name="empresa" type="string">
-                <column name="Empresa" length="45"/>
+                <column name="Empresa" length="500"/>
             </key-property>
             <key-property name="cargo" type="string">
                 <column name="Cargo" length="45"/>

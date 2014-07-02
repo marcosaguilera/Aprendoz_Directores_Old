@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" springFile="sendingMailToParents.spring.xml" type="JavaService" CRUDService="false" class="sendingMailToParents" id="sendingMailToParents">
+    <operation name="enviarNotificacionAlmuerzo">
+        <parameter isList="false" typeRef="java.lang.String" name="correopadre"/>
+        <parameter isList="false" typeRef="java.lang.String" name="correomadre"/>
+        <return isList="false" typeRef="java.lang.String"/>
+    </operation>
+    <dataobjects/>
+</service>

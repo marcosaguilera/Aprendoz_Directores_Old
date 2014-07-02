@@ -80,6 +80,12 @@
             </key>
             <one-to-many class="com.aprendoz_test.data.Horario"/>
         </set>
+        <set name="asignaturaCopies" inverse="true">
+            <key>
+                <column name="SY_Id_SY" not-null="true"/>
+            </key>
+            <one-to-many class="com.aprendoz_test.data.AsignaturaCopy"/>
+        </set>
         <set name="periodos" inverse="true">
             <key>
                 <column name="SY_Id_SY" not-null="true"/>
@@ -145,6 +151,12 @@
                 <column name="SY_Id_SY" not-null="true"/>
             </key>
             <one-to-many class="com.aprendoz_test.data.CostosAnuales"/>
+        </set>
+        <set name="promocionCopies" inverse="true">
+            <key>
+                <column name="SY_Id_Sy" not-null="true"/>
+            </key>
+            <one-to-many class="com.aprendoz_test.data.PromocionCopy"/>
         </set>
     </class>
 </hibernate-mapping>
