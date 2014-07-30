@@ -89,6 +89,7 @@ CONCAT(p.apellido2,&apos; &apos;,p.nombre1,&apos; &apos;,p.nombre2,&apos; &apos;
     </query>
     <query name="getListStudentsByCurse">
         <query-param name="pcurso" type="java.lang.Integer"/>
+        <query-param name="pidsy" type="java.lang.Integer"/>
         SELECT
 p.codigo as codigo,
 p.idPersona as idpersona,
@@ -100,7 +101,7 @@ g.idGrado as idgrado,
 g.grado as grado,
 sy.schoolYear as schoolYear
 FROM InscAlumCurso iac INNER JOIN iac.persona p INNER JOIN iac.curso c INNER JOIN iac.sy sy INNER JOIN c.grado g
-WHERE c.idCurso=:pcurso AND sy.idSy=4
+WHERE c.idCurso=:pcurso AND sy.idSy=:pidsy
 ORDER BY c.idCurso,p.apellido1,p.apellido2,p.nombre1,p.nombre2
     </query>
     <query name="getCountGender">

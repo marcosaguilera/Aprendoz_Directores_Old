@@ -348,6 +348,10 @@ dojo.declare("Subjects", wm.Page, {
      this.docentes.hide();
      this.learnings.hide();
      this.subjects.show();
+     
+     this.curdate = new Date().getTime();
+     this.a_cursy.input.setValue("f1",this.curdate); 
+     this.a_cursy.update();
   },
   areas_buttonClick: function(inSender, inEvent) {
      this.axis.hide();
@@ -394,7 +398,9 @@ dojo.declare("Subjects", wm.Page, {
      var json= this.a_cursy.getItem(0);    
      var sy = json.data.sy;
      var schoolyear = json.data.idsy;
-     this.aprendizajes_sel_sy.setDataValue(5);
+     this.aprendizajes_sel_sy.setDataValue(5); 
+     this.aprendizajes_sy.setDisplayValue(sy);
+     this.select_sy.setDisplayValue(sy);
   },
   aprendizajes_sel_gradoChange: function(inSender, inDisplayValue, inDataValue) {
      var idsy= this.aprendizajes_sel_sy.getDataValue();
@@ -412,8 +418,7 @@ dojo.declare("Subjects", wm.Page, {
      this.inscCursoAsigSv.input.setValue("idc", idcurso); 
      this.inscCursoAsigSv.input.setValue("idper", idsy); 
      this.inscCursoAsigSv.update(); 
-  }, 
-  
+  },   
   docentesAgregarClick: function(inSender, inEvent) {
      var obj_  = this.cursosDojoGrid.dojoObj.selection.getSelected();
      var cont_ = this.cursosDojoGrid.dojoObj.selection.getSelectedCount();
@@ -423,14 +428,20 @@ dojo.declare("Subjects", wm.Page, {
      var idcurso= this.cursosDojoGrid.selectedItem.getData().idcurso;
      var periodoid = 13;
      var periodo   = "2014-2015";
-     var idpersona= this.docentesDojoGrid.selectedItem.getData().idpersona;       
-     
+     var idpersona= this.docentesDojoGrid.selectedItem.getData().idpersona;   
+
      this.actionsInscCursoAsig.setValue("asignatura.idAsignatura", idasignatura);
      this.actionsInscCursoAsig.setValue("persona.idPersona", idpersona);
      this.actionsInscCursoAsig.setValue("periodo.idPeriodo", periodoid);
      this.actionsInscCursoAsig.setValue("curso.idCurso", idcurso);     
      this.inscCursoAsigActionForm.setDataSet(this.actionsInscCursoAsig);          
      this.inscCursoAsigActionForm.insertData();  
+     
+     var idcurso= this.cursosDojoGrid.selectedItem.getData().idcurso;
+     var idsy= this.aprendizajes_sel_sy.getDataValue();
+     this.inscCursoAsigSv.input.setValue("idc", idcurso); 
+     this.inscCursoAsigSv.input.setValue("idper", idsy); 
+     this.inscCursoAsigSv.update();
   }, 
   
   docentesRestablecerClick: function(inSender, inEvent) {
@@ -840,6 +851,10 @@ dojo.declare("Subjects", wm.Page, {
      this.docentes.hide();
      this.subjects.hide();
      this.learnings.show();
+     
+     this.curdate = new Date().getTime();
+     this.a_cursy.input.setValue("f1",this.curdate); 
+     this.a_cursy.update();
   },
   aprendizajes_asignaturaLiveFormInsertData: function(inSender) {
     try {
@@ -925,6 +940,10 @@ dojo.declare("Subjects", wm.Page, {
     } catch(e) {
       console.error('ERROR IN aprendizajes_gradoChange: ' + e); 
     } 
+  },
+  inscCursoAsigSvSuccess: function(inSender, inDeprecated) {
+     var count=  this.inscCursoAsigSv.getCount();
+     this.perfiles_docentes_total.setCaption("Existe(n)  "+count+" perfil(es) de docente(s)");
   },
   _end: 0
 });

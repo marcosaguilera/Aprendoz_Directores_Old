@@ -47,7 +47,7 @@ Inscripciones.widgets = {
 				subjectsLabel: ["wm.Label", {"_classes":{"domNode":["wm_FontSizePx_12px"]},"height":"38px","width":"100%","border":"0","caption":"Asignaturas"}, {}, {
 					format: ["wm.DataFormatter", {}, {}]
 				}],
-				showSubjectsButton: ["wm.Button", {"_classes":{"domNode":["wm_BackgroundColor_White"]},"height":"33px","width":"100%","borderColor":" #3d80df","iconUrl":"resources/images/showme.png","iconMargin":"0 0px 0 0","margin":"1","caption":"Para ver las asignaturas haga clic aquí","iconWidth":"20px","iconHeight":"20px","showing":false}, {"onclick":"showSubjectsButtonClick"}],
+				showSubjectsButton: ["wm.Button", {"_classes":{"domNode":["wm_BackgroundColor_White"]},"height":"33px","width":"100%","caption":"Para ver las asignaturas haga clic aquí","margin":"1","borderColor":" #3d80df","iconUrl":"resources/images/showme.png","iconWidth":"20px","iconMargin":"0 0px 0 0","iconHeight":"20px","showing":false}, {"onclick":"showSubjectsButtonClick"}],
 				label2: ["wm.Label", {"height":"120px","width":"100%","border":"0","caption":"A continuación seleccione el Grado y  la <u>Asignatura</u> a la cual desea (+Agregar) o (-Retirar) alumnos.<br><br>Una vez hecho esto, los selectores  de <u>Estudiantes por Curso</u> se activarán y podrá buscar los alumnos en el curso deseado, seleccionarlos y (+Agregar) a la asignatura.","singleLine":false}, {}, {
 					format: ["wm.DataFormatter", {}, {}]
 				}],
@@ -110,8 +110,8 @@ Inscripciones.widgets = {
 			}],
 			panel5: ["wm.Panel", {"height":"100%","width":"58px","horizontalAlign":"left","verticalAlign":"top","padding":"5"}, {}, {
 				spacer1: ["wm.Spacer", {"height":"150px","width":"100%"}, {}],
-				inscribirEstudiantes: ["wm.Button", {"_classes":{"domNode":["wm_BackgroundColor_White"]},"height":"48px","width":"100%","borderColor":"#5cb85c","margin":"1","caption":"+<br>Agregar","disabled":true}, {"onclick":"inscribirEstudiantesClick"}],
-				retirarEstudiantes: ["wm.Button", {"_classes":{"domNode":["wm_BackgroundColor_White"]},"height":"48px","width":"100%","borderColor":"#d9534f","margin":"1","caption":"-<br>Retirar","disabled":true}, {"onclick":"retirarEstudiantesClick"}]
+				inscribirEstudiantes: ["wm.Button", {"_classes":{"domNode":["wm_BackgroundColor_White"]},"height":"48px","width":"100%","caption":"+<br>Agregar","margin":"1","borderColor":"#5cb85c","disabled":true}, {"onclick":"inscribirEstudiantesClick"}],
+				retirarEstudiantes: ["wm.Button", {"_classes":{"domNode":["wm_BackgroundColor_White"]},"height":"48px","width":"100%","caption":"-<br>Retirar","margin":"1","borderColor":"#d9534f","disabled":true}, {"onclick":"retirarEstudiantesClick"}]
 			}],
 			left_panel: ["wm.Panel", {"height":"100%","width":"100%","horizontalAlign":"left","verticalAlign":"top"}, {}, {
 				alumnosInscritos: ["wm.Label", {"_classes":{"domNode":["wm_FontSizePx_12px"]},"height":"38px","width":"100%","border":"0","caption":"Estudiantes Inscritos por Asignatura y curso"}, {}, {

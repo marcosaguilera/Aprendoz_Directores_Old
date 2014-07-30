@@ -48,7 +48,7 @@ import com.wavemaker.runtime.service.TypedServiceReturn;
 
 /**
  *  Operations for service "aprendoz_test"
- *  06/24/2014 11:05:16
+ *  07/30/2014 13:30:19
  * 
  */
 @SuppressWarnings("unchecked")
@@ -87,8 +87,8 @@ public class Aprendoz_test
         return ((List<SearchStudentsByComplexNameRtnType> ) dsMgr.invoke(taskMgr.getQueryTask(), (Aprendoz_testConstants.searchStudentsByComplexNameQueryName), search));
     }
 
-    public List<GetListStudentsByCurseRtnType> getListStudentsByCurse(Integer pcurso) {
-        return ((List<GetListStudentsByCurseRtnType> ) dsMgr.invoke(taskMgr.getQueryTask(), (Aprendoz_testConstants.getListStudentsByCurseQueryName), pcurso));
+    public List<GetListStudentsByCurseRtnType> getListStudentsByCurse(Integer pcurso, Integer pidsy) {
+        return ((List<GetListStudentsByCurseRtnType> ) dsMgr.invoke(taskMgr.getQueryTask(), (Aprendoz_testConstants.getListStudentsByCurseQueryName), pcurso, pidsy));
     }
 
     public com.aprendoz_test.data.output.GetCountGenderRtnType getCountGender(Integer sy, Integer curso) {

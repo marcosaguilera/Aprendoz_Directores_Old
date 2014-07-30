@@ -38,7 +38,8 @@ dojo.declare("Main", wm.Page, {
       var json= this.a_cursy.getItem(0);
       this.sy = json.data.sy;
       this.schoolyear = json.data.idsy;
-      this.l_cur_asig_asignaturas_vista_docentes_asignaturas2.input.setValue("pidsy", this.schoolyear);
+      var idsy= main.cur_encabezado_sel_sy.getDataValue();
+      this.l_cur_asig_asignaturas_vista_docentes_asignaturas2.input.setValue("pidsy", idsy);
       this.l_cur_asig_asignaturas_vista_docentes_asignaturas2.input.setValue("pidgrado", grado);
       this.l_cur_asig_asignaturas_vista_docentes_asignaturas2.update();
       this.l_cur_unid_unidades_unidadLiveVariable1.clearData();
@@ -228,7 +229,8 @@ otrasmetasLiveForm1BeginInsert: function(inSender) {
            this.calif_encabezado_opciones_sel_curso.enable();
            this.l_calif_encabezado_opciones_listaCursos.update();
        }
-      this.l_calif_contenedor_tablas_asignaturas_docentes.filter.setValue("id.syIdSy",this.schoolyear);
+      var sy= main.calif_encabezado_opciones_sel_sy.getDataValue();    
+      this.l_calif_contenedor_tablas_asignaturas_docentes.filter.setValue("id.syIdSy",sy);
       this.l_calif_contenedor_tablas_asignaturas_docentes.filter.setValue("id.gradoIdGrado",grado);
       this.l_calif_contenedor_tablas_asignaturas_docentes.update();
       this.l_calif_contenedor_tablas_aprendizajes.clearData();
@@ -760,13 +762,7 @@ otrasmetasLiveForm1BeginInsert: function(inSender) {
   },
   
   cur_encabezado_butt_reporte1Click: function(inSender, inEvent) {
-    try {
-      url= "services/catalogoAsignaturas.download?method=getReport&ida="+this.cur_asig_datag_asignaturasDataGrid1.selectedItem.getData().id.asignaturaIdAsignatura;  
-      window.open(url,"_BLANK");   
-
-    } catch(e) {
-      console.error('ERROR IN cur_encabezado_butt_reporte1Click: ' + e); 
-    } 
+      
   },
 
   generar7Click: function(inSender, inEvent) {
@@ -1089,24 +1085,20 @@ otrasmetasLiveForm1BeginInsert: function(inSender) {
   },
 
   calif_encabezado_opciones_sel_cursoChange: function(inSender, inDisplayValue, inDataValue) {
-    try {
       var json= this.a_cursy.getItem(0);
       this.sy = json.data.sy;
       this.schoolyear = json.data.idsy;
       var idgardo= this.calif_encabezado_opciones_sel_grado.getDataValue();
-      var idcurso= this.calif_encabezado_opciones_sel_curso.getDataValue();      
+      var idcurso= this.calif_encabezado_opciones_sel_curso.getDataValue(); 
+      var sy= main.calif_encabezado_opciones_sel_sy.getDataValue();     
       this.calif_asig_datag_asignaturasDataGrid1.clearSelection();
       this.l_calif_contendor_tablas_Vista_Insc_Alumn_Asig_Curso.clearData();
       this.l_calif_contenedor_tablas_aprendizajes.clearData();
       this.l_calif_contenedor_tablas_inscalumaprendizajeLiveVariable2.clearData();
       this.l_calif_contenedor_tablas_calificacion_final.clearData(); 
-      this.l_calif_alumnos_alumnosCursos.filter.setValue("id.idSy",this.schoolyear);
+      this.l_calif_alumnos_alumnosCursos.filter.setValue("id.idSy",sy);
       this.l_calif_alumnos_alumnosCursos.filter.setValue("id.idCurso",idcurso);
-      this.l_calif_alumnos_alumnosCursos.update();
-                    
-    } catch(e) {
-      console.error('ERROR IN calif_encabezado_opciones_sel_cursoChange: ' + e); 
-    } 
+      this.l_calif_alumnos_alumnosCursos.update(); 
   },
   
   l_calif_alumnos_butt_ocultarClick: function(inSender, inEvent) {
@@ -2246,8 +2238,9 @@ otrasmetasLiveForm1BeginInsert: function(inSender) {
   a_cursySuccess: function(inSender, inDeprecated) {
      var json= this.a_cursy.getItem(0);
      this.sy = json.data.sy;
-     this.bievenida_sy.setCaption(this.sy);
-    
+     this.bievenida_sy.setCaption(this.sy); 
+     this.cur_encabezado_sel_sy.setDisplayValue(this.sy);
+     this.calif_encabezado_opciones_sel_sy.setDisplayValue(this.sy);   
   },
   cur_act_datag_actividadDataGrid1Selected: function(inSender, inIndex) {    
      this.l_cur_formularios_actividad_listaTipoActividades.update();
@@ -2798,6 +2791,10 @@ otrasmetasLiveForm1BeginInsert: function(inSender) {
   },
   sendingEmailJSError: function(inSender, inError) {
       alert("****Error al enviar la notificación, intente nuevamente o comuníquese con el administrador del sistema.");
+  },
+ 
+  pestana_curriculoShow: function(inSender) {
+       
   },
   _end: 0
 });

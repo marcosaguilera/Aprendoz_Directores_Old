@@ -173,6 +173,7 @@ dojo.declare("Inscripciones", wm.Page, {
      this.studentsListGradeSubject.input.setValue("pasignatura", subjectid);
      this.studentsListGradeSubject.input.setValue("idsy", sy);
      this.listStudentsByCurse.input.setValue("pcurso",idcurso);
+     this.listStudentsByCurse.input.setValue("pidsy",sy);
      
      this.listStudentsByCurse.update();
      this.studentsListGradeSubject.update(); 

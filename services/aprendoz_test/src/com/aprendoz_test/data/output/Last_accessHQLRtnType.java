@@ -4,7 +4,7 @@ package com.aprendoz_test.data.output;
 
 
 /**
- * Generated for query "last_accessHQL" on 06/24/2014 11:04:55
+ * Generated for query "last_accessHQL" on 07/30/2014 13:28:39
  * 
  */
 public class Last_accessHQLRtnType {

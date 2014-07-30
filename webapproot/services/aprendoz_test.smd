@@ -143,6 +143,9 @@
 		"parameters": [{
 			"name": "pcurso",
 			"type": "java.lang.Integer"
+		}, {
+			"name": "pidsy",
+			"type": "java.lang.Integer"
 		}],
 		"returnType": "[com.aprendoz_test.data.output.GetListStudentsByCurseRtnType]"
 	}, {
