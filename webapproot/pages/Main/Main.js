@@ -347,11 +347,12 @@ otrasmetasLiveForm1BeginInsert: function(inSender) {
       var json= this.a_cursy.getItem(0);
       this.sy = json.data.sy;
       this.schoolyear = json.data.idsy;
+      var idsyget= this.calif_encabezado_opciones_sel_sy.getDataValue();
       var codigo= main.calif_alumnos_datagrids_datag_alumnos_cursos.selectedItem.getData().id.codigo;
       main.imgstd.setSource("http://www.rochester.edu.co/fotosestudiantes/"+codigo+".Jpeg"); 
       var idp= this.calif_alumnos_datagrids_datag_alumnos_cursos.selectedItem.getData().id.idPersona;     
       this.l_calif_alumnos_alumnos_asignaturas.input.setValue("idpersona", idp);
-      this.l_calif_alumnos_alumnos_asignaturas.input.setValue("idsyp", this.schoolyear);
+      this.l_calif_alumnos_alumnos_asignaturas.input.setValue("idsyp", idsyget);
       this.l_calif_alumnos_alumnos_asignaturas.update();
       this.calif_encabezado_opciones_butt_reporte_pendientes.enable();
   },

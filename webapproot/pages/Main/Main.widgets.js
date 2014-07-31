@@ -402,14 +402,14 @@ Main.widgets = {
 								format: ["wm.DataFormatter", {}, {}]
 							}],
 							picture1: ["wm.Picture", {"height":"26px","border":"0","width":"22px","source":"resources/images/buttons/date.png","aspect":"v"}, {}],
-							dateEditor1: ["wm.DateEditor", {"_classes":{"domNode":["wm_FontSizePx_12px","wm_FontFamily_Arial"]},"width":"78px","captionAlign":"center","height":"26px","displayValue":"30/07/2014","readonly":true}, {}, {
+							dateEditor1: ["wm.DateEditor", {"_classes":{"domNode":["wm_FontSizePx_12px","wm_FontFamily_Arial"]},"width":"78px","captionAlign":"center","height":"26px","displayValue":"31/07/2014","readonly":true}, {}, {
 								binding: ["wm.Binding", {}, {}, {
 									wire: ["wm.Wire", {"targetProperty":"dataValue","expression":"new Date().getTime()"}, {}]
 								}],
 								editor: ["wm._DateEditor", {}, {}]
 							}],
 							picture3: ["wm.Picture", {"height":"26px","border":"0","width":"22px","source":"resources/images/buttons/clock.png","aspect":"v"}, {}],
-							timeEditor1: ["wm.TimeEditor", {"_classes":{"domNode":["wm_FontSizePx_12px","wm_FontFamily_Arial"]},"displayValue":"12:56 p.m.","captionAlign":"center","height":"26px","width":"72px","readonly":true}, {}, {
+							timeEditor1: ["wm.TimeEditor", {"_classes":{"domNode":["wm_FontSizePx_12px","wm_FontFamily_Arial"]},"displayValue":"13:32 p.m.","captionAlign":"center","height":"26px","width":"72px","readonly":true}, {}, {
 								binding: ["wm.Binding", {}, {}, {
 									wire: ["wm.Wire", {"targetProperty":"dataValue","expression":"new Date().getTime()"}, {}]
 								}],
@@ -427,8 +427,8 @@ Main.widgets = {
 						templateLeft: ["wm.Panel", {"_classes":{"domNode":["template-left"]},"height":"100%","width":"24px","horizontalAlign":"left","verticalAlign":"top","freeze":true,"showing":false}, {}],
 						templateContent: ["wm.Panel", {"_classes":{"domNode":["template-content"]},"height":"100%","width":"100%","horizontalAlign":"left","verticalAlign":"top"}, {}, {
 							MAIN: ["wm.TabLayers", {}, {}, {
-								pestana_bievenida: ["wm.Layer", {"caption":"Inicio","horizontalAlign":"left","verticalAlign":"top","roles":["6","10","5","4"],"padding":"100","lock":true}, {}, {
-									bienvenida_inputFullName: ["wm.TextEditor", {"width":"100%","caption":"inputFullName","showing":false,"displayValue":"m"}, {"onchange":"bienvenida_inputFullNameChange"}, {
+								pestana_bievenida: ["wm.Layer", {"caption":"Inicio","horizontalAlign":"left","verticalAlign":"top","roles":["6","10","5","4"],"lock":true,"padding":"100"}, {}, {
+									bienvenida_inputFullName: ["wm.TextEditor", {"width":"100%","caption":"inputFullName","showing":false}, {"onchange":"bienvenida_inputFullNameChange"}, {
 										binding: ["wm.Binding", {}, {}, {
 											wire: ["wm.Wire", {"targetProperty":"dataValue","source":"a_getUserName.dataValue"}, {}]
 										}],
@@ -503,7 +503,7 @@ Main.widgets = {
 											}]
 										}],
 										inicio_panel_opciones: ["wm.Panel", {"height":"100%","width":"275px","horizontalAlign":"left","verticalAlign":"top","padding":"10"}, {}, {
-											aux_getNameUser: ["wm.TextEditor", {"width":"150%","caption":"userId","showing":false,"disabled":true,"displayValue":"m","height":"28px"}, {"onchange":"getCompleteName"}, {
+											aux_getNameUser: ["wm.TextEditor", {"width":"150%","caption":"userId","showing":false,"disabled":true,"height":"28px"}, {"onchange":"getCompleteName"}, {
 												binding: ["wm.Binding", {}, {}, {
 													wire: ["wm.Wire", {"targetProperty":"dataValue","source":"a_getUserName.dataValue"}, {}]
 												}],
@@ -548,13 +548,13 @@ Main.widgets = {
 												format: ["wm.DataFormatter", {}, {}]
 											}],
 											logForm: ["wm.LiveForm", {"height":"60px","verticalAlign":"top","horizontalAlign":"left","showing":false}, {}, {
-												inicio_box_fecha: ["wm.DateEditor", {"displayValue":"30/07/2014","readonly":true,"disabled":true,"caption":"hora","showing":false}, {}, {
+												inicio_box_fecha: ["wm.DateEditor", {"displayValue":"31/07/2014","readonly":true,"disabled":true,"caption":"hora","showing":false}, {}, {
 													binding: ["wm.Binding", {}, {}, {
 														wire: ["wm.Wire", {"targetProperty":"dataValue","expression":"new Date().getTime()"}, {}]
 													}],
 													editor: ["wm._DateEditor", {}, {}]
 												}],
-												inicio_box_hora: ["wm.TimeEditor", {"displayValue":"12:56 p.m.","disabled":true,"caption":"fecha","showing":false}, {}, {
+												inicio_box_hora: ["wm.TimeEditor", {"displayValue":"13:32 p.m.","disabled":true,"caption":"fecha","showing":false}, {}, {
 													binding: ["wm.Binding", {}, {}, {
 														wire: ["wm.Wire", {"targetProperty":"dataValue","expression":"new Date().getTime()"}, {}]
 													}],
@@ -611,7 +611,7 @@ Main.widgets = {
 													ver_unidad: ["wm.Button", {"height":"100%","width":"40px","caption":"","borderColor":"#bbb","iconUrl":"resources/images/news_icons/view.png","iconWidth":"20px","iconMargin":"0 0px 0 0","disabled":true,"iconHeight":"20px"}, {"onclick":"ver_unidadClick"}]
 												}],
 												cur_panel_unid: ["wm.LivePanel", {"verticalAlign":"top","horizontalAlign":"right","height":"239px","layoutKind":"left-to-right","lock":true}, {}, {
-													cur_unid_panel_unidades: ["wm.FancyPanel", {"_classes":{"domNode":["wm_BackgroundGradient_Blue"]},"horizontalAlign":"left","verticalAlign":"top","title":"UNIDADES","captionClasses":"wm_BackgroundGradient_Blue wm_FontSizePx_16px wm_FontColor_White","margin":"0","lock":true,"borderColor":"#ffffff"}, {}, {
+													cur_unid_panel_unidades: ["wm.FancyPanel", {"_classes":{"domNode":["wm_BackgroundGradient_Blue"]},"horizontalAlign":"left","verticalAlign":"top","title":"UNIDADES","captionClasses":"wm_BackgroundGradient_Blue wm_FontSizePx_16px wm_FontColor_White","margin":"0","borderColor":"#ffffff","lock":true}, {}, {
 														cur_unid_datag_unidadesDataGrid1: ["wm.DataGrid", {"_classes":{"domNode":["omgDataGrid"]},"border":"0"}, {"onSelected":"cur_unid_datag_unidadesDataGrid1Selected"}, {
 															binding: ["wm.Binding", {}, {}, {
 																wire: ["wm.Wire", {"targetProperty":"dataSet","source":"l_cur_unid_unidades_unidadLiveVariable1","expression":undefined}, {}]
@@ -1321,7 +1321,7 @@ Main.widgets = {
 										}]
 									}]
 								}],
-								calificaciones: ["wm.Layer", {"caption":"Calificaciones","horizontalAlign":"left","verticalAlign":"top","roles":["6","8","9","10","7","25"],"lock":true,"borderColor":"#CD0000"}, {"onShow":"calificacionesShow"}, {
+								calificaciones: ["wm.Layer", {"caption":"Calificaciones","horizontalAlign":"left","verticalAlign":"top","roles":["6","8","9","10","7","25"],"borderColor":"#CD0000"}, {"onShow":"calificacionesShow"}, {
 									calf_panel_encabezado_principal: ["wm.Panel", {"_classes":{"domNode":["wm_SilverBlueTheme_LightBlueInsetPanel"]},"height":"42px","width":"100%","horizontalAlign":"left","verticalAlign":"middle","margin":"3","layoutKind":"left-to-right"}, {}, {
 										textEditor6: ["wm.TextEditor", {"width":"308px","caption":"idTipoPersona","showing":false}, {}, {
 											binding: ["wm.Binding", {}, {}, {
@@ -1371,7 +1371,7 @@ Main.widgets = {
 										button1: ["wm.Button", {"height":"48px","width":"96px","showing":false}, {"onclick":"button1Click"}],
 										spacer8: ["wm.Spacer", {"height":"48px","width":"3px"}, {}]
 									}],
-									calif_panel_contenedor_aprendizaje: ["wm.Panel", {"height":"100%","width":"100%","horizontalAlign":"left","verticalAlign":"top","layoutKind":"left-to-right","borderColor":"#ffffff"}, {}, {
+									calif_panel_contenedor_aprendizaje: ["wm.Panel", {"height":"100%","width":"100%","horizontalAlign":"left","verticalAlign":"top","layoutKind":"left-to-right","borderColor":"#ffffff","showing":false}, {}, {
 										calif_contendor_layer_principal: ["wm.Layers", {}, {}, {
 											calif_contendor_sublayer_principal: ["wm.Layer", {"caption":"layer20","horizontalAlign":"left","verticalAlign":"top"}, {}, {
 												calif_contendor_panel1: ["wm.Panel", {"height":"50%","width":"100%","horizontalAlign":"left","verticalAlign":"top","layoutKind":"left-to-right","borderColor":"#fffff"}, {}, {
@@ -1888,7 +1888,7 @@ Main.widgets = {
 											}]
 										}]
 									}],
-									calif_panel_contenedor_alumnos: ["wm.Panel", {"height":"100%","width":"100%","horizontalAlign":"left","verticalAlign":"top","layoutKind":"left-to-right","lock":true,"showing":false}, {}, {
+									calif_panel_contenedor_alumnos: ["wm.Panel", {"height":"100%","width":"100%","horizontalAlign":"left","verticalAlign":"top","layoutKind":"left-to-right"}, {}, {
 										layers7: ["wm.Layers", {}, {}, {
 											layer21: ["wm.Layer", {"caption":"layer21","horizontalAlign":"left","verticalAlign":"top"}, {}, {
 												calif_alumnos_panel_datagrids: ["wm.Panel", {"height":"402px","width":"100%","horizontalAlign":"left","verticalAlign":"top","layoutKind":"left-to-right","borderColor":"#000000"}, {}, {
@@ -2320,7 +2320,7 @@ Main.widgets = {
 								Inscripciones: ["wm.Layer", {"caption":"Inscripciones","horizontalAlign":"left","verticalAlign":"top","roles":["6","10","20","21","22","23","24","5"]}, {}, {
 									inscripciones: ["wm.PageContainer", {"border":"0","deferLoad":true,"pageName":"Inscripciones"}, {}]
 								}],
-								pestana_reportes_seguimiento: ["wm.Layer", {"caption":"Reportes","horizontalAlign":"left","verticalAlign":"top","roles":["5","6","10"],"padding":"40","lock":true}, {"onShow":"pestana_reportes_seguimientoShow"}, {
+								pestana_reportes_seguimiento: ["wm.Layer", {"caption":"Reportes","horizontalAlign":"left","verticalAlign":"top","roles":["5","6","10"],"lock":true,"padding":"40"}, {"onShow":"pestana_reportes_seguimientoShow"}, {
 									reportes_top_panel: ["wm.Panel", {"_classes":{"domNode":["wm_Border_TopStyleCurved4px","wm_BackgroundColor_VeryLightGray"]},"height":"48px","width":"100%","horizontalAlign":"left","verticalAlign":"top","padding":"2","layoutKind":"left-to-right"}, {}, {
 										reports_open_report_window: ["wm.Button", {"height":"100%","width":"155px","caption":"<img src=\"resources/images/buttons/report.png\" WIDTH=32 HEIGHT=32 > Generar reporte","borderColor":"#c6c6c6","disabled":true,"hint":"Abrir generador de  reporte"}, {"onclick":"reports_open_report_windowClick"}],
 										uctualizar_reportes_descripcion: ["wm.Button", {"height":"100%","width":"200px","caption":"<img src=\"resources/images/buttons/Update.png\" WIDTH=22 HEIGHT=22 > Actualizar información","disabled":true}, {}]
