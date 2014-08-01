@@ -641,6 +641,9 @@ dojo.declare("Subjects", wm.Page, {
      var gradostr        = this.aprendizajes_grado.getDisplayValue();
      var sy              = this.aprendizajes_sy.dataValue.idSy;    
      var systr           = this.aprendizajes_sy.getDisplayValue();
+     var ih1             = this.aprendizajes_asignaturas.selectedItem.getData().ih1;
+     var ih2             = this.aprendizajes_asignaturas.selectedItem.getData().ih2;
+     var ih3             = this.aprendizajes_asignaturas.selectedItem.getData().ih3;
      var idAsignatura    = this.aprendizajes_asignaturas.selectedItem.data.id;
      var idDimension     = this.dimensinComprensionEditor1.getDataValue();
      var idDimensionstr  = this.dimensinComprensionEditor1.getDisplayValue();
@@ -665,6 +668,9 @@ dojo.declare("Subjects", wm.Page, {
      this.aprendizajes_asignaturaActions.setValue("asignatura.grado.gradoSapiens",gradosapiens);
      this.aprendizajes_asignaturaActions.setValue("asignatura.grado.grade",grade);
      this.aprendizajes_asignaturaActions.setValue("asignatura.grado.grado",gradostr);
+     this.aprendizajes_asignaturaActions.setValue("asignatura.ihA1",ih1);
+     this.aprendizajes_asignaturaActions.setValue("asignatura.ihA2",ih2);
+     this.aprendizajes_asignaturaActions.setValue("asignatura.ihA3",ih3);
      this.aprendizajes_asignaturaActions.setValue("asignatura.sy.idSy",sy);
      this.aprendizajes_asignaturaActions.setValue("asignatura.sy.schoolYear",systr);
      this.aprendizajes_asignaturaActions.setValue("dimensionComprension.idDimension",idDimension);
@@ -714,6 +720,9 @@ dojo.declare("Subjects", wm.Page, {
      var gradostr        = this.aprendizajes_grado.getDisplayValue();
      var sy              = this.aprendizajes_sy.dataValue.idSy;
      var systr           = this.aprendizajes_sy.getDisplayValue();
+     var ih1             = this.aprendizajes_asignaturas.selectedItem.getData().ih1;
+     var ih2             = this.aprendizajes_asignaturas.selectedItem.getData().ih2;
+     var ih3             = this.aprendizajes_asignaturas.selectedItem.getData().ih3;
      var idAsignatura    = this.aprendizajes_asignaturas.selectedItem.data.id;
      var idDimension     = this.dimensinComprensionEditor1.getDataValue();
      var idDimensionstr  = this.dimensinComprensionEditor1.getDisplayValue();
@@ -739,6 +748,9 @@ dojo.declare("Subjects", wm.Page, {
      this.aprendizajes_asignaturaActions.setValue("asignatura.grado.gradoSapiens",gradosapiens);
      this.aprendizajes_asignaturaActions.setValue("asignatura.grado.grade",grade);
      this.aprendizajes_asignaturaActions.setValue("asignatura.grado.grado",gradostr);
+     this.aprendizajes_asignaturaActions.setValue("asignatura.ihA1",ih1);
+     this.aprendizajes_asignaturaActions.setValue("asignatura.ihA2",ih2);
+     this.aprendizajes_asignaturaActions.setValue("asignatura.ihA3",ih3);
      this.aprendizajes_asignaturaActions.setValue("asignatura.sy.idSy",sy);
      this.aprendizajes_asignaturaActions.setValue("asignatura.sy.schoolYear",systr);
      this.aprendizajes_asignaturaActions.setValue("dimensionComprension.idDimension",idDimension);

@@ -5,7 +5,7 @@ import java.util.Date;
 
 
 /**
- * Generated for query "hql_aprendizaje_detalles" on 07/30/2014 13:28:39
+ * Generated for query "hql_aprendizaje_detalles" on 08/01/2014 15:24:11
  * 
  */
 public class Hql_aprendizaje_detallesRtnType {

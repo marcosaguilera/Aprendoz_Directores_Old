@@ -4,7 +4,7 @@ package com.aprendoz_test.data.output;
 
 
 /**
- * Generated for query "subjectsByGrade" on 07/30/2014 13:28:39
+ * Generated for query "subjectsByGrade" on 08/01/2014 15:24:11
  * 
  */
 public class SubjectsByGradeRtnType {
@@ -19,11 +19,14 @@ public class SubjectsByGradeRtnType {
     private Integer sa1;
     private Integer sa2;
     private Integer sa3;
+    private Float ih1;
+    private Float ih2;
+    private Float ih3;
 
     public SubjectsByGradeRtnType() {
     }
 
-    public SubjectsByGradeRtnType(Integer id, String asignatura, Integer idgrado, Integer c3, Integer a1, Integer a2, Integer a3, Integer sa1, Integer sa2, Integer sa3) {
+    public SubjectsByGradeRtnType(Integer id, String asignatura, Integer idgrado, Integer c3, Integer a1, Integer a2, Integer a3, Integer sa1, Integer sa2, Integer sa3, Float ih1, Float ih2, Float ih3) {
         this.id = id;
         this.asignatura = asignatura;
         this.idgrado = idgrado;
@@ -34,6 +37,9 @@ public class SubjectsByGradeRtnType {
         this.sa1 = sa1;
         this.sa2 = sa2;
         this.sa3 = sa3;
+        this.ih1 = ih1;
+        this.ih2 = ih2;
+        this.ih3 = ih3;
     }
 
     public Integer getId() {
@@ -114,6 +120,30 @@ public class SubjectsByGradeRtnType {
 
     public void setSa3(Integer sa3) {
         this.sa3 = sa3;
+    }
+
+    public Float getIh1() {
+        return ih1;
+    }
+
+    public void setIh1(Float ih1) {
+        this.ih1 = ih1;
+    }
+
+    public Float getIh2() {
+        return ih2;
+    }
+
+    public void setIh2(Float ih2) {
+        this.ih2 = ih2;
+    }
+
+    public Float getIh3() {
+        return ih3;
+    }
+
+    public void setIh3(Float ih3) {
+        this.ih3 = ih3;
     }
 
 }

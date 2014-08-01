@@ -23425,6 +23425,33 @@ wm.types = {
 					"required": true,
 					"type": "java.lang.Integer"
 				},
+				"ih1": {
+					"exclude": [],
+					"fieldOrder": 10,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.lang.Float"
+				},
+				"ih2": {
+					"exclude": [],
+					"fieldOrder": 11,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.lang.Float"
+				},
+				"ih3": {
+					"exclude": [],
+					"fieldOrder": 12,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.lang.Float"
+				},
 				"sa1": {
 					"exclude": [],
 					"fieldOrder": 7,

@@ -4,7 +4,7 @@ package com.aprendoz_test.data.output;
 
 
 /**
- * Generated for query "cursos" on 07/30/2014 13:28:39
+ * Generated for query "cursos" on 08/01/2014 15:24:11
  * 
  */
 public class CursosRtnType {

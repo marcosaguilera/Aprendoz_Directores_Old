@@ -15,7 +15,7 @@ WHERE e.idEventualidad=:ide
     <query name="subjectsByGrade">
         <query-param name="_sy" type="java.lang.Integer"/>
         <query-param name="_grado" type="java.lang.Integer"/>
-        SELECT  a.idAsignatura as id, a.asignatura as asignatura, g.idGrado as idgrado, sy.idSy, a.idArea1 as a1, a.idArea2 as a2, a.idArea3 as a3, a.idSubarea1 as sa1, a.idSubarea2 as sa2, a.idSubarea3 as sa3
+        SELECT  a.idAsignatura as id, a.asignatura as asignatura, g.idGrado as idgrado, sy.idSy, a.idArea1 as a1, a.idArea2 as a2, a.idArea3 as a3, a.idSubarea1 as sa1, a.idSubarea2 as sa2, a.idSubarea3 as sa3, a.ihA1 as ih1, a.ihA2 as ih2, a.ihA3 as ih3
 FROM Asignatura a INNER JOIN a.grado g INNER JOIN a.sy sy
 WHERE sy.idSy=:_sy AND g.idGrado=:_grado
     </query>
