@@ -527,7 +527,7 @@ Subjects.widgets = {
 						}]
 					}]
 				}],
-				aprendizajes_asignaturas: ["wm.DojoGrid", {"height":"704px","border":"0","structure":"[[{\"field\":\"id\",\"name\":\" \",\"width\":\"55px\",\"displayType\":undefined},{\"field\":\"asignatura\",\"name\":\"Asignatura\",\"width\":\"auto\",\"displayType\":undefined}]]"}, {"onClick":"aprendizajes_asignaturasClick"}, {
+				aprendizajes_asignaturas: ["wm.DojoGrid", {"height":"704px","border":"0","structure":"[[{\"field\":\"id\",\"name\":\" \",\"width\":\"55px\",\"displayType\":undefined},{\"field\":\"asignatura\",\"name\":\"Asignatura\",\"width\":\"auto\",\"displayType\":undefined}]]"}, {"onClick":"aprendizajes_asignaturasClick","onSelectionChange":"aprendizajes_asignaturasSelectionChange"}, {
 					binding: ["wm.Binding", {}, {}, {
 						wire: ["wm.Wire", {"targetProperty":"dataSet","source":"aprendizajes_asignaturas_sv"}, {}]
 					}]
@@ -604,7 +604,7 @@ Subjects.widgets = {
 						}]
 					}]
 				}],
-				editPanel3: ["wm.EditPanel", {"liveForm":"learningsLiveForm1","savePanel":"savePanel3","operationPanel":"operationPanel3"}, {}, {
+				editPanel3: ["wm.EditPanel", {"liveForm":"learningsLiveForm1","savePanel":"savePanel3","operationPanel":"operationPanel3","lock":false}, {}, {
 					savePanel3: ["wm.Panel", {"height":"100%","width":"100%","horizontalAlign":"right","verticalAlign":"top","layoutKind":"left-to-right","showing":false}, {}, {
 						saveButton4: ["wm.Button", {"_classes":{"domNode":["wm_FontColor_White","wm_BackgroundColor_White"]},"height":"100%","width":"96px","caption":"Guardar*","border":"0"}, {"onclick":"saveButton4Click"}],
 						saveButton3: ["wm.Button", {"_classes":{"domNode":["wm_FontColor_White","wm_BackgroundColor_White"]},"height":"100%","width":"100px","caption":"Guardar","border":"0","disabled":undefined}, {"onclick":"saveButton3Click"}, {

@@ -483,8 +483,11 @@ dojo.declare("Subjects", wm.Page, {
      this.aprendizajesAsignaturaLV.update();
      
      this.aprendizajesEje1.filter.setValue("subarea.idSubarea", ejeIdEje1);
+     this.aprendizajesEje1.filter.setValue("activo",true);
      this.aprendizajesEje2.filter.setValue("subarea.idSubarea", ejeIdEje2);
+     this.aprendizajesEje2.filter.setValue("activo",true);
      this.aprendizajesEje3.filter.setValue("subarea.idSubarea", ejeIdEje3);
+     this.aprendizajesEje3.filter.setValue("activo",true);
      this.aprendizajesEje1.update();
      this.aprendizajesEje2.update();
      this.aprendizajesEje3.update();     
@@ -942,20 +945,20 @@ dojo.declare("Subjects", wm.Page, {
      this.nivelEsperadoEditor1.clear();
      this.pesoEditor1.clear(); 
   },
-  aprendizajes_gradoChange: function(inSender, inDisplayValue, inDataValue) {
-    try {
+  aprendizajes_gradoChange: function(inSender, inDisplayValue, inDataValue) {  
+     this.cancelButton3Click(); 
      var idgrado= this.aprendizajes_grado.dataValue.idGrado;
      var idsy   = this.aprendizajes_sy.dataValue.idSy;
      this.aprendizajes_asignaturas_sv.input.setValue("_grado", idgrado);
      this.aprendizajes_asignaturas_sv.input.setValue("_sy", idsy);
      this.aprendizajes_asignaturas_sv.update();      
-    } catch(e) {
-      console.error('ERROR IN aprendizajes_gradoChange: ' + e); 
-    } 
   },
   inscCursoAsigSvSuccess: function(inSender, inDeprecated) {
      var count=  this.inscCursoAsigSv.getCount();
      this.perfiles_docentes_total.setCaption("Existe(n)  "+count+" perfil(es) de docente(s)");
+  },
+  aprendizajes_asignaturasSelectionChange: function(inSender) {
+     this.cancelButton3Click();  
   },
   _end: 0
 });
