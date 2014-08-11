@@ -556,7 +556,7 @@ Subjects.widgets = {
 					editor: ["wm._NumberEditor", {"required":true}, {}]
 				}],
 				ejeIdEjeEditor1: ["wm.Editor", {"caption":"1er. Eje","width":"100%","height":"26px","display":"Select","readonly":true,"formField":"ejeIdEje"}, {}, {
-					editor: ["wm._SelectEditor", {"displayField":"ejeTematico","dataField":"idEje"}, {}, {
+					editor: ["wm._SelectEditor", {"displayField":"ejeTematico","dataField":"idEje","required":true}, {}, {
 						binding: ["wm.Binding", {}, {}, {
 							wire: ["wm.Wire", {"targetProperty":"dataSet","source":"aprendizajesEje1","expression":undefined}, {}]
 						}]
@@ -577,28 +577,28 @@ Subjects.widgets = {
 					}]
 				}],
 				dimensinComprensionEditor1: ["wm.SelectEditor", {"width":"100%","caption":"Dimensión Comprensión","readonly":true}, {}, {
-					editor: ["wm._SelectEditor", {"displayField":"dimensionComprension","dataField":"idDimension"}, {}, {
+					editor: ["wm._SelectEditor", {"displayField":"dimensionComprension","dataField":"idDimension","required":true}, {}, {
 						binding: ["wm.Binding", {}, {}, {
 							wire: ["wm.Wire", {"targetProperty":"dataSet","source":"l_dimension_comprension","expression":undefined}, {}]
 						}]
 					}]
 				}],
 				dimensinCurricularEditor1: ["wm.SelectEditor", {"width":"100%","caption":"Dimensión Currícular","readonly":true}, {}, {
-					editor: ["wm._SelectEditor", {"displayField":"dimensionCurricular","dataField":"idDimension"}, {}, {
+					editor: ["wm._SelectEditor", {"displayField":"dimensionCurricular","dataField":"idDimension","required":true}, {}, {
 						binding: ["wm.Binding", {}, {}, {
 							wire: ["wm.Wire", {"targetProperty":"dataSet","source":"l_dimension_curricular","expression":undefined}, {}]
 						}]
 					}]
 				}],
 				inteligenciaEditor1: ["wm.SelectEditor", {"width":"100%","caption":"Inteligencia","readonly":true}, {}, {
-					editor: ["wm._SelectEditor", {"displayField":"inteligencia","dataField":"idInteligencia"}, {}, {
+					editor: ["wm._SelectEditor", {"displayField":"inteligencia","dataField":"idInteligencia","required":true}, {}, {
 						binding: ["wm.Binding", {}, {}, {
 							wire: ["wm.Wire", {"targetProperty":"dataSet","source":"l_inteligencias","expression":undefined}, {}]
 						}]
 					}]
 				}],
 				nivelEsperadoEditor1: ["wm.SelectEditor", {"width":"100%","caption":"Nivel esperado","readonly":true}, {}, {
-					editor: ["wm._SelectEditor", {"displayField":"nivelEsperado","dataField":"idNivelEsperado"}, {}, {
+					editor: ["wm._SelectEditor", {"displayField":"nivelEsperado","dataField":"idNivelEsperado","required":true}, {}, {
 						binding: ["wm.Binding", {}, {}, {
 							wire: ["wm.Wire", {"targetProperty":"dataSet","source":"l_nivel_esperado","expression":undefined}, {}]
 						}]

@@ -48,7 +48,7 @@ import com.wavemaker.runtime.service.TypedServiceReturn;
 
 /**
  *  Operations for service "aprendoz_test"
- *  08/01/2014 15:24:21
+ *  08/08/2014 16:11:50
  * 
  */
 @SuppressWarnings("unchecked")

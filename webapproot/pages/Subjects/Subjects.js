@@ -644,12 +644,35 @@ dojo.declare("Subjects", wm.Page, {
      var gradostr        = this.aprendizajes_grado.getDisplayValue();
      var sy              = this.aprendizajes_sy.dataValue.idSy;    
      var systr           = this.aprendizajes_sy.getDisplayValue();
+     var fecha1          = this.aprendizajes_sy.getDataValue().fechaDesde;
+     var fecha2          = this.aprendizajes_sy.getDataValue().fechaHasta;
      var ih1             = this.aprendizajes_asignaturas.selectedItem.getData().ih1;
      var ih2             = this.aprendizajes_asignaturas.selectedItem.getData().ih2;
      var ih3             = this.aprendizajes_asignaturas.selectedItem.getData().ih3;
-     var idAsignatura    = this.aprendizajes_asignaturas.selectedItem.data.id;
-     var idDimension     = this.dimensinComprensionEditor1.getDataValue();
-     var idDimensionstr  = this.dimensinComprensionEditor1.getDisplayValue();
+     var idAsignatura    = this.aprendizajes_asignaturas.selectedItem.data.id;  
+     /**/
+     var asignatura      = this.aprendizajes_asignaturas.selectedItem.data.asignatura; 
+     var subject         = this.aprendizajes_asignaturas.selectedItem.data.subject;  
+     var electiva        = this.aprendizajes_asignaturas.selectedItem.data.electiva;
+     var a1              = this.aprendizajes_asignaturas.selectedItem.data.a1;
+     var a2              = this.aprendizajes_asignaturas.selectedItem.data.a2;
+     var a3              = this.aprendizajes_asignaturas.selectedItem.data.a3;
+     var sa1             = this.aprendizajes_asignaturas.selectedItem.data.sa1;
+     var sa2             = this.aprendizajes_asignaturas.selectedItem.data.sa2;
+     var sa3             = this.aprendizajes_asignaturas.selectedItem.data.sa3;
+     var intensidadHoraria = this.aprendizajes_asignaturas.selectedItem.data.intensidadHoraria;
+     var peso            = this.aprendizajes_asignaturas.selectedItem.data.intensidadHoraria;
+     var descripAsigEspaniol = this.aprendizajes_asignaturas.selectedItem.data.descripAsigEspaniol;
+     var descripAsigIngles= this.aprendizajes_asignaturas.selectedItem.data.descripAsigIngles;
+     var meses            = this.aprendizajes_asignaturas.selectedItem.data.meses;
+     var esperadostotal   = this.aprendizajes_asignaturas.selectedItem.data.esperadostotal;
+     var salonIdSalon     = this.aprendizajes_asignaturas.selectedItem.data.salonIdSalon;
+     var idNivel          = this.aprendizajes_asignaturas.selectedItem.data.idNivel;
+     var nivel           = this.aprendizajes_asignaturas.selectedItem.data.nivel;
+     var levelName       = this.aprendizajes_asignaturas.selectedItem.data.levelName;
+     /**/
+     var idDimension     = this.dimensinComprensionEditor1.getDataValue();          
+     var idDimensionstr  = this.dimensinComprensionEditor1.getDisplayValue();          
      var idDimension2    = this.dimensinCurricularEditor1.getDataValue();
      var idDimension2str = this.dimensinCurricularEditor1.getDisplayValue();
      var idInteligencia  = this.inteligenciaEditor1.getDataValue();
@@ -657,6 +680,10 @@ dojo.declare("Subjects", wm.Page, {
      var inteligencia    = this.inteligenciaEditor1.getDisplayValue();
      var nivelEsperado   = this.nivelEsperadoEditor1.getDisplayValue();    
      var peso            = this.pesoEditor1.getDataValue(); 
+     var idsalon         = 1;
+     var salon           = 101;
+     var idtipoinsc      = 1;
+     var tipo            = "MIXTO";
           
      this.aprendizajes_asignaturaActions.setValue("idAprendizaje",idAprendizaje);
      this.aprendizajes_asignaturaActions.setValue("aprendizaje",aprendizaje);
@@ -676,6 +703,8 @@ dojo.declare("Subjects", wm.Page, {
      this.aprendizajes_asignaturaActions.setValue("asignatura.ihA3",ih3);
      this.aprendizajes_asignaturaActions.setValue("asignatura.sy.idSy",sy);
      this.aprendizajes_asignaturaActions.setValue("asignatura.sy.schoolYear",systr);
+     this.aprendizajes_asignaturaActions.setValue("asignatura.sy.fechaDesde",fecha1);
+     this.aprendizajes_asignaturaActions.setValue("asignatura.sy.fechaHasta",fecha2);
      this.aprendizajes_asignaturaActions.setValue("dimensionComprension.idDimension",idDimension);
      this.aprendizajes_asignaturaActions.setValue("dimensionCurricular.idDimension",idDimension2);
      this.aprendizajes_asignaturaActions.setValue("dimensionComprension.dimensionComprension",idDimensionstr);//
@@ -683,7 +712,31 @@ dojo.declare("Subjects", wm.Page, {
      this.aprendizajes_asignaturaActions.setValue("nivelEsperado.idNivelEsperado",idNivelEsperado);
      this.aprendizajes_asignaturaActions.setValue("inteligencia.idInteligencia",idInteligencia);
      this.aprendizajes_asignaturaActions.setValue("nivelEsperado.nivelEsperado",nivelEsperado);
-     this.aprendizajes_asignaturaActions.setValue("inteligencia.inteligencia",inteligencia);
+     this.aprendizajes_asignaturaActions.setValue("inteligencia.inteligencia",inteligencia);     
+     this.aprendizajes_asignaturaActions.setValue("asignatura.salonIdSalon",idsalon);
+     this.aprendizajes_asignaturaActions.setValue("asignatura.tipoInscAsig.idTipoInscAsig",idtipoinsc);
+     this.aprendizajes_asignaturaActions.setValue("asignatura.tipoInscAsig.tipo",tipo);        
+     /**/ 
+     this.aprendizajes_asignaturaActions.setValue("asignatura.asignatura",asignatura);
+     this.aprendizajes_asignaturaActions.setValue("asignatura.subject",subject);
+     this.aprendizajes_asignaturaActions.setValue("asignatura.electiva",electiva);
+     this.aprendizajes_asignaturaActions.setValue("asignatura.a1",a1);
+     this.aprendizajes_asignaturaActions.setValue("asignatura.a2",a2);
+     this.aprendizajes_asignaturaActions.setValue("asignatura.a3",a3);
+     this.aprendizajes_asignaturaActions.setValue("asignatura.sa1",sa1);
+     this.aprendizajes_asignaturaActions.setValue("asignatura.sa2",sa2);
+     this.aprendizajes_asignaturaActions.setValue("asignatura.sa3",sa3);
+     this.aprendizajes_asignaturaActions.setValue("asignatura.intensidadHoraria",intensidadHoraria);
+     this.aprendizajes_asignaturaActions.setValue("asignatura.peso",peso);
+     this.aprendizajes_asignaturaActions.setValue("asignatura.descripAsigEspaniol",descripAsigEspaniol);
+     this.aprendizajes_asignaturaActions.setValue("asignatura.descripAsigIngles",descripAsigIngles);
+     this.aprendizajes_asignaturaActions.setValue("asignatura.meses",meses);
+     this.aprendizajes_asignaturaActions.setValue("asignatura.esperadostotal",esperadostotal);
+     this.aprendizajes_asignaturaActions.setValue("asignatura.salonIdSalon",salonIdSalon);
+     this.aprendizajes_asignaturaActions.setValue("nivel.idNivel",idNivel);
+     this.aprendizajes_asignaturaActions.setValue("nivel.nivel",nivel);
+     this.aprendizajes_asignaturaActions.setValue("nivel.levelName",levelName);
+     /**/
      this.aprendizajes_asignaturaLiveForm.setDataSet(this.aprendizajes_asignaturaActions);          
      this.aprendizajes_asignaturaLiveForm.updateData();  
      
@@ -723,10 +776,33 @@ dojo.declare("Subjects", wm.Page, {
      var gradostr        = this.aprendizajes_grado.getDisplayValue();
      var sy              = this.aprendizajes_sy.dataValue.idSy;
      var systr           = this.aprendizajes_sy.getDisplayValue();
+     var fecha1          = this.aprendizajes_sy.getDataValue().fechaDesde;
+     var fecha2          = this.aprendizajes_sy.getDataValue().fechaHasta;
      var ih1             = this.aprendizajes_asignaturas.selectedItem.getData().ih1;
      var ih2             = this.aprendizajes_asignaturas.selectedItem.getData().ih2;
      var ih3             = this.aprendizajes_asignaturas.selectedItem.getData().ih3;
      var idAsignatura    = this.aprendizajes_asignaturas.selectedItem.data.id;
+     /**/
+     var asignatura      = this.aprendizajes_asignaturas.selectedItem.data.asignatura; 
+     var subject         = this.aprendizajes_asignaturas.selectedItem.data.subject;  
+     var electiva        = this.aprendizajes_asignaturas.selectedItem.data.electiva;
+     var a1              = this.aprendizajes_asignaturas.selectedItem.data.a1;
+     var a2              = this.aprendizajes_asignaturas.selectedItem.data.a2;
+     var a3              = this.aprendizajes_asignaturas.selectedItem.data.a3;
+     var sa1             = this.aprendizajes_asignaturas.selectedItem.data.sa1;
+     var sa2             = this.aprendizajes_asignaturas.selectedItem.data.sa2;
+     var sa3             = this.aprendizajes_asignaturas.selectedItem.data.sa3;
+     var intensidadHoraria = this.aprendizajes_asignaturas.selectedItem.data.intensidadHoraria;
+     var peso            = this.aprendizajes_asignaturas.selectedItem.data.intensidadHoraria;
+     var descripAsigEspaniol = this.aprendizajes_asignaturas.selectedItem.data.descripAsigEspaniol;
+     var descripAsigIngles= this.aprendizajes_asignaturas.selectedItem.data.descripAsigIngles;
+     var meses            = this.aprendizajes_asignaturas.selectedItem.data.meses;
+     var esperadostotal   = this.aprendizajes_asignaturas.selectedItem.data.esperadostotal;
+     var salonIdSalon     = this.aprendizajes_asignaturas.selectedItem.data.salonIdSalon;
+     var idNivel          = this.aprendizajes_asignaturas.selectedItem.data.idNivel;
+     var nivel           = this.aprendizajes_asignaturas.selectedItem.data.nivel;
+     var levelName       = this.aprendizajes_asignaturas.selectedItem.data.levelName;
+     /**/
      var idDimension     = this.dimensinComprensionEditor1.getDataValue();
      var idDimensionstr  = this.dimensinComprensionEditor1.getDisplayValue();
      var idDimension2    = this.dimensinCurricularEditor1.getDataValue();
@@ -735,7 +811,11 @@ dojo.declare("Subjects", wm.Page, {
      var idNivelEsperado = this.nivelEsperadoEditor1.getDataValue();   
      var inteligencia    = this.inteligenciaEditor1.getDisplayValue();
      var nivelEsperado   = this.nivelEsperadoEditor1.getDisplayValue(); 
-     var peso            = this.pesoEditor1.getDataValue(); 
+     var peso            = this.pesoEditor1.getDataValue();
+     var idsalon         = 1;
+     var salon           = 101;
+     var idtipoinsc      = 1;
+     var tipo            = "MIXTO"; 
 
      //this.aprendizajes_asignaturaActions.setValue("idAprendizaje",idAprendizaje);
      this.aprendizajes_asignaturaActions.setValue("aprendizaje",aprendizaje);
@@ -756,6 +836,8 @@ dojo.declare("Subjects", wm.Page, {
      this.aprendizajes_asignaturaActions.setValue("asignatura.ihA3",ih3);
      this.aprendizajes_asignaturaActions.setValue("asignatura.sy.idSy",sy);
      this.aprendizajes_asignaturaActions.setValue("asignatura.sy.schoolYear",systr);
+     this.aprendizajes_asignaturaActions.setValue("asignatura.sy.fechaDesde",fecha1);
+     this.aprendizajes_asignaturaActions.setValue("asignatura.sy.fechaHasta",fecha2);
      this.aprendizajes_asignaturaActions.setValue("dimensionComprension.idDimension",idDimension);
      this.aprendizajes_asignaturaActions.setValue("dimensionCurricular.idDimension",idDimension2);
      this.aprendizajes_asignaturaActions.setValue("dimensionComprension.dimensionComprension",idDimensionstr);//
@@ -764,6 +846,33 @@ dojo.declare("Subjects", wm.Page, {
      this.aprendizajes_asignaturaActions.setValue("inteligencia.idInteligencia",idInteligencia);
      this.aprendizajes_asignaturaActions.setValue("nivelEsperado.nivelEsperado",nivelEsperado);
      this.aprendizajes_asignaturaActions.setValue("inteligencia.inteligencia",inteligencia);
+     this.aprendizajes_asignaturaActions.setValue("asignatura.salonIdSalon",idsalon);
+     this.aprendizajes_asignaturaActions.setValue("asignatura.tipoInscAsig.idTipoInscAsig",idtipoinsc);
+     this.aprendizajes_asignaturaActions.setValue("asignatura.tipoInscAsig.tipo",tipo);     
+     this.aprendizajes_asignaturaActions.setValue("asignatura.salonIdSalon",idsalon);
+     this.aprendizajes_asignaturaActions.setValue("asignatura.tipoInscAsig.idTipoInscAsig",idtipoinsc);
+     this.aprendizajes_asignaturaActions.setValue("asignatura.tipoInscAsig.tipo",tipo);    
+     /**/ 
+     this.aprendizajes_asignaturaActions.setValue("asignatura.asignatura",asignatura);
+     this.aprendizajes_asignaturaActions.setValue("asignatura.subject",subject);
+     this.aprendizajes_asignaturaActions.setValue("asignatura.electiva",electiva);
+     this.aprendizajes_asignaturaActions.setValue("asignatura.a1",a1);
+     this.aprendizajes_asignaturaActions.setValue("asignatura.a2",a2);
+     this.aprendizajes_asignaturaActions.setValue("asignatura.a3",a3);
+     this.aprendizajes_asignaturaActions.setValue("asignatura.sa1",sa1);
+     this.aprendizajes_asignaturaActions.setValue("asignatura.sa2",sa2);
+     this.aprendizajes_asignaturaActions.setValue("asignatura.sa3",sa3);
+     this.aprendizajes_asignaturaActions.setValue("asignatura.intensidadHoraria",intensidadHoraria);
+     this.aprendizajes_asignaturaActions.setValue("asignatura.peso",peso);
+     this.aprendizajes_asignaturaActions.setValue("asignatura.descripAsigEspaniol",descripAsigEspaniol);
+     this.aprendizajes_asignaturaActions.setValue("asignatura.descripAsigIngles",descripAsigIngles);
+     this.aprendizajes_asignaturaActions.setValue("asignatura.meses",meses);
+     this.aprendizajes_asignaturaActions.setValue("asignatura.esperadostotal",esperadostotal);
+     this.aprendizajes_asignaturaActions.setValue("asignatura.salonIdSalon",salonIdSalon);
+     this.aprendizajes_asignaturaActions.setValue("nivel.idNivel",idNivel);
+     this.aprendizajes_asignaturaActions.setValue("nivel.nivel",nivel);
+     this.aprendizajes_asignaturaActions.setValue("nivel.levelName",levelName);
+     /**/ 
      this.aprendizajes_asignaturaLiveForm.setDataSet(this.aprendizajes_asignaturaActions);          
      this.aprendizajes_asignaturaLiveForm.insertData();  
      

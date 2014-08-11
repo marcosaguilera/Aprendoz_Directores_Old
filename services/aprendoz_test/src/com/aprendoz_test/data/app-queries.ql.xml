@@ -15,8 +15,33 @@ WHERE e.idEventualidad=:ide
     <query name="subjectsByGrade">
         <query-param name="_sy" type="java.lang.Integer"/>
         <query-param name="_grado" type="java.lang.Integer"/>
-        SELECT  a.idAsignatura as id, a.asignatura as asignatura, g.idGrado as idgrado, sy.idSy, a.idArea1 as a1, a.idArea2 as a2, a.idArea3 as a3, a.idSubarea1 as sa1, a.idSubarea2 as sa2, a.idSubarea3 as sa3, a.ihA1 as ih1, a.ihA2 as ih2, a.ihA3 as ih3
-FROM Asignatura a INNER JOIN a.grado g INNER JOIN a.sy sy
+        SELECT
+a.idAsignatura as id,
+a.asignatura as asignatura,
+a.subject as subject,
+a.electiva as electiva,
+a.idArea1 as a1,
+a.idArea2 as a2,
+a.idArea3 as a3,
+a.idSubarea1 as sa1,
+a.idSubarea2 as sa2,
+a.idSubarea3 as sa3,
+a.intensidadHoraria as intensidadHoraria,
+a.peso as peso,
+a.descripAsigEspaniol as descripAsigEspaniol,
+a.descripAsigIngles as descripAsigIngles,
+a.ihA1 as ih1,
+a.ihA2 as ih2,
+a.ihA3 as ih3,
+a.meses as meses,
+a.esperadostotal as esperadostotal,
+a.salonIdSalon as salonIdSalon,
+sy.idSy,
+g.idGrado as idgrado,
+n.idNivel as idNivel,
+n.nivel as nivel,
+n.levelName as levelName
+FROM Asignatura a INNER JOIN a.grado g INNER JOIN a.sy sy INNER JOIN g.nivel n
 WHERE sy.idSy=:_sy AND g.idGrado=:_grado
     </query>
     <query name="cursos">

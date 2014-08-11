@@ -23398,9 +23398,45 @@ wm.types = {
 					"required": true,
 					"type": "java.lang.String"
 				},
-				"c3": {
+				"c20": {
+					"exclude": [],
+					"fieldOrder": 20,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.lang.Integer"
+				},
+				"descripAsigEspaniol": {
+					"exclude": [],
+					"fieldOrder": 12,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"descripAsigIngles": {
+					"exclude": [],
+					"fieldOrder": 13,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"electiva": {
 					"exclude": [],
 					"fieldOrder": 3,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.lang.Boolean"
+				},
+				"esperadostotal": {
+					"exclude": [],
+					"fieldOrder": 18,
 					"include": [],
 					"isList": false,
 					"noChange": [],
@@ -23416,9 +23452,18 @@ wm.types = {
 					"required": true,
 					"type": "java.lang.Integer"
 				},
+				"idNivel": {
+					"exclude": [],
+					"fieldOrder": 22,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.lang.Integer"
+				},
 				"idgrado": {
 					"exclude": [],
-					"fieldOrder": 2,
+					"fieldOrder": 21,
 					"include": [],
 					"isList": false,
 					"noChange": [],
@@ -23427,7 +23472,7 @@ wm.types = {
 				},
 				"ih1": {
 					"exclude": [],
-					"fieldOrder": 10,
+					"fieldOrder": 14,
 					"include": [],
 					"isList": false,
 					"noChange": [],
@@ -23436,7 +23481,7 @@ wm.types = {
 				},
 				"ih2": {
 					"exclude": [],
-					"fieldOrder": 11,
+					"fieldOrder": 15,
 					"include": [],
 					"isList": false,
 					"noChange": [],
@@ -23445,7 +23490,52 @@ wm.types = {
 				},
 				"ih3": {
 					"exclude": [],
-					"fieldOrder": 12,
+					"fieldOrder": 16,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.lang.Float"
+				},
+				"intensidadHoraria": {
+					"exclude": [],
+					"fieldOrder": 10,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.lang.Float"
+				},
+				"levelName": {
+					"exclude": [],
+					"fieldOrder": 24,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"meses": {
+					"exclude": [],
+					"fieldOrder": 17,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.lang.Float"
+				},
+				"nivel": {
+					"exclude": [],
+					"fieldOrder": 23,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"peso": {
+					"exclude": [],
+					"fieldOrder": 11,
 					"include": [],
 					"isList": false,
 					"noChange": [],
@@ -23478,6 +23568,24 @@ wm.types = {
 					"noChange": [],
 					"required": true,
 					"type": "java.lang.Integer"
+				},
+				"salonIdSalon": {
+					"exclude": [],
+					"fieldOrder": 19,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.lang.Integer"
+				},
+				"subject": {
+					"exclude": [],
+					"fieldOrder": 2,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.lang.String"
 				}
 			},
 			"internal": false,
