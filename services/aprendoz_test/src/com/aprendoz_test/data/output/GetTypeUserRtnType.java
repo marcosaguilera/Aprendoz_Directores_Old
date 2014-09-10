@@ -5,7 +5,7 @@ import com.aprendoz_test.data.TipoPersona;
 
 
 /**
- * Generated for query "getTypeUser" on 08/08/2014 16:11:37
+ * Generated for query "getTypeUser" on 09/10/2014 12:43:16
  * 
  */
 public class GetTypeUserRtnType {

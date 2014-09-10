@@ -176,6 +176,13 @@
 		}],
 		"returnType": "[com.aprendoz_test.data.output.GetSyByCurDateRtnType]"
 	}, {
+		"name": "getSyByCurDateFull",
+		"parameters": [{
+			"name": "f1",
+			"type": "java.lang.Integer"
+		}],
+		"returnType": "[com.aprendoz_test.data.output.GetSyByCurDateFullRtnType]"
+	}, {
 		"name": "getTipoEventualidadByIdSubTipo",
 		"parameters": [{
 			"name": "id",

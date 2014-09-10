@@ -6,26 +6,26 @@ import java.util.Date;
 
 /**
  *  aprendoz_test.LogAccionesDocentes
- *  06/13/2014 12:51:23
+ *  09/10/2014 12:43:02
  * 
  */
 public class LogAccionesDocentes {
 
     private Integer idLogAccionesDocentes;
+    private Date fechaCreacion;
+    private String tablaAfectada;
     private String usuario;
     private String accionRealizada;
-    private String tablaAfectada;
-    private Date fechaCreacion;
 
     public LogAccionesDocentes() {
     }
 
-    public LogAccionesDocentes(Integer idLogAccionesDocentes, String usuario, String accionRealizada, String tablaAfectada, Date fechaCreacion) {
+    public LogAccionesDocentes(Integer idLogAccionesDocentes, Date fechaCreacion, String tablaAfectada, String usuario, String accionRealizada) {
         this.idLogAccionesDocentes = idLogAccionesDocentes;
+        this.fechaCreacion = fechaCreacion;
+        this.tablaAfectada = tablaAfectada;
         this.usuario = usuario;
         this.accionRealizada = accionRealizada;
-        this.tablaAfectada = tablaAfectada;
-        this.fechaCreacion = fechaCreacion;
     }
 
     public Integer getIdLogAccionesDocentes() {
@@ -34,6 +34,22 @@ public class LogAccionesDocentes {
 
     public void setIdLogAccionesDocentes(Integer idLogAccionesDocentes) {
         this.idLogAccionesDocentes = idLogAccionesDocentes;
+    }
+
+    public Date getFechaCreacion() {
+        return fechaCreacion;
+    }
+
+    public void setFechaCreacion(Date fechaCreacion) {
+        this.fechaCreacion = fechaCreacion;
+    }
+
+    public String getTablaAfectada() {
+        return tablaAfectada;
+    }
+
+    public void setTablaAfectada(String tablaAfectada) {
+        this.tablaAfectada = tablaAfectada;
     }
 
     public String getUsuario() {
@@ -50,22 +66,6 @@ public class LogAccionesDocentes {
 
     public void setAccionRealizada(String accionRealizada) {
         this.accionRealizada = accionRealizada;
-    }
-
-    public String getTablaAfectada() {
-        return tablaAfectada;
-    }
-
-    public void setTablaAfectada(String tablaAfectada) {
-        this.tablaAfectada = tablaAfectada;
-    }
-
-    public Date getFechaCreacion() {
-        return fechaCreacion;
-    }
-
-    public void setFechaCreacion(Date fechaCreacion) {
-        this.fechaCreacion = fechaCreacion;
     }
 
 }

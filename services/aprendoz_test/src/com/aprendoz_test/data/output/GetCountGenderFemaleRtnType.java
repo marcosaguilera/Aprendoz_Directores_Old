@@ -4,7 +4,7 @@ package com.aprendoz_test.data.output;
 
 
 /**
- * Generated for query "getCountGenderFemale" on 08/08/2014 16:11:37
+ * Generated for query "getCountGenderFemale" on 09/10/2014 12:43:16
  * 
  */
 public class GetCountGenderFemaleRtnType {

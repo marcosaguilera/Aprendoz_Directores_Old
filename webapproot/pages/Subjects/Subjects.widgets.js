@@ -104,11 +104,11 @@ Subjects.widgets = {
 	insertLogData: ["wm.Variable", {"type":"com.aprendoz_test.data.LogAccionesDocentes"}, {}],
 	layoutBox1: ["wm.Layout", {"height":"100%","width":"100%","horizontalAlign":"left","verticalAlign":"top","padding":"20"}, {}, {
 		top_header: ["wm.Panel", {"height":"46px","width":"100%","horizontalAlign":"left","verticalAlign":"bottom","layoutKind":"left-to-right"}, {}, {
-			asignatura_button: ["wm.Button", {"height":"40px","width":"110px","caption":"Asignaturas","margin":"4,4,0,4","borderColor":"#C1272D","iconUrl":"resources/images/buttons/subjects.png","iconWidth":"20px","iconMargin":"0 5px 0 0","iconHeight":"20px","roles":["10"]}, {"onclick":"asignatura_buttonClick"}],
-			docentes_button: ["wm.Button", {"height":"40px","width":"110px","caption":"Docentes","margin":"4,4,0,4","borderColor":"#C1272D","iconUrl":"resources/images/news_icons/icon_2002.png","iconWidth":"20px","iconMargin":"0 5px 0 0","iconHeight":"20px","roles":["10"]}, {"onclick":"docentes_buttonClick"}],
+			asignatura_button: ["wm.Button", {"height":"40px","width":"110px","caption":"Asignaturas","margin":"4,4,0,4","borderColor":"#C1272D","iconUrl":"resources/images/buttons/subjects.png","iconWidth":"20px","iconHeight":"20px","iconMargin":"0 5px 0 0","roles":["10"]}, {"onclick":"asignatura_buttonClick"}],
+			docentes_button: ["wm.Button", {"height":"40px","width":"110px","caption":"Docentes","margin":"4,4,0,4","borderColor":"#C1272D","iconUrl":"resources/images/news_icons/icon_2002.png","iconWidth":"20px","iconHeight":"20px","iconMargin":"0 5px 0 0","roles":["10"]}, {"onclick":"docentes_buttonClick"}],
 			aprendizajes_button: ["wm.Button", {"height":"40px","width":"96px","caption":"Aprendizajes","margin":"4,4,0,4","borderColor":"#C1272D","roles":["4","5","6","7","8","9","10","11","13","14","15","16","17","18","19","20","21","22","23","24","25"]}, {"onclick":"aprendizajes_buttonClick"}],
-			areas_button: ["wm.Button", {"height":"40px","width":"96px","caption":"Areas","margin":"4,4,0,4","borderColor":"#C1272D","iconUrl":"resources/images/buttons/area2.png","iconWidth":"20px","iconMargin":"0 5px 0 0","iconHeight":"20px","roles":["10"]}, {"onclick":"areas_buttonClick"}],
-			ejes_button: ["wm.Button", {"height":"40px","width":"96px","caption":"Ejes","margin":"4,4,0,4","borderColor":"#C1272D","iconUrl":"resources/images/buttons/eje2.png","iconWidth":"20px","iconMargin":"0 5px 0 0","iconHeight":"20px","roles":["10"]}, {"onclick":"ejes_buttonClick"}]
+			areas_button: ["wm.Button", {"height":"40px","width":"96px","caption":"Areas","margin":"4,4,0,4","borderColor":"#C1272D","iconUrl":"resources/images/buttons/area2.png","iconWidth":"20px","iconHeight":"20px","iconMargin":"0 5px 0 0","roles":["10"]}, {"onclick":"areas_buttonClick"}],
+			ejes_button: ["wm.Button", {"height":"40px","width":"96px","caption":"Ejes","margin":"4,4,0,4","borderColor":"#C1272D","iconUrl":"resources/images/buttons/eje2.png","iconWidth":"20px","iconHeight":"20px","iconMargin":"0 5px 0 0","roles":["10"]}, {"onclick":"ejes_buttonClick"}]
 		}],
 		subjects: ["wm.Panel", {"height":"100%","width":"100%","horizontalAlign":"left","verticalAlign":"top","layoutKind":"left-to-right","lock":true,"showing":false}, {}, {
 			left_menu: ["wm.Panel", {"_classes":{"domNode":["wm_BackgroundColor_VeryLightGray"]},"height":"100%","width":"35%","horizontalAlign":"left","verticalAlign":"top","padding":"10"}, {}, {
@@ -142,16 +142,16 @@ Subjects.widgets = {
 			}],
 			main_form: ["wm.Panel", {"height":"100%","width":"75%","horizontalAlign":"center","verticalAlign":"top","padding":"0,10,10,10","autoScroll":true}, {}, {
 				subject_panel: ["wm.Panel", {"_classes":{"domNode":["wm_BackgroundColor_VeryLightGray","wm_Border_TopStyleCurved8px"]},"height":"44px","width":"100%","horizontalAlign":"right","verticalAlign":"top","layoutKind":"left-to-right"}, {}, {
-					subject_newRecord: ["wm.Button", {"height":"100%","width":"96px","caption":"Nuevo","borderColor":"#0044cc","disabled":true}, {"onclick":"subject_newRecordClick"}],
-					subject_updateRecord: ["wm.Button", {"height":"100%","width":"96px","caption":"Actualizar","borderColor":"#0044cc","disabled":true}, {"onclick":"subject_updateRecordClick"}],
+					subject_newRecord: ["wm.Button", {"height":"100%","width":"96px","caption":"Nuevo","disabled":true,"borderColor":"#0044cc"}, {"onclick":"subject_newRecordClick"}],
+					subject_updateRecord: ["wm.Button", {"height":"100%","width":"96px","caption":"Actualizar","disabled":true,"borderColor":"#0044cc"}, {"onclick":"subject_updateRecordClick"}],
 					subject_saveNewRecord: ["wm.Button", {"height":"100%","width":"96px","caption":"Guardar","borderColor":"#cccccc","showing":false}, {"onclick":"subject_saveNewRecordClick"}],
 					subject_saveUpdateRecord: ["wm.Button", {"height":"100%","width":"96px","caption":"Guardar","borderColor":"#cccccc","showing":false}, {"onclick":"subject_saveUpdateRecordClick"}],
 					subject_cancelOperation: ["wm.Button", {"_classes":{"domNode":["wm_Border_TopStyleCurved4px","wm_Border_BottomStyleCurved4px"]},"height":"100%","width":"96px","caption":"Cancelar","borderColor":"#cccccc","showing":false}, {"onclick":"subject_cancelOperationClick"}],
-					subject_deleteRecord: ["wm.Button", {"height":"100%","width":"96px","caption":"Borrar","borderColor":"#bd362f","disabled":true}, {"onclick":"subject_deleteRecordClick"}]
+					subject_deleteRecord: ["wm.Button", {"height":"100%","width":"96px","caption":"Borrar","disabled":true,"borderColor":"#bd362f"}, {"onclick":"subject_deleteRecordClick"}]
 				}],
 				subject_content_panel: ["wm.Panel", {"_classes":{"domNode":["wm_BackgroundColor_White"]},"height":"100%","width":"100%","horizontalAlign":"left","verticalAlign":"top","layoutKind":"left-to-right"}, {}, {
 					subject_content_left_col: ["wm.Panel", {"height":"100%","width":"100%","horizontalAlign":"left","verticalAlign":"top"}, {}, {
-						subject_idasignatura: ["wm.NumberEditor", {"width":"100%","caption":"Id","readonly":true}, {}, {
+						subject_idasignatura: ["wm.NumberEditor", {"caption":"Id","readonly":true,"width":"100%"}, {}, {
 							editor: ["wm._NumberEditor", {}, {}]
 						}],
 						subject_asignatura: ["wm.TextEditor", {"width":"100%","caption":"Asignatura","readonly":true}, {}, {
@@ -188,16 +188,16 @@ Subjects.widgets = {
 								}]
 							}]
 						}],
-						subject_iha1: ["wm.NumberEditor", {"display":"Text","width":"100%","caption":"Inten Area No.1","readonly":true}, {"onchange":"subject_iha1Change"}, {
+						subject_iha1: ["wm.NumberEditor", {"caption":"Inten Area No.1","readonly":true,"display":"Text","width":"100%"}, {"onchange":"subject_iha1Change"}, {
 							editor: ["wm._TextEditor", {"changeOnKey":true,"changeOnEnter":true}, {}]
 						}],
-						subject_iha2: ["wm.NumberEditor", {"display":"Text","width":"100%","caption":"Inten Area No.2","readonly":true}, {"onchange":"subject_iha2Change"}, {
+						subject_iha2: ["wm.NumberEditor", {"caption":"Inten Area No.2","readonly":true,"display":"Text","width":"100%"}, {"onchange":"subject_iha2Change"}, {
 							editor: ["wm._TextEditor", {"changeOnKey":true,"changeOnEnter":true}, {}]
 						}],
-						subject_iha3: ["wm.NumberEditor", {"display":"Text","width":"100%","caption":"Inten Area No.3","readonly":true}, {"onchange":"subject_iha3Change"}, {
+						subject_iha3: ["wm.NumberEditor", {"caption":"Inten Area No.3","readonly":true,"display":"Text","width":"100%"}, {"onchange":"subject_iha3Change"}, {
 							editor: ["wm._TextEditor", {"changeOnKey":true,"changeOnEnter":true}, {}]
 						}],
-						subject_ihtotal: ["wm.NumberEditor", {"display":"Text","width":"100%","caption":"* Intensidad Total","readonly":true}, {}, {
+						subject_ihtotal: ["wm.NumberEditor", {"caption":"* Intensidad Total","readonly":true,"display":"Text","width":"100%"}, {}, {
 							editor: ["wm._TextEditor", {}, {}]
 						}]
 					}],
@@ -245,13 +245,13 @@ Subjects.widgets = {
 								}]
 							}]
 						}],
-						subject_esperados: ["wm.NumberEditor", {"width":"100%","caption":"Esperados Año","readonly":true}, {}, {
+						subject_esperados: ["wm.NumberEditor", {"caption":"Esperados Año","readonly":true,"width":"100%"}, {}, {
 							editor: ["wm._NumberEditor", {}, {}]
 						}],
-						subject_meses: ["wm.NumberEditor", {"display":"Text","width":"100%","caption":"No. Meses","readonly":true}, {}, {
+						subject_meses: ["wm.NumberEditor", {"caption":"No. Meses","readonly":true,"display":"Text","width":"100%"}, {}, {
 							editor: ["wm._TextEditor", {}, {}]
 						}],
-						subject_peso: ["wm.NumberEditor", {"display":"Text","width":"100%","caption":"Peso asignatura","readonly":true}, {}, {
+						subject_peso: ["wm.NumberEditor", {"caption":"Peso asignatura","readonly":true,"display":"Text","width":"100%"}, {}, {
 							binding: ["wm.Binding", {}, {}, {
 								wire: ["wm.Wire", {"targetProperty":"dataValue","source":"subject_ihtotal.dataValue"}, {}]
 							}],
@@ -496,7 +496,7 @@ Subjects.widgets = {
 					spacer4: ["wm.Spacer", {"height":"100%","width":"10px"}, {}],
 					docentesAgregar: ["wm.Button", {"_classes":{"domNode":["wm_BackgroundColor_White"]},"height":"100%","width":"100px","caption":"[+] Agregar","margin":"0","borderColor":"#56bd14"}, {"onclick":"docentesAgregarClick"}],
 					spacer3: ["wm.Spacer", {"height":"100%","width":"10px"}, {}],
-					docentesRetirar: ["wm.Button", {"_classes":{"domNode":["wm_BackgroundColor_White"]},"height":"100%","width":"100px","caption":"[-] Retirar","margin":"0","borderColor":"#c6353a ","disabled":true}, {"onclick":"docentesRetirarClick"}]
+					docentesRetirar: ["wm.Button", {"_classes":{"domNode":["wm_BackgroundColor_White"]},"height":"100%","width":"100px","caption":"[-] Retirar","disabled":true,"margin":"0","borderColor":"#c6353a "}, {"onclick":"docentesRetirarClick"}]
 				}],
 				panel8: ["wm.Panel", {"_classes":{"domNode":["wm_BackgroundColor_LightGray"]},"height":"35px","width":"100%","horizontalAlign":"right","verticalAlign":"top","layoutKind":"left-to-right"}, {}, {
 					perfiles_docentes_total: ["wm.Label", {"height":"100%","width":"100%","border":"0","align":"right","caption":"Existen  #  perfiles de docentes"}, {}, {
@@ -511,9 +511,9 @@ Subjects.widgets = {
 				inscCursoAsigActionForm: ["wm.LiveForm", {"height":"60px","verticalAlign":"top","horizontalAlign":"left","showing":false}, {"onSuccess":"inscCursoAsigActionFormSuccess"}]
 			}]
 		}],
-		learnings: ["wm.Panel", {"height":"100%","width":"100%","horizontalAlign":"left","verticalAlign":"top","layoutKind":"left-to-right"}, {}, {
+		learnings: ["wm.Panel", {"height":"100%","width":"100%","horizontalAlign":"left","verticalAlign":"top","layoutKind":"left-to-right","lock":true}, {}, {
 			panel6: ["wm.Panel", {"height":"100%","width":"252px","horizontalAlign":"left","verticalAlign":"top"}, {}, {
-				aprendizajes_sy: ["wm.SelectEditor", {"width":"100%","caption":"Año escolar"}, {}, {
+				aprendizajes_sy: ["wm.SelectEditor", {"width":"100%","caption":"Año escolar"}, {"onchange":"aprendizajes_syChange"}, {
 					editor: ["wm._SelectEditor", {"displayField":"schoolYear","dataField":"All Fields"}, {}, {
 						binding: ["wm.Binding", {}, {}, {
 							wire: ["wm.Wire", {"targetProperty":"dataSet","source":"sy","expression":undefined}, {}]
@@ -533,7 +533,7 @@ Subjects.widgets = {
 					}]
 				}]
 			}],
-			aprendizajes_aprendizajes: ["wm.DojoGrid", {"height":"750px","border":"0","structure":"[[{\"field\":\"idAprendizaje\",\"name\":\" \",\"width\":\"50px\",\"displayType\":\"Number\"},{\"field\":\"fechaEsperada\",\"name\":\"Fecha esperada\",\"width\":\"60px\",\"displayType\":\"Date\",\"typeValue\":\"\",\"editable\":false,\"type\":\"\",\"expression\":\"\"},{\"field\":\"aprendizaje\",\"name\":\"Aprendizaje\",\"width\":\"auto\",\"displayType\":\"Text\"},{\"field\":\"peso\",\"name\":\"Peso\",\"width\":\"30px\",\"displayType\":\"Number\"}]]","width":"386px"}, {"onClick":"aprendizajes_aprendizajesClick"}, {
+			aprendizajes_aprendizajes: ["wm.DojoGrid", {"height":"750px","border":"0","structure":"[[{\"field\":\"idAprendizaje\",\"name\":\" \",\"width\":\"50px\",\"displayType\":\"Number\"},{\"field\":\"fechaEsperada\",\"name\":\"Fecha esperada\",\"width\":\"60px\",\"displayType\":\"Date\",\"typeValue\":\"\",\"editable\":false,\"type\":\"\",\"expression\":\"\"},{\"field\":\"aprendizaje\",\"name\":\"Aprendizaje\",\"width\":\"auto\",\"displayType\":\"Text\"},{\"field\":\"peso\",\"name\":\"Peso\",\"width\":\"30px\",\"displayType\":\"Number\"}]]","width":"386px"}, {"onClick":"aprendizajes_aprendizajesClick","onSelectionChange":"aprendizajes_aprendizajesSelectionChange"}, {
 				binding: ["wm.Binding", {}, {}, {
 					wire: ["wm.Wire", {"targetProperty":"dataSet","source":"aprendizajesAsignaturaLV"}, {}]
 				}]
@@ -607,7 +607,7 @@ Subjects.widgets = {
 				editPanel3: ["wm.EditPanel", {"liveForm":"learningsLiveForm1","savePanel":"savePanel3","operationPanel":"operationPanel3","lock":false}, {}, {
 					savePanel3: ["wm.Panel", {"height":"100%","width":"100%","horizontalAlign":"right","verticalAlign":"top","layoutKind":"left-to-right","showing":false}, {}, {
 						saveButton4: ["wm.Button", {"_classes":{"domNode":["wm_FontColor_White","wm_BackgroundColor_White"]},"height":"100%","width":"96px","caption":"Guardar*","border":"0"}, {"onclick":"saveButton4Click"}],
-						saveButton3: ["wm.Button", {"_classes":{"domNode":["wm_FontColor_White","wm_BackgroundColor_White"]},"height":"100%","width":"100px","caption":"Guardar","border":"0","disabled":undefined}, {"onclick":"saveButton3Click"}, {
+						saveButton3: ["wm.Button", {"_classes":{"domNode":["wm_FontColor_White","wm_BackgroundColor_White"]},"height":"100%","width":"100px","caption":"Guardar","disabled":undefined,"border":"0"}, {"onclick":"saveButton3Click"}, {
 							binding: ["wm.Binding", {}, {}, {
 								wire: ["wm.Wire", {"targetProperty":"disabled","source":"editPanel3.formInvalid","expression":undefined}, {}]
 							}]
@@ -615,8 +615,8 @@ Subjects.widgets = {
 						cancelButton3: ["wm.Button", {"height":"100%","width":"100px","caption":"Cancelar"}, {"onclick":"cancelButton3Click"}]
 					}],
 					operationPanel3: ["wm.Panel", {"height":"100%","width":"100%","horizontalAlign":"right","verticalAlign":"top","layoutKind":"left-to-right"}, {}, {
-						newButton3: ["wm.Button", {"_classes":{"domNode":["wm_BackgroundColor_White","wm_FontColor_White"]},"height":"100%","width":"100px","caption":"Nuevo","border":"0","disabled":true}, {"onclick":"newButton3Click"}],
-						updateButton3: ["wm.Button", {"_classes":{"domNode":["wm_BackgroundColor_White","wm_FontColor_White"]},"height":"100%","width":"100px","caption":"Actualizar","border":"0","disabled":true}, {"onclick":"updateButton3Click"}, {
+						newButton3: ["wm.Button", {"_classes":{"domNode":["wm_BackgroundColor_White","wm_FontColor_White"]},"height":"100%","width":"100px","caption":"Nuevo","disabled":true,"border":"0"}, {"onclick":"newButton3Click"}],
+						updateButton3: ["wm.Button", {"_classes":{"domNode":["wm_BackgroundColor_White","wm_FontColor_White"]},"height":"100%","width":"100px","caption":"Actualizar","disabled":true,"border":"0"}, {"onclick":"updateButton3Click"}, {
 							binding: ["wm.Binding", {}, {}, {
 								wire: ["wm.Wire", {"targetProperty":"disabled","source":"editPanel3.formUneditable","expression":undefined}, {}]
 							}]

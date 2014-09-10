@@ -12,6 +12,7 @@ import com.aprendoz_test.data.output.GetEmailsFamiliarGroupRtnType;
 import com.aprendoz_test.data.output.GetListStudentsByCurseRtnType;
 import com.aprendoz_test.data.output.GetMaxSubjectByGradeRtnType;
 import com.aprendoz_test.data.output.GetSubjectsByProfileRtnType;
+import com.aprendoz_test.data.output.GetSyByCurDateFullRtnType;
 import com.aprendoz_test.data.output.GetSyByCurDateRtnType;
 import com.aprendoz_test.data.output.GetTipoEventualidadByIdSubTipoRtnType;
 import com.aprendoz_test.data.output.HQLlsCursosRtnType;
@@ -48,7 +49,7 @@ import com.wavemaker.runtime.service.TypedServiceReturn;
 
 /**
  *  Operations for service "aprendoz_test"
- *  08/08/2014 16:11:50
+ *  09/09/2014 12:53:55
  * 
  */
 @SuppressWarnings("unchecked")
@@ -214,6 +215,10 @@ public class Aprendoz_test
         } else {
             return rtn.get(0);
         }
+    }
+
+    public List<GetSyByCurDateFullRtnType> getSyByCurDateFull(Integer f1) {
+        return ((List<GetSyByCurDateFullRtnType> ) dsMgr.invoke(taskMgr.getQueryTask(), (Aprendoz_testConstants.getSyByCurDateFullQueryName), f1));
     }
 
     public Integer actualizarClave(String clave, String usuario) {
