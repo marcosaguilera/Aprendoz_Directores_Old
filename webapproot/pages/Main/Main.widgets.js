@@ -402,14 +402,14 @@ Main.widgets = {
 								format: ["wm.DataFormatter", {}, {}]
 							}],
 							picture1: ["wm.Picture", {"height":"26px","border":"0","width":"22px","source":"resources/images/buttons/date.png","aspect":"v"}, {}],
-							dateEditor1: ["wm.DateEditor", {"_classes":{"domNode":["wm_FontSizePx_12px","wm_FontFamily_Arial"]},"width":"78px","captionAlign":"center","height":"26px","displayValue":"09/09/2014","readonly":true}, {}, {
+							dateEditor1: ["wm.DateEditor", {"_classes":{"domNode":["wm_FontSizePx_12px","wm_FontFamily_Arial"]},"width":"78px","captionAlign":"center","height":"26px","displayValue":"10/09/2014","readonly":true}, {}, {
 								binding: ["wm.Binding", {}, {}, {
 									wire: ["wm.Wire", {"targetProperty":"dataValue","expression":"new Date().getTime()"}, {}]
 								}],
 								editor: ["wm._DateEditor", {}, {}]
 							}],
 							picture3: ["wm.Picture", {"height":"26px","border":"0","width":"22px","source":"resources/images/buttons/clock.png","aspect":"v"}, {}],
-							timeEditor1: ["wm.TimeEditor", {"_classes":{"domNode":["wm_FontSizePx_12px","wm_FontFamily_Arial"]},"displayValue":"11:34 a.m.","captionAlign":"center","height":"26px","width":"72px","readonly":true}, {}, {
+							timeEditor1: ["wm.TimeEditor", {"_classes":{"domNode":["wm_FontSizePx_12px","wm_FontFamily_Arial"]},"displayValue":"11:25 a.m.","captionAlign":"center","height":"26px","width":"72px","readonly":true}, {}, {
 								binding: ["wm.Binding", {}, {}, {
 									wire: ["wm.Wire", {"targetProperty":"dataValue","expression":"new Date().getTime()"}, {}]
 								}],
@@ -428,7 +428,7 @@ Main.widgets = {
 						templateContent: ["wm.Panel", {"_classes":{"domNode":["template-content"]},"height":"100%","width":"100%","horizontalAlign":"left","verticalAlign":"top"}, {}, {
 							MAIN: ["wm.TabLayers", {}, {}, {
 								pestana_bievenida: ["wm.Layer", {"caption":"Inicio","horizontalAlign":"left","verticalAlign":"top","roles":["6","10","5","4"],"lock":true,"padding":"100"}, {}, {
-									bienvenida_inputFullName: ["wm.TextEditor", {"width":"100%","caption":"inputFullName","showing":false,"displayValue":"m"}, {"onchange":"bienvenida_inputFullNameChange"}, {
+									bienvenida_inputFullName: ["wm.TextEditor", {"width":"100%","caption":"inputFullName","showing":false}, {"onchange":"bienvenida_inputFullNameChange"}, {
 										binding: ["wm.Binding", {}, {}, {
 											wire: ["wm.Wire", {"targetProperty":"dataValue","source":"a_getUserName.dataValue"}, {}]
 										}],
@@ -503,7 +503,7 @@ Main.widgets = {
 											}]
 										}],
 										inicio_panel_opciones: ["wm.Panel", {"height":"100%","width":"275px","horizontalAlign":"left","verticalAlign":"top","padding":"10"}, {}, {
-											aux_getNameUser: ["wm.TextEditor", {"width":"150%","caption":"userId","showing":false,"disabled":true,"displayValue":"m","height":"28px"}, {"onchange":"getCompleteName"}, {
+											aux_getNameUser: ["wm.TextEditor", {"width":"150%","caption":"userId","showing":false,"disabled":true,"height":"28px"}, {"onchange":"getCompleteName"}, {
 												binding: ["wm.Binding", {}, {}, {
 													wire: ["wm.Wire", {"targetProperty":"dataValue","source":"a_getUserName.dataValue"}, {}]
 												}],
@@ -548,13 +548,13 @@ Main.widgets = {
 												format: ["wm.DataFormatter", {}, {}]
 											}],
 											logForm: ["wm.LiveForm", {"height":"60px","verticalAlign":"top","horizontalAlign":"left","showing":false}, {}, {
-												inicio_box_fecha: ["wm.DateEditor", {"displayValue":"09/09/2014","readonly":true,"disabled":true,"caption":"hora","showing":false}, {}, {
+												inicio_box_fecha: ["wm.DateEditor", {"displayValue":"10/09/2014","readonly":true,"disabled":true,"caption":"hora","showing":false}, {}, {
 													binding: ["wm.Binding", {}, {}, {
 														wire: ["wm.Wire", {"targetProperty":"dataValue","expression":"new Date().getTime()"}, {}]
 													}],
 													editor: ["wm._DateEditor", {}, {}]
 												}],
-												inicio_box_hora: ["wm.TimeEditor", {"displayValue":"11:34 a.m.","disabled":true,"caption":"fecha","showing":false}, {}, {
+												inicio_box_hora: ["wm.TimeEditor", {"displayValue":"11:25 a.m.","disabled":true,"caption":"fecha","showing":false}, {}, {
 													binding: ["wm.Binding", {}, {}, {
 														wire: ["wm.Wire", {"targetProperty":"dataValue","expression":"new Date().getTime()"}, {}]
 													}],
