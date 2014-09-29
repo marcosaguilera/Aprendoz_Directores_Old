@@ -5,19 +5,19 @@ package com.aprendoz_test.data;
 
 /**
  *  aprendoz_test.Asistencia
- *  06/13/2014 12:51:22
+ *  09/11/2014 07:30:07
  * 
  */
 public class Asistencia {
 
     private Integer idAsistencia;
-    private Sesion sesion;
-    private TipoAsistencia tipoAsistencia;
-    private Persona persona;
     private String tipoEventualidadIdTipoEventualidad;
     private String tipoEventualidadIdTipoEventualidad1;
     private String tipoEventualidadIdTipoEventualidad2;
     private String comentario;
+    private Sesion sesion;
+    private TipoAsistencia tipoAsistencia;
+    private Persona persona;
 
     public Asistencia() {
     }
@@ -30,15 +30,15 @@ public class Asistencia {
         this.comentario = comentario;
     }
 
-    public Asistencia(Integer idAsistencia, Sesion sesion, TipoAsistencia tipoAsistencia, Persona persona, String tipoEventualidadIdTipoEventualidad, String tipoEventualidadIdTipoEventualidad1, String tipoEventualidadIdTipoEventualidad2, String comentario) {
+    public Asistencia(Integer idAsistencia, String tipoEventualidadIdTipoEventualidad, String tipoEventualidadIdTipoEventualidad1, String tipoEventualidadIdTipoEventualidad2, String comentario, Sesion sesion, TipoAsistencia tipoAsistencia, Persona persona) {
         this.idAsistencia = idAsistencia;
-        this.sesion = sesion;
-        this.tipoAsistencia = tipoAsistencia;
-        this.persona = persona;
         this.tipoEventualidadIdTipoEventualidad = tipoEventualidadIdTipoEventualidad;
         this.tipoEventualidadIdTipoEventualidad1 = tipoEventualidadIdTipoEventualidad1;
         this.tipoEventualidadIdTipoEventualidad2 = tipoEventualidadIdTipoEventualidad2;
         this.comentario = comentario;
+        this.sesion = sesion;
+        this.tipoAsistencia = tipoAsistencia;
+        this.persona = persona;
     }
 
     public Integer getIdAsistencia() {
@@ -47,30 +47,6 @@ public class Asistencia {
 
     public void setIdAsistencia(Integer idAsistencia) {
         this.idAsistencia = idAsistencia;
-    }
-
-    public Sesion getSesion() {
-        return sesion;
-    }
-
-    public void setSesion(Sesion sesion) {
-        this.sesion = sesion;
-    }
-
-    public TipoAsistencia getTipoAsistencia() {
-        return tipoAsistencia;
-    }
-
-    public void setTipoAsistencia(TipoAsistencia tipoAsistencia) {
-        this.tipoAsistencia = tipoAsistencia;
-    }
-
-    public Persona getPersona() {
-        return persona;
-    }
-
-    public void setPersona(Persona persona) {
-        this.persona = persona;
     }
 
     public String getTipoEventualidadIdTipoEventualidad() {
@@ -103,6 +79,30 @@ public class Asistencia {
 
     public void setComentario(String comentario) {
         this.comentario = comentario;
+    }
+
+    public Sesion getSesion() {
+        return sesion;
+    }
+
+    public void setSesion(Sesion sesion) {
+        this.sesion = sesion;
+    }
+
+    public TipoAsistencia getTipoAsistencia() {
+        return tipoAsistencia;
+    }
+
+    public void setTipoAsistencia(TipoAsistencia tipoAsistencia) {
+        this.tipoAsistencia = tipoAsistencia;
+    }
+
+    public Persona getPersona() {
+        return persona;
+    }
+
+    public void setPersona(Persona persona) {
+        this.persona = persona;
     }
 
 }

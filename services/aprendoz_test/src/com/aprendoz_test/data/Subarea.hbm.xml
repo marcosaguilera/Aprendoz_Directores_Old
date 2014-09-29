@@ -20,5 +20,11 @@
             </key>
             <one-to-many class="com.aprendoz_test.data.Eje"/>
         </set>
+        <set name="insccoordinadoressubareas" inverse="true">
+            <key>
+                <column name="subarea_id_subarea"/>
+            </key>
+            <one-to-many class="com.aprendoz_test.data.InscCoordinadoresSubarea"/>
+        </set>
     </class>
 </hibernate-mapping>

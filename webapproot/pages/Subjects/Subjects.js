@@ -1054,13 +1054,30 @@ dojo.declare("Subjects", wm.Page, {
      this.nivelEsperadoEditor1.clear();
      this.pesoEditor1.clear(); 
   },
-  aprendizajes_gradoChange: function(inSender, inDisplayValue, inDataValue) {  
-     this.cancelButton3Click(); 
+  aprendizajes_gradoChange: function(inSender, inDisplayValue, inDataValue) {       
      var idgrado= this.aprendizajes_grado.dataValue.idGrado;
      var idsy   = this.aprendizajes_sy.dataValue.idSy;
      this.aprendizajes_asignaturas_sv.input.setValue("_grado", idgrado);
      this.aprendizajes_asignaturas_sv.input.setValue("_sy", idsy);
-     this.aprendizajes_asignaturas_sv.update();      
+     this.aprendizajes_asignaturas_sv.update();  
+          
+     this.aprendizajes_asignaturas_sv.clearData();
+     this.aprendizajesAsignaturaLV.clearData();
+     
+     this.cancelButton3Click();  
+     this.idAprendizajeEditor1.clear();
+     this.fechaEsperadaEditor1.clear();
+     this.aprendizajeEditor1.clear();
+     this.learningEditor1.clear();
+     this.pesoEditor1.clear();
+     this.ejeIdEjeEditor1.clear();
+     this.eje2IdEjeEditor1.clear();
+     this.eje3IdEjeEditor1.clear(); 
+     this.dimensinComprensionEditor1.clear();
+     this.dimensinCurricularEditor1.clear();
+     this.inteligenciaEditor1.clear();
+     this.nivelEsperadoEditor1.clear();
+     this.pesoEditor1.clear();   
   },
   inscCursoAsigSvSuccess: function(inSender, inDeprecated) {
      var count=  this.inscCursoAsigSv.getCount();
@@ -1068,6 +1085,57 @@ dojo.declare("Subjects", wm.Page, {
   },
   aprendizajes_asignaturasSelectionChange: function(inSender) {
      this.cancelButton3Click();  
+     this.idAprendizajeEditor1.clear();
+     this.fechaEsperadaEditor1.clear();
+     this.aprendizajeEditor1.clear();
+     this.learningEditor1.clear();
+     this.pesoEditor1.clear();
+     this.ejeIdEjeEditor1.clear();
+     this.eje2IdEjeEditor1.clear();
+     this.eje3IdEjeEditor1.clear(); 
+     this.dimensinComprensionEditor1.clear();
+     this.dimensinCurricularEditor1.clear();
+     this.inteligenciaEditor1.clear();
+     this.nivelEsperadoEditor1.clear();
+     this.pesoEditor1.clear();  
+  },
+  aprendizajes_syChange: function(inSender, inDisplayValue, inDataValue) {
+     this.aprendizajes_grado.clear();
+     this.aprendizajes_asignaturas_sv.clearData();
+     this.aprendizajesAsignaturaLV.clearData();
+     
+     this.cancelButton3Click();
+     
+     this.idAprendizajeEditor1.clear();
+     this.fechaEsperadaEditor1.clear();
+     this.aprendizajeEditor1.clear();
+     this.learningEditor1.clear();
+     this.pesoEditor1.clear();
+     this.ejeIdEjeEditor1.clear();
+     this.eje2IdEjeEditor1.clear();
+     this.eje3IdEjeEditor1.clear(); 
+     this.dimensinComprensionEditor1.clear();
+     this.dimensinCurricularEditor1.clear();
+     this.inteligenciaEditor1.clear();
+     this.nivelEsperadoEditor1.clear();
+     this.pesoEditor1.clear(); 
+  },
+  aprendizajes_aprendizajesSelectionChange: function(inSender) {
+     this.cancelButton3Click();
+     
+     this.idAprendizajeEditor1.clear();
+     this.fechaEsperadaEditor1.clear();
+     this.aprendizajeEditor1.clear();
+     this.learningEditor1.clear();
+     this.pesoEditor1.clear();
+     this.ejeIdEjeEditor1.clear();
+     this.eje2IdEjeEditor1.clear();
+     this.eje3IdEjeEditor1.clear(); 
+     this.dimensinComprensionEditor1.clear();
+     this.dimensinCurricularEditor1.clear();
+     this.inteligenciaEditor1.clear();
+     this.nivelEsperadoEditor1.clear();
+     this.pesoEditor1.clear(); 
   },
   _end: 0
 });

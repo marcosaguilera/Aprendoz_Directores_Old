@@ -6,17 +6,17 @@ import java.util.Date;
 
 /**
  *  aprendoz_test.InscComentariosAlumnos
- *  06/13/2014 12:51:22
+ *  09/11/2014 07:30:07
  * 
  */
 public class InscComentariosAlumnos {
 
     private Integer idComentarioEstudiante;
-    private Sy sy;
-    private Persona persona;
     private Integer numeroBimestre;
     private String comentario;
     private Date fechaActual;
+    private Sy sy;
+    private Persona persona;
 
     public InscComentariosAlumnos() {
     }
@@ -28,13 +28,13 @@ public class InscComentariosAlumnos {
         this.fechaActual = fechaActual;
     }
 
-    public InscComentariosAlumnos(Integer idComentarioEstudiante, Sy sy, Persona persona, Integer numeroBimestre, String comentario, Date fechaActual) {
+    public InscComentariosAlumnos(Integer idComentarioEstudiante, Integer numeroBimestre, String comentario, Date fechaActual, Sy sy, Persona persona) {
         this.idComentarioEstudiante = idComentarioEstudiante;
-        this.sy = sy;
-        this.persona = persona;
         this.numeroBimestre = numeroBimestre;
         this.comentario = comentario;
         this.fechaActual = fechaActual;
+        this.sy = sy;
+        this.persona = persona;
     }
 
     public Integer getIdComentarioEstudiante() {
@@ -43,22 +43,6 @@ public class InscComentariosAlumnos {
 
     public void setIdComentarioEstudiante(Integer idComentarioEstudiante) {
         this.idComentarioEstudiante = idComentarioEstudiante;
-    }
-
-    public Sy getSy() {
-        return sy;
-    }
-
-    public void setSy(Sy sy) {
-        this.sy = sy;
-    }
-
-    public Persona getPersona() {
-        return persona;
-    }
-
-    public void setPersona(Persona persona) {
-        this.persona = persona;
     }
 
     public Integer getNumeroBimestre() {
@@ -83,6 +67,22 @@ public class InscComentariosAlumnos {
 
     public void setFechaActual(Date fechaActual) {
         this.fechaActual = fechaActual;
+    }
+
+    public Sy getSy() {
+        return sy;
+    }
+
+    public void setSy(Sy sy) {
+        this.sy = sy;
+    }
+
+    public Persona getPersona() {
+        return persona;
+    }
+
+    public void setPersona(Persona persona) {
+        this.persona = persona;
     }
 
 }

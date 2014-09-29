@@ -6,16 +6,16 @@ import java.util.Date;
 
 /**
  *  aprendoz_test.PerfilPersonaImg
- *  06/13/2014 12:51:21
+ *  09/11/2014 07:30:06
  * 
  */
 public class PerfilPersonaImg {
 
     private Integer idPersonaImg;
-    private Persona persona;
     private String imgName;
     private Date fechaCreacion;
     private Date fechaActualizacion;
+    private Persona persona;
 
     public PerfilPersonaImg() {
     }
@@ -27,12 +27,12 @@ public class PerfilPersonaImg {
         this.fechaActualizacion = fechaActualizacion;
     }
 
-    public PerfilPersonaImg(Integer idPersonaImg, Persona persona, String imgName, Date fechaCreacion, Date fechaActualizacion) {
+    public PerfilPersonaImg(Integer idPersonaImg, String imgName, Date fechaCreacion, Date fechaActualizacion, Persona persona) {
         this.idPersonaImg = idPersonaImg;
-        this.persona = persona;
         this.imgName = imgName;
         this.fechaCreacion = fechaCreacion;
         this.fechaActualizacion = fechaActualizacion;
+        this.persona = persona;
     }
 
     public Integer getIdPersonaImg() {
@@ -41,14 +41,6 @@ public class PerfilPersonaImg {
 
     public void setIdPersonaImg(Integer idPersonaImg) {
         this.idPersonaImg = idPersonaImg;
-    }
-
-    public Persona getPersona() {
-        return persona;
-    }
-
-    public void setPersona(Persona persona) {
-        this.persona = persona;
     }
 
     public String getImgName() {
@@ -73,6 +65,14 @@ public class PerfilPersonaImg {
 
     public void setFechaActualizacion(Date fechaActualizacion) {
         this.fechaActualizacion = fechaActualizacion;
+    }
+
+    public Persona getPersona() {
+        return persona;
+    }
+
+    public void setPersona(Persona persona) {
+        this.persona = persona;
     }
 
 }

@@ -5,14 +5,12 @@ package com.aprendoz_test.data;
 
 /**
  *  aprendoz_test.CostosAnualesCopy
- *  06/13/2014 12:51:21
+ *  09/11/2014 07:30:07
  * 
  */
 public class CostosAnualesCopy {
 
     private Integer idCostoAnua;
-    private Grado grado;
-    private Sy sy;
     private String codigo;
     private String nombreProducto;
     private String descripcion;
@@ -20,6 +18,8 @@ public class CostosAnualesCopy {
     private Boolean nuevo;
     private Boolean obligatorio;
     private Integer tipoCosto;
+    private Grado grado;
+    private Sy sy;
 
     public CostosAnualesCopy() {
     }
@@ -35,10 +35,8 @@ public class CostosAnualesCopy {
         this.tipoCosto = tipoCosto;
     }
 
-    public CostosAnualesCopy(Integer idCostoAnua, Grado grado, Sy sy, String codigo, String nombreProducto, String descripcion, Double valor, Boolean nuevo, Boolean obligatorio, Integer tipoCosto) {
+    public CostosAnualesCopy(Integer idCostoAnua, String codigo, String nombreProducto, String descripcion, Double valor, Boolean nuevo, Boolean obligatorio, Integer tipoCosto, Grado grado, Sy sy) {
         this.idCostoAnua = idCostoAnua;
-        this.grado = grado;
-        this.sy = sy;
         this.codigo = codigo;
         this.nombreProducto = nombreProducto;
         this.descripcion = descripcion;
@@ -46,6 +44,8 @@ public class CostosAnualesCopy {
         this.nuevo = nuevo;
         this.obligatorio = obligatorio;
         this.tipoCosto = tipoCosto;
+        this.grado = grado;
+        this.sy = sy;
     }
 
     public Integer getIdCostoAnua() {
@@ -54,22 +54,6 @@ public class CostosAnualesCopy {
 
     public void setIdCostoAnua(Integer idCostoAnua) {
         this.idCostoAnua = idCostoAnua;
-    }
-
-    public Grado getGrado() {
-        return grado;
-    }
-
-    public void setGrado(Grado grado) {
-        this.grado = grado;
-    }
-
-    public Sy getSy() {
-        return sy;
-    }
-
-    public void setSy(Sy sy) {
-        this.sy = sy;
     }
 
     public String getCodigo() {
@@ -126,6 +110,22 @@ public class CostosAnualesCopy {
 
     public void setTipoCosto(Integer tipoCosto) {
         this.tipoCosto = tipoCosto;
+    }
+
+    public Grado getGrado() {
+        return grado;
+    }
+
+    public void setGrado(Grado grado) {
+        this.grado = grado;
+    }
+
+    public Sy getSy() {
+        return sy;
+    }
+
+    public void setSy(Sy sy) {
+        this.sy = sy;
     }
 
 }

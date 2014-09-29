@@ -41,6 +41,9 @@ Inscripciones.widgets = {
 		}]
 	}],
 	a_sy: ["wm.LiveVariable", {"autoUpdate":false,"liveSource":"com.aprendoz_test.data.Sy","orderBy":"desc: idSy"}, {}],
+	getSyFullSv: ["wm.ServiceVariable", {"service":"aprendoz_test","operation":"getSyByCurDateFull"}, {}, {
+		input: ["wm.ServiceInput", {"type":"getSyByCurDateFullInputs"}, {}]
+	}],
 	layoutBox1: ["wm.Layout", {"height":"100%","width":"100%","horizontalAlign":"left","verticalAlign":"top"}, {}, {
 		panel2: ["wm.Panel", {"height":"100%","width":"100%","horizontalAlign":"left","verticalAlign":"top","layoutKind":"left-to-right"}, {}, {
 			right_panel: ["wm.Panel", {"height":"100%","width":"100%","horizontalAlign":"left","verticalAlign":"top"}, {}, {
@@ -51,7 +54,7 @@ Inscripciones.widgets = {
 				label2: ["wm.Label", {"height":"120px","width":"100%","border":"0","caption":"A continuación seleccione el Grado y  la <u>Asignatura</u> a la cual desea (+Agregar) o (-Retirar) alumnos.<br><br>Una vez hecho esto, los selectores  de <u>Estudiantes por Curso</u> se activarán y podrá buscar los alumnos en el curso deseado, seleccionarlos y (+Agregar) a la asignatura.","singleLine":false}, {}, {
 					format: ["wm.DataFormatter", {}, {}]
 				}],
-				syGrade: ["wm.SelectEditor", {"width":"100%","caption":"Año escolar"}, {}, {
+				syGrade: ["wm.SelectEditor", {"width":"100%","caption":"Año escolar"}, {"onchange":"syGradeChange"}, {
 					editor: ["wm._SelectEditor", {"displayField":"schoolYear","dataField":"idSy"}, {}, {
 						binding: ["wm.Binding", {}, {}, {
 							wire: ["wm.Wire", {"targetProperty":"dataSet","source":"a_sy","expression":undefined}, {}]

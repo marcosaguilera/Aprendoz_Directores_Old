@@ -5,7 +5,7 @@ package com.aprendoz_test.data;
 
 /**
  *  aprendoz_test.VistaEventualidadesNotificacionesFamilia
- *  06/13/2014 12:51:23
+ *  09/11/2014 07:30:07
  * 
  */
 public class VistaEventualidadesNotificacionesFamilia {

@@ -4,7 +4,7 @@ package com.aprendoz_test.data.output;
 
 
 /**
- * Generated for query "searchStudentsByComplexName" on 08/08/2014 16:11:37
+ * Generated for query "searchStudentsByComplexName" on 09/11/2014 08:33:54
  * 
  */
 public class SearchStudentsByComplexNameRtnType {

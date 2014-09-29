@@ -12,6 +12,11 @@ INNER JOIN ep.eventualidades e
 INNER JOIN ep.persona alumno
 WHERE e.idEventualidad=:ide
     </query>
+    <query name="cursos">
+        <query-param name="idg" type="java.lang.Integer"/>
+        SELECT g.idGrado as idgrado, c.idCurso as idcurso, c.curso as curso FROM Grado g INNER JOIN g.cursos c
+WHERE g.idGrado=:idg and c.idCurso&gt;=10101 and c.idCurso&lt;=40403
+    </query>
     <query name="subjectsByGrade">
         <query-param name="_sy" type="java.lang.Integer"/>
         <query-param name="_grado" type="java.lang.Integer"/>
@@ -44,11 +49,6 @@ n.levelName as levelName
 FROM Asignatura a INNER JOIN a.grado g INNER JOIN a.sy sy INNER JOIN g.nivel n
 WHERE sy.idSy=:_sy AND g.idGrado=:_grado
     </query>
-    <query name="cursos">
-        <query-param name="idg" type="java.lang.Integer"/>
-        SELECT g.idGrado as idgrado, c.idCurso as idcurso, c.curso as curso FROM Grado g INNER JOIN g.cursos c
-WHERE g.idGrado=:idg and c.idCurso&gt;=10101 and c.idCurso&lt;=40403
-    </query>
     <query name="sendMailHQLOne">
         <query-param name="ide" type="java.lang.Integer"/>
         <query-param name="ppersona" type="java.lang.Integer"/>
@@ -71,16 +71,52 @@ FROM InscAlumCurso i INNER JOIN i.curso c INNER JOIN i.persona pc INNER JOIN c.g
 WHERE e.idEventualidad=:ide AND alumno.idPersona=:ppersona AND c.idCurso &gt;=10101 AND c.idCurso &lt;=40403 AND pc.idPersona=alumno.idPersona AND nidn.idNivel=n.idNivel and sy.idSy=4 and c.idCurso=cc.idCurso AND sycp.idSy=4
 GROUP BY alumno.idPersona
     </query>
+    <query name="lsCursos" comment="listado de cursos sin adminisiones ni matriculas">
+        SELECT c.idCurso as id, c.curso as curso
+FROM Curso c
+WHERE c.idCurso &gt;= 10101 and c.idCurso &lt;=40403
+    </query>
     <query name="HQLlsPeriodo" comment="lista de periodos">
         SELECT p.idPeriodo as id, p.periodo as periodo, tipo.tipoPeriodo as tipoP
 FROM Periodo p INNER JOIN p.tipoPeriodo as tipo
 WHERE tipo.idTipoPeriodo=1
 ORDER BY p.idPeriodo desc
     </query>
-    <query name="lsCursos" comment="listado de cursos sin adminisiones ni matriculas">
-        SELECT c.idCurso as id, c.curso as curso
-FROM Curso c
-WHERE c.idCurso &gt;= 10101 and c.idCurso &lt;=40403
+    <query name="getEmailsFamiliarGroup">
+        <query-param name="pgrupo" type="java.lang.Integer"/>
+        <query-param name="ppersona" type="java.lang.Integer"/>
+        SELECT
+gf.idGrupoFamiliar as idgrupofamiliar,
+gf.grupoFamiliar as grupofamiliar,
+tipostd.idTipoPersona as tipoalumno,
+p.idPersona as idpersona,
+p.nombre1 as stdn1,
+p.nombre2 as stdn2,
+p.apellido1 as stda1,
+p.apellido2 as stda2,
+mama.idPersona as mamaidpersona,
+mama.nombre1 as maman1,
+mama.nombre2 as maman2,
+mama.apellido1 as mamaa1,
+mama.apellido2 as mamaa2,
+mama.email as correomama,
+mama.noDocumento as dnimama,
+tipomama.idTipoPersona as tipomama,
+papa.idPersona as papaidpersona,
+papa.nombre1 as papan1,
+papa.nombre2 as papan2,
+papa.apellido1 as papaa1,
+papa.apellido2 as papaa2,
+papa.email as correopapa,
+papa.noDocumento as dnipapa,
+tipopapa.idTipoPersona as tipopapa
+FROM Persona p INNER JOIN p.grupoFamiliar gf INNER JOIN p.tipoPersona tipostd, Persona mama INNER JOIN mama.grupoFamiliar mamagrupo INNER JOIN mama.tipoPersona tipomama,
+Persona papa INNER JOIN papa.grupoFamiliar papagrupo INNER JOIN papa.tipoPersona tipopapa
+WHERE gf.idGrupoFamiliar=:pgrupo AND p.idPersona=:ppersona AND mamagrupo.idGrupoFamiliar= gf.idGrupoFamiliar AND  papagrupo.idGrupoFamiliar= gf.idGrupoFamiliar
+AND (tipostd.idTipoPersona=1)
+AND (tipomama.idTipoPersona=12 OR tipomama.idTipoPersona=10 OR tipomama.idTipoPersona=7 OR tipomama.idTipoPersona=5 OR tipomama.idTipoPersona=4)
+AND (tipopapa.idTipoPersona=10 OR tipopapa.idTipoPersona=7 OR tipopapa.idTipoPersona=4 OR tipopapa.idTipoPersona=2)
+AND (papa.idPersona &lt;&gt; mama.idPersona)
     </query>
     <query name="searchStudentsByComplexName">
         <query-param name="search" type="java.lang.String"/>
@@ -153,6 +189,22 @@ INNER JOIN iac.sy AS sy
 WHERE tipo.tipoPersona = &apos;Estudiante&apos; AND sy.idSy = :sy AND curso.idCurso = :curso AND enlace.sexo = &apos;Masculino&apos;
 GROUP BY enlace.sexo
     </query>
+    <query name="hql_deleteLearnings">
+        <query-param name="ida" type="java.lang.Integer"/>
+        DELETE FROM AprendizajesAsignaturas aa WHERE aa.idAprendizaje=:ida
+    </query>
+    <query name="HQLlsGrado" comment="lista grados seccionada, HQL">
+        SELECT g.idGrado as id, g.grado as grado
+FROM Grado g
+WHERE g.idGrado &gt;=101 and g.idGrado &lt;= 404
+    </query>
+    <query name="enviarMailEventualidades">
+        <query-param name="ide" type="java.lang.Integer"/>
+        SELECT
+n.id.idpersona as alumnoid, n.id.nombreAlumno as nombreAlumno, n.id.ideventualidad, n.id.registrante, n.id.curso as curso, n.id.userCordinador as coordinador, n.id.correoCordinador as correoCoordinador, n.id.fecha as fecha, n.id.horas as hora, n.id.lugar as lugar, n.id.tipoeventualidad as tipoeventualidad, n.id.subtipo as subtipo, n.id.correoDirector as correodirector, n.id.nombreRegistrante as docenteReg
+FROM VistaEventualidadesNotificaciones n
+WHERE n.id.ideventualidad=:ide
+    </query>
     <query name="SeachEventualidadHQL">
         <query-param name="search" type="java.lang.String"/>
         SELECT ep.idEventualidadPersonas as id, p.codigo as codigo, CONCAT(p.apellido1,&apos; &apos;,p.apellido2,&apos; &apos;,p.nombre1,&apos; &apos;,p.nombre2) as complex, e.fecha as fecha, e.hora as hora, e.estado as estado, e.descripcion as descripcion, t.lugar as lugar, e.idEventualidad as ideventualidad, e.confidencial as confidencial, se.subtipoEventualidad as subtipo, e.usuarioReg as usuario
@@ -162,8 +214,7 @@ INNER JOIN ep.eventualidades as e
 INNER JOIN e.tipoLugar as t
 INNER JOIN ep.subtipoEventualidad as se
 WHERE
-(e.fecha between &apos;30-07-2013&apos; AND &apos;01-08-2014&apos;) AND
-CONCAT(p.apellido1,&apos; &apos;,p.apellido2,&apos; &apos;,p.nombre1,&apos; &apos;,p.nombre2) LIKE &apos;%&apos; || :search || &apos;%&apos; OR
+(CONCAT(p.apellido1,&apos; &apos;,p.apellido2,&apos; &apos;,p.nombre1,&apos; &apos;,p.nombre2) LIKE &apos;%&apos; || :search || &apos;%&apos; OR
 CONCAT(p.apellido2,&apos; &apos;,p.apellido1,&apos; &apos;,p.nombre1,&apos; &apos;,p.nombre2) LIKE &apos;%&apos; || :search || &apos;%&apos; OR
 CONCAT(p.apellido2,&apos; &apos;,p.apellido1,&apos; &apos;,p.nombre2,&apos; &apos;,p.nombre1) LIKE &apos;%&apos; || :search || &apos;%&apos; OR
 CONCAT(p.apellido1,&apos; &apos;,p.apellido2,&apos; &apos;,p.nombre2,&apos; &apos;,p.nombre1) LIKE &apos;%&apos; || :search || &apos;%&apos; OR
@@ -186,21 +237,9 @@ CONCAT(p.nombre1,&apos; &apos;,p.apellido2,&apos; &apos;,p.apellido1,&apos; &apo
 CONCAT(p.apellido2,&apos; &apos;,p.nombre2,&apos; &apos;,p.apellido1,&apos; &apos;,p.nombre1) LIKE &apos;%&apos; || :search || &apos;%&apos; OR
 CONCAT(p.nombre2,&apos; &apos;,p.apellido1,&apos; &apos;,p.nombre1,&apos; &apos;,p.apellido2) LIKE &apos;%&apos; || :search || &apos;%&apos; OR
 CONCAT(p.apellido1,&apos; &apos;,p.nombre2,&apos; &apos;,p.nombre1,&apos; &apos;,p.apellido2) LIKE &apos;%&apos; || :search || &apos;%&apos; OR
-CONCAT(p.apellido2,&apos; &apos;,p.nombre1,&apos; &apos;,p.nombre2,&apos; &apos;,p.apellido1) LIKE &apos;%&apos; || :search || &apos;%&apos;
+CONCAT(p.apellido2,&apos; &apos;,p.nombre1,&apos; &apos;,p.nombre2,&apos; &apos;,p.apellido1) LIKE &apos;%&apos; || :search || &apos;%&apos;) AND  (e.fecha&gt;&apos;2014-07-01&apos; AND  e.fecha&lt;&apos;2015-07-01&apos;)
 ORDER BY
 e.idEventualidad desc, e.fecha desc, e.hora desc
-    </query>
-    <query name="enviarMailEventualidades">
-        <query-param name="ide" type="java.lang.Integer"/>
-        SELECT
-n.id.idpersona as alumnoid, n.id.nombreAlumno as nombreAlumno, n.id.ideventualidad, n.id.registrante, n.id.curso as curso, n.id.userCordinador as coordinador, n.id.correoCordinador as correoCoordinador, n.id.fecha as fecha, n.id.horas as hora, n.id.lugar as lugar, n.id.tipoeventualidad as tipoeventualidad, n.id.subtipo as subtipo, n.id.correoDirector as correodirector, n.id.nombreRegistrante as docenteReg
-FROM VistaEventualidadesNotificaciones n
-WHERE n.id.ideventualidad=:ide
-    </query>
-    <query name="HQLlsGrado" comment="lista grados seccionada, HQL">
-        SELECT g.idGrado as id, g.grado as grado
-FROM Grado g
-WHERE g.idGrado &gt;=101 and g.idGrado &lt;= 404
     </query>
     <query name="getTipoEventualidadByIdSubTipo">
         <query-param name="id" type="java.lang.Integer"/>
@@ -279,7 +318,7 @@ RIGHT OUTER JOIN p.inscAlumCursos c
 INNER JOIN c.curso curso
 INNER JOIN c.sy sy
 INNER JOIN p.grupoFamiliar gf
-WHERE p.idPersona=:ppersona AND (curso.idCurso&gt;=10101 AND curso.idCurso&lt;=40403) AND sy.idSy=4
+WHERE p.idPersona=:ppersona AND (curso.idCurso&gt;=10101 AND curso.idCurso&lt;=40403) AND sy.idSy=5
 ORDER BY curso.idCurso
     </query>
     <query name="studentsByCurseBySubject">
@@ -310,10 +349,6 @@ ORDER BY c.idCurso desc,p.apellido1,p.apellido2,p.nombre1,p.nombre2
         SELECT te.idTipoEventualidad as id, te.tipoEventualidad as tipo
 FROM TipoEventualidad te
     </query>
-    <query name="deleteSubject">
-        <query-param name="idasignatura" type="java.lang.Integer"/>
-        DELETE FROM Asignatura a WHERE a.idAsignatura=:idasignatura
-    </query>
     <query name="getSyByCurDate">
         <query-param name="f1" type="java.util.Date"/>
         SELECT
@@ -324,6 +359,10 @@ DATE(sy.fechaHasta)
 FROM Sy sy
 WHERE :f1 BETWEEN sy.fechaDesde AND sy.fechaHasta
     </query>
+    <query name="deleteSubject">
+        <query-param name="idasignatura" type="java.lang.Integer"/>
+        DELETE FROM Asignatura a WHERE a.idAsignatura=:idasignatura
+    </query>
     <query name="getTypeUser">
         <query-param name="usuario" type="java.lang.String"/>
         SELECT
@@ -332,10 +371,16 @@ FROM Persona AS p
 INNER JOIN p.tipoPersona AS tipo
 WHERE p.nombreLdap=:usuario
     </query>
-    <query name="actualizarClave">
-        <query-param name="clave" type="java.lang.String"/>
-        <query-param name="usuario" type="java.lang.String"/>
-        UPDATE Persona p SET p.clave =:clave WHERE p.nombreLdap =:usuario
+    <query name="getSyByCurDateFull">
+        <query-param name="f1" type="java.lang.Integer"/>
+        SELECT
+sy.idSy as idsy,
+sy.schoolYear as sy,
+DATE(sy.fechaDesde),
+DATE(sy.fechaHasta),
+p.idPeriodo as idperiodo
+FROM Periodo p INNER JOIN p.sy sy
+WHERE sy.idSy=:f1
     </query>
     <query name="subjectsAxis">
         <query-param name="ida" type="java.lang.Integer"/>
@@ -350,6 +395,11 @@ sy.idSy as idsy,
 sy.schoolYear as school_year
 FROM Asignatura a INNER JOIN a.grado g INNER JOIN a.sy sy
 WHERE a.idAsignatura=:ida
+    </query>
+    <query name="actualizarClave">
+        <query-param name="clave" type="java.lang.String"/>
+        <query-param name="usuario" type="java.lang.String"/>
+        UPDATE Persona p SET p.clave =:clave WHERE p.nombreLdap =:usuario
     </query>
     <query name="searchReportesAlumnos" comment="busqueda compleja de nombre por alumnos">
         <query-param name="search" type="java.lang.String"/>
@@ -389,16 +439,6 @@ CONCAT(p.apellido2,&apos; &apos;,p.nombre1,&apos; &apos;,p.nombre2,&apos; &apos;
 FROM Asignatura a INNER JOIN a.sy sy INNER JOIN a.grado g
 WHERE g.idGrado=:idgrado AND sy.idSy=:idsy
     </query>
-    <query name="getCurseByidGrade">
-        <query-param name="pgrado" type="java.lang.Integer"/>
-        SELECT
-c.idCurso as idcurso,
-c.curso as curso,
-g.idGrado as idgrado,
-g.grado as grado
-FROM Curso c INNER JOIN c.grado g
-WHERE g.idGrado=:pgrado AND c.idCurso&gt;=10101 AND c.idCurso&lt;=40403
-    </query>
     <query name="subjectsCirruculum">
         <query-param name="pidgrado" type="java.lang.Integer"/>
         <query-param name="pidsy" type="java.lang.Integer"/>
@@ -417,6 +457,16 @@ sy.schoolYear as school_year
 FROM Asignatura a INNER JOIN a.grado g INNER JOIN a.sy sy
 WHERE g.idGrado=:pidgrado AND sy.idSy=:pidsy
 ORDER BY a.asignatura
+    </query>
+    <query name="getCurseByidGrade">
+        <query-param name="pgrado" type="java.lang.Integer"/>
+        SELECT
+c.idCurso as idcurso,
+c.curso as curso,
+g.idGrado as idgrado,
+g.grado as grado
+FROM Curso c INNER JOIN c.grado g
+WHERE g.idGrado=:pgrado AND c.idCurso&gt;=10101 AND c.idCurso&lt;=40403
     </query>
     <query name="last_accessHQL">
         <query-param name="user" type="java.lang.String"/>
@@ -439,6 +489,25 @@ FROM Asignatura a INNER JOIN a.grado g INNER JOIN a.sy as sy
 WHERE g.idGrado=:pgrado and sy.idSy=:idsy
 GROUP BY a.idAsignatura
     </query>
+    <query name="hql_aprendizaje_detalles">
+        <query-param name="idaprendizajes" type="java.lang.Integer"/>
+        SELECT
+aa.idAprendizaje as idAprendizaje,
+aa.fechaEsperada as fechaEsperada,
+aa.aprendizaje as aprendizaje,
+aa.learning as learning,
+aa.peso as peso,
+aa.ejeIdEje as ejeIdEje,
+aa.eje2IdEje as eje2IdEje,
+aa.eje3IdEje as eje3IdEje,
+i.idInteligencia as idInteligencia,
+dc.idDimension as idDimension,
+a.idAsignatura as idAsignatura,
+n.idNivelEsperado as idNivelEsperado,
+dcr.idDimension as idDimension
+FROM AprendizajesAsignaturas aa INNER JOIN aa.inteligencia i INNER JOIN  aa.dimensionComprension dc INNER JOIN aa.asignatura a INNER JOIN aa.nivelEsperado n INNER JOIN aa.dimensionCurricular dcr
+WHERE aa.idAprendizaje=:idaprendizajes
+    </query>
     <query name="sendMailHQL">
         <query-param name="ide" type="java.lang.Integer"/>
         SELECT
@@ -458,25 +527,6 @@ pidn.email as dir_mail
 FROM InscAlumCurso i INNER JOIN i.curso c INNER JOIN i.persona pc INNER JOIN c.grado.nivel n INNER JOIN i.sy sy, EventualidadPersonas ep INNER JOIN ep.persona alumno INNER JOIN ep.eventualidades e INNER JOIN e.tipoLugar l INNER JOIN ep.subtipoEventualidad as sub INNER JOIN sub.tipoEventualidad tipo, InscCoordinadoresCurso icc INNER JOIN icc.curso cc INNER JOIN icc.persona cp INNER JOIN icc.sy sycp, InscDirectorNivel idn INNER JOIN idn.nivel nidn INNER JOIN idn.persona pidn
 WHERE e.idEventualidad=:ide AND c.idCurso &gt;=10101 AND c.idCurso &lt;=40403 AND pc.idPersona=alumno.idPersona AND nidn.idNivel=n.idNivel and sy.idSy=4 and c.idCurso=cc.idCurso AND sycp.idSy=4
 GROUP BY alumno.idPersona
-    </query>
-    <query name="hql_aprendizaje_detalles">
-        <query-param name="idaprendizajes" type="java.lang.Integer"/>
-        SELECT
-aa.idAprendizaje as idAprendizaje,
-aa.fechaEsperada as fechaEsperada,
-aa.aprendizaje as aprendizaje,
-aa.learning as learning,
-aa.peso as peso,
-aa.ejeIdEje as ejeIdEje,
-aa.eje2IdEje as eje2IdEje,
-aa.eje3IdEje as eje3IdEje,
-i.idInteligencia as idInteligencia,
-dc.idDimension as idDimension,
-a.idAsignatura as idAsignatura,
-n.idNivelEsperado as idNivelEsperado,
-dcr.idDimension as idDimension
-FROM AprendizajesAsignaturas aa INNER JOIN aa.inteligencia i INNER JOIN  aa.dimensionComprension dc INNER JOIN aa.asignatura a INNER JOIN aa.nivelEsperado n INNER JOIN aa.dimensionCurricular dcr
-WHERE aa.idAprendizaje=:idaprendizajes
     </query>
     <query name="showInformationUser">
         <query-param name="user" type="java.lang.String"/>
@@ -527,10 +577,6 @@ CONCAT(p.nombre2,&apos; &apos;,p.apellido1,&apos; &apos;,p.nombre1,&apos; &apos;
 CONCAT(p.apellido1,&apos; &apos;,p.nombre2,&apos; &apos;,p.nombre1,&apos; &apos;,p.apellido2) LIKE &apos;%&apos; || :search || &apos;%&apos; OR
 CONCAT(p.apellido2,&apos; &apos;,p.nombre1,&apos; &apos;,p.nombre2,&apos; &apos;,p.apellido1) LIKE &apos;%&apos; || :search || &apos;%&apos;)
     </query>
-    <query name="deleteEventualidadPersona">
-        <query-param name="epid" type="java.lang.Integer"/>
-        DELETE FROM EventualidadPersonas ep WHERE ep.idEventualidadPersonas=:epid
-    </query>
     <query name="getCountGenderMale">
         <query-param name="sy" type="java.lang.Integer"/>
         <query-param name="curso" type="java.lang.Integer"/>
@@ -551,6 +597,10 @@ INNER JOIN iac.persona as persona
 WHERE tipo.tipoPersona = &apos;Estudiante&apos; AND sy.idSy = :sy AND curso.idCurso = :curso AND enlace.sexo = &apos;Masculino&apos;
 AND curso.idCurso&gt;= 10101 and curso.idCurso&lt;=40403 and persona.activoRetirado=1 and persona.matriculado=1
 GROUP BY enlace.sexo
+    </query>
+    <query name="deleteEventualidadPersona">
+        <query-param name="epid" type="java.lang.Integer"/>
+        DELETE FROM EventualidadPersonas ep WHERE ep.idEventualidadPersonas=:epid
     </query>
     <query name="subjectsBySyAndStudent">
         <query-param name="idpersona" type="java.lang.Integer"/>
@@ -600,44 +650,16 @@ a.peso as peso
 FROM Asignatura a INNER JOIN a.grado g INNER JOIN a.sy sy INNER JOIN a.tipoInscAsig tia
 WHERE a.idAsignatura=:idasignatura
     </query>
-    <query name="getEmailsFamiliarGroup">
-        <query-param name="pgrupo" type="java.lang.Integer"/>
-        <query-param name="ppersona" type="java.lang.Integer"/>
+    <query name="getSubareaCoord">
+        <query-param name="user" type="java.lang.String"/>
         SELECT
-gf.idGrupoFamiliar as idgrupofamiliar,
-gf.grupoFamiliar as grupofamiliar,
-tipostd.idTipoPersona as tipoalumno,
 p.idPersona as idpersona,
-p.nombre1 as stdn1,
-p.nombre2 as stdn2,
-p.apellido1 as stda1,
-p.apellido2 as stda2,
-mama.idPersona as mamaidpersona,
-mama.nombre1 as maman1,
-mama.nombre2 as maman2,
-mama.apellido1 as mamaa1,
-mama.apellido2 as mamaa2,
-mama.email as correomama,
-mama.noDocumento as dnimama,
-tipomama.idTipoPersona as tipomama,
-papa.idPersona as papaidpersona,
-papa.nombre1 as papan1,
-papa.nombre2 as papan2,
-papa.apellido1 as papaa1,
-papa.apellido2 as papaa2,
-papa.email as correopapa,
-papa.noDocumento as dnipapa,
-tipopapa.idTipoPersona as tipopapa
-FROM Persona p INNER JOIN p.grupoFamiliar gf INNER JOIN p.tipoPersona tipostd, Persona mama INNER JOIN mama.grupoFamiliar mamagrupo INNER JOIN mama.tipoPersona tipomama,
-Persona papa INNER JOIN papa.grupoFamiliar papagrupo INNER JOIN papa.tipoPersona tipopapa
-WHERE gf.idGrupoFamiliar=:pgrupo AND p.idPersona=:ppersona AND mamagrupo.idGrupoFamiliar= gf.idGrupoFamiliar AND  papagrupo.idGrupoFamiliar= gf.idGrupoFamiliar
-AND (tipostd.idTipoPersona=1)
-AND (tipomama.idTipoPersona=12 OR tipomama.idTipoPersona=10 OR tipomama.idTipoPersona=7 OR tipomama.idTipoPersona=5 OR tipomama.idTipoPersona=4)
-AND (tipopapa.idTipoPersona=10 OR tipopapa.idTipoPersona=7 OR tipopapa.idTipoPersona=4 OR tipopapa.idTipoPersona=2)
-AND (papa.idPersona &lt;&gt; mama.idPersona)
-    </query>
-    <query name="hql_deleteLearnings">
-        <query-param name="ida" type="java.lang.Integer"/>
-        DELETE FROM AprendizajesAsignaturas aa WHERE aa.idAprendizaje=:ida
+p.nombreLdap as user,
+s.idSubarea as idsubarea,
+s.subarea as subarea,
+sy.idSy as idsy,
+sy.schoolYear as sy
+FROM InscCoordinadoresSubarea i INNER JOIN i.persona p INNER JOIN i.subareas s INNER JOIN i.sy sy
+WHERE p.nombreLdap=:user
     </query>
 </hibernate-mapping>

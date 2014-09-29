@@ -7,28 +7,31 @@ import java.util.Set;
 
 /**
  *  aprendoz_test.SubtipoEventualidad
- *  06/13/2014 12:51:22
+ *  09/11/2014 07:30:06
  * 
  */
 public class SubtipoEventualidad {
 
     private Integer idSubtipoEventualidad;
-    private TipoEventualidad tipoEventualidad;
     private String subtipoEventualidad;
+    private Integer syIdSy;
+    private TipoEventualidad tipoEventualidad;
     private Set<com.aprendoz_test.data.EventualidadPersonas> eventualidadPersonases = new HashSet<com.aprendoz_test.data.EventualidadPersonas>();
 
     public SubtipoEventualidad() {
     }
 
-    public SubtipoEventualidad(Integer idSubtipoEventualidad, String subtipoEventualidad) {
+    public SubtipoEventualidad(Integer idSubtipoEventualidad, String subtipoEventualidad, Integer syIdSy) {
         this.idSubtipoEventualidad = idSubtipoEventualidad;
         this.subtipoEventualidad = subtipoEventualidad;
+        this.syIdSy = syIdSy;
     }
 
-    public SubtipoEventualidad(Integer idSubtipoEventualidad, TipoEventualidad tipoEventualidad, String subtipoEventualidad, Set<com.aprendoz_test.data.EventualidadPersonas> eventualidadPersonases) {
+    public SubtipoEventualidad(Integer idSubtipoEventualidad, String subtipoEventualidad, Integer syIdSy, TipoEventualidad tipoEventualidad, Set<com.aprendoz_test.data.EventualidadPersonas> eventualidadPersonases) {
         this.idSubtipoEventualidad = idSubtipoEventualidad;
-        this.tipoEventualidad = tipoEventualidad;
         this.subtipoEventualidad = subtipoEventualidad;
+        this.syIdSy = syIdSy;
+        this.tipoEventualidad = tipoEventualidad;
         this.eventualidadPersonases = eventualidadPersonases;
     }
 
@@ -40,20 +43,28 @@ public class SubtipoEventualidad {
         this.idSubtipoEventualidad = idSubtipoEventualidad;
     }
 
-    public TipoEventualidad getTipoEventualidad() {
-        return tipoEventualidad;
-    }
-
-    public void setTipoEventualidad(TipoEventualidad tipoEventualidad) {
-        this.tipoEventualidad = tipoEventualidad;
-    }
-
     public String getSubtipoEventualidad() {
         return subtipoEventualidad;
     }
 
     public void setSubtipoEventualidad(String subtipoEventualidad) {
         this.subtipoEventualidad = subtipoEventualidad;
+    }
+
+    public Integer getSyIdSy() {
+        return syIdSy;
+    }
+
+    public void setSyIdSy(Integer syIdSy) {
+        this.syIdSy = syIdSy;
+    }
+
+    public TipoEventualidad getTipoEventualidad() {
+        return tipoEventualidad;
+    }
+
+    public void setTipoEventualidad(TipoEventualidad tipoEventualidad) {
+        this.tipoEventualidad = tipoEventualidad;
     }
 
     public Set<com.aprendoz_test.data.EventualidadPersonas> getEventualidadPersonases() {

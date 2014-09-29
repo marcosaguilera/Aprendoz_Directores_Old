@@ -8,14 +8,12 @@ import java.util.Set;
 
 /**
  *  aprendoz_test.Educom
- *  06/13/2014 12:51:22
+ *  09/11/2014 07:30:06
  * 
  */
 public class Educom {
 
     private Integer idEducom;
-    private Sy sy;
-    private Costos costos;
     private Boolean activoRetirado;
     private Integer edadRequeridadFinal;
     private Integer edadRequeridaInicial;
@@ -56,6 +54,8 @@ public class Educom {
     private Double costoTransporte;
     private String descripcion;
     private String tipoEducom;
+    private Sy sy;
+    private Costos costos;
     private Set<com.aprendoz_test.data.InscPersonaEduCom> inscPersonaEduComs = new HashSet<com.aprendoz_test.data.InscPersonaEduCom>();
 
     public Educom() {
@@ -105,10 +105,8 @@ public class Educom {
         this.tipoEducom = tipoEducom;
     }
 
-    public Educom(Integer idEducom, Sy sy, Costos costos, Boolean activoRetirado, Integer edadRequeridadFinal, Integer edadRequeridaInicial, String comentario, Date fechaInicio, Date fechaFin, Integer cupoMinimo, Integer cupoMaximo, Byte lunes, Date hora1Lunes, Date hora2Lunes, Byte martes, Date hora1Martes, Date hora2Martes, Byte miercoles, Date hora1Miercoles, Date hora2Miercoles, Byte jueves, Date hora1Jueves, Date hora2Jueves, Byte viernes, Date hora1Viernes, Date hora2Viernes, Byte sabado, Date hora1Sabado, Date hora2Sabado, Byte domingo, Date hora1Domingo, Date hora2Domingo, Integer profesor1, Integer profesor2, Float numeroHoras, Double valorHonorarios, Date fechaAperturaCurso, Date fechaCierreCurso, Double valorTransporte, Double tarifaAnticipado, Double costoTransporte, String descripcion, String tipoEducom, Set<com.aprendoz_test.data.InscPersonaEduCom> inscPersonaEduComs) {
+    public Educom(Integer idEducom, Boolean activoRetirado, Integer edadRequeridadFinal, Integer edadRequeridaInicial, String comentario, Date fechaInicio, Date fechaFin, Integer cupoMinimo, Integer cupoMaximo, Byte lunes, Date hora1Lunes, Date hora2Lunes, Byte martes, Date hora1Martes, Date hora2Martes, Byte miercoles, Date hora1Miercoles, Date hora2Miercoles, Byte jueves, Date hora1Jueves, Date hora2Jueves, Byte viernes, Date hora1Viernes, Date hora2Viernes, Byte sabado, Date hora1Sabado, Date hora2Sabado, Byte domingo, Date hora1Domingo, Date hora2Domingo, Integer profesor1, Integer profesor2, Float numeroHoras, Double valorHonorarios, Date fechaAperturaCurso, Date fechaCierreCurso, Double valorTransporte, Double tarifaAnticipado, Double costoTransporte, String descripcion, String tipoEducom, Sy sy, Costos costos, Set<com.aprendoz_test.data.InscPersonaEduCom> inscPersonaEduComs) {
         this.idEducom = idEducom;
-        this.sy = sy;
-        this.costos = costos;
         this.activoRetirado = activoRetirado;
         this.edadRequeridadFinal = edadRequeridadFinal;
         this.edadRequeridaInicial = edadRequeridaInicial;
@@ -149,6 +147,8 @@ public class Educom {
         this.costoTransporte = costoTransporte;
         this.descripcion = descripcion;
         this.tipoEducom = tipoEducom;
+        this.sy = sy;
+        this.costos = costos;
         this.inscPersonaEduComs = inscPersonaEduComs;
     }
 
@@ -158,22 +158,6 @@ public class Educom {
 
     public void setIdEducom(Integer idEducom) {
         this.idEducom = idEducom;
-    }
-
-    public Sy getSy() {
-        return sy;
-    }
-
-    public void setSy(Sy sy) {
-        this.sy = sy;
-    }
-
-    public Costos getCostos() {
-        return costos;
-    }
-
-    public void setCostos(Costos costos) {
-        this.costos = costos;
     }
 
     public Boolean getActivoRetirado() {
@@ -494,6 +478,22 @@ public class Educom {
 
     public void setTipoEducom(String tipoEducom) {
         this.tipoEducom = tipoEducom;
+    }
+
+    public Sy getSy() {
+        return sy;
+    }
+
+    public void setSy(Sy sy) {
+        this.sy = sy;
+    }
+
+    public Costos getCostos() {
+        return costos;
+    }
+
+    public void setCostos(Costos costos) {
+        this.costos = costos;
     }
 
     public Set<com.aprendoz_test.data.InscPersonaEduCom> getInscPersonaEduComs() {

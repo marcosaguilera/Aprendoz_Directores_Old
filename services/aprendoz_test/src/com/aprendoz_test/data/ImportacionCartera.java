@@ -5,7 +5,7 @@ package com.aprendoz_test.data;
 
 /**
  *  aprendoz_test.ImportacionCartera
- *  06/13/2014 12:51:22
+ *  09/11/2014 07:30:06
  * 
  */
 public class ImportacionCartera {

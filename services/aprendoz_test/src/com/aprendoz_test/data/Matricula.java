@@ -6,19 +6,19 @@ import java.util.Date;
 
 /**
  *  aprendoz_test.Matricula
- *  06/13/2014 12:51:23
+ *  09/11/2014 07:30:07
  * 
  */
 public class Matricula {
 
     private Integer idMatricula;
-    private Curso curso;
-    private Sy sy;
-    private Persona persona;
     private Double valorAnual;
     private Integer valorMensual;
     private Date fechaMatricula;
     private String comentario;
+    private Curso curso;
+    private Sy sy;
+    private Persona persona;
 
     public Matricula() {
     }
@@ -31,15 +31,15 @@ public class Matricula {
         this.comentario = comentario;
     }
 
-    public Matricula(Integer idMatricula, Curso curso, Sy sy, Persona persona, Double valorAnual, Integer valorMensual, Date fechaMatricula, String comentario) {
+    public Matricula(Integer idMatricula, Double valorAnual, Integer valorMensual, Date fechaMatricula, String comentario, Curso curso, Sy sy, Persona persona) {
         this.idMatricula = idMatricula;
-        this.curso = curso;
-        this.sy = sy;
-        this.persona = persona;
         this.valorAnual = valorAnual;
         this.valorMensual = valorMensual;
         this.fechaMatricula = fechaMatricula;
         this.comentario = comentario;
+        this.curso = curso;
+        this.sy = sy;
+        this.persona = persona;
     }
 
     public Integer getIdMatricula() {
@@ -48,30 +48,6 @@ public class Matricula {
 
     public void setIdMatricula(Integer idMatricula) {
         this.idMatricula = idMatricula;
-    }
-
-    public Curso getCurso() {
-        return curso;
-    }
-
-    public void setCurso(Curso curso) {
-        this.curso = curso;
-    }
-
-    public Sy getSy() {
-        return sy;
-    }
-
-    public void setSy(Sy sy) {
-        this.sy = sy;
-    }
-
-    public Persona getPersona() {
-        return persona;
-    }
-
-    public void setPersona(Persona persona) {
-        this.persona = persona;
     }
 
     public Double getValorAnual() {
@@ -104,6 +80,30 @@ public class Matricula {
 
     public void setComentario(String comentario) {
         this.comentario = comentario;
+    }
+
+    public Curso getCurso() {
+        return curso;
+    }
+
+    public void setCurso(Curso curso) {
+        this.curso = curso;
+    }
+
+    public Sy getSy() {
+        return sy;
+    }
+
+    public void setSy(Sy sy) {
+        this.sy = sy;
+    }
+
+    public Persona getPersona() {
+        return persona;
+    }
+
+    public void setPersona(Persona persona) {
+        this.persona = persona;
     }
 
 }

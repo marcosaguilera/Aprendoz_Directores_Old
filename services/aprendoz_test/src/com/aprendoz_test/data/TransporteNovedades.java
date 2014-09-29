@@ -6,15 +6,12 @@ import java.util.Date;
 
 /**
  *  aprendoz_test.TransporteNovedades
- *  06/13/2014 12:51:22
+ *  09/11/2014 07:30:06
  * 
  */
 public class TransporteNovedades {
 
     private Integer idNovedades;
-    private TransporteRutas transporteRutas;
-    private Persona persona;
-    private TipoSolicitud tipoSolicitud;
     private Date horaProgramada;
     private String observaciones;
     private Date horaActualSalida;
@@ -32,6 +29,9 @@ public class TransporteNovedades {
     private Boolean jueves;
     private Boolean viernes;
     private Boolean sabado;
+    private TransporteRutas transporteRutas;
+    private Persona persona;
+    private TipoSolicitud tipoSolicitud;
 
     public TransporteNovedades() {
     }
@@ -57,11 +57,8 @@ public class TransporteNovedades {
         this.sabado = sabado;
     }
 
-    public TransporteNovedades(Integer idNovedades, TransporteRutas transporteRutas, Persona persona, TipoSolicitud tipoSolicitud, Date horaProgramada, String observaciones, Date horaActualSalida, Boolean aprobacionDirNivel, Boolean aprobacionCoordinador, Boolean aprobacionTransporte, Integer numeroPuerta, Date fechaProgramada, Date fechaSolicitudInicio, Date fechaSolicitudFin, String tipoSolicitud_1, Boolean lunes, Boolean martes, Boolean miercoles, Boolean jueves, Boolean viernes, Boolean sabado) {
+    public TransporteNovedades(Integer idNovedades, Date horaProgramada, String observaciones, Date horaActualSalida, Boolean aprobacionDirNivel, Boolean aprobacionCoordinador, Boolean aprobacionTransporte, Integer numeroPuerta, Date fechaProgramada, Date fechaSolicitudInicio, Date fechaSolicitudFin, String tipoSolicitud_1, Boolean lunes, Boolean martes, Boolean miercoles, Boolean jueves, Boolean viernes, Boolean sabado, TransporteRutas transporteRutas, Persona persona, TipoSolicitud tipoSolicitud) {
         this.idNovedades = idNovedades;
-        this.transporteRutas = transporteRutas;
-        this.persona = persona;
-        this.tipoSolicitud = tipoSolicitud;
         this.horaProgramada = horaProgramada;
         this.observaciones = observaciones;
         this.horaActualSalida = horaActualSalida;
@@ -79,6 +76,9 @@ public class TransporteNovedades {
         this.jueves = jueves;
         this.viernes = viernes;
         this.sabado = sabado;
+        this.transporteRutas = transporteRutas;
+        this.persona = persona;
+        this.tipoSolicitud = tipoSolicitud;
     }
 
     public Integer getIdNovedades() {
@@ -87,30 +87,6 @@ public class TransporteNovedades {
 
     public void setIdNovedades(Integer idNovedades) {
         this.idNovedades = idNovedades;
-    }
-
-    public TransporteRutas getTransporteRutas() {
-        return transporteRutas;
-    }
-
-    public void setTransporteRutas(TransporteRutas transporteRutas) {
-        this.transporteRutas = transporteRutas;
-    }
-
-    public Persona getPersona() {
-        return persona;
-    }
-
-    public void setPersona(Persona persona) {
-        this.persona = persona;
-    }
-
-    public TipoSolicitud getTipoSolicitud() {
-        return tipoSolicitud;
-    }
-
-    public void setTipoSolicitud(TipoSolicitud tipoSolicitud) {
-        this.tipoSolicitud = tipoSolicitud;
     }
 
     public Date getHoraProgramada() {
@@ -247,6 +223,30 @@ public class TransporteNovedades {
 
     public void setSabado(Boolean sabado) {
         this.sabado = sabado;
+    }
+
+    public TransporteRutas getTransporteRutas() {
+        return transporteRutas;
+    }
+
+    public void setTransporteRutas(TransporteRutas transporteRutas) {
+        this.transporteRutas = transporteRutas;
+    }
+
+    public Persona getPersona() {
+        return persona;
+    }
+
+    public void setPersona(Persona persona) {
+        this.persona = persona;
+    }
+
+    public TipoSolicitud getTipoSolicitud() {
+        return tipoSolicitud;
+    }
+
+    public void setTipoSolicitud(TipoSolicitud tipoSolicitud) {
+        this.tipoSolicitud = tipoSolicitud;
     }
 
 }

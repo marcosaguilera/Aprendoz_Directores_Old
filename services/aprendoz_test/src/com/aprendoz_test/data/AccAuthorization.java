@@ -7,16 +7,16 @@ import java.util.Set;
 
 /**
  *  aprendoz_test.AccAuthorization
- *  06/13/2014 12:51:22
+ *  09/11/2014 07:30:07
  * 
  */
 public class AccAuthorization {
 
     private Integer id;
-    private Grado grado;
-    private TipoPersona tipoPersona;
     private String code;
     private String areas;
+    private Grado grado;
+    private TipoPersona tipoPersona;
     private Set<com.aprendoz_test.data.AccStudentCardAuthorization> accStudentCardAuthorizations = new HashSet<com.aprendoz_test.data.AccStudentCardAuthorization>();
 
     public AccAuthorization() {
@@ -28,12 +28,12 @@ public class AccAuthorization {
         this.areas = areas;
     }
 
-    public AccAuthorization(Integer id, Grado grado, TipoPersona tipoPersona, String code, String areas, Set<com.aprendoz_test.data.AccStudentCardAuthorization> accStudentCardAuthorizations) {
+    public AccAuthorization(Integer id, String code, String areas, Grado grado, TipoPersona tipoPersona, Set<com.aprendoz_test.data.AccStudentCardAuthorization> accStudentCardAuthorizations) {
         this.id = id;
-        this.grado = grado;
-        this.tipoPersona = tipoPersona;
         this.code = code;
         this.areas = areas;
+        this.grado = grado;
+        this.tipoPersona = tipoPersona;
         this.accStudentCardAuthorizations = accStudentCardAuthorizations;
     }
 
@@ -43,22 +43,6 @@ public class AccAuthorization {
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public Grado getGrado() {
-        return grado;
-    }
-
-    public void setGrado(Grado grado) {
-        this.grado = grado;
-    }
-
-    public TipoPersona getTipoPersona() {
-        return tipoPersona;
-    }
-
-    public void setTipoPersona(TipoPersona tipoPersona) {
-        this.tipoPersona = tipoPersona;
     }
 
     public String getCode() {
@@ -75,6 +59,22 @@ public class AccAuthorization {
 
     public void setAreas(String areas) {
         this.areas = areas;
+    }
+
+    public Grado getGrado() {
+        return grado;
+    }
+
+    public void setGrado(Grado grado) {
+        this.grado = grado;
+    }
+
+    public TipoPersona getTipoPersona() {
+        return tipoPersona;
+    }
+
+    public void setTipoPersona(TipoPersona tipoPersona) {
+        this.tipoPersona = tipoPersona;
     }
 
     public Set<com.aprendoz_test.data.AccStudentCardAuthorization> getAccStudentCardAuthorizations() {

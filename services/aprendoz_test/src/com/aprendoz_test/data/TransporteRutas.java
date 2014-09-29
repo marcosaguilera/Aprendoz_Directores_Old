@@ -7,14 +7,12 @@ import java.util.Set;
 
 /**
  *  aprendoz_test.TransporteRutas
- *  06/13/2014 12:51:23
+ *  09/11/2014 07:30:07
  * 
  */
 public class TransporteRutas {
 
     private Integer idRuta;
-    private GrupoFamiliar grupoFamiliar;
-    private TipoTransporte tipoTransporte;
     private String numeroRuta;
     private String placaVehiculo;
     private String nombreConductor;
@@ -29,6 +27,8 @@ public class TransporteRutas {
     private String descripcion;
     private String telefono1;
     private String telefono2;
+    private GrupoFamiliar grupoFamiliar;
+    private TipoTransporte tipoTransporte;
     private Set<com.aprendoz_test.data.TransporteInscAlumTransporte> transporteInscAlumTransportesForMartesRuta = new HashSet<com.aprendoz_test.data.TransporteInscAlumTransporte>();
     private Set<com.aprendoz_test.data.TransporteInscAlumTransporte> transporteInscAlumTransportesForMiercolesRuta = new HashSet<com.aprendoz_test.data.TransporteInscAlumTransporte>();
     private Set<com.aprendoz_test.data.TransporteInscAlumTransporte> transporteInscAlumTransportesForJuevesRuta = new HashSet<com.aprendoz_test.data.TransporteInscAlumTransporte>();
@@ -59,10 +59,8 @@ public class TransporteRutas {
         this.telefono2 = telefono2;
     }
 
-    public TransporteRutas(Integer idRuta, GrupoFamiliar grupoFamiliar, TipoTransporte tipoTransporte, String numeroRuta, String placaVehiculo, String nombreConductor, String telefonoConductor, String movilConductor, String nombreMonitora, String telefonoMonitor, String movilMonitor, String idAvantel, String numeroAvantel, String nombreResponsable, String descripcion, String telefono1, String telefono2, Set<com.aprendoz_test.data.TransporteInscAlumTransporte> transporteInscAlumTransportesForMartesRuta, Set<com.aprendoz_test.data.TransporteInscAlumTransporte> transporteInscAlumTransportesForMiercolesRuta, Set<com.aprendoz_test.data.TransporteInscAlumTransporte> transporteInscAlumTransportesForJuevesRuta, Set<com.aprendoz_test.data.TransporteInscAlumTransporte> transporteInscAlumTransportesForViernesRuta, Set<com.aprendoz_test.data.TransporteInscAlumTransporte> transporteInscAlumTransportesForSabadoRuta, Set<com.aprendoz_test.data.TransporteInscAlumTransporte> transporteInscAlumTransportesForDomingoRuta, Set<com.aprendoz_test.data.TransporteNovedades> transporteNovedadeses, Set<com.aprendoz_test.data.TransporteInscAlumTransporte> transporteInscAlumTransportesForLunesRuta) {
+    public TransporteRutas(Integer idRuta, String numeroRuta, String placaVehiculo, String nombreConductor, String telefonoConductor, String movilConductor, String nombreMonitora, String telefonoMonitor, String movilMonitor, String idAvantel, String numeroAvantel, String nombreResponsable, String descripcion, String telefono1, String telefono2, GrupoFamiliar grupoFamiliar, TipoTransporte tipoTransporte, Set<com.aprendoz_test.data.TransporteInscAlumTransporte> transporteInscAlumTransportesForMartesRuta, Set<com.aprendoz_test.data.TransporteInscAlumTransporte> transporteInscAlumTransportesForMiercolesRuta, Set<com.aprendoz_test.data.TransporteInscAlumTransporte> transporteInscAlumTransportesForJuevesRuta, Set<com.aprendoz_test.data.TransporteInscAlumTransporte> transporteInscAlumTransportesForViernesRuta, Set<com.aprendoz_test.data.TransporteInscAlumTransporte> transporteInscAlumTransportesForSabadoRuta, Set<com.aprendoz_test.data.TransporteInscAlumTransporte> transporteInscAlumTransportesForDomingoRuta, Set<com.aprendoz_test.data.TransporteNovedades> transporteNovedadeses, Set<com.aprendoz_test.data.TransporteInscAlumTransporte> transporteInscAlumTransportesForLunesRuta) {
         this.idRuta = idRuta;
-        this.grupoFamiliar = grupoFamiliar;
-        this.tipoTransporte = tipoTransporte;
         this.numeroRuta = numeroRuta;
         this.placaVehiculo = placaVehiculo;
         this.nombreConductor = nombreConductor;
@@ -77,6 +75,8 @@ public class TransporteRutas {
         this.descripcion = descripcion;
         this.telefono1 = telefono1;
         this.telefono2 = telefono2;
+        this.grupoFamiliar = grupoFamiliar;
+        this.tipoTransporte = tipoTransporte;
         this.transporteInscAlumTransportesForMartesRuta = transporteInscAlumTransportesForMartesRuta;
         this.transporteInscAlumTransportesForMiercolesRuta = transporteInscAlumTransportesForMiercolesRuta;
         this.transporteInscAlumTransportesForJuevesRuta = transporteInscAlumTransportesForJuevesRuta;
@@ -93,22 +93,6 @@ public class TransporteRutas {
 
     public void setIdRuta(Integer idRuta) {
         this.idRuta = idRuta;
-    }
-
-    public GrupoFamiliar getGrupoFamiliar() {
-        return grupoFamiliar;
-    }
-
-    public void setGrupoFamiliar(GrupoFamiliar grupoFamiliar) {
-        this.grupoFamiliar = grupoFamiliar;
-    }
-
-    public TipoTransporte getTipoTransporte() {
-        return tipoTransporte;
-    }
-
-    public void setTipoTransporte(TipoTransporte tipoTransporte) {
-        this.tipoTransporte = tipoTransporte;
     }
 
     public String getNumeroRuta() {
@@ -221,6 +205,22 @@ public class TransporteRutas {
 
     public void setTelefono2(String telefono2) {
         this.telefono2 = telefono2;
+    }
+
+    public GrupoFamiliar getGrupoFamiliar() {
+        return grupoFamiliar;
+    }
+
+    public void setGrupoFamiliar(GrupoFamiliar grupoFamiliar) {
+        this.grupoFamiliar = grupoFamiliar;
+    }
+
+    public TipoTransporte getTipoTransporte() {
+        return tipoTransporte;
+    }
+
+    public void setTipoTransporte(TipoTransporte tipoTransporte) {
+        this.tipoTransporte = tipoTransporte;
     }
 
     public Set<com.aprendoz_test.data.TransporteInscAlumTransporte> getTransporteInscAlumTransportesForMartesRuta() {

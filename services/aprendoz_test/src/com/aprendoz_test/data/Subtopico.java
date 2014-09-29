@@ -8,19 +8,19 @@ import java.util.Set;
 
 /**
  *  aprendoz_test.Subtopico
- *  06/13/2014 12:51:23
+ *  09/11/2014 07:30:07
  * 
  */
 public class Subtopico {
 
     private Integer idSubtopico;
-    private Unidad unidad;
     private String subtopico;
     private Date fechaInicio;
     private Date fechaFin;
     private String subtopic;
     private Integer numeroSubtopico;
     private Integer idSyIdIdSy;
+    private Unidad unidad;
     private Set<com.aprendoz_test.data.Recurso> recursos = new HashSet<com.aprendoz_test.data.Recurso>();
     private Set<com.aprendoz_test.data.Aprendizaje> aprendizajes = new HashSet<com.aprendoz_test.data.Aprendizaje>();
     private Set<com.aprendoz_test.data.OtrasMetas> otrasMetases = new HashSet<com.aprendoz_test.data.OtrasMetas>();
@@ -39,15 +39,15 @@ public class Subtopico {
         this.idSyIdIdSy = idSyIdIdSy;
     }
 
-    public Subtopico(Integer idSubtopico, Unidad unidad, String subtopico, Date fechaInicio, Date fechaFin, String subtopic, Integer numeroSubtopico, Integer idSyIdIdSy, Set<com.aprendoz_test.data.Recurso> recursos, Set<com.aprendoz_test.data.Aprendizaje> aprendizajes, Set<com.aprendoz_test.data.OtrasMetas> otrasMetases, Set<com.aprendoz_test.data.Actividad> actividads) {
+    public Subtopico(Integer idSubtopico, String subtopico, Date fechaInicio, Date fechaFin, String subtopic, Integer numeroSubtopico, Integer idSyIdIdSy, Unidad unidad, Set<com.aprendoz_test.data.Recurso> recursos, Set<com.aprendoz_test.data.Aprendizaje> aprendizajes, Set<com.aprendoz_test.data.OtrasMetas> otrasMetases, Set<com.aprendoz_test.data.Actividad> actividads) {
         this.idSubtopico = idSubtopico;
-        this.unidad = unidad;
         this.subtopico = subtopico;
         this.fechaInicio = fechaInicio;
         this.fechaFin = fechaFin;
         this.subtopic = subtopic;
         this.numeroSubtopico = numeroSubtopico;
         this.idSyIdIdSy = idSyIdIdSy;
+        this.unidad = unidad;
         this.recursos = recursos;
         this.aprendizajes = aprendizajes;
         this.otrasMetases = otrasMetases;
@@ -60,14 +60,6 @@ public class Subtopico {
 
     public void setIdSubtopico(Integer idSubtopico) {
         this.idSubtopico = idSubtopico;
-    }
-
-    public Unidad getUnidad() {
-        return unidad;
-    }
-
-    public void setUnidad(Unidad unidad) {
-        this.unidad = unidad;
     }
 
     public String getSubtopico() {
@@ -116,6 +108,14 @@ public class Subtopico {
 
     public void setIdSyIdIdSy(Integer idSyIdIdSy) {
         this.idSyIdIdSy = idSyIdIdSy;
+    }
+
+    public Unidad getUnidad() {
+        return unidad;
+    }
+
+    public void setUnidad(Unidad unidad) {
+        this.unidad = unidad;
     }
 
     public Set<com.aprendoz_test.data.Recurso> getRecursos() {

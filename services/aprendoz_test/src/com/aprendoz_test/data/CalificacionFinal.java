@@ -6,18 +6,18 @@ import java.util.Date;
 
 /**
  *  aprendoz_test.CalificacionFinal
- *  06/13/2014 12:51:22
+ *  09/11/2014 07:30:07
  * 
  */
 public class CalificacionFinal {
 
     private Integer idCalificacionFinal;
-    private Persona persona;
-    private Aprendizaje aprendizaje;
     private Float calificacionNum;
     private String calificacion;
     private Integer idSyIdIdSy;
     private Date fechaLogro;
+    private Persona persona;
+    private Aprendizaje aprendizaje;
 
     public CalificacionFinal() {
     }
@@ -30,14 +30,14 @@ public class CalificacionFinal {
         this.fechaLogro = fechaLogro;
     }
 
-    public CalificacionFinal(Integer idCalificacionFinal, Persona persona, Aprendizaje aprendizaje, Float calificacionNum, String calificacion, Integer idSyIdIdSy, Date fechaLogro) {
+    public CalificacionFinal(Integer idCalificacionFinal, Float calificacionNum, String calificacion, Integer idSyIdIdSy, Date fechaLogro, Persona persona, Aprendizaje aprendizaje) {
         this.idCalificacionFinal = idCalificacionFinal;
-        this.persona = persona;
-        this.aprendizaje = aprendizaje;
         this.calificacionNum = calificacionNum;
         this.calificacion = calificacion;
         this.idSyIdIdSy = idSyIdIdSy;
         this.fechaLogro = fechaLogro;
+        this.persona = persona;
+        this.aprendizaje = aprendizaje;
     }
 
     public Integer getIdCalificacionFinal() {
@@ -46,22 +46,6 @@ public class CalificacionFinal {
 
     public void setIdCalificacionFinal(Integer idCalificacionFinal) {
         this.idCalificacionFinal = idCalificacionFinal;
-    }
-
-    public Persona getPersona() {
-        return persona;
-    }
-
-    public void setPersona(Persona persona) {
-        this.persona = persona;
-    }
-
-    public Aprendizaje getAprendizaje() {
-        return aprendizaje;
-    }
-
-    public void setAprendizaje(Aprendizaje aprendizaje) {
-        this.aprendizaje = aprendizaje;
     }
 
     public Float getCalificacionNum() {
@@ -94,6 +78,22 @@ public class CalificacionFinal {
 
     public void setFechaLogro(Date fechaLogro) {
         this.fechaLogro = fechaLogro;
+    }
+
+    public Persona getPersona() {
+        return persona;
+    }
+
+    public void setPersona(Persona persona) {
+        this.persona = persona;
+    }
+
+    public Aprendizaje getAprendizaje() {
+        return aprendizaje;
+    }
+
+    public void setAprendizaje(Aprendizaje aprendizaje) {
+        this.aprendizaje = aprendizaje;
     }
 
 }

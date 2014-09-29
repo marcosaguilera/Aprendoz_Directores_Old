@@ -5,7 +5,7 @@ package com.aprendoz_test.data;
 
 /**
  *  aprendoz_test.Personal
- *  06/13/2014 12:51:22
+ *  09/11/2014 07:30:07
  * 
  */
 public class Personal {
@@ -16,17 +16,19 @@ public class Personal {
     private String eps;
     private String afp;
     private String arp;
+    private String ccosto;
 
     public Personal() {
     }
 
-    public Personal(String codigo, String noDocumento, String rh, String eps, String afp, String arp) {
+    public Personal(String codigo, String noDocumento, String rh, String eps, String afp, String arp, String ccosto) {
         this.codigo = codigo;
         this.noDocumento = noDocumento;
         this.rh = rh;
         this.eps = eps;
         this.afp = afp;
         this.arp = arp;
+        this.ccosto = ccosto;
     }
 
     public String getCodigo() {
@@ -75,6 +77,14 @@ public class Personal {
 
     public void setArp(String arp) {
         this.arp = arp;
+    }
+
+    public String getCcosto() {
+        return ccosto;
+    }
+
+    public void setCcosto(String ccosto) {
+        this.ccosto = ccosto;
     }
 
 }

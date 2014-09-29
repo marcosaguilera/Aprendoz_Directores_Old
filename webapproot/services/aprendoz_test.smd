@@ -159,6 +159,13 @@
 		}],
 		"returnType": "[com.aprendoz_test.data.output.GetMaxSubjectByGradeRtnType]"
 	}, {
+		"name": "getSubareaCoord",
+		"parameters": [{
+			"name": "user",
+			"type": "java.lang.String"
+		}],
+		"returnType": "[com.aprendoz_test.data.output.GetSubareaCoordRtnType]"
+	}, {
 		"name": "getSubjectsByProfile",
 		"parameters": [{
 			"name": "pgrado",
@@ -175,6 +182,13 @@
 			"type": "java.util.Date"
 		}],
 		"returnType": "[com.aprendoz_test.data.output.GetSyByCurDateRtnType]"
+	}, {
+		"name": "getSyByCurDateFull",
+		"parameters": [{
+			"name": "f1",
+			"type": "java.lang.Integer"
+		}],
+		"returnType": "[com.aprendoz_test.data.output.GetSyByCurDateFullRtnType]"
 	}, {
 		"name": "getTipoEventualidadByIdSubTipo",
 		"parameters": [{
