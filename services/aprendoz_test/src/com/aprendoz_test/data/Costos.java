@@ -7,14 +7,12 @@ import java.util.Set;
 
 /**
  *  aprendoz_test.Costos
- *  09/10/2014 12:59:41
+ *  09/11/2014 07:30:06
  * 
  */
 public class Costos {
 
     private Integer idCosto;
-    private Grado grado;
-    private Sy sy;
     private String codigo;
     private String nombreProducto;
     private String descripcion;
@@ -24,6 +22,8 @@ public class Costos {
     private Boolean positivo;
     private Boolean anual;
     private Integer tipoCosto;
+    private Grado grado;
+    private Sy sy;
     private Set<com.aprendoz_test.data.InscAlumCosto> inscAlumCostos = new HashSet<com.aprendoz_test.data.InscAlumCosto>();
     private Set<com.aprendoz_test.data.Educom> educoms = new HashSet<com.aprendoz_test.data.Educom>();
 
@@ -43,10 +43,8 @@ public class Costos {
         this.tipoCosto = tipoCosto;
     }
 
-    public Costos(Integer idCosto, Grado grado, Sy sy, String codigo, String nombreProducto, String descripcion, Double valor, Boolean nuevo, Boolean obligatorio, Boolean positivo, Boolean anual, Integer tipoCosto, Set<com.aprendoz_test.data.InscAlumCosto> inscAlumCostos, Set<com.aprendoz_test.data.Educom> educoms) {
+    public Costos(Integer idCosto, String codigo, String nombreProducto, String descripcion, Double valor, Boolean nuevo, Boolean obligatorio, Boolean positivo, Boolean anual, Integer tipoCosto, Grado grado, Sy sy, Set<com.aprendoz_test.data.InscAlumCosto> inscAlumCostos, Set<com.aprendoz_test.data.Educom> educoms) {
         this.idCosto = idCosto;
-        this.grado = grado;
-        this.sy = sy;
         this.codigo = codigo;
         this.nombreProducto = nombreProducto;
         this.descripcion = descripcion;
@@ -56,6 +54,8 @@ public class Costos {
         this.positivo = positivo;
         this.anual = anual;
         this.tipoCosto = tipoCosto;
+        this.grado = grado;
+        this.sy = sy;
         this.inscAlumCostos = inscAlumCostos;
         this.educoms = educoms;
     }
@@ -66,22 +66,6 @@ public class Costos {
 
     public void setIdCosto(Integer idCosto) {
         this.idCosto = idCosto;
-    }
-
-    public Grado getGrado() {
-        return grado;
-    }
-
-    public void setGrado(Grado grado) {
-        this.grado = grado;
-    }
-
-    public Sy getSy() {
-        return sy;
-    }
-
-    public void setSy(Sy sy) {
-        this.sy = sy;
     }
 
     public String getCodigo() {
@@ -154,6 +138,22 @@ public class Costos {
 
     public void setTipoCosto(Integer tipoCosto) {
         this.tipoCosto = tipoCosto;
+    }
+
+    public Grado getGrado() {
+        return grado;
+    }
+
+    public void setGrado(Grado grado) {
+        this.grado = grado;
+    }
+
+    public Sy getSy() {
+        return sy;
+    }
+
+    public void setSy(Sy sy) {
+        this.sy = sy;
     }
 
     public Set<com.aprendoz_test.data.InscAlumCosto> getInscAlumCostos() {

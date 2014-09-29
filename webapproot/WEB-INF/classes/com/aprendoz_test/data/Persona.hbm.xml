@@ -416,5 +416,11 @@
             </key>
             <one-to-many class="com.aprendoz_test.data.Coordinacion"/>
         </set>
+        <set name="insccoordinadoressubareas" inverse="true">
+            <key>
+                <column name="persona_id_persona"/>
+            </key>
+            <one-to-many class="com.aprendoz_test.data.InscCoordinadoresSubarea"/>
+        </set>
     </class>
 </hibernate-mapping>

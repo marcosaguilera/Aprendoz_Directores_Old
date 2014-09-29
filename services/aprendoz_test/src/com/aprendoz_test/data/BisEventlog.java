@@ -6,7 +6,7 @@ import java.util.Date;
 
 /**
  *  aprendoz_test.BisEventlog
- *  09/10/2014 12:59:40
+ *  09/11/2014 07:30:06
  * 
  */
 public class BisEventlog {

@@ -6,7 +6,7 @@ import java.util.Date;
 
 /**
  *  aprendoz_test.InscCoordinadorSubarea
- *  09/10/2014 12:59:41
+ *  09/10/2014 13:23:01
  * 
  */
 public class InscCoordinadorSubarea {

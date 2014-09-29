@@ -8,17 +8,17 @@ import java.util.Set;
 
 /**
  *  aprendoz_test.AccStudentCard
- *  09/10/2014 12:59:41
+ *  09/11/2014 07:30:07
  * 
  */
 public class AccStudentCard {
 
     private Integer id;
-    private Persona persona;
     private String cardCodeData;
     private String cardNumber;
     private Date created;
     private Date updated;
+    private Persona persona;
     private Set<com.aprendoz_test.data.AccStudentCardAuthorization> accStudentCardAuthorizations = new HashSet<com.aprendoz_test.data.AccStudentCardAuthorization>();
 
     public AccStudentCard() {
@@ -32,13 +32,13 @@ public class AccStudentCard {
         this.updated = updated;
     }
 
-    public AccStudentCard(Integer id, Persona persona, String cardCodeData, String cardNumber, Date created, Date updated, Set<com.aprendoz_test.data.AccStudentCardAuthorization> accStudentCardAuthorizations) {
+    public AccStudentCard(Integer id, String cardCodeData, String cardNumber, Date created, Date updated, Persona persona, Set<com.aprendoz_test.data.AccStudentCardAuthorization> accStudentCardAuthorizations) {
         this.id = id;
-        this.persona = persona;
         this.cardCodeData = cardCodeData;
         this.cardNumber = cardNumber;
         this.created = created;
         this.updated = updated;
+        this.persona = persona;
         this.accStudentCardAuthorizations = accStudentCardAuthorizations;
     }
 
@@ -48,14 +48,6 @@ public class AccStudentCard {
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public Persona getPersona() {
-        return persona;
-    }
-
-    public void setPersona(Persona persona) {
-        this.persona = persona;
     }
 
     public String getCardCodeData() {
@@ -88,6 +80,14 @@ public class AccStudentCard {
 
     public void setUpdated(Date updated) {
         this.updated = updated;
+    }
+
+    public Persona getPersona() {
+        return persona;
+    }
+
+    public void setPersona(Persona persona) {
+        this.persona = persona;
     }
 
     public Set<com.aprendoz_test.data.AccStudentCardAuthorization> getAccStudentCardAuthorizations() {

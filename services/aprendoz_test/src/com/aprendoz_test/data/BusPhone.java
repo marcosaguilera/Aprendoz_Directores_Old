@@ -5,14 +5,14 @@ package com.aprendoz_test.data;
 
 /**
  *  aprendoz_test.BusPhone
- *  09/10/2014 12:59:40
+ *  09/11/2014 07:30:06
  * 
  */
 public class BusPhone {
 
     private Integer id;
-    private BusDriver busDriver;
     private String phone;
+    private BusDriver busDriver;
 
     public BusPhone() {
     }
@@ -22,10 +22,10 @@ public class BusPhone {
         this.phone = phone;
     }
 
-    public BusPhone(Integer id, BusDriver busDriver, String phone) {
+    public BusPhone(Integer id, String phone, BusDriver busDriver) {
         this.id = id;
-        this.busDriver = busDriver;
         this.phone = phone;
+        this.busDriver = busDriver;
     }
 
     public Integer getId() {
@@ -36,20 +36,20 @@ public class BusPhone {
         this.id = id;
     }
 
-    public BusDriver getBusDriver() {
-        return busDriver;
-    }
-
-    public void setBusDriver(BusDriver busDriver) {
-        this.busDriver = busDriver;
-    }
-
     public String getPhone() {
         return phone;
     }
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    public BusDriver getBusDriver() {
+        return busDriver;
+    }
+
+    public void setBusDriver(BusDriver busDriver) {
+        this.busDriver = busDriver;
     }
 
 }

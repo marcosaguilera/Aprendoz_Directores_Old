@@ -6,13 +6,12 @@ import java.util.Date;
 
 /**
  *  aprendoz_test.FichaMedica
- *  09/10/2014 12:59:40
+ *  09/11/2014 07:30:07
  * 
  */
 public class FichaMedica {
 
     private Integer idfichaMedica;
-    private Persona persona;
     private Date fechaCreacion;
     private String medicoTratante;
     private String alergias;
@@ -21,6 +20,7 @@ public class FichaMedica {
     private String medicamentosActualidad;
     private String medicamentosAlerta;
     private String recomendacionesEspeciales;
+    private Persona persona;
 
     public FichaMedica() {
     }
@@ -37,9 +37,8 @@ public class FichaMedica {
         this.recomendacionesEspeciales = recomendacionesEspeciales;
     }
 
-    public FichaMedica(Integer idfichaMedica, Persona persona, Date fechaCreacion, String medicoTratante, String alergias, String enfermedadesRecientes, String antecedentesQuirurgicos, String medicamentosActualidad, String medicamentosAlerta, String recomendacionesEspeciales) {
+    public FichaMedica(Integer idfichaMedica, Date fechaCreacion, String medicoTratante, String alergias, String enfermedadesRecientes, String antecedentesQuirurgicos, String medicamentosActualidad, String medicamentosAlerta, String recomendacionesEspeciales, Persona persona) {
         this.idfichaMedica = idfichaMedica;
-        this.persona = persona;
         this.fechaCreacion = fechaCreacion;
         this.medicoTratante = medicoTratante;
         this.alergias = alergias;
@@ -48,6 +47,7 @@ public class FichaMedica {
         this.medicamentosActualidad = medicamentosActualidad;
         this.medicamentosAlerta = medicamentosAlerta;
         this.recomendacionesEspeciales = recomendacionesEspeciales;
+        this.persona = persona;
     }
 
     public Integer getIdfichaMedica() {
@@ -56,14 +56,6 @@ public class FichaMedica {
 
     public void setIdfichaMedica(Integer idfichaMedica) {
         this.idfichaMedica = idfichaMedica;
-    }
-
-    public Persona getPersona() {
-        return persona;
-    }
-
-    public void setPersona(Persona persona) {
-        this.persona = persona;
     }
 
     public Date getFechaCreacion() {
@@ -128,6 +120,14 @@ public class FichaMedica {
 
     public void setRecomendacionesEspeciales(String recomendacionesEspeciales) {
         this.recomendacionesEspeciales = recomendacionesEspeciales;
+    }
+
+    public Persona getPersona() {
+        return persona;
+    }
+
+    public void setPersona(Persona persona) {
+        this.persona = persona;
     }
 
 }

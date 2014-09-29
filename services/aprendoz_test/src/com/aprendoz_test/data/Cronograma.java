@@ -6,16 +6,16 @@ import java.util.Date;
 
 /**
  *  aprendoz_test.Cronograma
- *  09/10/2014 12:59:40
+ *  09/11/2014 07:30:07
  * 
  */
 public class Cronograma {
 
     private Integer idCronograma;
-    private TipoDia tipoDia;
-    private Sy sy;
     private Date fecha;
     private String descripcion;
+    private TipoDia tipoDia;
+    private Sy sy;
 
     public Cronograma() {
     }
@@ -26,12 +26,12 @@ public class Cronograma {
         this.descripcion = descripcion;
     }
 
-    public Cronograma(Integer idCronograma, TipoDia tipoDia, Sy sy, Date fecha, String descripcion) {
+    public Cronograma(Integer idCronograma, Date fecha, String descripcion, TipoDia tipoDia, Sy sy) {
         this.idCronograma = idCronograma;
-        this.tipoDia = tipoDia;
-        this.sy = sy;
         this.fecha = fecha;
         this.descripcion = descripcion;
+        this.tipoDia = tipoDia;
+        this.sy = sy;
     }
 
     public Integer getIdCronograma() {
@@ -40,22 +40,6 @@ public class Cronograma {
 
     public void setIdCronograma(Integer idCronograma) {
         this.idCronograma = idCronograma;
-    }
-
-    public TipoDia getTipoDia() {
-        return tipoDia;
-    }
-
-    public void setTipoDia(TipoDia tipoDia) {
-        this.tipoDia = tipoDia;
-    }
-
-    public Sy getSy() {
-        return sy;
-    }
-
-    public void setSy(Sy sy) {
-        this.sy = sy;
     }
 
     public Date getFecha() {
@@ -72,6 +56,22 @@ public class Cronograma {
 
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
+    }
+
+    public TipoDia getTipoDia() {
+        return tipoDia;
+    }
+
+    public void setTipoDia(TipoDia tipoDia) {
+        this.tipoDia = tipoDia;
+    }
+
+    public Sy getSy() {
+        return sy;
+    }
+
+    public void setSy(Sy sy) {
+        this.sy = sy;
     }
 
 }

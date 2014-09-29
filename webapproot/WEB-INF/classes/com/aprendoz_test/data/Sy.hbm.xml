@@ -158,5 +158,11 @@
             </key>
             <one-to-many class="com.aprendoz_test.data.PromocionCopy"/>
         </set>
+        <set name="insccoordinadoressubareas" inverse="true">
+            <key>
+                <column name="sy_id_sy"/>
+            </key>
+            <one-to-many class="com.aprendoz_test.data.InscCoordinadoresSubarea"/>
+        </set>
     </class>
 </hibernate-mapping>

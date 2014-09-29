@@ -8,20 +8,20 @@ import java.util.Set;
 
 /**
  *  aprendoz_test.Actividad
- *  09/10/2014 12:59:41
+ *  09/11/2014 07:30:06
  * 
  */
 public class Actividad {
 
     private Integer idActividad;
-    private Subtopico subtopico;
-    private TipoValoracion tipoValoracion;
-    private TipoDesempeno tipoDesempeno;
-    private TipoActividad tipoActividad;
     private String actividad;
     private Date fecha;
     private Boolean requeridoAlternativo;
     private Integer idSyIdIdSy;
+    private Subtopico subtopico;
+    private TipoValoracion tipoValoracion;
+    private TipoDesempeno tipoDesempeno;
+    private TipoActividad tipoActividad;
     private Set<com.aprendoz_test.data.InscAlumActividad> inscAlumActividads = new HashSet<com.aprendoz_test.data.InscAlumActividad>();
 
     public Actividad() {
@@ -35,16 +35,16 @@ public class Actividad {
         this.idSyIdIdSy = idSyIdIdSy;
     }
 
-    public Actividad(Integer idActividad, Subtopico subtopico, TipoValoracion tipoValoracion, TipoDesempeno tipoDesempeno, TipoActividad tipoActividad, String actividad, Date fecha, Boolean requeridoAlternativo, Integer idSyIdIdSy, Set<com.aprendoz_test.data.InscAlumActividad> inscAlumActividads) {
+    public Actividad(Integer idActividad, String actividad, Date fecha, Boolean requeridoAlternativo, Integer idSyIdIdSy, Subtopico subtopico, TipoValoracion tipoValoracion, TipoDesempeno tipoDesempeno, TipoActividad tipoActividad, Set<com.aprendoz_test.data.InscAlumActividad> inscAlumActividads) {
         this.idActividad = idActividad;
-        this.subtopico = subtopico;
-        this.tipoValoracion = tipoValoracion;
-        this.tipoDesempeno = tipoDesempeno;
-        this.tipoActividad = tipoActividad;
         this.actividad = actividad;
         this.fecha = fecha;
         this.requeridoAlternativo = requeridoAlternativo;
         this.idSyIdIdSy = idSyIdIdSy;
+        this.subtopico = subtopico;
+        this.tipoValoracion = tipoValoracion;
+        this.tipoDesempeno = tipoDesempeno;
+        this.tipoActividad = tipoActividad;
         this.inscAlumActividads = inscAlumActividads;
     }
 
@@ -54,38 +54,6 @@ public class Actividad {
 
     public void setIdActividad(Integer idActividad) {
         this.idActividad = idActividad;
-    }
-
-    public Subtopico getSubtopico() {
-        return subtopico;
-    }
-
-    public void setSubtopico(Subtopico subtopico) {
-        this.subtopico = subtopico;
-    }
-
-    public TipoValoracion getTipoValoracion() {
-        return tipoValoracion;
-    }
-
-    public void setTipoValoracion(TipoValoracion tipoValoracion) {
-        this.tipoValoracion = tipoValoracion;
-    }
-
-    public TipoDesempeno getTipoDesempeno() {
-        return tipoDesempeno;
-    }
-
-    public void setTipoDesempeno(TipoDesempeno tipoDesempeno) {
-        this.tipoDesempeno = tipoDesempeno;
-    }
-
-    public TipoActividad getTipoActividad() {
-        return tipoActividad;
-    }
-
-    public void setTipoActividad(TipoActividad tipoActividad) {
-        this.tipoActividad = tipoActividad;
     }
 
     public String getActividad() {
@@ -118,6 +86,38 @@ public class Actividad {
 
     public void setIdSyIdIdSy(Integer idSyIdIdSy) {
         this.idSyIdIdSy = idSyIdIdSy;
+    }
+
+    public Subtopico getSubtopico() {
+        return subtopico;
+    }
+
+    public void setSubtopico(Subtopico subtopico) {
+        this.subtopico = subtopico;
+    }
+
+    public TipoValoracion getTipoValoracion() {
+        return tipoValoracion;
+    }
+
+    public void setTipoValoracion(TipoValoracion tipoValoracion) {
+        this.tipoValoracion = tipoValoracion;
+    }
+
+    public TipoDesempeno getTipoDesempeno() {
+        return tipoDesempeno;
+    }
+
+    public void setTipoDesempeno(TipoDesempeno tipoDesempeno) {
+        this.tipoDesempeno = tipoDesempeno;
+    }
+
+    public TipoActividad getTipoActividad() {
+        return tipoActividad;
+    }
+
+    public void setTipoActividad(TipoActividad tipoActividad) {
+        this.tipoActividad = tipoActividad;
     }
 
     public Set<com.aprendoz_test.data.InscAlumActividad> getInscAlumActividads() {

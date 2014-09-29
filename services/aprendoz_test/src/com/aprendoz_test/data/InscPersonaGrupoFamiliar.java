@@ -5,16 +5,16 @@ package com.aprendoz_test.data;
 
 /**
  *  aprendoz_test.InscPersonaGrupoFamiliar
- *  09/10/2014 12:59:41
+ *  09/11/2014 07:30:06
  * 
  */
 public class InscPersonaGrupoFamiliar {
 
     private Integer idInscPersonaGrupoFamiliar;
+    private Boolean responsable;
     private Persona persona;
     private TipoPersona tipoPersona;
     private GrupoFamiliar grupoFamiliar;
-    private Boolean responsable;
 
     public InscPersonaGrupoFamiliar() {
     }
@@ -24,12 +24,12 @@ public class InscPersonaGrupoFamiliar {
         this.responsable = responsable;
     }
 
-    public InscPersonaGrupoFamiliar(Integer idInscPersonaGrupoFamiliar, Persona persona, TipoPersona tipoPersona, GrupoFamiliar grupoFamiliar, Boolean responsable) {
+    public InscPersonaGrupoFamiliar(Integer idInscPersonaGrupoFamiliar, Boolean responsable, Persona persona, TipoPersona tipoPersona, GrupoFamiliar grupoFamiliar) {
         this.idInscPersonaGrupoFamiliar = idInscPersonaGrupoFamiliar;
+        this.responsable = responsable;
         this.persona = persona;
         this.tipoPersona = tipoPersona;
         this.grupoFamiliar = grupoFamiliar;
-        this.responsable = responsable;
     }
 
     public Integer getIdInscPersonaGrupoFamiliar() {
@@ -38,6 +38,14 @@ public class InscPersonaGrupoFamiliar {
 
     public void setIdInscPersonaGrupoFamiliar(Integer idInscPersonaGrupoFamiliar) {
         this.idInscPersonaGrupoFamiliar = idInscPersonaGrupoFamiliar;
+    }
+
+    public Boolean getResponsable() {
+        return responsable;
+    }
+
+    public void setResponsable(Boolean responsable) {
+        this.responsable = responsable;
     }
 
     public Persona getPersona() {
@@ -62,14 +70,6 @@ public class InscPersonaGrupoFamiliar {
 
     public void setGrupoFamiliar(GrupoFamiliar grupoFamiliar) {
         this.grupoFamiliar = grupoFamiliar;
-    }
-
-    public Boolean getResponsable() {
-        return responsable;
-    }
-
-    public void setResponsable(Boolean responsable) {
-        this.responsable = responsable;
     }
 
 }

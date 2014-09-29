@@ -5,17 +5,17 @@ package com.aprendoz_test.data;
 
 /**
  *  aprendoz_test.Recurso
- *  09/10/2014 12:59:41
+ *  09/11/2014 07:30:07
  * 
  */
 public class Recurso {
 
     private Integer idRecurso;
-    private Subtopico subtopico;
-    private TipoRecurso tipoRecurso;
     private String recurso;
     private String ubicacion;
     private String fileName;
+    private Subtopico subtopico;
+    private TipoRecurso tipoRecurso;
 
     public Recurso() {
     }
@@ -27,13 +27,13 @@ public class Recurso {
         this.fileName = fileName;
     }
 
-    public Recurso(Integer idRecurso, Subtopico subtopico, TipoRecurso tipoRecurso, String recurso, String ubicacion, String fileName) {
+    public Recurso(Integer idRecurso, String recurso, String ubicacion, String fileName, Subtopico subtopico, TipoRecurso tipoRecurso) {
         this.idRecurso = idRecurso;
-        this.subtopico = subtopico;
-        this.tipoRecurso = tipoRecurso;
         this.recurso = recurso;
         this.ubicacion = ubicacion;
         this.fileName = fileName;
+        this.subtopico = subtopico;
+        this.tipoRecurso = tipoRecurso;
     }
 
     public Integer getIdRecurso() {
@@ -42,22 +42,6 @@ public class Recurso {
 
     public void setIdRecurso(Integer idRecurso) {
         this.idRecurso = idRecurso;
-    }
-
-    public Subtopico getSubtopico() {
-        return subtopico;
-    }
-
-    public void setSubtopico(Subtopico subtopico) {
-        this.subtopico = subtopico;
-    }
-
-    public TipoRecurso getTipoRecurso() {
-        return tipoRecurso;
-    }
-
-    public void setTipoRecurso(TipoRecurso tipoRecurso) {
-        this.tipoRecurso = tipoRecurso;
     }
 
     public String getRecurso() {
@@ -82,6 +66,22 @@ public class Recurso {
 
     public void setFileName(String fileName) {
         this.fileName = fileName;
+    }
+
+    public Subtopico getSubtopico() {
+        return subtopico;
+    }
+
+    public void setSubtopico(Subtopico subtopico) {
+        this.subtopico = subtopico;
+    }
+
+    public TipoRecurso getTipoRecurso() {
+        return tipoRecurso;
+    }
+
+    public void setTipoRecurso(TipoRecurso tipoRecurso) {
+        this.tipoRecurso = tipoRecurso;
     }
 
 }

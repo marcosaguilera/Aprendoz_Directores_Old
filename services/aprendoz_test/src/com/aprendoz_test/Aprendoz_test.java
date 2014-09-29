@@ -11,6 +11,7 @@ import com.aprendoz_test.data.output.GetCurseByidGradeRtnType;
 import com.aprendoz_test.data.output.GetEmailsFamiliarGroupRtnType;
 import com.aprendoz_test.data.output.GetListStudentsByCurseRtnType;
 import com.aprendoz_test.data.output.GetMaxSubjectByGradeRtnType;
+import com.aprendoz_test.data.output.GetSubareaCoordRtnType;
 import com.aprendoz_test.data.output.GetSubjectsByProfileRtnType;
 import com.aprendoz_test.data.output.GetSyByCurDateFullRtnType;
 import com.aprendoz_test.data.output.GetSyByCurDateRtnType;
@@ -49,7 +50,7 @@ import com.wavemaker.runtime.service.TypedServiceReturn;
 
 /**
  *  Operations for service "aprendoz_test"
- *  09/10/2014 13:01:01
+ *  09/11/2014 08:37:06
  * 
  */
 @SuppressWarnings("unchecked")
@@ -180,6 +181,10 @@ public class Aprendoz_test
         } else {
             return rtn.get(0);
         }
+    }
+
+    public List<GetSubareaCoordRtnType> getSubareaCoord(String user) {
+        return ((List<GetSubareaCoordRtnType> ) dsMgr.invoke(taskMgr.getQueryTask(), (Aprendoz_testConstants.getSubareaCoordQueryName), user));
     }
 
     public List<Hql_tipo_eventualidadRtnType> hql_tipo_eventualidad() {

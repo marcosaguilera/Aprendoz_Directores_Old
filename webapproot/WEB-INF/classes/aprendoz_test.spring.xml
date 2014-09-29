@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 
-<!-- Generated 09/10/2014 12:59:38
+<!-- Generated 09/11/2014 07:23:30
 
 Configuration for 'aprendoz_test' database service
 
@@ -198,7 +198,6 @@ Configuration for 'aprendoz_test' database service
 <value>com/aprendoz_test/data/VistaEventualidadesNotificacionesFamilia.hbm.xml</value>
 <value>com/aprendoz_test/data/VistaPersonasGrupoFamiliar.hbm.xml</value>
 <value>com/aprendoz_test/data/InscAlumActividad.hbm.xml</value>
-<value>com/aprendoz_test/data/InscCoordinadorSubarea.hbm.xml</value>
 <value>com/aprendoz_test/data/InscCoordinadoresCurso.hbm.xml</value>
 <value>com/aprendoz_test/data/EstadoDepartamento.hbm.xml</value>
 <value>com/aprendoz_test/data/LogAccionesDocentes.hbm.xml</value>
@@ -244,6 +243,7 @@ Configuration for 'aprendoz_test' database service
 <value>com/aprendoz_test/data/TransporteIngresoRutas.hbm.xml</value>
 <value>com/aprendoz_test/data/ActualizacionDatosPersonaCopy.hbm.xml</value>
 <value>com/aprendoz_test/data/InscAlumAsigCopy.hbm.xml</value>
+<value>com/aprendoz_test/data/InscCoordinadoresSubarea.hbm.xml</value>
 <value>com/aprendoz_test/data/DocentesInscCursoAsignatura.hbm.xml</value>
 <value>com/aprendoz_test/data/PersonaCopy.hbm.xml</value>
 <value>com/aprendoz_test/data/CafeteriaSopas.hbm.xml</value>

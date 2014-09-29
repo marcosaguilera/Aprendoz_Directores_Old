@@ -7,16 +7,17 @@ import java.util.Set;
 
 /**
  *  aprendoz_test.Subarea
- *  09/10/2014 12:59:41
+ *  09/11/2014 07:31:45
  * 
  */
 public class Subarea {
 
     private Integer idSubarea;
-    private Area area;
     private String subarea;
     private Integer idSyIdIdSy;
+    private Area area;
     private Set<com.aprendoz_test.data.Eje> ejes = new HashSet<com.aprendoz_test.data.Eje>();
+    private Set<com.aprendoz_test.data.InscCoordinadoresSubarea> insccoordinadoressubareas = new HashSet<com.aprendoz_test.data.InscCoordinadoresSubarea>();
 
     public Subarea() {
     }
@@ -27,12 +28,13 @@ public class Subarea {
         this.idSyIdIdSy = idSyIdIdSy;
     }
 
-    public Subarea(Integer idSubarea, Area area, String subarea, Integer idSyIdIdSy, Set<com.aprendoz_test.data.Eje> ejes) {
+    public Subarea(Integer idSubarea, String subarea, Integer idSyIdIdSy, Area area, Set<com.aprendoz_test.data.Eje> ejes, Set<com.aprendoz_test.data.InscCoordinadoresSubarea> insccoordinadoressubareas) {
         this.idSubarea = idSubarea;
-        this.area = area;
         this.subarea = subarea;
         this.idSyIdIdSy = idSyIdIdSy;
+        this.area = area;
         this.ejes = ejes;
+        this.insccoordinadoressubareas = insccoordinadoressubareas;
     }
 
     public Integer getIdSubarea() {
@@ -41,14 +43,6 @@ public class Subarea {
 
     public void setIdSubarea(Integer idSubarea) {
         this.idSubarea = idSubarea;
-    }
-
-    public Area getArea() {
-        return area;
-    }
-
-    public void setArea(Area area) {
-        this.area = area;
     }
 
     public String getSubarea() {
@@ -67,12 +61,28 @@ public class Subarea {
         this.idSyIdIdSy = idSyIdIdSy;
     }
 
+    public Area getArea() {
+        return area;
+    }
+
+    public void setArea(Area area) {
+        this.area = area;
+    }
+
     public Set<com.aprendoz_test.data.Eje> getEjes() {
         return ejes;
     }
 
     public void setEjes(Set<com.aprendoz_test.data.Eje> ejes) {
         this.ejes = ejes;
+    }
+
+    public Set<com.aprendoz_test.data.InscCoordinadoresSubarea> getInsccoordinadoressubareas() {
+        return insccoordinadoressubareas;
+    }
+
+    public void setInsccoordinadoressubareas(Set<com.aprendoz_test.data.InscCoordinadoresSubarea> insccoordinadoressubareas) {
+        this.insccoordinadoressubareas = insccoordinadoressubareas;
     }
 
 }

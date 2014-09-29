@@ -6,16 +6,16 @@ import java.util.Date;
 
 /**
  *  aprendoz_test.LogIngresoCarne
- *  09/10/2014 12:59:41
+ *  09/11/2014 07:30:06
  * 
  */
 public class LogIngresoCarne {
 
     private Integer idLogIngresoCarne;
-    private TipoFalla tipoFalla;
-    private Persona persona;
     private Date fechaCreacion;
     private Date fechaActualizacion;
+    private TipoFalla tipoFalla;
+    private Persona persona;
 
     public LogIngresoCarne() {
     }
@@ -26,12 +26,12 @@ public class LogIngresoCarne {
         this.fechaActualizacion = fechaActualizacion;
     }
 
-    public LogIngresoCarne(Integer idLogIngresoCarne, TipoFalla tipoFalla, Persona persona, Date fechaCreacion, Date fechaActualizacion) {
+    public LogIngresoCarne(Integer idLogIngresoCarne, Date fechaCreacion, Date fechaActualizacion, TipoFalla tipoFalla, Persona persona) {
         this.idLogIngresoCarne = idLogIngresoCarne;
-        this.tipoFalla = tipoFalla;
-        this.persona = persona;
         this.fechaCreacion = fechaCreacion;
         this.fechaActualizacion = fechaActualizacion;
+        this.tipoFalla = tipoFalla;
+        this.persona = persona;
     }
 
     public Integer getIdLogIngresoCarne() {
@@ -40,22 +40,6 @@ public class LogIngresoCarne {
 
     public void setIdLogIngresoCarne(Integer idLogIngresoCarne) {
         this.idLogIngresoCarne = idLogIngresoCarne;
-    }
-
-    public TipoFalla getTipoFalla() {
-        return tipoFalla;
-    }
-
-    public void setTipoFalla(TipoFalla tipoFalla) {
-        this.tipoFalla = tipoFalla;
-    }
-
-    public Persona getPersona() {
-        return persona;
-    }
-
-    public void setPersona(Persona persona) {
-        this.persona = persona;
     }
 
     public Date getFechaCreacion() {
@@ -72,6 +56,22 @@ public class LogIngresoCarne {
 
     public void setFechaActualizacion(Date fechaActualizacion) {
         this.fechaActualizacion = fechaActualizacion;
+    }
+
+    public TipoFalla getTipoFalla() {
+        return tipoFalla;
+    }
+
+    public void setTipoFalla(TipoFalla tipoFalla) {
+        this.tipoFalla = tipoFalla;
+    }
+
+    public Persona getPersona() {
+        return persona;
+    }
+
+    public void setPersona(Persona persona) {
+        this.persona = persona;
     }
 
 }

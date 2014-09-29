@@ -86,17 +86,12 @@ dojo.declare("Main", wm.Page, {
   },
   
   bSubtopicoClick: function(inSender, inEvent) {
-    try {
       this.iraFormulario2.update();
       this.aprendizajeDetailsPanel2.hide();     
       this.asignaturaDetailsPanel2.hide();
       this.unidadDetalles.hide();
       this.subtopicoDetailsPanel2.show();
       this.editPanel18.beginDataInsert();
-      
-    } catch(e) {
-      console.error('ERROR IN button2Click: ' + e); 
-    } 
   },
   
 otrasmetasLiveForm1BeginInsert: function(inSender) {
@@ -156,7 +151,7 @@ otrasmetasLiveForm1BeginInsert: function(inSender) {
     try {
       window.open("http://aprendoz.rochester.edu.co/ckfinder/ckfinder.html","popup");
       
-        } catch(e) {
+    } catch(e) {
       console.error('ERROR IN button10Click: ' + e); 
     } 
   },

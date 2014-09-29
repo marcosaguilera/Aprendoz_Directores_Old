@@ -5,7 +5,7 @@ package com.aprendoz_test.data;
 
 /**
  *  aprendoz_test.CafeteriaTipoOpcion
- *  09/10/2014 12:59:41
+ *  09/11/2014 07:30:07
  * 
  */
 public class CafeteriaTipoOpcion {

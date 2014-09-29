@@ -6,17 +6,17 @@ import java.util.Date;
 
 /**
  *  aprendoz_test.SeguridadPersonasAccesos
- *  09/10/2014 12:59:41
+ *  09/11/2014 07:30:06
  * 
  */
 public class SeguridadPersonasAccesos {
 
     private Integer idSeguridadPersonasAccesos;
-    private Persona persona;
     private Byte accesoTemp;
     private Date createdDate;
     private Date updatedDate;
     private String asignadoPor;
+    private Persona persona;
 
     public SeguridadPersonasAccesos() {
     }
@@ -29,13 +29,13 @@ public class SeguridadPersonasAccesos {
         this.asignadoPor = asignadoPor;
     }
 
-    public SeguridadPersonasAccesos(Integer idSeguridadPersonasAccesos, Persona persona, Byte accesoTemp, Date createdDate, Date updatedDate, String asignadoPor) {
+    public SeguridadPersonasAccesos(Integer idSeguridadPersonasAccesos, Byte accesoTemp, Date createdDate, Date updatedDate, String asignadoPor, Persona persona) {
         this.idSeguridadPersonasAccesos = idSeguridadPersonasAccesos;
-        this.persona = persona;
         this.accesoTemp = accesoTemp;
         this.createdDate = createdDate;
         this.updatedDate = updatedDate;
         this.asignadoPor = asignadoPor;
+        this.persona = persona;
     }
 
     public Integer getIdSeguridadPersonasAccesos() {
@@ -44,14 +44,6 @@ public class SeguridadPersonasAccesos {
 
     public void setIdSeguridadPersonasAccesos(Integer idSeguridadPersonasAccesos) {
         this.idSeguridadPersonasAccesos = idSeguridadPersonasAccesos;
-    }
-
-    public Persona getPersona() {
-        return persona;
-    }
-
-    public void setPersona(Persona persona) {
-        this.persona = persona;
     }
 
     public Byte getAccesoTemp() {
@@ -84,6 +76,14 @@ public class SeguridadPersonasAccesos {
 
     public void setAsignadoPor(String asignadoPor) {
         this.asignadoPor = asignadoPor;
+    }
+
+    public Persona getPersona() {
+        return persona;
+    }
+
+    public void setPersona(Persona persona) {
+        this.persona = persona;
     }
 
 }

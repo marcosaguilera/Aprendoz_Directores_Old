@@ -7,15 +7,12 @@ import java.util.Set;
 
 /**
  *  aprendoz_test.Asignatura
- *  09/10/2014 12:59:40
+ *  09/11/2014 07:30:06
  * 
  */
 public class Asignatura {
 
     private Integer idAsignatura;
-    private Grado grado;
-    private TipoInscAsig tipoInscAsig;
-    private Sy sy;
     private String asignatura;
     private String subject;
     private Boolean electiva;
@@ -35,6 +32,9 @@ public class Asignatura {
     private Float ihA3;
     private Float meses;
     private Integer esperadostotal;
+    private Grado grado;
+    private TipoInscAsig tipoInscAsig;
+    private Sy sy;
     private Set<com.aprendoz_test.data.InscCursoAsig> inscCursoAsigs = new HashSet<com.aprendoz_test.data.InscCursoAsig>();
     private Set<com.aprendoz_test.data.Horario> horarios = new HashSet<com.aprendoz_test.data.Horario>();
     private Set<com.aprendoz_test.data.InscAlumAsigCopy> inscAlumAsigCopies = new HashSet<com.aprendoz_test.data.InscAlumAsigCopy>();
@@ -72,11 +72,8 @@ public class Asignatura {
         this.esperadostotal = esperadostotal;
     }
 
-    public Asignatura(Integer idAsignatura, Grado grado, TipoInscAsig tipoInscAsig, Sy sy, String asignatura, String subject, Boolean electiva, Integer idArea1, Integer idArea2, Integer idArea3, Integer idSubarea1, Integer idSubarea2, Integer idSubarea3, Integer salonIdSalon, Float intensidadHoraria, Float peso, String descripAsigEspaniol, String descripAsigIngles, Float ihA1, Float ihA2, Float ihA3, Float meses, Integer esperadostotal, Set<com.aprendoz_test.data.InscCursoAsig> inscCursoAsigs, Set<com.aprendoz_test.data.Horario> horarios, Set<com.aprendoz_test.data.InscAlumAsigCopy> inscAlumAsigCopies, Set<com.aprendoz_test.data.InscAlumAsigCopy3> inscAlumAsigCopy3s, Set<com.aprendoz_test.data.InscAlumAsig> inscAlumAsigs, Set<com.aprendoz_test.data.Sesion> sesions, Set<com.aprendoz_test.data.InscCursoAsigCopy> inscCursoAsigCopies, Set<com.aprendoz_test.data.Unidad> unidads, Set<com.aprendoz_test.data.AprendizajesAsignaturas> aprendizajesAsignaturases, Set<com.aprendoz_test.data.InscAlumAsigCopy2> inscAlumAsigCopy2s) {
+    public Asignatura(Integer idAsignatura, String asignatura, String subject, Boolean electiva, Integer idArea1, Integer idArea2, Integer idArea3, Integer idSubarea1, Integer idSubarea2, Integer idSubarea3, Integer salonIdSalon, Float intensidadHoraria, Float peso, String descripAsigEspaniol, String descripAsigIngles, Float ihA1, Float ihA2, Float ihA3, Float meses, Integer esperadostotal, Grado grado, TipoInscAsig tipoInscAsig, Sy sy, Set<com.aprendoz_test.data.InscCursoAsig> inscCursoAsigs, Set<com.aprendoz_test.data.Horario> horarios, Set<com.aprendoz_test.data.InscAlumAsigCopy> inscAlumAsigCopies, Set<com.aprendoz_test.data.InscAlumAsigCopy3> inscAlumAsigCopy3s, Set<com.aprendoz_test.data.InscAlumAsig> inscAlumAsigs, Set<com.aprendoz_test.data.Sesion> sesions, Set<com.aprendoz_test.data.InscCursoAsigCopy> inscCursoAsigCopies, Set<com.aprendoz_test.data.Unidad> unidads, Set<com.aprendoz_test.data.AprendizajesAsignaturas> aprendizajesAsignaturases, Set<com.aprendoz_test.data.InscAlumAsigCopy2> inscAlumAsigCopy2s) {
         this.idAsignatura = idAsignatura;
-        this.grado = grado;
-        this.tipoInscAsig = tipoInscAsig;
-        this.sy = sy;
         this.asignatura = asignatura;
         this.subject = subject;
         this.electiva = electiva;
@@ -96,6 +93,9 @@ public class Asignatura {
         this.ihA3 = ihA3;
         this.meses = meses;
         this.esperadostotal = esperadostotal;
+        this.grado = grado;
+        this.tipoInscAsig = tipoInscAsig;
+        this.sy = sy;
         this.inscCursoAsigs = inscCursoAsigs;
         this.horarios = horarios;
         this.inscAlumAsigCopies = inscAlumAsigCopies;
@@ -114,30 +114,6 @@ public class Asignatura {
 
     public void setIdAsignatura(Integer idAsignatura) {
         this.idAsignatura = idAsignatura;
-    }
-
-    public Grado getGrado() {
-        return grado;
-    }
-
-    public void setGrado(Grado grado) {
-        this.grado = grado;
-    }
-
-    public TipoInscAsig getTipoInscAsig() {
-        return tipoInscAsig;
-    }
-
-    public void setTipoInscAsig(TipoInscAsig tipoInscAsig) {
-        this.tipoInscAsig = tipoInscAsig;
-    }
-
-    public Sy getSy() {
-        return sy;
-    }
-
-    public void setSy(Sy sy) {
-        this.sy = sy;
     }
 
     public String getAsignatura() {
@@ -290,6 +266,30 @@ public class Asignatura {
 
     public void setEsperadostotal(Integer esperadostotal) {
         this.esperadostotal = esperadostotal;
+    }
+
+    public Grado getGrado() {
+        return grado;
+    }
+
+    public void setGrado(Grado grado) {
+        this.grado = grado;
+    }
+
+    public TipoInscAsig getTipoInscAsig() {
+        return tipoInscAsig;
+    }
+
+    public void setTipoInscAsig(TipoInscAsig tipoInscAsig) {
+        this.tipoInscAsig = tipoInscAsig;
+    }
+
+    public Sy getSy() {
+        return sy;
+    }
+
+    public void setSy(Sy sy) {
+        this.sy = sy;
     }
 
     public Set<com.aprendoz_test.data.InscCursoAsig> getInscCursoAsigs() {
