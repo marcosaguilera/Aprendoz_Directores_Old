@@ -1,10 +1,10 @@
 dojo.declare("Eventualidades", wm.Page, {
   start: function() {
-    
+     
   },
   sesionLiveForm1BeginInsert: function(inSender) {
     try {
-      this.asignaturaLookup1.setValue("dataValue", this.asignaturas.selectedItem.getData().id.asignaturaIdAsignatura);
+       this.asignaturaLookup1.setValue("dataValue", this.asignaturas.selectedItem.getData().id.asignaturaIdAsignatura);
        this.cursoLookup1.setValue("dataValue", this.asignaturas.selectedItem.getData().id.cursoIdCurso);
       
     } catch(e) {
@@ -71,40 +71,24 @@ dojo.declare("Eventualidades", wm.Page, {
     } 
   },
   dataGrid1SelectionChanged: function(inSender) {
-    try {
    /* this.editPanel2.cancelEdit();
       this.dataGrid1.setDisabled(false);
-      */
-       
-    } catch(e) {
-      console.error('ERROR IN dataGrid1SelectionChanged: ' + e); 
-    } 
+      */ 
   },
   button3Click: function(inSender, inEvent) {
-    try {
      this.personaBox.clear();
-       this.docenteAsig.update();
-            app.lsEventualidad.update(); 
-      
-    } catch(e) {
-      console.error('ERROR IN button3Click: ' + e); 
-    } 
+     this.docenteAsig.update();
+     app.lsEventualidad.update(); 
   },
   liveForm1UpdateData: function(inSender) {
-    try {
       this.dataGrid1.setDisabled(false);
-      
-    } catch(e) {
-      console.error('ERROR IN liveForm1UpdateData: ' + e); 
-    } 
   },
   liveForm1Result: function(inSender, inData) {
-    try {
       this.dataGrid1.setDisabled(false);
-      
-    } catch(e) {
-      console.error('ERROR IN liveForm1Result: ' + e); 
-    } 
+  },
+  a_lista_sySuccess: function(inSender, inDeprecated) {
+      var sy_actual =  main.a_cursy.getItem(0).data.sy;
+      this.selectEditor1.setDisplayValue(sy_actual);
   },
   _end: 0
 });

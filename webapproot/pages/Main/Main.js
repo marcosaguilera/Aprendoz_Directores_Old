@@ -539,13 +539,10 @@ otrasmetasLiveForm1BeginInsert: function(inSender) {
   },
   
   asistenciaShow: function(inSender) {
-    try {
-      app.listaSY.update();
-      app.listaGrado.update();
-      
-    } catch(e) {
-      console.error('ERROR IN layer43Show: ' + e); 
-    } 
+      var sy_actual =  main.a_cursy.getItem(0).data.sy;
+      main.eventualidadesContainer.page.selectEditor1.setDisplayValue(sy_actual);
+      /*app.listaSY.update();
+      app.listaGrado.update();*/
   },
 
   calificacionEditor2Change: function(inSender, inDisplayValue, inDataValue) {

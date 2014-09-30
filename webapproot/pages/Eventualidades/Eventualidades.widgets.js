@@ -36,7 +36,7 @@ Eventualidades.widgets = {
 			wire5: ["wm.Wire", {"targetProperty":"filter.id.syIdSy","source":"selectEditor1.dataValue"}, {}]
 		}]
 	}],
-	a_lista_sy: ["wm.LiveVariable", {"autoUpdate":false,"liveSource":"com.aprendoz_test.data.Sy","orderBy":"desc: idSy"}, {}],
+	a_lista_sy: ["wm.LiveVariable", {"autoUpdate":false,"liveSource":"com.aprendoz_test.data.Sy","orderBy":"desc: idSy"}, {"onSuccess":"a_lista_sySuccess"}],
 	a_lista_grado: ["wm.LiveVariable", {"autoUpdate":false,"liveSource":"com.aprendoz_test.data.Grado"}, {}],
 	layoutBox1: ["wm.Layout", {"height":"100%","width":"100%","horizontalAlign":"left","verticalAlign":"top","padding":"10"}, {}, {
 		panel2: ["wm.Panel", {"height":"216px","width":"100%","horizontalAlign":"left","verticalAlign":"top","padding":"5","layoutKind":"left-to-right","borderColor":""}, {}, {
@@ -309,7 +309,7 @@ Eventualidades.widgets = {
 								optionsVar: ["wm.Variable", {"type":"EntryData"}, {}]
 							}]
 						}],
-						picture1: ["wm.Picture", {"height":"26px","border":"0","width":"26px","source":"resources/images/ico/dialog-close.png"}, {"onclick":"picture1Click"}]
+						picture1: ["wm.Picture", {"height":"25px","border":"0","width":"26px","source":"resources/images/ico/dialog-close.png"}, {"onclick":"picture1Click"}]
 					}],
 					dataGrid1: ["wm.DataGrid", {"_classes":{"domNode":["wm_FontSizePx_12px"]},"border":"3","borderColor":""}, {"onSelectionChanged":"dataGrid1SelectionChanged"}, {
 						binding: ["wm.Binding", {}, {}, {
