@@ -6,12 +6,15 @@ import java.util.Date;
 
 /**
  *  aprendoz_test.PersonaCopy
- *  09/11/2014 07:30:06
+ *  09/29/2014 19:07:35
  * 
  */
 public class PersonaCopy {
 
     private Integer idPersona;
+    private Pais pais;
+    private TipoPersona tipoPersona;
+    private GrupoFamiliar grupoFamiliar;
     private String nombreLdap;
     private String clave;
     private String codigo;
@@ -72,9 +75,6 @@ public class PersonaCopy {
     private Boolean tomaSeguroAccidentes;
     private String noPlaqueta;
     private Integer inscAlumCursoIdInscAlumCurso;
-    private Pais pais;
-    private TipoPersona tipoPersona;
-    private GrupoFamiliar grupoFamiliar;
 
     public PersonaCopy() {
     }
@@ -143,8 +143,11 @@ public class PersonaCopy {
         this.inscAlumCursoIdInscAlumCurso = inscAlumCursoIdInscAlumCurso;
     }
 
-    public PersonaCopy(Integer idPersona, String nombreLdap, String clave, String codigo, String email, Boolean matriculado, Boolean activoRetirado, String apellido1, String apellido2, String nombre1, String nombre2, String nivelAcademico, Date fechaNacimiento, String direccionResidencia, String telefono, String telefono2, String religion, String tipoDocumento, String noDocumento, String nacionalidad, String lugarNacimientoDepartamento, String lugarNacimientoMunicipio, String lugarExpedicionMunicipio, String lugarExpedicionDepartamento, String paisDomicilio, String barrio, String codigoPostal, String municipio, String departamento, String saludPrepagada, String eps, String numeroContratoSalud, String clinicaEmergencia, String viveCon, String tipoSangre, String sexo, String codigoFamilia, Date fechaIngreso, String gradoIngreso, String cursoIngreso, Date fechaRetiro, String comentarioRetiro, String colegioAnterior, Boolean hijoDeExalumno, String nombrePadreExalumno, String promocion, String numeroTarjetaCredito, String profesion, String empresa, String cargo, String celular, String direccionOficina, String telefonoOficina, String parentesco, String rutaM, String rutaT, Boolean tomaAlmuerzo, Boolean tomaMediasNueves, Boolean tomaSeguroAccidentes, String noPlaqueta, Integer inscAlumCursoIdInscAlumCurso, Pais pais, TipoPersona tipoPersona, GrupoFamiliar grupoFamiliar) {
+    public PersonaCopy(Integer idPersona, Pais pais, TipoPersona tipoPersona, GrupoFamiliar grupoFamiliar, String nombreLdap, String clave, String codigo, String email, Boolean matriculado, Boolean activoRetirado, String apellido1, String apellido2, String nombre1, String nombre2, String nivelAcademico, Date fechaNacimiento, String direccionResidencia, String telefono, String telefono2, String religion, String tipoDocumento, String noDocumento, String nacionalidad, String lugarNacimientoDepartamento, String lugarNacimientoMunicipio, String lugarExpedicionMunicipio, String lugarExpedicionDepartamento, String paisDomicilio, String barrio, String codigoPostal, String municipio, String departamento, String saludPrepagada, String eps, String numeroContratoSalud, String clinicaEmergencia, String viveCon, String tipoSangre, String sexo, String codigoFamilia, Date fechaIngreso, String gradoIngreso, String cursoIngreso, Date fechaRetiro, String comentarioRetiro, String colegioAnterior, Boolean hijoDeExalumno, String nombrePadreExalumno, String promocion, String numeroTarjetaCredito, String profesion, String empresa, String cargo, String celular, String direccionOficina, String telefonoOficina, String parentesco, String rutaM, String rutaT, Boolean tomaAlmuerzo, Boolean tomaMediasNueves, Boolean tomaSeguroAccidentes, String noPlaqueta, Integer inscAlumCursoIdInscAlumCurso) {
         this.idPersona = idPersona;
+        this.pais = pais;
+        this.tipoPersona = tipoPersona;
+        this.grupoFamiliar = grupoFamiliar;
         this.nombreLdap = nombreLdap;
         this.clave = clave;
         this.codigo = codigo;
@@ -205,9 +208,6 @@ public class PersonaCopy {
         this.tomaSeguroAccidentes = tomaSeguroAccidentes;
         this.noPlaqueta = noPlaqueta;
         this.inscAlumCursoIdInscAlumCurso = inscAlumCursoIdInscAlumCurso;
-        this.pais = pais;
-        this.tipoPersona = tipoPersona;
-        this.grupoFamiliar = grupoFamiliar;
     }
 
     public Integer getIdPersona() {
@@ -216,6 +216,30 @@ public class PersonaCopy {
 
     public void setIdPersona(Integer idPersona) {
         this.idPersona = idPersona;
+    }
+
+    public Pais getPais() {
+        return pais;
+    }
+
+    public void setPais(Pais pais) {
+        this.pais = pais;
+    }
+
+    public TipoPersona getTipoPersona() {
+        return tipoPersona;
+    }
+
+    public void setTipoPersona(TipoPersona tipoPersona) {
+        this.tipoPersona = tipoPersona;
+    }
+
+    public GrupoFamiliar getGrupoFamiliar() {
+        return grupoFamiliar;
+    }
+
+    public void setGrupoFamiliar(GrupoFamiliar grupoFamiliar) {
+        this.grupoFamiliar = grupoFamiliar;
     }
 
     public String getNombreLdap() {
@@ -696,30 +720,6 @@ public class PersonaCopy {
 
     public void setInscAlumCursoIdInscAlumCurso(Integer inscAlumCursoIdInscAlumCurso) {
         this.inscAlumCursoIdInscAlumCurso = inscAlumCursoIdInscAlumCurso;
-    }
-
-    public Pais getPais() {
-        return pais;
-    }
-
-    public void setPais(Pais pais) {
-        this.pais = pais;
-    }
-
-    public TipoPersona getTipoPersona() {
-        return tipoPersona;
-    }
-
-    public void setTipoPersona(TipoPersona tipoPersona) {
-        this.tipoPersona = tipoPersona;
-    }
-
-    public GrupoFamiliar getGrupoFamiliar() {
-        return grupoFamiliar;
-    }
-
-    public void setGrupoFamiliar(GrupoFamiliar grupoFamiliar) {
-        this.grupoFamiliar = grupoFamiliar;
     }
 
 }

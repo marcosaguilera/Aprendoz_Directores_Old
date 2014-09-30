@@ -2792,5 +2792,25 @@ otrasmetasLiveForm1BeginInsert: function(inSender) {
   pestana_curriculoShow: function(inSender) {
        
   },
+  transportenovedadesLiveForm1BeginUpdate: function(inSender) {
+    this.fechaSolicitudInicioEditor1.setReadonly(true);
+    this.fechaSolicitudFinEditor1.setReadonly(true);
+    this.horaProgramadaEditor1.setReadonly(true);
+    this.comentarioCoordinadorEditor1.setReadonly(true);
+    this.fechaCreacionEditor1.setReadonly(true);
+    this.comentarioEnfermeriaEditor1.setReadonly(true);
+    this.comentarioTransporteEditor1.setReadonly(true);
+    this.comentarioCoordinadorEditor1.setReadonly(true);
+    this.observacionesEditor1.setReadonly(true);
+  },
+  solicitud_permisosShow: function(inSender) {
+    var now = new Date().getTime();
+    this.fecha_solicitud.setDataValue(now);
+  },
+  fecha_solicitudChange: function(inSender, inDisplayValue, inDataValue) {
+    var fecha_solicitud = this.fecha_solicitud.getDataValue();
+    this.transportenovedadesLiveVariable1.filter.setValue("fechaSolicitudInicio", fecha_solicitud); 
+    this.transportenovedadesLiveVariable1.update();
+  },
   _end: 0
 });

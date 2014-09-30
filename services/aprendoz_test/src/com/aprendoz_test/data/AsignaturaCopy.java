@@ -5,12 +5,15 @@ package com.aprendoz_test.data;
 
 /**
  *  aprendoz_test.AsignaturaCopy
- *  09/11/2014 07:30:07
+ *  09/29/2014 19:07:34
  * 
  */
 public class AsignaturaCopy {
 
     private Integer idAsignatura;
+    private Grado grado;
+    private TipoInscAsig tipoInscAsig;
+    private Sy sy;
     private String asignatura;
     private String subject;
     private Boolean electiva;
@@ -30,9 +33,6 @@ public class AsignaturaCopy {
     private Float ihA3;
     private Float meses;
     private Integer esperadostotal;
-    private Grado grado;
-    private TipoInscAsig tipoInscAsig;
-    private Sy sy;
 
     public AsignaturaCopy() {
     }
@@ -60,8 +60,11 @@ public class AsignaturaCopy {
         this.esperadostotal = esperadostotal;
     }
 
-    public AsignaturaCopy(Integer idAsignatura, String asignatura, String subject, Boolean electiva, Integer idArea1, Integer idArea2, Integer idArea3, Integer idSubarea1, Integer idSubarea2, Integer idSubarea3, Integer salonIdSalon, Float intensidadHoraria, Float peso, String descripAsigEspaniol, String descripAsigIngles, Float ihA1, Float ihA2, Float ihA3, Float meses, Integer esperadostotal, Grado grado, TipoInscAsig tipoInscAsig, Sy sy) {
+    public AsignaturaCopy(Integer idAsignatura, Grado grado, TipoInscAsig tipoInscAsig, Sy sy, String asignatura, String subject, Boolean electiva, Integer idArea1, Integer idArea2, Integer idArea3, Integer idSubarea1, Integer idSubarea2, Integer idSubarea3, Integer salonIdSalon, Float intensidadHoraria, Float peso, String descripAsigEspaniol, String descripAsigIngles, Float ihA1, Float ihA2, Float ihA3, Float meses, Integer esperadostotal) {
         this.idAsignatura = idAsignatura;
+        this.grado = grado;
+        this.tipoInscAsig = tipoInscAsig;
+        this.sy = sy;
         this.asignatura = asignatura;
         this.subject = subject;
         this.electiva = electiva;
@@ -81,9 +84,6 @@ public class AsignaturaCopy {
         this.ihA3 = ihA3;
         this.meses = meses;
         this.esperadostotal = esperadostotal;
-        this.grado = grado;
-        this.tipoInscAsig = tipoInscAsig;
-        this.sy = sy;
     }
 
     public Integer getIdAsignatura() {
@@ -92,6 +92,30 @@ public class AsignaturaCopy {
 
     public void setIdAsignatura(Integer idAsignatura) {
         this.idAsignatura = idAsignatura;
+    }
+
+    public Grado getGrado() {
+        return grado;
+    }
+
+    public void setGrado(Grado grado) {
+        this.grado = grado;
+    }
+
+    public TipoInscAsig getTipoInscAsig() {
+        return tipoInscAsig;
+    }
+
+    public void setTipoInscAsig(TipoInscAsig tipoInscAsig) {
+        this.tipoInscAsig = tipoInscAsig;
+    }
+
+    public Sy getSy() {
+        return sy;
+    }
+
+    public void setSy(Sy sy) {
+        this.sy = sy;
     }
 
     public String getAsignatura() {
@@ -244,30 +268,6 @@ public class AsignaturaCopy {
 
     public void setEsperadostotal(Integer esperadostotal) {
         this.esperadostotal = esperadostotal;
-    }
-
-    public Grado getGrado() {
-        return grado;
-    }
-
-    public void setGrado(Grado grado) {
-        this.grado = grado;
-    }
-
-    public TipoInscAsig getTipoInscAsig() {
-        return tipoInscAsig;
-    }
-
-    public void setTipoInscAsig(TipoInscAsig tipoInscAsig) {
-        this.tipoInscAsig = tipoInscAsig;
-    }
-
-    public Sy getSy() {
-        return sy;
-    }
-
-    public void setSy(Sy sy) {
-        this.sy = sy;
     }
 
 }

@@ -8,12 +8,13 @@ import java.util.Set;
 
 /**
  *  aprendoz_test.Eventualidades
- *  09/11/2014 07:30:07
+ *  09/29/2014 19:07:35
  * 
  */
 public class Eventualidades {
 
     private Integer idEventualidad;
+    private TipoLugar tipoLugar;
     private Date fecha;
     private Date hora;
     private String estado;
@@ -25,7 +26,6 @@ public class Eventualidades {
     private String pregunta3;
     private Date fechaPlanReparacion;
     private String confidencial;
-    private TipoLugar tipoLugar;
     private Set<com.aprendoz_test.data.EventualidadPersonas> eventualidadPersonases = new HashSet<com.aprendoz_test.data.EventualidadPersonas>();
 
     public Eventualidades() {
@@ -46,8 +46,9 @@ public class Eventualidades {
         this.confidencial = confidencial;
     }
 
-    public Eventualidades(Integer idEventualidad, Date fecha, Date hora, String estado, String descripcion, Date fechaIngreso, String usuarioReg, String pregunta1, String pregunta2, String pregunta3, Date fechaPlanReparacion, String confidencial, TipoLugar tipoLugar, Set<com.aprendoz_test.data.EventualidadPersonas> eventualidadPersonases) {
+    public Eventualidades(Integer idEventualidad, TipoLugar tipoLugar, Date fecha, Date hora, String estado, String descripcion, Date fechaIngreso, String usuarioReg, String pregunta1, String pregunta2, String pregunta3, Date fechaPlanReparacion, String confidencial, Set<com.aprendoz_test.data.EventualidadPersonas> eventualidadPersonases) {
         this.idEventualidad = idEventualidad;
+        this.tipoLugar = tipoLugar;
         this.fecha = fecha;
         this.hora = hora;
         this.estado = estado;
@@ -59,7 +60,6 @@ public class Eventualidades {
         this.pregunta3 = pregunta3;
         this.fechaPlanReparacion = fechaPlanReparacion;
         this.confidencial = confidencial;
-        this.tipoLugar = tipoLugar;
         this.eventualidadPersonases = eventualidadPersonases;
     }
 
@@ -69,6 +69,14 @@ public class Eventualidades {
 
     public void setIdEventualidad(Integer idEventualidad) {
         this.idEventualidad = idEventualidad;
+    }
+
+    public TipoLugar getTipoLugar() {
+        return tipoLugar;
+    }
+
+    public void setTipoLugar(TipoLugar tipoLugar) {
+        this.tipoLugar = tipoLugar;
     }
 
     public Date getFecha() {
@@ -157,14 +165,6 @@ public class Eventualidades {
 
     public void setConfidencial(String confidencial) {
         this.confidencial = confidencial;
-    }
-
-    public TipoLugar getTipoLugar() {
-        return tipoLugar;
-    }
-
-    public void setTipoLugar(TipoLugar tipoLugar) {
-        this.tipoLugar = tipoLugar;
     }
 
     public Set<com.aprendoz_test.data.EventualidadPersonas> getEventualidadPersonases() {

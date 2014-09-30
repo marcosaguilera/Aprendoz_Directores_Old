@@ -6,18 +6,18 @@ import java.util.Date;
 
 /**
  *  aprendoz_test.SecretariaEquivalenciaNotas
- *  09/11/2014 07:30:07
+ *  09/29/2014 19:07:34
  * 
  */
 public class SecretariaEquivalenciaNotas {
 
     private Integer idSecretariaEquivalenciaNotas;
+    private Sy sy;
     private String calificacion;
     private String qualification;
     private Double puntaje;
     private Date fechaCreacion;
     private Date fechaActualizacion;
-    private Sy sy;
 
     public SecretariaEquivalenciaNotas() {
     }
@@ -31,14 +31,14 @@ public class SecretariaEquivalenciaNotas {
         this.fechaActualizacion = fechaActualizacion;
     }
 
-    public SecretariaEquivalenciaNotas(Integer idSecretariaEquivalenciaNotas, String calificacion, String qualification, Double puntaje, Date fechaCreacion, Date fechaActualizacion, Sy sy) {
+    public SecretariaEquivalenciaNotas(Integer idSecretariaEquivalenciaNotas, Sy sy, String calificacion, String qualification, Double puntaje, Date fechaCreacion, Date fechaActualizacion) {
         this.idSecretariaEquivalenciaNotas = idSecretariaEquivalenciaNotas;
+        this.sy = sy;
         this.calificacion = calificacion;
         this.qualification = qualification;
         this.puntaje = puntaje;
         this.fechaCreacion = fechaCreacion;
         this.fechaActualizacion = fechaActualizacion;
-        this.sy = sy;
     }
 
     public Integer getIdSecretariaEquivalenciaNotas() {
@@ -47,6 +47,14 @@ public class SecretariaEquivalenciaNotas {
 
     public void setIdSecretariaEquivalenciaNotas(Integer idSecretariaEquivalenciaNotas) {
         this.idSecretariaEquivalenciaNotas = idSecretariaEquivalenciaNotas;
+    }
+
+    public Sy getSy() {
+        return sy;
+    }
+
+    public void setSy(Sy sy) {
+        this.sy = sy;
     }
 
     public String getCalificacion() {
@@ -87,14 +95,6 @@ public class SecretariaEquivalenciaNotas {
 
     public void setFechaActualizacion(Date fechaActualizacion) {
         this.fechaActualizacion = fechaActualizacion;
-    }
-
-    public Sy getSy() {
-        return sy;
-    }
-
-    public void setSy(Sy sy) {
-        this.sy = sy;
     }
 
 }

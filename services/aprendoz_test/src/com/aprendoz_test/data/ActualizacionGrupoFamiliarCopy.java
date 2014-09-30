@@ -6,16 +6,16 @@ import java.util.Date;
 
 /**
  *  aprendoz_test.ActualizacionGrupoFamiliarCopy
- *  09/11/2014 07:30:06
+ *  09/29/2014 19:07:34
  * 
  */
 public class ActualizacionGrupoFamiliarCopy {
 
     private Integer idActualizacionGrupoFamiliar;
+    private GrupoFamiliar grupoFamiliar;
     private Date fechaCreacion;
     private Date fecha;
     private Byte actualizado;
-    private GrupoFamiliar grupoFamiliar;
 
     public ActualizacionGrupoFamiliarCopy() {
     }
@@ -27,12 +27,12 @@ public class ActualizacionGrupoFamiliarCopy {
         this.actualizado = actualizado;
     }
 
-    public ActualizacionGrupoFamiliarCopy(Integer idActualizacionGrupoFamiliar, Date fechaCreacion, Date fecha, Byte actualizado, GrupoFamiliar grupoFamiliar) {
+    public ActualizacionGrupoFamiliarCopy(Integer idActualizacionGrupoFamiliar, GrupoFamiliar grupoFamiliar, Date fechaCreacion, Date fecha, Byte actualizado) {
         this.idActualizacionGrupoFamiliar = idActualizacionGrupoFamiliar;
+        this.grupoFamiliar = grupoFamiliar;
         this.fechaCreacion = fechaCreacion;
         this.fecha = fecha;
         this.actualizado = actualizado;
-        this.grupoFamiliar = grupoFamiliar;
     }
 
     public Integer getIdActualizacionGrupoFamiliar() {
@@ -41,6 +41,14 @@ public class ActualizacionGrupoFamiliarCopy {
 
     public void setIdActualizacionGrupoFamiliar(Integer idActualizacionGrupoFamiliar) {
         this.idActualizacionGrupoFamiliar = idActualizacionGrupoFamiliar;
+    }
+
+    public GrupoFamiliar getGrupoFamiliar() {
+        return grupoFamiliar;
+    }
+
+    public void setGrupoFamiliar(GrupoFamiliar grupoFamiliar) {
+        this.grupoFamiliar = grupoFamiliar;
     }
 
     public Date getFechaCreacion() {
@@ -65,14 +73,6 @@ public class ActualizacionGrupoFamiliarCopy {
 
     public void setActualizado(Byte actualizado) {
         this.actualizado = actualizado;
-    }
-
-    public GrupoFamiliar getGrupoFamiliar() {
-        return grupoFamiliar;
-    }
-
-    public void setGrupoFamiliar(GrupoFamiliar grupoFamiliar) {
-        this.grupoFamiliar = grupoFamiliar;
     }
 
 }

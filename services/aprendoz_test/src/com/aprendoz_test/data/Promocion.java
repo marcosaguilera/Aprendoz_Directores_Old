@@ -5,12 +5,14 @@ package com.aprendoz_test.data;
 
 /**
  *  aprendoz_test.Promocion
- *  09/11/2014 07:30:06
+ *  09/29/2014 19:07:34
  * 
  */
 public class Promocion {
 
     private Integer idPromocion;
+    private Sy sy;
+    private Persona persona;
     private Boolean aprobado;
     private Boolean autorizadoAcademico;
     private String commentcomite;
@@ -24,8 +26,6 @@ public class Promocion {
     private Float calificacion;
     private String calificacionChar;
     private Boolean autorizadoPromAnticipada;
-    private Sy sy;
-    private Persona persona;
 
     public Promocion() {
     }
@@ -47,8 +47,10 @@ public class Promocion {
         this.autorizadoPromAnticipada = autorizadoPromAnticipada;
     }
 
-    public Promocion(Integer idPromocion, Boolean aprobado, Boolean autorizadoAcademico, String commentcomite, Boolean autorizadoFinanciera, String commentfinanc, Boolean autorizadoCra, String commentCra, Boolean promovido, String commentaprobado, String commentpromovido, Float calificacion, String calificacionChar, Boolean autorizadoPromAnticipada, Sy sy, Persona persona) {
+    public Promocion(Integer idPromocion, Sy sy, Persona persona, Boolean aprobado, Boolean autorizadoAcademico, String commentcomite, Boolean autorizadoFinanciera, String commentfinanc, Boolean autorizadoCra, String commentCra, Boolean promovido, String commentaprobado, String commentpromovido, Float calificacion, String calificacionChar, Boolean autorizadoPromAnticipada) {
         this.idPromocion = idPromocion;
+        this.sy = sy;
+        this.persona = persona;
         this.aprobado = aprobado;
         this.autorizadoAcademico = autorizadoAcademico;
         this.commentcomite = commentcomite;
@@ -62,8 +64,6 @@ public class Promocion {
         this.calificacion = calificacion;
         this.calificacionChar = calificacionChar;
         this.autorizadoPromAnticipada = autorizadoPromAnticipada;
-        this.sy = sy;
-        this.persona = persona;
     }
 
     public Integer getIdPromocion() {
@@ -72,6 +72,22 @@ public class Promocion {
 
     public void setIdPromocion(Integer idPromocion) {
         this.idPromocion = idPromocion;
+    }
+
+    public Sy getSy() {
+        return sy;
+    }
+
+    public void setSy(Sy sy) {
+        this.sy = sy;
+    }
+
+    public Persona getPersona() {
+        return persona;
+    }
+
+    public void setPersona(Persona persona) {
+        this.persona = persona;
     }
 
     public Boolean getAprobado() {
@@ -176,22 +192,6 @@ public class Promocion {
 
     public void setAutorizadoPromAnticipada(Boolean autorizadoPromAnticipada) {
         this.autorizadoPromAnticipada = autorizadoPromAnticipada;
-    }
-
-    public Sy getSy() {
-        return sy;
-    }
-
-    public void setSy(Sy sy) {
-        this.sy = sy;
-    }
-
-    public Persona getPersona() {
-        return persona;
-    }
-
-    public void setPersona(Persona persona) {
-        this.persona = persona;
     }
 
 }

@@ -5,13 +5,12 @@ package com.aprendoz_test.data;
 
 /**
  *  aprendoz_test.TransporteInscAlumTransporte
- *  09/11/2014 07:30:06
+ *  09/29/2014 19:07:34
  * 
  */
 public class TransporteInscAlumTransporte {
 
     private Integer idInscAlumTransporte;
-    private String amPm;
     private com.aprendoz_test.data.TransporteRutas transporteRutasByDomingoRuta;
     private com.aprendoz_test.data.TransporteRutas transporteRutasByMiercolesRuta;
     private com.aprendoz_test.data.TransporteRutas transporteRutasByViernesRuta;
@@ -20,6 +19,7 @@ public class TransporteInscAlumTransporte {
     private com.aprendoz_test.data.TransporteRutas transporteRutasByJuevesRuta;
     private com.aprendoz_test.data.TransporteRutas transporteRutasByLunesRuta;
     private com.aprendoz_test.data.TransporteRutas transporteRutasBySabadoRuta;
+    private String amPm;
 
     public TransporteInscAlumTransporte() {
     }
@@ -29,9 +29,8 @@ public class TransporteInscAlumTransporte {
         this.amPm = amPm;
     }
 
-    public TransporteInscAlumTransporte(Integer idInscAlumTransporte, String amPm, com.aprendoz_test.data.TransporteRutas transporteRutasByDomingoRuta, com.aprendoz_test.data.TransporteRutas transporteRutasByMiercolesRuta, com.aprendoz_test.data.TransporteRutas transporteRutasByViernesRuta, Persona persona, com.aprendoz_test.data.TransporteRutas transporteRutasByMartesRuta, com.aprendoz_test.data.TransporteRutas transporteRutasByJuevesRuta, com.aprendoz_test.data.TransporteRutas transporteRutasByLunesRuta, com.aprendoz_test.data.TransporteRutas transporteRutasBySabadoRuta) {
+    public TransporteInscAlumTransporte(Integer idInscAlumTransporte, com.aprendoz_test.data.TransporteRutas transporteRutasByDomingoRuta, com.aprendoz_test.data.TransporteRutas transporteRutasByMiercolesRuta, com.aprendoz_test.data.TransporteRutas transporteRutasByViernesRuta, Persona persona, com.aprendoz_test.data.TransporteRutas transporteRutasByMartesRuta, com.aprendoz_test.data.TransporteRutas transporteRutasByJuevesRuta, com.aprendoz_test.data.TransporteRutas transporteRutasByLunesRuta, com.aprendoz_test.data.TransporteRutas transporteRutasBySabadoRuta, String amPm) {
         this.idInscAlumTransporte = idInscAlumTransporte;
-        this.amPm = amPm;
         this.transporteRutasByDomingoRuta = transporteRutasByDomingoRuta;
         this.transporteRutasByMiercolesRuta = transporteRutasByMiercolesRuta;
         this.transporteRutasByViernesRuta = transporteRutasByViernesRuta;
@@ -40,6 +39,7 @@ public class TransporteInscAlumTransporte {
         this.transporteRutasByJuevesRuta = transporteRutasByJuevesRuta;
         this.transporteRutasByLunesRuta = transporteRutasByLunesRuta;
         this.transporteRutasBySabadoRuta = transporteRutasBySabadoRuta;
+        this.amPm = amPm;
     }
 
     public Integer getIdInscAlumTransporte() {
@@ -48,14 +48,6 @@ public class TransporteInscAlumTransporte {
 
     public void setIdInscAlumTransporte(Integer idInscAlumTransporte) {
         this.idInscAlumTransporte = idInscAlumTransporte;
-    }
-
-    public String getAmPm() {
-        return amPm;
-    }
-
-    public void setAmPm(String amPm) {
-        this.amPm = amPm;
     }
 
     public com.aprendoz_test.data.TransporteRutas getTransporteRutasByDomingoRuta() {
@@ -120,6 +112,14 @@ public class TransporteInscAlumTransporte {
 
     public void setTransporteRutasBySabadoRuta(com.aprendoz_test.data.TransporteRutas transporteRutasBySabadoRuta) {
         this.transporteRutasBySabadoRuta = transporteRutasBySabadoRuta;
+    }
+
+    public String getAmPm() {
+        return amPm;
+    }
+
+    public void setAmPm(String amPm) {
+        this.amPm = amPm;
     }
 
 }

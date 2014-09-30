@@ -6,16 +6,16 @@ import java.util.Date;
 
 /**
  *  aprendoz_test.GestionEncuestasGrupoFamiliar
- *  09/11/2014 07:30:06
+ *  09/29/2014 19:07:34
  * 
  */
 public class GestionEncuestasGrupoFamiliar {
 
     private Integer idGestionEncuestaGrupoFamiliar;
+    private GrupoFamiliar grupoFamiliar;
     private Byte encuestaTerminada;
     private Date fechaCreacion;
     private Date fechaActualizacion;
-    private GrupoFamiliar grupoFamiliar;
 
     public GestionEncuestasGrupoFamiliar() {
     }
@@ -27,12 +27,12 @@ public class GestionEncuestasGrupoFamiliar {
         this.fechaActualizacion = fechaActualizacion;
     }
 
-    public GestionEncuestasGrupoFamiliar(Integer idGestionEncuestaGrupoFamiliar, Byte encuestaTerminada, Date fechaCreacion, Date fechaActualizacion, GrupoFamiliar grupoFamiliar) {
+    public GestionEncuestasGrupoFamiliar(Integer idGestionEncuestaGrupoFamiliar, GrupoFamiliar grupoFamiliar, Byte encuestaTerminada, Date fechaCreacion, Date fechaActualizacion) {
         this.idGestionEncuestaGrupoFamiliar = idGestionEncuestaGrupoFamiliar;
+        this.grupoFamiliar = grupoFamiliar;
         this.encuestaTerminada = encuestaTerminada;
         this.fechaCreacion = fechaCreacion;
         this.fechaActualizacion = fechaActualizacion;
-        this.grupoFamiliar = grupoFamiliar;
     }
 
     public Integer getIdGestionEncuestaGrupoFamiliar() {
@@ -41,6 +41,14 @@ public class GestionEncuestasGrupoFamiliar {
 
     public void setIdGestionEncuestaGrupoFamiliar(Integer idGestionEncuestaGrupoFamiliar) {
         this.idGestionEncuestaGrupoFamiliar = idGestionEncuestaGrupoFamiliar;
+    }
+
+    public GrupoFamiliar getGrupoFamiliar() {
+        return grupoFamiliar;
+    }
+
+    public void setGrupoFamiliar(GrupoFamiliar grupoFamiliar) {
+        this.grupoFamiliar = grupoFamiliar;
     }
 
     public Byte getEncuestaTerminada() {
@@ -65,14 +73,6 @@ public class GestionEncuestasGrupoFamiliar {
 
     public void setFechaActualizacion(Date fechaActualizacion) {
         this.fechaActualizacion = fechaActualizacion;
-    }
-
-    public GrupoFamiliar getGrupoFamiliar() {
-        return grupoFamiliar;
-    }
-
-    public void setGrupoFamiliar(GrupoFamiliar grupoFamiliar) {
-        this.grupoFamiliar = grupoFamiliar;
     }
 
 }

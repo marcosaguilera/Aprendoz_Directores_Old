@@ -6,18 +6,18 @@ import java.util.Date;
 
 /**
  *  aprendoz_test.SesionNivel
- *  09/11/2014 07:30:07
+ *  09/29/2014 19:07:34
  * 
  */
 public class SesionNivel {
 
     private Integer idSesionNivel;
+    private Nivel nivel;
+    private Sy sy;
     private Integer numeroSesion;
     private Date horaInicio;
     private Date horaFin;
     private Integer dia;
-    private Nivel nivel;
-    private Sy sy;
 
     public SesionNivel() {
     }
@@ -30,14 +30,14 @@ public class SesionNivel {
         this.dia = dia;
     }
 
-    public SesionNivel(Integer idSesionNivel, Integer numeroSesion, Date horaInicio, Date horaFin, Integer dia, Nivel nivel, Sy sy) {
+    public SesionNivel(Integer idSesionNivel, Nivel nivel, Sy sy, Integer numeroSesion, Date horaInicio, Date horaFin, Integer dia) {
         this.idSesionNivel = idSesionNivel;
+        this.nivel = nivel;
+        this.sy = sy;
         this.numeroSesion = numeroSesion;
         this.horaInicio = horaInicio;
         this.horaFin = horaFin;
         this.dia = dia;
-        this.nivel = nivel;
-        this.sy = sy;
     }
 
     public Integer getIdSesionNivel() {
@@ -46,6 +46,22 @@ public class SesionNivel {
 
     public void setIdSesionNivel(Integer idSesionNivel) {
         this.idSesionNivel = idSesionNivel;
+    }
+
+    public Nivel getNivel() {
+        return nivel;
+    }
+
+    public void setNivel(Nivel nivel) {
+        this.nivel = nivel;
+    }
+
+    public Sy getSy() {
+        return sy;
+    }
+
+    public void setSy(Sy sy) {
+        this.sy = sy;
     }
 
     public Integer getNumeroSesion() {
@@ -78,22 +94,6 @@ public class SesionNivel {
 
     public void setDia(Integer dia) {
         this.dia = dia;
-    }
-
-    public Nivel getNivel() {
-        return nivel;
-    }
-
-    public void setNivel(Nivel nivel) {
-        this.nivel = nivel;
-    }
-
-    public Sy getSy() {
-        return sy;
-    }
-
-    public void setSy(Sy sy) {
-        this.sy = sy;
     }
 
 }

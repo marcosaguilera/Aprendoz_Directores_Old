@@ -7,16 +7,16 @@ import java.util.Set;
 
 /**
  *  aprendoz_test.AccAuthorization
- *  09/11/2014 07:30:07
+ *  09/29/2014 19:07:34
  * 
  */
 public class AccAuthorization {
 
     private Integer id;
-    private String code;
-    private String areas;
     private Grado grado;
     private TipoPersona tipoPersona;
+    private String code;
+    private String areas;
     private Set<com.aprendoz_test.data.AccStudentCardAuthorization> accStudentCardAuthorizations = new HashSet<com.aprendoz_test.data.AccStudentCardAuthorization>();
 
     public AccAuthorization() {
@@ -28,12 +28,12 @@ public class AccAuthorization {
         this.areas = areas;
     }
 
-    public AccAuthorization(Integer id, String code, String areas, Grado grado, TipoPersona tipoPersona, Set<com.aprendoz_test.data.AccStudentCardAuthorization> accStudentCardAuthorizations) {
+    public AccAuthorization(Integer id, Grado grado, TipoPersona tipoPersona, String code, String areas, Set<com.aprendoz_test.data.AccStudentCardAuthorization> accStudentCardAuthorizations) {
         this.id = id;
-        this.code = code;
-        this.areas = areas;
         this.grado = grado;
         this.tipoPersona = tipoPersona;
+        this.code = code;
+        this.areas = areas;
         this.accStudentCardAuthorizations = accStudentCardAuthorizations;
     }
 
@@ -43,22 +43,6 @@ public class AccAuthorization {
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public String getCode() {
-        return code;
-    }
-
-    public void setCode(String code) {
-        this.code = code;
-    }
-
-    public String getAreas() {
-        return areas;
-    }
-
-    public void setAreas(String areas) {
-        this.areas = areas;
     }
 
     public Grado getGrado() {
@@ -75,6 +59,22 @@ public class AccAuthorization {
 
     public void setTipoPersona(TipoPersona tipoPersona) {
         this.tipoPersona = tipoPersona;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    public String getAreas() {
+        return areas;
+    }
+
+    public void setAreas(String areas) {
+        this.areas = areas;
     }
 
     public Set<com.aprendoz_test.data.AccStudentCardAuthorization> getAccStudentCardAuthorizations() {

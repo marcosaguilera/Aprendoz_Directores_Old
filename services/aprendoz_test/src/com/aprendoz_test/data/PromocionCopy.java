@@ -5,12 +5,14 @@ package com.aprendoz_test.data;
 
 /**
  *  aprendoz_test.PromocionCopy
- *  09/11/2014 07:30:07
+ *  09/29/2014 19:07:34
  * 
  */
 public class PromocionCopy {
 
     private Integer idPromocion;
+    private Sy sy;
+    private Persona persona;
     private Boolean aprobado;
     private Boolean autorizadoAcademico;
     private String commentcomite;
@@ -22,8 +24,6 @@ public class PromocionCopy {
     private Float calificacion;
     private String calificacionChar;
     private Boolean autorizadoPromAnticipada;
-    private Sy sy;
-    private Persona persona;
 
     public PromocionCopy() {
     }
@@ -43,8 +43,10 @@ public class PromocionCopy {
         this.autorizadoPromAnticipada = autorizadoPromAnticipada;
     }
 
-    public PromocionCopy(Integer idPromocion, Boolean aprobado, Boolean autorizadoAcademico, String commentcomite, Boolean autorizadoFinanciera, String commentfinanc, Boolean promovido, String commentaprobado, String commentpromovido, Float calificacion, String calificacionChar, Boolean autorizadoPromAnticipada, Sy sy, Persona persona) {
+    public PromocionCopy(Integer idPromocion, Sy sy, Persona persona, Boolean aprobado, Boolean autorizadoAcademico, String commentcomite, Boolean autorizadoFinanciera, String commentfinanc, Boolean promovido, String commentaprobado, String commentpromovido, Float calificacion, String calificacionChar, Boolean autorizadoPromAnticipada) {
         this.idPromocion = idPromocion;
+        this.sy = sy;
+        this.persona = persona;
         this.aprobado = aprobado;
         this.autorizadoAcademico = autorizadoAcademico;
         this.commentcomite = commentcomite;
@@ -56,8 +58,6 @@ public class PromocionCopy {
         this.calificacion = calificacion;
         this.calificacionChar = calificacionChar;
         this.autorizadoPromAnticipada = autorizadoPromAnticipada;
-        this.sy = sy;
-        this.persona = persona;
     }
 
     public Integer getIdPromocion() {
@@ -66,6 +66,22 @@ public class PromocionCopy {
 
     public void setIdPromocion(Integer idPromocion) {
         this.idPromocion = idPromocion;
+    }
+
+    public Sy getSy() {
+        return sy;
+    }
+
+    public void setSy(Sy sy) {
+        this.sy = sy;
+    }
+
+    public Persona getPersona() {
+        return persona;
+    }
+
+    public void setPersona(Persona persona) {
+        this.persona = persona;
     }
 
     public Boolean getAprobado() {
@@ -154,22 +170,6 @@ public class PromocionCopy {
 
     public void setAutorizadoPromAnticipada(Boolean autorizadoPromAnticipada) {
         this.autorizadoPromAnticipada = autorizadoPromAnticipada;
-    }
-
-    public Sy getSy() {
-        return sy;
-    }
-
-    public void setSy(Sy sy) {
-        this.sy = sy;
-    }
-
-    public Persona getPersona() {
-        return persona;
-    }
-
-    public void setPersona(Persona persona) {
-        this.persona = persona;
     }
 
 }

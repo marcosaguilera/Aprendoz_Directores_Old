@@ -4,7 +4,7 @@ package com.aprendoz_test.data.output;
 
 
 /**
- * Generated for query "getEmailsFamiliarGroup" on 09/11/2014 08:33:54
+ * Generated for query "getEmailsFamiliarGroup" on 09/29/2014 19:07:56
  * 
  */
 public class GetEmailsFamiliarGroupRtnType {

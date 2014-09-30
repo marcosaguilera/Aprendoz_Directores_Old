@@ -8,20 +8,20 @@ import java.util.Set;
 
 /**
  *  aprendoz_test.Actividad
- *  09/11/2014 07:30:06
+ *  09/29/2014 19:07:34
  * 
  */
 public class Actividad {
 
     private Integer idActividad;
-    private String actividad;
-    private Date fecha;
-    private Boolean requeridoAlternativo;
-    private Integer idSyIdIdSy;
     private Subtopico subtopico;
     private TipoValoracion tipoValoracion;
     private TipoDesempeno tipoDesempeno;
     private TipoActividad tipoActividad;
+    private String actividad;
+    private Date fecha;
+    private Boolean requeridoAlternativo;
+    private Integer idSyIdIdSy;
     private Set<com.aprendoz_test.data.InscAlumActividad> inscAlumActividads = new HashSet<com.aprendoz_test.data.InscAlumActividad>();
 
     public Actividad() {
@@ -35,16 +35,16 @@ public class Actividad {
         this.idSyIdIdSy = idSyIdIdSy;
     }
 
-    public Actividad(Integer idActividad, String actividad, Date fecha, Boolean requeridoAlternativo, Integer idSyIdIdSy, Subtopico subtopico, TipoValoracion tipoValoracion, TipoDesempeno tipoDesempeno, TipoActividad tipoActividad, Set<com.aprendoz_test.data.InscAlumActividad> inscAlumActividads) {
+    public Actividad(Integer idActividad, Subtopico subtopico, TipoValoracion tipoValoracion, TipoDesempeno tipoDesempeno, TipoActividad tipoActividad, String actividad, Date fecha, Boolean requeridoAlternativo, Integer idSyIdIdSy, Set<com.aprendoz_test.data.InscAlumActividad> inscAlumActividads) {
         this.idActividad = idActividad;
-        this.actividad = actividad;
-        this.fecha = fecha;
-        this.requeridoAlternativo = requeridoAlternativo;
-        this.idSyIdIdSy = idSyIdIdSy;
         this.subtopico = subtopico;
         this.tipoValoracion = tipoValoracion;
         this.tipoDesempeno = tipoDesempeno;
         this.tipoActividad = tipoActividad;
+        this.actividad = actividad;
+        this.fecha = fecha;
+        this.requeridoAlternativo = requeridoAlternativo;
+        this.idSyIdIdSy = idSyIdIdSy;
         this.inscAlumActividads = inscAlumActividads;
     }
 
@@ -54,38 +54,6 @@ public class Actividad {
 
     public void setIdActividad(Integer idActividad) {
         this.idActividad = idActividad;
-    }
-
-    public String getActividad() {
-        return actividad;
-    }
-
-    public void setActividad(String actividad) {
-        this.actividad = actividad;
-    }
-
-    public Date getFecha() {
-        return fecha;
-    }
-
-    public void setFecha(Date fecha) {
-        this.fecha = fecha;
-    }
-
-    public Boolean getRequeridoAlternativo() {
-        return requeridoAlternativo;
-    }
-
-    public void setRequeridoAlternativo(Boolean requeridoAlternativo) {
-        this.requeridoAlternativo = requeridoAlternativo;
-    }
-
-    public Integer getIdSyIdIdSy() {
-        return idSyIdIdSy;
-    }
-
-    public void setIdSyIdIdSy(Integer idSyIdIdSy) {
-        this.idSyIdIdSy = idSyIdIdSy;
     }
 
     public Subtopico getSubtopico() {
@@ -118,6 +86,38 @@ public class Actividad {
 
     public void setTipoActividad(TipoActividad tipoActividad) {
         this.tipoActividad = tipoActividad;
+    }
+
+    public String getActividad() {
+        return actividad;
+    }
+
+    public void setActividad(String actividad) {
+        this.actividad = actividad;
+    }
+
+    public Date getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(Date fecha) {
+        this.fecha = fecha;
+    }
+
+    public Boolean getRequeridoAlternativo() {
+        return requeridoAlternativo;
+    }
+
+    public void setRequeridoAlternativo(Boolean requeridoAlternativo) {
+        this.requeridoAlternativo = requeridoAlternativo;
+    }
+
+    public Integer getIdSyIdIdSy() {
+        return idSyIdIdSy;
+    }
+
+    public void setIdSyIdIdSy(Integer idSyIdIdSy) {
+        this.idSyIdIdSy = idSyIdIdSy;
     }
 
     public Set<com.aprendoz_test.data.InscAlumActividad> getInscAlumActividads() {

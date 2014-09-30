@@ -159,13 +159,6 @@
 		}],
 		"returnType": "[com.aprendoz_test.data.output.GetMaxSubjectByGradeRtnType]"
 	}, {
-		"name": "getSubareaCoord",
-		"parameters": [{
-			"name": "user",
-			"type": "java.lang.String"
-		}],
-		"returnType": "[com.aprendoz_test.data.output.GetSubareaCoordRtnType]"
-	}, {
 		"name": "getSubjectsByProfile",
 		"parameters": [{
 			"name": "pgrado",

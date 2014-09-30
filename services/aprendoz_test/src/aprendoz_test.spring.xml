@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 
-<!-- Generated 09/11/2014 07:23:30
+<!-- Generated 09/29/2014 19:07:31
 
 Configuration for 'aprendoz_test' database service
 
@@ -134,6 +134,7 @@ Configuration for 'aprendoz_test' database service
 <value>com/aprendoz_test/data/TransporteNovedades.hbm.xml</value>
 <value>com/aprendoz_test/data/ReporteDavivienda.hbm.xml</value>
 <value>com/aprendoz_test/data/SeguridadPersonasAccesos.hbm.xml</value>
+<value>com/aprendoz_test/data/LogAccionesPadres.hbm.xml</value>
 <value>com/aprendoz_test/data/SesionNivel.hbm.xml</value>
 <value>com/aprendoz_test/data/GestionEncuestasGrupoFamiliar.hbm.xml</value>
 <value>com/aprendoz_test/data/Educom.hbm.xml</value>
@@ -211,6 +212,7 @@ Configuration for 'aprendoz_test' database service
 <value>com/aprendoz_test/data/FeedbackReportes.hbm.xml</value>
 <value>com/aprendoz_test/data/ImportacionAlumnosTransporte.hbm.xml</value>
 <value>com/aprendoz_test/data/CostosAnuales.hbm.xml</value>
+<value>com/aprendoz_test/data/VistaDashboardDirectores.hbm.xml</value>
 <value>com/aprendoz_test/data/CoordinacionDeGrupo.hbm.xml</value>
 <value>com/aprendoz_test/data/PadresVistaRecursos.hbm.xml</value>
 <value>com/aprendoz_test/data/InscPersonaGrupoFamiliar.hbm.xml</value>
@@ -264,6 +266,7 @@ Configuration for 'aprendoz_test' database service
 <value>com/aprendoz_test/data/TipoCosto.hbm.xml</value>
 <value>com/aprendoz_test/data/EventualidadPersonas.hbm.xml</value>
 <value>com/aprendoz_test/data/ImportacionCartera.hbm.xml</value>
+<value>com/aprendoz_test/data/Meses.hbm.xml</value>
 <value>com/aprendoz_test/data/CafeteriaPostres.hbm.xml</value>
 <value>com/aprendoz_test/data/TablaDescuentos.hbm.xml</value>
 <value>com/aprendoz_test/data/VistaMatriculasGraficasTotalDia.hbm.xml</value>

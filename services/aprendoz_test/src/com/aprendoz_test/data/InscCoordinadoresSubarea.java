@@ -6,37 +6,30 @@ import java.util.Date;
 
 /**
  *  aprendoz_test.InscCoordinadoresSubarea
- *  09/11/2014 07:31:45
+ *  09/29/2014 19:07:35
  * 
  */
 public class InscCoordinadoresSubarea {
 
     private Integer idCoordinadorSubarea;
+    private Integer personaIdPersona;
+    private Integer syIdSy;
+    private Integer subareaIdSubarea;
     private Integer activo;
     private Date fechaCreacion;
     private Date fechaActualizacion;
-    private Persona persona;
-    private Sy sy;
-    private Subarea subareas;
 
     public InscCoordinadoresSubarea() {
     }
 
-    public InscCoordinadoresSubarea(Integer idCoordinadorSubarea, Integer activo, Date fechaCreacion, Date fechaActualizacion) {
+    public InscCoordinadoresSubarea(Integer idCoordinadorSubarea, Integer personaIdPersona, Integer syIdSy, Integer subareaIdSubarea, Integer activo, Date fechaCreacion, Date fechaActualizacion) {
         this.idCoordinadorSubarea = idCoordinadorSubarea;
+        this.personaIdPersona = personaIdPersona;
+        this.syIdSy = syIdSy;
+        this.subareaIdSubarea = subareaIdSubarea;
         this.activo = activo;
         this.fechaCreacion = fechaCreacion;
         this.fechaActualizacion = fechaActualizacion;
-    }
-
-    public InscCoordinadoresSubarea(Integer idCoordinadorSubarea, Integer activo, Date fechaCreacion, Date fechaActualizacion, Persona persona, Sy sy, Subarea subareas) {
-        this.idCoordinadorSubarea = idCoordinadorSubarea;
-        this.activo = activo;
-        this.fechaCreacion = fechaCreacion;
-        this.fechaActualizacion = fechaActualizacion;
-        this.persona = persona;
-        this.sy = sy;
-        this.subareas = subareas;
     }
 
     public Integer getIdCoordinadorSubarea() {
@@ -45,6 +38,30 @@ public class InscCoordinadoresSubarea {
 
     public void setIdCoordinadorSubarea(Integer idCoordinadorSubarea) {
         this.idCoordinadorSubarea = idCoordinadorSubarea;
+    }
+
+    public Integer getPersonaIdPersona() {
+        return personaIdPersona;
+    }
+
+    public void setPersonaIdPersona(Integer personaIdPersona) {
+        this.personaIdPersona = personaIdPersona;
+    }
+
+    public Integer getSyIdSy() {
+        return syIdSy;
+    }
+
+    public void setSyIdSy(Integer syIdSy) {
+        this.syIdSy = syIdSy;
+    }
+
+    public Integer getSubareaIdSubarea() {
+        return subareaIdSubarea;
+    }
+
+    public void setSubareaIdSubarea(Integer subareaIdSubarea) {
+        this.subareaIdSubarea = subareaIdSubarea;
     }
 
     public Integer getActivo() {
@@ -69,30 +86,6 @@ public class InscCoordinadoresSubarea {
 
     public void setFechaActualizacion(Date fechaActualizacion) {
         this.fechaActualizacion = fechaActualizacion;
-    }
-
-    public Persona getPersona() {
-        return persona;
-    }
-
-    public void setPersona(Persona persona) {
-        this.persona = persona;
-    }
-
-    public Sy getSy() {
-        return sy;
-    }
-
-    public void setSy(Sy sy) {
-        this.sy = sy;
-    }
-
-    public Subarea getSubareas() {
-        return subareas;
-    }
-
-    public void setSubareas(Subarea subareas) {
-        this.subareas = subareas;
     }
 
 }

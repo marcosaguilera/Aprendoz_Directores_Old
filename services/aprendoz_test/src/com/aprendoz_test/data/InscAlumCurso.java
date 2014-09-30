@@ -6,18 +6,18 @@ import java.util.Date;
 
 /**
  *  aprendoz_test.InscAlumCurso
- *  09/11/2014 07:30:06
+ *  09/29/2014 19:07:34
  * 
  */
 public class InscAlumCurso {
 
     private Integer idInscAlumCurso;
-    private Integer calificacion;
-    private String califChar;
-    private Date fechaMatricula;
     private Curso curso;
     private Sy sy;
     private Persona persona;
+    private Integer calificacion;
+    private String califChar;
+    private Date fechaMatricula;
 
     public InscAlumCurso() {
     }
@@ -29,14 +29,14 @@ public class InscAlumCurso {
         this.fechaMatricula = fechaMatricula;
     }
 
-    public InscAlumCurso(Integer idInscAlumCurso, Integer calificacion, String califChar, Date fechaMatricula, Curso curso, Sy sy, Persona persona) {
+    public InscAlumCurso(Integer idInscAlumCurso, Curso curso, Sy sy, Persona persona, Integer calificacion, String califChar, Date fechaMatricula) {
         this.idInscAlumCurso = idInscAlumCurso;
-        this.calificacion = calificacion;
-        this.califChar = califChar;
-        this.fechaMatricula = fechaMatricula;
         this.curso = curso;
         this.sy = sy;
         this.persona = persona;
+        this.calificacion = calificacion;
+        this.califChar = califChar;
+        this.fechaMatricula = fechaMatricula;
     }
 
     public Integer getIdInscAlumCurso() {
@@ -45,30 +45,6 @@ public class InscAlumCurso {
 
     public void setIdInscAlumCurso(Integer idInscAlumCurso) {
         this.idInscAlumCurso = idInscAlumCurso;
-    }
-
-    public Integer getCalificacion() {
-        return calificacion;
-    }
-
-    public void setCalificacion(Integer calificacion) {
-        this.calificacion = calificacion;
-    }
-
-    public String getCalifChar() {
-        return califChar;
-    }
-
-    public void setCalifChar(String califChar) {
-        this.califChar = califChar;
-    }
-
-    public Date getFechaMatricula() {
-        return fechaMatricula;
-    }
-
-    public void setFechaMatricula(Date fechaMatricula) {
-        this.fechaMatricula = fechaMatricula;
     }
 
     public Curso getCurso() {
@@ -93,6 +69,30 @@ public class InscAlumCurso {
 
     public void setPersona(Persona persona) {
         this.persona = persona;
+    }
+
+    public Integer getCalificacion() {
+        return calificacion;
+    }
+
+    public void setCalificacion(Integer calificacion) {
+        this.calificacion = calificacion;
+    }
+
+    public String getCalifChar() {
+        return califChar;
+    }
+
+    public void setCalifChar(String califChar) {
+        this.califChar = califChar;
+    }
+
+    public Date getFechaMatricula() {
+        return fechaMatricula;
+    }
+
+    public void setFechaMatricula(Date fechaMatricula) {
+        this.fechaMatricula = fechaMatricula;
     }
 
 }

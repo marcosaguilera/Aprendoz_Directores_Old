@@ -6,17 +6,17 @@ import java.util.Date;
 
 /**
  *  aprendoz_test.OtrasMetas
- *  09/11/2014 07:30:06
+ *  09/29/2014 19:07:34
  * 
  */
 public class OtrasMetas {
 
     private Integer idOtraMeta;
+    private Subtopico subtopico;
     private String meta;
     private Date fecha;
     private Boolean logrado;
     private Integer idSyIdIdSy;
-    private Subtopico subtopico;
 
     public OtrasMetas() {
     }
@@ -29,13 +29,13 @@ public class OtrasMetas {
         this.idSyIdIdSy = idSyIdIdSy;
     }
 
-    public OtrasMetas(Integer idOtraMeta, String meta, Date fecha, Boolean logrado, Integer idSyIdIdSy, Subtopico subtopico) {
+    public OtrasMetas(Integer idOtraMeta, Subtopico subtopico, String meta, Date fecha, Boolean logrado, Integer idSyIdIdSy) {
         this.idOtraMeta = idOtraMeta;
+        this.subtopico = subtopico;
         this.meta = meta;
         this.fecha = fecha;
         this.logrado = logrado;
         this.idSyIdIdSy = idSyIdIdSy;
-        this.subtopico = subtopico;
     }
 
     public Integer getIdOtraMeta() {
@@ -44,6 +44,14 @@ public class OtrasMetas {
 
     public void setIdOtraMeta(Integer idOtraMeta) {
         this.idOtraMeta = idOtraMeta;
+    }
+
+    public Subtopico getSubtopico() {
+        return subtopico;
+    }
+
+    public void setSubtopico(Subtopico subtopico) {
+        this.subtopico = subtopico;
     }
 
     public String getMeta() {
@@ -76,14 +84,6 @@ public class OtrasMetas {
 
     public void setIdSyIdIdSy(Integer idSyIdIdSy) {
         this.idSyIdIdSy = idSyIdIdSy;
-    }
-
-    public Subtopico getSubtopico() {
-        return subtopico;
-    }
-
-    public void setSubtopico(Subtopico subtopico) {
-        this.subtopico = subtopico;
     }
 
 }

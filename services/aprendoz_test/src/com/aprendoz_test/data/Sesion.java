@@ -8,20 +8,20 @@ import java.util.Set;
 
 /**
  *  aprendoz_test.Sesion
- *  09/11/2014 07:30:07
+ *  09/29/2014 19:07:35
  * 
  */
 public class Sesion {
 
     private Integer idSesion;
+    private Curso curso;
+    private Asignatura asignatura;
     private Date fecha;
     private Integer numeroSesion;
     private Boolean impartida;
     private String comentario;
     private Date horaInicio;
     private Date horaFin;
-    private Curso curso;
-    private Asignatura asignatura;
     private Set<com.aprendoz_test.data.Asistencia> asistencias = new HashSet<com.aprendoz_test.data.Asistencia>();
 
     public Sesion() {
@@ -37,16 +37,16 @@ public class Sesion {
         this.horaFin = horaFin;
     }
 
-    public Sesion(Integer idSesion, Date fecha, Integer numeroSesion, Boolean impartida, String comentario, Date horaInicio, Date horaFin, Curso curso, Asignatura asignatura, Set<com.aprendoz_test.data.Asistencia> asistencias) {
+    public Sesion(Integer idSesion, Curso curso, Asignatura asignatura, Date fecha, Integer numeroSesion, Boolean impartida, String comentario, Date horaInicio, Date horaFin, Set<com.aprendoz_test.data.Asistencia> asistencias) {
         this.idSesion = idSesion;
+        this.curso = curso;
+        this.asignatura = asignatura;
         this.fecha = fecha;
         this.numeroSesion = numeroSesion;
         this.impartida = impartida;
         this.comentario = comentario;
         this.horaInicio = horaInicio;
         this.horaFin = horaFin;
-        this.curso = curso;
-        this.asignatura = asignatura;
         this.asistencias = asistencias;
     }
 
@@ -56,6 +56,22 @@ public class Sesion {
 
     public void setIdSesion(Integer idSesion) {
         this.idSesion = idSesion;
+    }
+
+    public Curso getCurso() {
+        return curso;
+    }
+
+    public void setCurso(Curso curso) {
+        this.curso = curso;
+    }
+
+    public Asignatura getAsignatura() {
+        return asignatura;
+    }
+
+    public void setAsignatura(Asignatura asignatura) {
+        this.asignatura = asignatura;
     }
 
     public Date getFecha() {
@@ -104,22 +120,6 @@ public class Sesion {
 
     public void setHoraFin(Date horaFin) {
         this.horaFin = horaFin;
-    }
-
-    public Curso getCurso() {
-        return curso;
-    }
-
-    public void setCurso(Curso curso) {
-        this.curso = curso;
-    }
-
-    public Asignatura getAsignatura() {
-        return asignatura;
-    }
-
-    public void setAsignatura(Asignatura asignatura) {
-        this.asignatura = asignatura;
     }
 
     public Set<com.aprendoz_test.data.Asistencia> getAsistencias() {

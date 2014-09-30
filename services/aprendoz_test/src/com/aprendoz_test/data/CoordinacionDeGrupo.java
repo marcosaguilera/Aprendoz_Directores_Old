@@ -5,7 +5,7 @@ package com.aprendoz_test.data;
 
 /**
  *  aprendoz_test.CoordinacionDeGrupo
- *  09/11/2014 07:30:06
+ *  09/29/2014 19:07:34
  * 
  */
 public class CoordinacionDeGrupo {

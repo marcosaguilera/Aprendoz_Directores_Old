@@ -7,26 +7,32 @@ import java.util.Set;
 
 /**
  *  aprendoz_test.TipoSolicitud
- *  09/11/2014 07:30:07
+ *  09/29/2014 19:07:35
  * 
  */
 public class TipoSolicitud {
 
     private Integer idTipoSolicitud;
     private String solicitud;
+    private Integer disponiblePadres;
+    private Integer disponibleAdmon;
     private Set<com.aprendoz_test.data.TransporteNovedades> transporteNovedadeses = new HashSet<com.aprendoz_test.data.TransporteNovedades>();
 
     public TipoSolicitud() {
     }
 
-    public TipoSolicitud(Integer idTipoSolicitud, String solicitud) {
+    public TipoSolicitud(Integer idTipoSolicitud, String solicitud, Integer disponiblePadres, Integer disponibleAdmon) {
         this.idTipoSolicitud = idTipoSolicitud;
         this.solicitud = solicitud;
+        this.disponiblePadres = disponiblePadres;
+        this.disponibleAdmon = disponibleAdmon;
     }
 
-    public TipoSolicitud(Integer idTipoSolicitud, String solicitud, Set<com.aprendoz_test.data.TransporteNovedades> transporteNovedadeses) {
+    public TipoSolicitud(Integer idTipoSolicitud, String solicitud, Integer disponiblePadres, Integer disponibleAdmon, Set<com.aprendoz_test.data.TransporteNovedades> transporteNovedadeses) {
         this.idTipoSolicitud = idTipoSolicitud;
         this.solicitud = solicitud;
+        this.disponiblePadres = disponiblePadres;
+        this.disponibleAdmon = disponibleAdmon;
         this.transporteNovedadeses = transporteNovedadeses;
     }
 
@@ -44,6 +50,22 @@ public class TipoSolicitud {
 
     public void setSolicitud(String solicitud) {
         this.solicitud = solicitud;
+    }
+
+    public Integer getDisponiblePadres() {
+        return disponiblePadres;
+    }
+
+    public void setDisponiblePadres(Integer disponiblePadres) {
+        this.disponiblePadres = disponiblePadres;
+    }
+
+    public Integer getDisponibleAdmon() {
+        return disponibleAdmon;
+    }
+
+    public void setDisponibleAdmon(Integer disponibleAdmon) {
+        this.disponibleAdmon = disponibleAdmon;
     }
 
     public Set<com.aprendoz_test.data.TransporteNovedades> getTransporteNovedadeses() {

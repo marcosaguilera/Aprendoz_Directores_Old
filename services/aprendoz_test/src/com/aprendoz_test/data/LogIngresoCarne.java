@@ -6,16 +6,16 @@ import java.util.Date;
 
 /**
  *  aprendoz_test.LogIngresoCarne
- *  09/11/2014 07:30:06
+ *  09/29/2014 19:07:34
  * 
  */
 public class LogIngresoCarne {
 
     private Integer idLogIngresoCarne;
-    private Date fechaCreacion;
-    private Date fechaActualizacion;
     private TipoFalla tipoFalla;
     private Persona persona;
+    private Date fechaCreacion;
+    private Date fechaActualizacion;
 
     public LogIngresoCarne() {
     }
@@ -26,12 +26,12 @@ public class LogIngresoCarne {
         this.fechaActualizacion = fechaActualizacion;
     }
 
-    public LogIngresoCarne(Integer idLogIngresoCarne, Date fechaCreacion, Date fechaActualizacion, TipoFalla tipoFalla, Persona persona) {
+    public LogIngresoCarne(Integer idLogIngresoCarne, TipoFalla tipoFalla, Persona persona, Date fechaCreacion, Date fechaActualizacion) {
         this.idLogIngresoCarne = idLogIngresoCarne;
-        this.fechaCreacion = fechaCreacion;
-        this.fechaActualizacion = fechaActualizacion;
         this.tipoFalla = tipoFalla;
         this.persona = persona;
+        this.fechaCreacion = fechaCreacion;
+        this.fechaActualizacion = fechaActualizacion;
     }
 
     public Integer getIdLogIngresoCarne() {
@@ -40,22 +40,6 @@ public class LogIngresoCarne {
 
     public void setIdLogIngresoCarne(Integer idLogIngresoCarne) {
         this.idLogIngresoCarne = idLogIngresoCarne;
-    }
-
-    public Date getFechaCreacion() {
-        return fechaCreacion;
-    }
-
-    public void setFechaCreacion(Date fechaCreacion) {
-        this.fechaCreacion = fechaCreacion;
-    }
-
-    public Date getFechaActualizacion() {
-        return fechaActualizacion;
-    }
-
-    public void setFechaActualizacion(Date fechaActualizacion) {
-        this.fechaActualizacion = fechaActualizacion;
     }
 
     public TipoFalla getTipoFalla() {
@@ -72,6 +56,22 @@ public class LogIngresoCarne {
 
     public void setPersona(Persona persona) {
         this.persona = persona;
+    }
+
+    public Date getFechaCreacion() {
+        return fechaCreacion;
+    }
+
+    public void setFechaCreacion(Date fechaCreacion) {
+        this.fechaCreacion = fechaCreacion;
+    }
+
+    public Date getFechaActualizacion() {
+        return fechaActualizacion;
+    }
+
+    public void setFechaActualizacion(Date fechaActualizacion) {
+        this.fechaActualizacion = fechaActualizacion;
     }
 
 }

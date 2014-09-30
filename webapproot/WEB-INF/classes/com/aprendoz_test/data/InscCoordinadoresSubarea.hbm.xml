@@ -5,6 +5,15 @@
             <column name="id_coordinador_subarea"/>
             <generator class="identity"/>
         </id>
+        <property name="personaIdPersona" type="integer">
+            <column name="persona_id_persona"/>
+        </property>
+        <property name="syIdSy" type="integer">
+            <column name="sy_id_sy"/>
+        </property>
+        <property name="subareaIdSubarea" type="integer">
+            <column name="subarea_id_subarea"/>
+        </property>
         <property name="activo" type="integer">
             <column name="activo"/>
         </property>
@@ -14,14 +23,5 @@
         <property name="fechaActualizacion" type="timestamp">
             <column name="fecha_actualizacion" length="19"/>
         </property>
-        <many-to-one name="persona" class="com.aprendoz_test.data.Persona" cascade="all">
-            <column name="persona_id_persona"/>
-        </many-to-one>
-        <many-to-one name="sy" class="com.aprendoz_test.data.Sy" cascade="all">
-            <column name="sy_id_sy"/>
-        </many-to-one>
-        <many-to-one name="subareas" class="com.aprendoz_test.data.Subarea" cascade="all">
-            <column name="subarea_id_subarea"/>
-        </many-to-one>
     </class>
 </hibernate-mapping>

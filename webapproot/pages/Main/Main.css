@@ -2028,3 +2028,11 @@ cursor: pointer;
 	border-radius: 15px 0px 15px 0px
 }
 
+.Main .Main-transportenovedadesLiveForm1 {
+	background-color: #FAFAFA;
+}
+
+.Main .Main-transportenovedadesDataGrid1 {
+	cursor: pointer;
+}
+

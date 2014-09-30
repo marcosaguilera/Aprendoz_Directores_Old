@@ -6,12 +6,13 @@ import java.util.Date;
 
 /**
  *  aprendoz_test.GestionEncuestas
- *  09/11/2014 07:30:07
+ *  09/29/2014 19:07:34
  * 
  */
 public class GestionEncuestas {
 
     private Integer idPkEncuesta;
+    private Persona persona;
     private Date fechaIngreso;
     private Date fechaActualizacion;
     private String tipo;
@@ -37,7 +38,6 @@ public class GestionEncuestas {
     private Integer p19;
     private Integer p20;
     private String sugerencias;
-    private Persona persona;
 
     public GestionEncuestas() {
     }
@@ -71,8 +71,9 @@ public class GestionEncuestas {
         this.sugerencias = sugerencias;
     }
 
-    public GestionEncuestas(Integer idPkEncuesta, Date fechaIngreso, Date fechaActualizacion, String tipo, String grado, Integer p1, Integer p2, Integer p3, Integer p4, Integer p5, Integer p6, Integer p7, Integer p8, Integer p9, Integer p10, Integer p11, Integer p12, Integer p13, Integer p14, Integer p15, Integer p16, Integer p17, Integer p18, Integer p19, Integer p20, String sugerencias, Persona persona) {
+    public GestionEncuestas(Integer idPkEncuesta, Persona persona, Date fechaIngreso, Date fechaActualizacion, String tipo, String grado, Integer p1, Integer p2, Integer p3, Integer p4, Integer p5, Integer p6, Integer p7, Integer p8, Integer p9, Integer p10, Integer p11, Integer p12, Integer p13, Integer p14, Integer p15, Integer p16, Integer p17, Integer p18, Integer p19, Integer p20, String sugerencias) {
         this.idPkEncuesta = idPkEncuesta;
+        this.persona = persona;
         this.fechaIngreso = fechaIngreso;
         this.fechaActualizacion = fechaActualizacion;
         this.tipo = tipo;
@@ -98,7 +99,6 @@ public class GestionEncuestas {
         this.p19 = p19;
         this.p20 = p20;
         this.sugerencias = sugerencias;
-        this.persona = persona;
     }
 
     public Integer getIdPkEncuesta() {
@@ -107,6 +107,14 @@ public class GestionEncuestas {
 
     public void setIdPkEncuesta(Integer idPkEncuesta) {
         this.idPkEncuesta = idPkEncuesta;
+    }
+
+    public Persona getPersona() {
+        return persona;
+    }
+
+    public void setPersona(Persona persona) {
+        this.persona = persona;
     }
 
     public Date getFechaIngreso() {
@@ -307,14 +315,6 @@ public class GestionEncuestas {
 
     public void setSugerencias(String sugerencias) {
         this.sugerencias = sugerencias;
-    }
-
-    public Persona getPersona() {
-        return persona;
-    }
-
-    public void setPersona(Persona persona) {
-        this.persona = persona;
     }
 
 }

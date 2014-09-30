@@ -6,15 +6,15 @@ import java.util.Date;
 
 /**
  *  aprendoz_test.LogDocentes
- *  09/11/2014 07:30:06
+ *  09/29/2014 19:07:35
  * 
  */
 public class LogDocentes {
 
     private Integer idLogDocentes;
+    private Persona persona;
     private Date fechaIngreso;
     private Date horaIngreso;
-    private Persona persona;
 
     public LogDocentes() {
     }
@@ -25,11 +25,11 @@ public class LogDocentes {
         this.horaIngreso = horaIngreso;
     }
 
-    public LogDocentes(Integer idLogDocentes, Date fechaIngreso, Date horaIngreso, Persona persona) {
+    public LogDocentes(Integer idLogDocentes, Persona persona, Date fechaIngreso, Date horaIngreso) {
         this.idLogDocentes = idLogDocentes;
+        this.persona = persona;
         this.fechaIngreso = fechaIngreso;
         this.horaIngreso = horaIngreso;
-        this.persona = persona;
     }
 
     public Integer getIdLogDocentes() {
@@ -38,6 +38,14 @@ public class LogDocentes {
 
     public void setIdLogDocentes(Integer idLogDocentes) {
         this.idLogDocentes = idLogDocentes;
+    }
+
+    public Persona getPersona() {
+        return persona;
+    }
+
+    public void setPersona(Persona persona) {
+        this.persona = persona;
     }
 
     public Date getFechaIngreso() {
@@ -54,14 +62,6 @@ public class LogDocentes {
 
     public void setHoraIngreso(Date horaIngreso) {
         this.horaIngreso = horaIngreso;
-    }
-
-    public Persona getPersona() {
-        return persona;
-    }
-
-    public void setPersona(Persona persona) {
-        this.persona = persona;
     }
 
 }

@@ -6,7 +6,7 @@ import java.io.Serializable;
 
 /**
  *  aprendoz_test.TmpEnrLogId
- *  09/11/2014 07:30:06
+ *  09/29/2014 19:07:35
  * 
  */
 public class TmpEnrLogId

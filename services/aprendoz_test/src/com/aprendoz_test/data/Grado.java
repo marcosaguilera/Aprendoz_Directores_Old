@@ -7,16 +7,16 @@ import java.util.Set;
 
 /**
  *  aprendoz_test.Grado
- *  09/11/2014 07:30:07
+ *  09/29/2014 19:07:34
  * 
  */
 public class Grado {
 
     private Integer idGrado;
+    private Nivel nivel;
     private String grado;
     private String grade;
     private String gradoSapiens;
-    private Nivel nivel;
     private Set<com.aprendoz_test.data.CostosAnualesCopy> costosAnualesCopies = new HashSet<com.aprendoz_test.data.CostosAnualesCopy>();
     private Set<com.aprendoz_test.data.Asignatura> asignaturas = new HashSet<com.aprendoz_test.data.Asignatura>();
     private Set<com.aprendoz_test.data.CostosCopy> costosCopies = new HashSet<com.aprendoz_test.data.CostosCopy>();
@@ -36,12 +36,12 @@ public class Grado {
         this.gradoSapiens = gradoSapiens;
     }
 
-    public Grado(Integer idGrado, String grado, String grade, String gradoSapiens, Nivel nivel, Set<com.aprendoz_test.data.CostosAnualesCopy> costosAnualesCopies, Set<com.aprendoz_test.data.Asignatura> asignaturas, Set<com.aprendoz_test.data.CostosCopy> costosCopies, Set<com.aprendoz_test.data.Costos> costoses, Set<com.aprendoz_test.data.AsignaturaCopy> asignaturaCopies, Set<com.aprendoz_test.data.AccAuthorization> accAuthorizations, Set<com.aprendoz_test.data.Curso> cursos, Set<com.aprendoz_test.data.CostosAnuales> costosAnualeses) {
+    public Grado(Integer idGrado, Nivel nivel, String grado, String grade, String gradoSapiens, Set<com.aprendoz_test.data.CostosAnualesCopy> costosAnualesCopies, Set<com.aprendoz_test.data.Asignatura> asignaturas, Set<com.aprendoz_test.data.CostosCopy> costosCopies, Set<com.aprendoz_test.data.Costos> costoses, Set<com.aprendoz_test.data.AsignaturaCopy> asignaturaCopies, Set<com.aprendoz_test.data.AccAuthorization> accAuthorizations, Set<com.aprendoz_test.data.Curso> cursos, Set<com.aprendoz_test.data.CostosAnuales> costosAnualeses) {
         this.idGrado = idGrado;
+        this.nivel = nivel;
         this.grado = grado;
         this.grade = grade;
         this.gradoSapiens = gradoSapiens;
-        this.nivel = nivel;
         this.costosAnualesCopies = costosAnualesCopies;
         this.asignaturas = asignaturas;
         this.costosCopies = costosCopies;
@@ -58,6 +58,14 @@ public class Grado {
 
     public void setIdGrado(Integer idGrado) {
         this.idGrado = idGrado;
+    }
+
+    public Nivel getNivel() {
+        return nivel;
+    }
+
+    public void setNivel(Nivel nivel) {
+        this.nivel = nivel;
     }
 
     public String getGrado() {
@@ -82,14 +90,6 @@ public class Grado {
 
     public void setGradoSapiens(String gradoSapiens) {
         this.gradoSapiens = gradoSapiens;
-    }
-
-    public Nivel getNivel() {
-        return nivel;
-    }
-
-    public void setNivel(Nivel nivel) {
-        this.nivel = nivel;
     }
 
     public Set<com.aprendoz_test.data.CostosAnualesCopy> getCostosAnualesCopies() {

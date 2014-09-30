@@ -5,14 +5,14 @@ package com.aprendoz_test.data;
 
 /**
  *  aprendoz_test.EstadoDepartamento
- *  09/11/2014 07:30:07
+ *  09/29/2014 19:07:35
  * 
  */
 public class EstadoDepartamento {
 
     private Integer idEstados;
-    private String estado;
     private Pais pais;
+    private String estado;
 
     public EstadoDepartamento() {
     }
@@ -22,10 +22,10 @@ public class EstadoDepartamento {
         this.estado = estado;
     }
 
-    public EstadoDepartamento(Integer idEstados, String estado, Pais pais) {
+    public EstadoDepartamento(Integer idEstados, Pais pais, String estado) {
         this.idEstados = idEstados;
-        this.estado = estado;
         this.pais = pais;
+        this.estado = estado;
     }
 
     public Integer getIdEstados() {
@@ -36,20 +36,20 @@ public class EstadoDepartamento {
         this.idEstados = idEstados;
     }
 
-    public String getEstado() {
-        return estado;
-    }
-
-    public void setEstado(String estado) {
-        this.estado = estado;
-    }
-
     public Pais getPais() {
         return pais;
     }
 
     public void setPais(Pais pais) {
         this.pais = pais;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
     }
 
 }

@@ -5,16 +5,16 @@ package com.aprendoz_test.data;
 
 /**
  *  aprendoz_test.InscCoordinadoresCurso
- *  09/11/2014 07:30:07
+ *  09/29/2014 19:07:34
  * 
  */
 public class InscCoordinadoresCurso {
 
     private Integer idInscCoordinadoresCurso;
-    private String grupo;
     private Curso curso;
     private Sy sy;
     private Persona persona;
+    private String grupo;
 
     public InscCoordinadoresCurso() {
     }
@@ -24,12 +24,12 @@ public class InscCoordinadoresCurso {
         this.grupo = grupo;
     }
 
-    public InscCoordinadoresCurso(Integer idInscCoordinadoresCurso, String grupo, Curso curso, Sy sy, Persona persona) {
+    public InscCoordinadoresCurso(Integer idInscCoordinadoresCurso, Curso curso, Sy sy, Persona persona, String grupo) {
         this.idInscCoordinadoresCurso = idInscCoordinadoresCurso;
-        this.grupo = grupo;
         this.curso = curso;
         this.sy = sy;
         this.persona = persona;
+        this.grupo = grupo;
     }
 
     public Integer getIdInscCoordinadoresCurso() {
@@ -38,14 +38,6 @@ public class InscCoordinadoresCurso {
 
     public void setIdInscCoordinadoresCurso(Integer idInscCoordinadoresCurso) {
         this.idInscCoordinadoresCurso = idInscCoordinadoresCurso;
-    }
-
-    public String getGrupo() {
-        return grupo;
-    }
-
-    public void setGrupo(String grupo) {
-        this.grupo = grupo;
     }
 
     public Curso getCurso() {
@@ -70,6 +62,14 @@ public class InscCoordinadoresCurso {
 
     public void setPersona(Persona persona) {
         this.persona = persona;
+    }
+
+    public String getGrupo() {
+        return grupo;
+    }
+
+    public void setGrupo(String grupo) {
+        this.grupo = grupo;
     }
 
 }

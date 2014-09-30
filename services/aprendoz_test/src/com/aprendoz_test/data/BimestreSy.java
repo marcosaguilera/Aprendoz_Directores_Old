@@ -6,16 +6,16 @@ import java.util.Date;
 
 /**
  *  aprendoz_test.BimestreSy
- *  09/11/2014 07:30:07
+ *  09/29/2014 19:07:35
  * 
  */
 public class BimestreSy {
 
     private Integer idBimSy;
+    private Sy sy;
     private Integer bimestre;
     private Date fechaInicio;
     private Date fechaFin;
-    private Sy sy;
 
     public BimestreSy() {
     }
@@ -27,12 +27,12 @@ public class BimestreSy {
         this.fechaFin = fechaFin;
     }
 
-    public BimestreSy(Integer idBimSy, Integer bimestre, Date fechaInicio, Date fechaFin, Sy sy) {
+    public BimestreSy(Integer idBimSy, Sy sy, Integer bimestre, Date fechaInicio, Date fechaFin) {
         this.idBimSy = idBimSy;
+        this.sy = sy;
         this.bimestre = bimestre;
         this.fechaInicio = fechaInicio;
         this.fechaFin = fechaFin;
-        this.sy = sy;
     }
 
     public Integer getIdBimSy() {
@@ -41,6 +41,14 @@ public class BimestreSy {
 
     public void setIdBimSy(Integer idBimSy) {
         this.idBimSy = idBimSy;
+    }
+
+    public Sy getSy() {
+        return sy;
+    }
+
+    public void setSy(Sy sy) {
+        this.sy = sy;
     }
 
     public Integer getBimestre() {
@@ -65,14 +73,6 @@ public class BimestreSy {
 
     public void setFechaFin(Date fechaFin) {
         this.fechaFin = fechaFin;
-    }
-
-    public Sy getSy() {
-        return sy;
-    }
-
-    public void setSy(Sy sy) {
-        this.sy = sy;
     }
 
 }

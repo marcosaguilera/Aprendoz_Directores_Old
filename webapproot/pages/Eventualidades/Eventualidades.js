@@ -13,28 +13,19 @@ dojo.declare("Eventualidades", wm.Page, {
   },
   
   button2Click: function(inSender, inEvent) {
-    try {
-          this.docenteAsig.update();
-            app.lsEventualidad.update();    
-              this.sesionLiveVariable1.clearData(); 
-                this.asistencia.clearData(); 
-      
-    } catch(e) {
-      console.error('ERROR IN button2Click: ' + e); 
-    } 
+      this.docenteAsig.update();
+      app.lsEventualidad.update();    
+      this.sesionLiveVariable1.clearData(); 
+      this.asistencia.clearData(); 
   },
   button1Click: function(inSender, inEvent) {
-    try {
       this.asignaturaCurso.clearData();
-        this.sesionLiveVariable1.clearData();
-          this.asistencia.clearData();
-           this.selectEditor2.clear();
-             this.selectEditor3.clear();
-               
-      
-    } catch(e) {
-      console.error('ERROR IN button1Click: ' + e); 
-    } 
+      this.sesionLiveVariable1.clearData();
+      this.docenteAsig.clearData();
+      this.sesionLiveVariable1.clearData();
+      this.asistencia.clearData();
+      this.selectEditor2.clear();
+      this.selectEditor3.clear();
   },
   asignaturasCellClick: function(inSender, inEvent) {
     try {
